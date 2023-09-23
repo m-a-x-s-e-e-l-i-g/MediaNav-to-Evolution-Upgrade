@@ -54,5 +54,5 @@ Don't worry, follow these steps to fix this issue and get your map working.
 7. Done! Remove your USB from navigation system.
 ![IMG_20230923_160814](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/5a04b222-7003-40cc-846e-2b8603e753ef)
 
-
-
+## Credits
+Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1)
