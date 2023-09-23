@@ -20,7 +20,7 @@ Upgrading to 7.0.5.MD solved these issues for me.
 - 6.0.3MD
 
 ## Requirements
-- [Radio (Unlock) Code](radio-code.md)
+- [Radio (Unlock) Code](Radio_Code.md)
 - USB Drive (min. 64MB fat32 formatted)
 
 ## Instructions
@@ -34,7 +34,7 @@ Upgrading to 7.0.5.MD solved these issues for me.
 - Don't turn off your engine..
 - Don't remove USB
 - The navigation system will restart and show text in Arabic. This is saying that it's still updating
-7. Put in your [Radio Code](radio-code.md)
+7. Put in your [Radio Code](Radio_Code.md)
 ![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/8de202e5-76a7-4ea1-82c1-564a44a67d4c)
 8. Done! Remove your USB from navigation system.
  - If the update is proposed again, ignore it by pressing the home button.
@@ -43,7 +43,7 @@ Upgrading to 7.0.5.MD solved these issues for me.
 ![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/2b02517f-0dcd-4b1c-9d88-365673a7c797)
 Don't worry, follow these steps to fix this issue and get your map working.
 1. Insert your USB Drive in your PC and format it (fat32).
-2. Download and copy `upgrade.lgu` from folder `file_corruption_fix` to your USB Drive.
+2. Download and copy `upgrade.lgu` from folder `File_Corruption_Fix` to your USB Drive.
 3. Turn on your engine and navigation system.
 4. Insert the USB drive in the navigator.
 5. Accept the proposed update on screen by pressing "Update".
