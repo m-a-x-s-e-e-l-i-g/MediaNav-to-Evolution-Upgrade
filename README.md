@@ -16,7 +16,6 @@ Upgrading to 7.0.5.MD solved these issues for me.
 
 ## Should work upgrading from
 - 4.0.6
-- 4.1.0
 - 6.0.3MD
 
 ## Requirements
