@@ -8,6 +8,7 @@ MediaNav 4.1.0
 - Is slow with connecting Bluetooth devices.
 - Has a delay when switching songs over Bluetooth.
 - Uses more RAM then the MediaNav Evolution software.
+- Stuttering when playing music over Bluetooth
 Upgrading to 7.0.5.MD solved these issues for me.
 
 ## Confirmed working on:
