@@ -9,8 +9,8 @@ How to find your Renault / Dacia MediaNav authentication key or Radio Code?
 ![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/ec148b45-b936-431d-b88c-e0df20e9f663)
 
 3. Use the last 4 digits of the serial number to find your Radio Code:
-You can find your code with [this handy generator](https://renault-dacia-radio-code-generator.netlify.app/en.html) by [m-a-x-s-e-e-l-i-g/renault-radio-code-generator](https://github.com/m-a-x-s-e-e-l-i-g/renault-radio-code-generator)
-4. Done!
+You can find your code with [this handy generator](https://renault-dacia-radio-code-generator.netlify.app) by [m-a-x-s-e-e-l-i-g/renault-radio-code-generator](https://github.com/m-a-x-s-e-e-l-i-g/renault-radio-code-generator)
+1. Done!
 
 ## Instruction Video
 [Watch this video by Kwid Tech solutions](https://www.youtube.com/watch?v=xUY4Z5MEy6Y)
