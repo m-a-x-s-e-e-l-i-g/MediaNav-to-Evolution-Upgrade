@@ -15,6 +15,7 @@ Upgrading to 7.0.5.MD solved these issues for me.
 ## Confirmed working on:
 - MediaNav 4.1.0 in a Renault Clio IV (4th generation 2012 model)
 - MediaNav 4.0.7
+- MediaNav 4.0.5 (confirmed by [dgm1g15](https://github.com/dgm1g15) in [#2](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/2))
 
 ## Should work upgrading from
 - 4.0.6
