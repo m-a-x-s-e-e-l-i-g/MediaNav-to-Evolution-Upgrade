@@ -1,6 +1,8 @@
 # Radio Code
 How to find your Renault / Dacia MediaNav authentication key or Radio Code?
 
+** First of all check the back of your owner's manual ** 😂
+
 ## Instructions
 1. Remove the panel around the navigation system.
 2. Find the serial number on the navigation system.
