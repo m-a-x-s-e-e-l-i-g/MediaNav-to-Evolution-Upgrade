@@ -11,6 +11,7 @@ MediaNav 4.1.0
 - Stuttering when playing music over Bluetooth.
 
 Upgrading to 7.0.5.MD solved these issues for me.
+However there's a very noticeable delay in sound playing over Bluetooth. 
 
 ## Confirmed working on:
 - MediaNav 4.1.0 in a Renault Clio IV (4th generation 2012 model)
