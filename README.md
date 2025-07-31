@@ -14,7 +14,7 @@ Upgrading to 7.0.5.MD solved these issues for me.
 However there's a very noticeable delay in sound playing over Bluetooth. 
 
 ## Confirmed working on:
-- MediaNav 4.1.0 in a Renault Clio IV (4th generation 2012 model) ⚠️ [Some known issue](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/8) 
+- MediaNav 4.1.0 in a Renault Clio IV (4th generation 2012 model) ⚠️ [Warning for issue #7](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/7) 
 - MediaNav 4.0.7
 - MediaNav 4.0.6 (2014 Renault Clio IV) 
 - MediaNav 4.0.5 (confirmed by [dgm1g15](https://github.com/dgm1g15) in [#2](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/2))
