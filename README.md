@@ -10,8 +10,10 @@ MediaNav 4.1.0
 - Uses more RAM then the MediaNav Evolution software.
 - Stuttering when playing music over Bluetooth.
 
-Upgrading to 7.0.5.MD solved these issues for me.
-However there's a very noticeable delay in sound playing over Bluetooth. 
+Upgrading to 7.0.5.MD solved these issues for me. Also I noticed:
+- Improved touch response.
+- Remembers volume level when turning off the car.
+- Adds very noticeable delay in sound playing over Bluetooth.
 
 ## Confirmed working on:
 - MediaNav 4.1.0 in a Renault Clio IV (4th generation 2012 model) ⚠️ [Warning for issue #7](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/7) 
@@ -25,7 +27,7 @@ However there's a very noticeable delay in sound playing over Bluetooth.
 
 ## Requirements
 - [Radio (Unlock) Code](Radio_Code.md)
-- USB Drive (min. 64MB fat32 formatted)
+- USB Drive (min. 64MB, max. 4GB, FAT32 formatted)
 
 ## Instructions
 1. Insert your USB Drive in your PC and format it (fat32).
@@ -57,6 +59,13 @@ Don't worry, follow these steps to fix this issue and get your map working.
 - Don't remove USB
 7. Done! Remove your USB from navigation system.
 ![IMG_20230923_160814](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/5a04b222-7003-40cc-846e-2b8603e753ef)
+
+## Downgrade
+If you want to downgrade to MediaNav 4.0.6, follow these steps:
+- Take the "upgrade.lgu" file from `remove_md_super_evo` put it on a FAT32 formatted USB.
+- Insert the USB with the file into the navigator and then turn on the machine.
+- Accept the update proposed on the screen and wait for the update to be proposed again (DO NOT turn off the engine, in medianav it may restart).
+- Turn off the engine, unplug the USB.
 
 ## Credits
 Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1)
