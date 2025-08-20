@@ -67,5 +67,13 @@ If you want to downgrade to MediaNav 4.0.6, follow these steps:
 - Accept the update proposed on the screen and wait for the update to be proposed again (DO NOT turn off the engine, in medianav it may restart).
 - Turn off the engine, unplug the USB.
 
+## Accessing the MICOM Test menu
+1. Go to Settings > System > System version.  
+2. Follow the image and press the screen at points 1 to 5.  
+<img width="403" height="265" alt="image" src="https://github.com/user-attachments/assets/f8df3f4a-0242-4a53-8714-a166f1137a21" />
+
+3. Fill in code `0362` and press OK.  
+4. Fill in the second code `3748` and press OK.  
+
 ## Credits
 Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1)
