@@ -25,6 +25,9 @@ Upgrading to 7.0.5.MD solved these issues for me. Also I noticed:
 ## Should work upgrading from
 - 6.0.3MD
 
+## ⚠️ Check the open issues before you upgrade!
+Just to warn you that this update is not always succesful and can introduce some unresolved issues.
+
 ## Requirements
 - [Radio (Unlock) Code](Radio_Code.md)
 - USB Drive (min. 64MB, max. 4GB, FAT32 formatted)
