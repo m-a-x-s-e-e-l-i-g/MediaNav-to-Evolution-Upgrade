@@ -27,7 +27,14 @@ This community-made update is intended for the **original MediaNav**, including 
 
 The [previous guide lists vehicles and versions tested with the original upgrade](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Those reports do not yet confirm MAXmade compatibility.
 
-Check the [open issues](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues) before an installation test.
+## ⚠️ Check the [open issues](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues) before you upgrade!
+
+Just to warn you that this update is not always succesful and can introduce some unresolved issues.
+
+## Requirements
+
+- [Radio (Unlock) Code](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/blob/main/Radio_Code.md)
+- USB Drive (min. 64MB, max. 4GB, FAT32 formatted)
 
 ## Before you start
 
