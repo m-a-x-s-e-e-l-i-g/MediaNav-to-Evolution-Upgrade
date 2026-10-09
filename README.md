@@ -15,11 +15,9 @@ Compared with 4.1.0, the original upgrade to Evolution software brought these im
 
 MAXmade builds on that upgrade and adds:
 
-- **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers. Max reported that the delay was fixed when testing this change in his car.
+- **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers.
 - **Eight saved phones instead of five:** remember more phones without deleting an old one first. The list has two pages; you still connect one phone at a time.
 - **The navigation fix included:** the fix for the **“File corruption detected”** error is part of this update. You do not need to install a second update for it.
-
-**Still a test release:** the audio change has been tested in Max's car. The complete USB update—including upgrading directly from 4.1.0—and all eight saved-phone slots still need testing. See the [test status and technical details](Upgrade_706MAX03_MAXmade/README.md) before installing.
 
 ## Compatibility
 
