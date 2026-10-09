@@ -1,9 +1,17 @@
 # MediaNav MAXmade — 7.0.6.MAX03
 
-A combined full update for the original Renault / Dacia MediaNav.
+A combined full update for the **first-generation Renault / Dacia MediaNav**:
+the original hardware that came with **4.x software**, such as
+**4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family
+is **4.0.3**.
 
-**Minimum installed software version: 4.0.3.** You can upgrade directly to
-**7.0.6.MAX03**; installing the 7.0.5.MD conversion first is not required.
+You can upgrade directly to **7.0.6.MAX03**; installing the 7.0.5.MD conversion
+first is not required. First-generation units already converted to 7.0.5.MD
+are also within this guide's scope.
+
+**Factory MediaNav Evolution units and later hardware generations are not
+supported by this package.** Installing Evolution software on the original
+MediaNav does not change its hardware generation.
 
 See the [7.0.6.MAX03 installation guide](../README.md) for the complete procedure
 and the [preserved FavreMod guide](../Upgrade_705MD_FavreMod/README.md) for the

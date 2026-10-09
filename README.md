@@ -1,6 +1,6 @@
 # MediaNav MAXmade — 7.0.6.MAX03
 
-Upgrade the original Renault / Dacia **MediaNav 4.1.0** to Evolution software, with the MAXmade improvements included in **one USB update**.
+Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
 ![MediaNav Evolution home screen with Radio, Media, Phone, Map, Nav and Settings](assets/medianav-evolution-home.png)
 
@@ -23,7 +23,11 @@ MAXmade builds on that upgrade and adds:
 
 ## Compatibility
 
-This community-made update is intended for the **original MediaNav**, with a minimum installed software version of **4.0.3**. You can upgrade directly to **7.0.6.MAX03**; installing 7.0.5.MD first is not required. Use it only on the hardware covered by the original conversion guide.
+This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
+
+You can upgrade directly to **7.0.6.MAX03**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope.
+
+**Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
 
 The [previous guide lists vehicles and versions tested with the original upgrade](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Those reports do not yet confirm MAXmade compatibility.
 
@@ -33,7 +37,7 @@ Just to warn you that this update is not always succesful and can introduce some
 
 ## Requirements
 
-- Original MediaNav running software version **4.0.3 or newer**.
+- First-generation MediaNav running **4.x software (minimum 4.0.3)**, or the same hardware already converted to **7.0.5.MD**.
 - [Radio (Unlock) Code](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/blob/main/Radio_Code.md)
 - USB Drive (min. 64MB, max. 4GB, FAT32 formatted)
 
