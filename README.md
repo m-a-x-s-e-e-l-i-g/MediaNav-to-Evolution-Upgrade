@@ -48,6 +48,24 @@ Just to warn you that this update is not always succesful and can introduce some
 8. Done! Remove your USB from navigation system.
  - If the update is proposed again, ignore it by pressing the home button.
 
+## Accessing Windows CE with DBoot
+
+The 7.0.5.MD package includes **DBoot 2.0**, which lets you open the Windows CE desktop from the boot screen. Use this after the update has finished and you have removed the update USB.
+
+1. Start the MediaNav from a **full boot** and watch the Renault/Dacia logo screen. Waking the unit from standby may skip this screen.
+2. As soon as the small **"DBOOT 2.0 - 2017"** text appears, keep your finger on the screen and swipe horizontally across **more than half its width** in one continuous movement. Either left-to-right or right-to-left works.
+3. Press **OK** in the Windows CE prompt. **Annuler** cancels it.
+4. Wait for the unit to restart into the Windows CE desktop.
+
+**Timing matters:** the DBoot boot-screen window hides after about **five seconds**. Swiping after the normal interface has appeared is not a guaranteed alternative: gestures there depend on the installed `dboot.ini` configuration.
+
+If it does not open:
+
+- If you saw the DBoot text but missed the prompt, retry during the next full boot and swipe as soon as the text appears.
+- If the DBoot text never appears, check whether the unit is resuming from standby or whether DBoot is still installed and launched at startup. This method requires DBoot; it is not a gesture provided by every MediaNav firmware.
+
+To return to the normal MediaNav interface, double-tap the **Redemarrer** desktop shortcut and confirm the restart. **Redemarrer WinCE** opens the prompt to restart into Windows CE again. The Windows CE boot choice is one-time; a subsequent normal restart returns to the usual interface.
+
 ## File corruption detected, Navigation stops.
 ![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/2b02517f-0dcd-4b1c-9d88-365673a7c797)
 Don't worry, follow these steps to fix this issue and get your map working.
