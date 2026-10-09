@@ -46,16 +46,6 @@ This updates the system software as well as the apps. Installing MAXmade and ret
 5. Enter your radio code if prompted.
 6. Once normal operation returns, remove the USB stick. Open **Settings > System > System version** and confirm **7.0.6.MAX03**.
 
-## Check after installation
-
-- **Navigation:** open the map, confirm GPS and calculate a route.
-- **Bluetooth music:** check play/pause, track changes, audio delay and reconnect after a restart.
-- **Calls and contacts:** test a handsfree call, microphone, call audio and your phonebook.
-- **Saved devices:** add up to eight phones, check both pages and select each device. Restart normally and check that the entries remain saved. Check deletion/re-pairing too.
-- **Other functions:** check radio/presets, USB music, touch, volume, settings and any fitted steering-wheel controls or camera.
-
-When reporting a problem, include your vehicle, previous/current version, phone model and the exact action that failed.
-
 ## Access Windows CE with DBoot
 
 **Windows CE** is the desktop underneath the normal MediaNav interface. **DBoot 2.0**, included in this update, lets you open it to copy files and make backups. Use it after installation is complete and the update USB has been removed.
