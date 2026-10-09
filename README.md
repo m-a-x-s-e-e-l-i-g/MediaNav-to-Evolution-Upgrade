@@ -30,7 +30,7 @@ Check the [open issues](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evoluti
 ## Before you start
 
 1. Record your current **Settings > System > System version** and keep your [radio unlock code](Radio_Code.md).
-2. Back up your unit and keep access to its Windows CE desktop through DBoot (see below). Save your current Bluetooth and main application files, plus your saved-phone database. Their locations are listed under [USB and backup locations](#usb-and-backup-locations-in-ce). These copies alone are not a full system backup.
+2. Back up your unit if possible.
 3. Write down your vehicle settings and radio presets; the update can replace them.
 4. Use a USB stick of **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
 5. Download [upgrade.lgu](Upgrade_706MAX03_MAXmade/upgrade.lgu) using GitHub's **Download raw file** button. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
