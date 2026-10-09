@@ -82,7 +82,7 @@ Copy backups from the unit to USB/PC and check that the copied files are readabl
 1. Go to Settings > System > System version.
 2. Follow the image and press the screen at points 1 to 5.
 
-   <img width="403" height="265" alt="MediaNav system version screen showing the five points to press in order" src="https://github.com/user-attachments/assets/f8df3f4a-0242-4a53-8714-a166f1137a21" />
+   <img width="403" height="265" alt="MediaNav system version screen showing the five points to press in order" src="https://github.com/user-attachments/assets/f8df3f4a-0242-4a53-8714-a166f1137a21?raw=1" />
 
 3. Fill in code `0362` and press OK.
 4. Fill in the second code `3748` and press OK.
