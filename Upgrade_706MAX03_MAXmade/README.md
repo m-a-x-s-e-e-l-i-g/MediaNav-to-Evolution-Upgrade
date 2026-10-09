@@ -1,7 +1,9 @@
 # MediaNav MAXmade — 7.0.6.MAX03
 
-Experimental combined full update for the original MediaNav running the
-7.0.5.MD conversion. Full LGU installation has not yet been tested on a unit.
+A combined full update for the original Renault / Dacia MediaNav.
+
+**Minimum installed software version: 4.0.3.** You can upgrade directly to
+**7.0.6.MAX03**; installing the 7.0.5.MD conversion first is not required.
 
 See the [7.0.6.MAX03 installation guide](../README.md) for the complete procedure
 and the [preserved FavreMod guide](../Upgrade_705MD_FavreMod/README.md) for the

@@ -23,7 +23,7 @@ MAXmade builds on that upgrade and adds:
 
 ## Compatibility
 
-This community-made update is intended for the **original MediaNav**, including units running 4.1.0. Use it only on the hardware covered by the original conversion guide.
+This community-made update is intended for the **original MediaNav**, with a minimum installed software version of **4.0.3**. You can upgrade directly to **7.0.6.MAX03**; installing 7.0.5.MD first is not required. Use it only on the hardware covered by the original conversion guide.
 
 The [previous guide lists vehicles and versions tested with the original upgrade](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Those reports do not yet confirm MAXmade compatibility.
 
@@ -33,6 +33,7 @@ Just to warn you that this update is not always succesful and can introduce some
 
 ## Requirements
 
+- Original MediaNav running software version **4.0.3 or newer**.
 - [Radio (Unlock) Code](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/blob/main/Radio_Code.md)
 - USB Drive (min. 64MB, max. 4GB, FAT32 formatted)
 
