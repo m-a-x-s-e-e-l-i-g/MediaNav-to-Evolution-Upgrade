@@ -74,14 +74,6 @@ Copy backups from the unit to USB/PC and check that the copied files are readabl
 
 Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` directly at its root. Check for an accidental extra extension such as `upgrade.lgu.lgu`. The version should be **7.0.6.MAX03**, which sorts above existing **7.0.5.MD** versions. If the installed version is equal or newer, the normal updater may not offer it. Report the current version if the correct package still does not appear.
 
-### Bluetooth search shows an empty list
-
-Test with a **phone that is not already saved**, keeping its Bluetooth pairing/settings screen open. The original discovery filter favors phone-type devices and excludes already-paired addresses; laptops normally do not appear in this list. Pairing initiated from the phone is a separate useful check.
-
-### Navigation still reports corruption
-
-The navigation fix is already included. If you still see an error, record the exact message and system version and report it in the issues. Other map, license or storage problems may need a different solution.
-
 ### Returning to an older version
 
 Returning from MAXmade to an older version has not been tested. The updater may refuse an older version number, and copying back the apps alone does not undo the full system update. The [previous FavreMod guide](Upgrade_705MD_FavreMod/README.md) keeps the older instructions for reference.
