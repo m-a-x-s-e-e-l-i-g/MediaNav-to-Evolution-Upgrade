@@ -2,6 +2,8 @@
 
 Upgrade the original Renault / Dacia **MediaNav 4.1.0** to Evolution software, with the MAXmade improvements included in **one USB update**.
 
+![MediaNav Evolution home screen with Radio, Media, Phone, Map, Nav and Settings](assets/medianav-evolution-home.png)
+
 [Download upgrade.lgu](Upgrade_706MAX03_MAXmade/upgrade.lgu) · [Package details and checksum](Upgrade_706MAX03_MAXmade/README.md) · [Previous FavreMod guide](Upgrade_705MD_FavreMod/README.md)
 
 ## Why upgrade from 4.1.0 to 7.0.6.MAX03?
