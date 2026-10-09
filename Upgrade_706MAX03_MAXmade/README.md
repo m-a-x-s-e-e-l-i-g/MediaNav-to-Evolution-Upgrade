@@ -3,6 +3,10 @@
 Experimental combined full update for the original MediaNav running the
 7.0.5.MD conversion. Full LGU installation has not yet been tested on a unit.
 
+See the [7.0.6.MAX03 installation guide](../README.md) for the complete procedure
+and the [preserved FavreMod guide](../Upgrade_705MD_FavreMod/README.md) for the
+previous release.
+
 ## Based on the original package
 
 All 1,917 files from [Upgrade_705MD_FavreMod](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/tree/main/Upgrade_705MD_FavreMod)
@@ -38,7 +42,7 @@ test of the new-phone list.
   verified; original source files unchanged.
 - `upgrade.lgu`: **38,352,671 bytes**, SHA-256 `6b00c5a0807f1b6f6ad7f211a5a65fdc416232d8176bdcdb93227acf21122145`.
 
-See build-manifest.json for all original/output member hashes and version
+See [build-manifest.json](build-manifest.json) for all original/output member hashes and version
 recognition checks. These checks validate the package bytes, not a physical
 installation or recovery route.
 
@@ -60,7 +64,7 @@ preserved; they were not repaired by combining the files.
 ## Experimental installation test
 
 1. Save the backups and radio code above. Prepare a FAT32 USB stick using the
-   original guide's requirements. Copy only this folder's **upgrade.lgu** to
+   [USB requirements in the MAXmade guide](../README.md#before-you-start). Copy only this folder's **upgrade.lgu** to
    the USB root, not inside a folder, and safely eject it from the PC.
 2. Start the engine and wait for the normal MediaNav interface. Insert the USB.
    The proposed new version should be **7.0.6.MAX03**. If no update is offered

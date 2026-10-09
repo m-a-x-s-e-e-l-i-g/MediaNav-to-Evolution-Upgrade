@@ -1,112 +1,114 @@
-# MediaNav to MediaNav Evolution Upgrade
-Upgrade your Renault / Dacia MediaNav software to MediaNav Evolution.
-Following this guide you'll upgrade your navigation system's software to 7.0.5.MD.
-![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/a577d32b-5f15-4ec3-ada5-168c7cdaa149)
+# MediaNav MAXmade — 7.0.6.MAX03
 
-## MediaNav MAXmade — 7.0.6.MAX03 (experimental)
+A combined update for the original Renault / Dacia MediaNav, based on the **7.0.5.MD** conversion. MAXmade includes the new Bluetooth and AppMain applications and the existing navigation corruption fix in one **upgrade.lgu**.
 
-The [MAXmade package and test guide](Upgrade_705MD_MAXmade/README.md) combine the complete original **7.0.5.MD** update, the new **Blue.exe/AppMain.exe** pair and the existing navigation corruption fix in one `upgrade.lgu`. The MAXmade version is **7.0.6.MAX03** in both the update header and System version screen.
+[Download upgrade.lgu](Upgrade_706MAX03_MAXmade/upgrade.lgu) · [Package details and checksum](Upgrade_706MAX03_MAXmade/README.md) · [Previous FavreMod guide](Upgrade_705MD_FavreMod/README.md)
 
-MAXmade adds support for **eight saved Bluetooth devices**, the Bluetooth audio-delay repair, checked Bluetooth list/database handling and a faster equivalent text-label scan. The navigation-fix executable is already included, so this package does not need the separate `File_Corruption_Fix` update afterward.
+**Experimental release:** Max reports the audio-delay repair working after replacing the applications through Windows CE. The complete USB update, all eight saved devices, navigation and vehicle functions still need hardware testing. The archive checks have passed; that does not establish a successful installation on every unit.
 
-**Status:** Max reports the audio repair working after installing the application pair through Windows CE. The combined full LGU installation, all eight saved devices and the remaining vehicle functions still need hardware testing. This is an experimental release; the original guide and packages below remain available.
+## What changes?
 
-The complete original OS/boot/MCU payload is retained. This is a full upgrade rather than a lightweight application-only swap. Read the [MAXmade backup, installation-test and verification instructions](Upgrade_705MD_MAXmade/README.md) before using it.
+- **Bluetooth audio:** includes the buffer repair that resolved the delay in Max's application test.
+- **Eight saved Bluetooth devices:** the saved-device list supports eight pairings across two pages. This means eight remembered devices, not eight simultaneous connections.
+- **Bluetooth reliability:** includes checked database/list handling and guards for connection, reconnect and deletion.
+- **Menus and labels:** reduces repeated work when displaying text while preserving the same text-direction behavior. Overall menu speed has not been measured on the unit.
+- **Navigation corruption fix:** includes the unchanged navigation executable from `File_Corruption_Fix`. You do not need to install that separate patch after this update.
 
-## Why?
-MediaNav 4.1.0
-- Is slow with connecting Bluetooth devices.
-- Has a delay when switching songs over Bluetooth.
-- Uses more RAM then the MediaNav Evolution software.
-- Stuttering when playing music over Bluetooth.
+All original 7.0.5.MD package paths are retained. The complete original OS, boot, MCU, settings and resources payloads remain included. Blue.exe, AppMain.exe and Version_Info.txt are replaced, and the navigation executable is added. The LGU header and displayed system version both use **7.0.6.MAX03**.
 
-Upgrading to 7.0.5.MD solved these issues for me. Also I noticed:
-- Improved touch response.
-- Remembers volume level when turning off the car.
-- Adds very noticeable delay in sound playing over Bluetooth.
+## Compatibility
 
-## Confirmed working on:
-- MediaNav 4.1.0 in a Renault Clio IV (4th generation 2012 model) ⚠️ [Warning for issue #7](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/7) 
-- MediaNav 4.0.7
-- MediaNav 4.0.6 (2014 Renault Clio IV) 
-- MediaNav 4.0.5 (confirmed by [dgm1g15](https://github.com/dgm1g15) in [#2](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/2))
-- MediaNav 4.0.3
+This project targets the **original MediaNav hardware** covered by the [FavreMod conversion guide](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Its historical compatibility reports apply to that older package; they are not confirmation that MAXmade has been tested on the same vehicles.
 
-## Should work upgrading from
-- 6.0.3MD
+The first full MAXmade installation test is intended for a unit already running **7.0.5.MD**. This package's naming does not make it an official Renault release or firmware for later MediaNav hardware generations.
 
-## ⚠️ Check the open issues before you upgrade!
-Just to warn you that this update is not always succesful and can introduce some unresolved issues.
+Check the [open issues](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues) before an installation test.
 
-## Requirements
-- [Radio (Unlock) Code](Radio_Code.md)
-- USB Drive (min. 64MB, max. 4GB, FAT32 formatted)
+## Before you start
 
-## Instructions
-1. Insert your USB Drive in your PC and format it (fat32).
-2. Download and copy `upgrade.lgu` from folder `Upgrade_705MD_FavreMod` to your USB Drive.
-3. Turn on your engine and navigation system.
-4. Insert the USB drive in the navigator.
-5. Accept the proposed update on screen by pressing "Update".
-![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/f6c4c973-9e4f-4b43-bdbd-22483569360e)
-6. Wait:
-- Don't turn off your engine..
-- Don't remove USB
-- The navigation system will restart and show text in Arabic. This is saying that it's still updating
-7. Put in your [Radio Code](Radio_Code.md)
-![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/8de202e5-76a7-4ea1-82c1-564a44a67d4c)
-8. Done! Remove your USB from navigation system.
- - If the update is proposed again, ignore it by pressing the home button.
+1. Record your current **Settings > System > System version** and keep your [radio unlock code](Radio_Code.md).
+2. Keep your own backup and working Windows CE/DBoot access. At minimum, copy your current `Blue.exe` and `AppMain.exe` from `\Storage Card\System\`, plus `\Storage Card2\DATA\BLUE\sc_db.db`, to your PC. These files preserve the application/pairing state; they are not a complete OS/MCU recovery backup.
+3. Save your vehicle settings and radio presets. This full update includes the original settings/resources and can replace them.
+4. Use the original guide's USB requirements: **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
+5. Download [upgrade.lgu from Upgrade_706MAX03_MAXmade](Upgrade_706MAX03_MAXmade/upgrade.lgu). Copy **only that upgrade.lgu** to the USB root, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
 
-## Accessing Windows CE with DBoot
+This is a full software update, including the original OS/MCU payloads. A full MAXmade installation and rollback have not yet been validated on the unit.
 
-The 7.0.5.MD package includes **DBoot 2.0**, which lets you open the Windows CE desktop from the boot screen. Use this after the update has finished and you have removed the update USB.
+## Install 7.0.6.MAX03
 
-1. Start the MediaNav from a **full boot** and watch the Renault/Dacia logo screen. Waking the unit from standby may skip this screen.
-2. As soon as the small **"DBOOT 2.0 - 2017"** text appears, keep your finger on the screen and swipe horizontally across **more than half its width** in one continuous movement. Either left-to-right or right-to-left works.
-3. Press **OK** in the Windows CE prompt. **Annuler** cancels it.
-4. Wait for the unit to restart into the Windows CE desktop.
+1. Start the engine and wait for the normal MediaNav interface.
+2. Insert the prepared USB stick. The offered update should identify the new version as **7.0.6.MAX03**. If there is no dialog or a different version appears, check the troubleshooting section before proceeding.
+3. Accept the update by pressing **Update**.
+4. Keep the engine running and leave the USB connected until the update has finished. The original full-update process can restart the unit several times and temporarily display Arabic text while installation continues.
+5. Enter your radio code if prompted.
+6. Once normal operation returns, remove the USB stick. Open **Settings > System > System version** and confirm **7.0.6.MAX03**.
 
-**Timing matters:** the DBoot boot-screen window hides after about **five seconds**. Swiping after the normal interface has appeared is not a guaranteed alternative: gestures there depend on the installed `dboot.ini` configuration.
+## Check after installation
 
-If it does not open:
+- **Navigation:** open the map, confirm GPS and calculate a route. The corruption-fix executable is already included.
+- **Bluetooth music:** check play/pause, track changes, audio delay and reconnect after a restart.
+- **Calls and contacts:** test a handsfree call, microphone, call audio and your phonebook.
+- **Saved devices:** add up to eight phones, check both pages and select each device. Restart normally and check that the entries remain saved. Check deletion/re-pairing too.
+- **Other functions:** check radio/presets, USB music, touch, volume, settings and any fitted steering-wheel controls or camera.
 
-- If you saw the DBoot text but missed the prompt, retry during the next full boot and swipe as soon as the text appears.
-- If the DBoot text never appears, check whether the unit is resuming from standby or whether DBoot is still installed and launched at startup. This method requires DBoot; it is not a gesture provided by every MediaNav firmware.
+When reporting a problem, include your vehicle, previous/current version, phone model and the exact action that failed.
 
-To return to the normal MediaNav interface, double-tap the **Redemarrer** desktop shortcut and confirm the restart. **Redemarrer WinCE** opens the prompt to restart into Windows CE again. The Windows CE boot choice is one-time; a subsequent normal restart returns to the usual interface.
+## Access Windows CE with DBoot
 
-## File corruption detected, Navigation stops.
-![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/2b02517f-0dcd-4b1c-9d88-365673a7c797)
-Don't worry, follow these steps to fix this issue and get your map working.
-1. Insert your USB Drive in your PC and format it (fat32).
-2. Download and copy `upgrade.lgu` from folder `File_Corruption_Fix` to your USB Drive.
-3. Turn on your engine and navigation system.
-4. Insert the USB drive in the navigator.
-5. Accept the proposed update on screen by pressing "Update".
-![IMG_20230923_160257](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/9b5df73a-a9a6-4805-a77a-5ee12a240145)
-6. Wait:
-- Don't turn off your engine..
-- Don't remove USB
-7. Done! Remove your USB from navigation system.
-![IMG_20230923_160814](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/5a04b222-7003-40cc-846e-2b8603e753ef)
+The package retains **DBoot 2.0** from the original update. Use it after installation is complete and the update USB has been removed.
 
-## Downgrade
-If you want to downgrade to MediaNav 4.0.6, follow these steps:
-- Take the "upgrade.lgu" file from `remove_md_super_evo` put it on a FAT32 formatted USB.
-- Insert the USB with the file into the navigator and then turn on the machine.
-- Accept the update proposed on the screen and wait for the update to be proposed again (DO NOT turn off the engine, in medianav it may restart).
-- Turn off the engine, unplug the USB.
+1. Start from a **full boot** and watch the Renault/Dacia logo. Waking from standby can skip this screen.
+2. When **DBOOT 2.0 - 2017** appears, swipe horizontally across **more than half the screen's width** in one continuous movement. Either direction works.
+3. Press **OK** in the Windows CE prompt; **Annuler** cancels it.
+4. Wait for the restart into the Windows CE desktop.
 
-## Accessing the MICOM Test menu
-1. Go to Settings > System > System version.  
-2. Follow the image and press the screen at points 1 to 5.  
-<img width="403" height="265" alt="image" src="https://github.com/user-attachments/assets/f8df3f4a-0242-4a53-8714-a166f1137a21" />
+The boot-screen gesture window lasts about **five seconds**. If you miss it, retry on the next full boot. If the text never appears, check that DBoot is installed and the unit is not merely resuming from standby. Swiping in the normal interface depends on the installed `dboot.ini` configuration.
 
-3. Fill in code `0362` and press OK.  
-4. Fill in the second code `3748` and press OK.  
+To return to MediaNav, double-tap **Redemarrer** and confirm. **Redemarrer WinCE** opens the prompt for another CE restart. The CE boot choice is one-time.
 
-## Credits
-Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1)
+### USB and backup locations in CE
 
-MAXmade is based on the original [Upgrade_705MD_FavreMod](Upgrade_705MD_FavreMod) conversion package and the existing [File_Corruption_Fix](File_Corruption_Fix). Their original contributions remain part of this build; the [MAXmade changes](Upgrade_705MD_MAXmade/README.md#maxmade-changes) are listed separately.
+The USB mount is normally **MD**, under **My Device**. If it is missing, try **Start > Programs > USB PHY On**, then reconnect the stick and reopen My Device. The four **Storage Card** volumes are internal storage.
+
+- Applications: `\Storage Card\System\Blue.exe` and `\Storage Card\System\AppMain.exe`.
+- Bluetooth pairing database: `\Storage Card2\DATA\BLUE\sc_db.db`.
+
+Copy backups from the unit to USB/PC and check that the copied files are readable.
+
+## Troubleshooting
+
+### No update dialog
+
+Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` directly at its root. Check for an accidental extra extension such as `upgrade.lgu.lgu`. The version should be **7.0.6.MAX03**, which sorts above existing **7.0.5.MD** versions. If the installed version is equal or newer, the normal updater may not offer it. Report the current version if the correct package still does not appear.
+
+### Bluetooth search shows an empty list
+
+Test with a **phone that is not already saved**, keeping its Bluetooth pairing/settings screen open. The original discovery filter favors phone-type devices and excludes already-paired addresses; laptops normally do not appear in this list. Pairing initiated from the phone is a separate useful check.
+
+### Navigation still reports corruption
+
+MAXmade already contains the executable from the old corruption-fix package. Record the exact error and system version and report it in the issues. Including that executable does not guarantee that every map, license or storage problem is resolved.
+
+### Returning to an older version
+
+The [previous FavreMod guide](Upgrade_705MD_FavreMod/README.md) and older packages are preserved for their existing procedures. They are not a verified rollback from MAXmade. The ordinary updater can reject older version numbers; restoring applications alone does not restore the full OS/MCU update.
+
+## Package verification
+
+The [package manifest](Upgrade_706MAX03_MAXmade/build-manifest.json) records all **1,918 member hashes**, the source packages and the matching Bluetooth/AppMain test build. Container CRCs, encrypted ZIP members and extraction with a separate PC tool were checked. All original source files remain unchanged.
+
+`upgrade.lgu` is **38,352,671 bytes**. SHA-256:
+
+```text
+6b00c5a0807f1b6f6ad7f211a5a65fdc416232d8176bdcdb93227acf21122145
+```
+
+See [SHA256SUMS.txt](Upgrade_706MAX03_MAXmade/SHA256SUMS.txt). Packaging checks validate the file contents; full hardware installation remains experimental.
+
+## Previous release and credits
+
+The original **7.0.5.MD** instructions are preserved in [Upgrade_705MD_FavreMod/README.md](Upgrade_705MD_FavreMod/README.md), alongside the original LGU. The separate [File_Corruption_Fix](File_Corruption_Fix) and [remove_md_super_evo](remove_md_super_evo) packages remain available for the legacy guide.
+
+MAXmade builds on the original [Upgrade_705MD_FavreMod](Upgrade_705MD_FavreMod) conversion and its accompanying navigation fix. Their original contributions remain credited. Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1).
+
+The MAXmade changes are listed above and in the [package notes](Upgrade_706MAX03_MAXmade/README.md#maxmade-changes).
