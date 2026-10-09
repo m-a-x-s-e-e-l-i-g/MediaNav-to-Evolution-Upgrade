@@ -3,6 +3,16 @@ Upgrade your Renault / Dacia MediaNav software to MediaNav Evolution.
 Following this guide you'll upgrade your navigation system's software to 7.0.5.MD.
 ![image](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/assets/7907436/a577d32b-5f15-4ec3-ada5-168c7cdaa149)
 
+## MediaNav MAXmade — 7.0.6.MAX03 (experimental)
+
+The [MAXmade package and test guide](Upgrade_705MD_MAXmade/README.md) combine the complete original **7.0.5.MD** update, the new **Blue.exe/AppMain.exe** pair and the existing navigation corruption fix in one `upgrade.lgu`. The MAXmade version is **7.0.6.MAX03** in both the update header and System version screen.
+
+MAXmade adds support for **eight saved Bluetooth devices**, the Bluetooth audio-delay repair, checked Bluetooth list/database handling and a faster equivalent text-label scan. The navigation-fix executable is already included, so this package does not need the separate `File_Corruption_Fix` update afterward.
+
+**Status:** Max reports the audio repair working after installing the application pair through Windows CE. The combined full LGU installation, all eight saved devices and the remaining vehicle functions still need hardware testing. This is an experimental release; the original guide and packages below remain available.
+
+The complete original OS/boot/MCU payload is retained. This is a full upgrade rather than a lightweight application-only swap. Read the [MAXmade backup, installation-test and verification instructions](Upgrade_705MD_MAXmade/README.md) before using it.
+
 ## Why?
 MediaNav 4.1.0
 - Is slow with connecting Bluetooth devices.
@@ -98,3 +108,5 @@ If you want to downgrade to MediaNav 4.0.6, follow these steps:
 
 ## Credits
 Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1)
+
+MAXmade is based on the original [Upgrade_705MD_FavreMod](Upgrade_705MD_FavreMod) conversion package and the existing [File_Corruption_Fix](File_Corruption_Fix). Their original contributions remain part of this build; the [MAXmade changes](Upgrade_705MD_MAXmade/README.md#maxmade-changes) are listed separately.
