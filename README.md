@@ -1,38 +1,43 @@
 # MediaNav MAXmade — 7.0.6.MAX03
 
-A combined update for the original Renault / Dacia MediaNav, based on the **7.0.5.MD** conversion. MAXmade includes the new Bluetooth and AppMain applications and the existing navigation corruption fix in one **upgrade.lgu**.
+Upgrade the original Renault / Dacia **MediaNav 4.1.0** to Evolution software, with the MAXmade improvements included in **one USB update**.
 
 [Download upgrade.lgu](Upgrade_706MAX03_MAXmade/upgrade.lgu) · [Package details and checksum](Upgrade_706MAX03_MAXmade/README.md) · [Previous FavreMod guide](Upgrade_705MD_FavreMod/README.md)
 
-**Experimental release:** Max reports the audio-delay repair working after replacing the applications through Windows CE. The complete USB update, all eight saved devices, navigation and vehicle functions still need hardware testing. The archive checks have passed; that does not establish a successful installation on every unit.
+## Why upgrade from 4.1.0 to 7.0.6.MAX03?
 
-## What changes?
+Compared with 4.1.0, the original upgrade to Evolution software brought these improvements on Max's unit:
 
-- **Bluetooth audio:** includes the buffer repair that resolved the delay in Max's application test.
-- **Eight saved Bluetooth devices:** the saved-device list supports eight pairings across two pages. This means eight remembered devices, not eight simultaneous connections.
-- **Bluetooth reliability:** includes checked database/list handling and guards for connection, reconnect and deletion.
-- **Menus and labels:** reduces repeated work when displaying text while preserving the same text-direction behavior. Overall menu speed has not been measured on the unit.
-- **Navigation corruption fix:** includes the unchanged navigation executable from `File_Corruption_Fix`. You do not need to install that separate patch after this update.
+- **Smoother Bluetooth music:** less stuttering, quicker phone connection and less waiting when changing songs.
+- **Better touch response:** the screen reacts more quickly to taps.
+- **Remembered volume:** the unit keeps your volume level when you turn off the car.
+- **The Evolution interface:** newer software on your existing MediaNav.
 
-All original 7.0.5.MD package paths are retained. The complete original OS, boot, MCU, settings and resources payloads remain included. Blue.exe, AppMain.exe and Version_Info.txt are replaced, and the navigation executable is added. The LGU header and displayed system version both use **7.0.6.MAX03**.
+MAXmade builds on that upgrade and adds:
+
+- **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers. Max reported that the delay was fixed when testing this change in his car.
+- **Eight saved phones instead of five:** remember more phones without deleting an old one first. The list has two pages; you still connect one phone at a time.
+- **The navigation fix included:** the fix for the **“File corruption detected”** error is part of this update. You do not need to install a second update for it.
+
+**Still a test release:** the audio change has been tested in Max's car. The complete USB update—including upgrading directly from 4.1.0—and all eight saved-phone slots still need testing. See the [test status and technical details](Upgrade_706MAX03_MAXmade/README.md) before installing.
 
 ## Compatibility
 
-This project targets the **original MediaNav hardware** covered by the [FavreMod conversion guide](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Its historical compatibility reports apply to that older package; they are not confirmation that MAXmade has been tested on the same vehicles.
+This community-made update is intended for the **original MediaNav**, including units running 4.1.0. Use it only on the hardware covered by the original conversion guide.
 
-The first full MAXmade installation test is intended for a unit already running **7.0.5.MD**. This package's naming does not make it an official Renault release or firmware for later MediaNav hardware generations.
+The [previous guide lists vehicles and versions tested with the original upgrade](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Those reports do not yet confirm MAXmade compatibility.
 
 Check the [open issues](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues) before an installation test.
 
 ## Before you start
 
 1. Record your current **Settings > System > System version** and keep your [radio unlock code](Radio_Code.md).
-2. Keep your own backup and working Windows CE/DBoot access. At minimum, copy your current `Blue.exe` and `AppMain.exe` from `\Storage Card\System\`, plus `\Storage Card2\DATA\BLUE\sc_db.db`, to your PC. These files preserve the application/pairing state; they are not a complete OS/MCU recovery backup.
-3. Save your vehicle settings and radio presets. This full update includes the original settings/resources and can replace them.
-4. Use the original guide's USB requirements: **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
-5. Download [upgrade.lgu from Upgrade_706MAX03_MAXmade](Upgrade_706MAX03_MAXmade/upgrade.lgu). Copy **only that upgrade.lgu** to the USB root, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
+2. Back up your unit and keep access to its Windows CE desktop through DBoot (see below). Save your current Bluetooth and main application files, plus your saved-phone database. Their locations are listed under [USB and backup locations](#usb-and-backup-locations-in-ce). These copies alone are not a full system backup.
+3. Write down your vehicle settings and radio presets; the update can replace them.
+4. Use a USB stick of **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
+5. Download [upgrade.lgu](Upgrade_706MAX03_MAXmade/upgrade.lgu) using GitHub's **Download raw file** button. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
 
-This is a full software update, including the original OS/MCU payloads. A full MAXmade installation and rollback have not yet been validated on the unit.
+This updates the system software as well as the apps. Installing MAXmade and returning to an older version have not yet been tested on the unit.
 
 ## Install 7.0.6.MAX03
 
@@ -45,7 +50,7 @@ This is a full software update, including the original OS/MCU payloads. A full M
 
 ## Check after installation
 
-- **Navigation:** open the map, confirm GPS and calculate a route. The corruption-fix executable is already included.
+- **Navigation:** open the map, confirm GPS and calculate a route.
 - **Bluetooth music:** check play/pause, track changes, audio delay and reconnect after a restart.
 - **Calls and contacts:** test a handsfree call, microphone, call audio and your phonebook.
 - **Saved devices:** add up to eight phones, check both pages and select each device. Restart normally and check that the entries remain saved. Check deletion/re-pairing too.
@@ -55,7 +60,7 @@ When reporting a problem, include your vehicle, previous/current version, phone 
 
 ## Access Windows CE with DBoot
 
-The package retains **DBoot 2.0** from the original update. Use it after installation is complete and the update USB has been removed.
+**Windows CE** is the desktop underneath the normal MediaNav interface. **DBoot 2.0**, included in this update, lets you open it to copy files and make backups. Use it after installation is complete and the update USB has been removed.
 
 1. Start from a **full boot** and watch the Renault/Dacia logo. Waking from standby can skip this screen.
 2. When **DBOOT 2.0 - 2017** appears, swipe horizontally across **more than half the screen's width** in one continuous movement. Either direction works.
@@ -87,23 +92,15 @@ Test with a **phone that is not already saved**, keeping its Bluetooth pairing/s
 
 ### Navigation still reports corruption
 
-MAXmade already contains the executable from the old corruption-fix package. Record the exact error and system version and report it in the issues. Including that executable does not guarantee that every map, license or storage problem is resolved.
+The navigation fix is already included. If you still see an error, record the exact message and system version and report it in the issues. Other map, license or storage problems may need a different solution.
 
 ### Returning to an older version
 
-The [previous FavreMod guide](Upgrade_705MD_FavreMod/README.md) and older packages are preserved for their existing procedures. They are not a verified rollback from MAXmade. The ordinary updater can reject older version numbers; restoring applications alone does not restore the full OS/MCU update.
+Returning from MAXmade to an older version has not been tested. The updater may refuse an older version number, and copying back the apps alone does not undo the full system update. The [previous FavreMod guide](Upgrade_705MD_FavreMod/README.md) keeps the older instructions for reference.
 
-## Package verification
+## Technical details
 
-The [package manifest](Upgrade_706MAX03_MAXmade/build-manifest.json) records all **1,918 member hashes**, the source packages and the matching Bluetooth/AppMain test build. Container CRCs, encrypted ZIP members and extraction with a separate PC tool were checked. All original source files remain unchanged.
-
-`upgrade.lgu` is **38,352,671 bytes**. SHA-256:
-
-```text
-6b00c5a0807f1b6f6ad7f211a5a65fdc416232d8176bdcdb93227acf21122145
-```
-
-See [SHA256SUMS.txt](Upgrade_706MAX03_MAXmade/SHA256SUMS.txt). Packaging checks validate the file contents; full hardware installation remains experimental.
+For the download checksum, what is included and how the update was checked, see the [package notes](Upgrade_706MAX03_MAXmade/README.md) and [SHA256SUMS.txt](Upgrade_706MAX03_MAXmade/SHA256SUMS.txt).
 
 ## Previous release and credits
 
@@ -111,4 +108,4 @@ The original **7.0.5.MD** instructions are preserved in [Upgrade_705MD_FavreMod/
 
 MAXmade builds on the original [Upgrade_705MD_FavreMod](Upgrade_705MD_FavreMod) conversion and its accompanying navigation fix. Their original contributions remain credited. Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1).
 
-The MAXmade changes are listed above and in the [package notes](Upgrade_706MAX03_MAXmade/README.md#maxmade-changes).
+The improvements are listed above; the [package notes](Upgrade_706MAX03_MAXmade/README.md#maxmade-changes) describe the individual file changes.
