@@ -1,6 +1,6 @@
 # MediaNav MAXmade — 7.0.6.MAX04
 
-- **Full update:** all 1,918 MAX03 files and earlier fixes included.
+- **Full update:** all 1,918 files and earlier fixes included.
 - **Hardware:** original MediaNav (4.x, minimum 4.0.3), including units converted to 7.0.5.MD. Factory Evolution is unsupported.
 - **Status:** experimental; package checks passed, full installation and runtime on the unit remain untested.
 
