@@ -1,0 +1,117 @@
+--- upstream/rl78.slaspec
++++ local/rl78.slaspec
+@@ -127,6 +127,7 @@
+ 	
+ 	data8 = (0, 7)
+ 	data0_1 = (0, 1)
++	data_lsb = (0, 0)
+ 	
+ 	data3 = (0, 2)
+ 	datal=(0, 7)
+@@ -196,11 +197,11 @@
+ 
+ # short direct addressing
+ saddr: val is jimm8 [val = 0xffe20 + jimm8;] { export *[const]:3 val; }
+-saddrp: val is jimm8 & data0_1=0 [val = 0xffe20 + jimm8;] { export *[const]:3 val; }
++saddrp: val is jimm8 & data_lsb=0 [val = 0xffe20 + jimm8;] { export *[const]:3 val; }
+ 
+ # SFR addressing
+-sfr: val is jimm8 [val = 0xfff00 + jimm8;] { export *[const]:3 val; }
+-sfrp: val is jimm8 & data0_1=0 [val = 0xfff00 + jimm8;] { export *[const]:3 val; }
++sfr: val is data8 [val = 0xfff00 + data8;] { export *[const]:3 val; }
++sfrp: val is data8 & data_lsb=0 [val = 0xfff00 + data8;] { export *[const]:3 val; }
+ 
+ reg_xcbedlh: is oplo=0x8 & current_bank { local tmp:3=0xFFEF8 - current_bank*8; export *[ram]:1 tmp; }
+ reg_xcbedlh: is oplo=0xA & current_bank { local tmp:3=0xFFEFA - current_bank*8; export *[ram]:1 tmp; }
+@@ -530,7 +531,7 @@
+ :add A, saddr is op=0x0B; saddr & A { local tmp:1; add_flags(tmp, A, *[ram]:1 saddr); A = tmp; }
+ :add A, addr16_abs is op=0x0F; addr16_abs & A { local tmp:1; add_flags(tmp, A, *[ram]:1 addr16_abs); A = tmp; }
+ :add A, hl_ind is op=0x0D & hl_ind & A { local tmp:1; add_flags(tmp, A, *[ram]:1 hl_ind); A = tmp; }
+-:add A, addr8_hl_rel is op=0x0E & addr8_hl_rel & A { local tmp:1; add_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
++:add A, addr8_hl_rel is op=0x0E & A; addr8_hl_rel { local tmp:1; add_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
+ :add A, hl_b_ind is op=0x61; op=0x80 & hl_b_ind & A { local tmp:1; add_flags(tmp, A, *[ram]:1 hl_b_ind); A = tmp; }
+ :add A, hl_c_ind is op=0x61; op=0x82 & hl_c_ind & A { local tmp:1; add_flags(tmp, A, *[ram]:1 hl_c_ind); A = tmp; }
+ :add A, es_addr16_abs is op=0x11; op=0x0F; es_addr16_abs & A { local tmp:1; add_flags(tmp, A, *[ram]:1 es_addr16_abs); A = tmp; }
+@@ -555,7 +556,7 @@
+ :addc A, saddr is op=0x1B; saddr & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 saddr); A = tmp; }
+ :addc A, addr16_abs is op=0x1F; addr16_abs & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 addr16_abs); A = tmp; }
+ :addc A, hl_ind is op=0x1D & hl_ind & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 hl_ind); A = tmp; }
+-:addc A, addr8_hl_rel is op=0x1E & addr8_hl_rel & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
++:addc A, addr8_hl_rel is op=0x1E & A; addr8_hl_rel { local tmp:1; addc_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
+ :addc A, hl_b_ind is op=0x61; op=0x90 & hl_b_ind & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 hl_b_ind); A = tmp; }
+ :addc A, hl_c_ind is op=0x61; op=0x92 & hl_c_ind & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 hl_c_ind); A = tmp; }
+ :addc A, es_addr16_abs is op=0x11; op=0x1F; es_addr16_abs & A { local tmp:1; addc_flags(tmp, A, *[ram]:1 es_addr16_abs); A = tmp; }
+@@ -578,7 +579,7 @@
+ :sub A, saddr is op=0x2B; saddr & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 saddr); A = tmp; }
+ :sub A, addr16_abs is op=0x2F; addr16_abs & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 addr16_abs); A = tmp; }
+ :sub A, hl_ind is op=0x2D & hl_ind & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 hl_ind); A = tmp; }
+-:sub A, addr8_hl_rel is op=0x2E & addr8_hl_rel & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
++:sub A, addr8_hl_rel is op=0x2E & A; addr8_hl_rel { local tmp:1; sub_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
+ :sub A, hl_b_ind is op=0x61; op=0xa0 & hl_b_ind & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 hl_b_ind); A = tmp; }
+ :sub A, hl_c_ind is op=0x61; op=0xa2 & hl_c_ind & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 hl_c_ind); A = tmp; }
+ :sub A, es_addr16_abs is op=0x11; op=0x2F; es_addr16_abs & A { local tmp:1; sub_flags(tmp, A, *[ram]:1 es_addr16_abs); A = tmp; }
+@@ -602,7 +603,7 @@
+ :subc A, saddr is op=0x3B; saddr & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 saddr); A = tmp; }
+ :subc A, addr16_abs is op=0x3F; addr16_abs & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 addr16_abs); A = tmp; }
+ :subc A, hl_ind is op=0x3D & hl_ind & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 hl_ind); A = tmp; }
+-:subc A, addr8_hl_rel is op=0x3E & addr8_hl_rel & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
++:subc A, addr8_hl_rel is op=0x3E & A; addr8_hl_rel { local tmp:1; subc_flags(tmp, A, *[ram]:1 addr8_hl_rel); A = tmp; }
+ :subc A, hl_b_ind is op=0x61; op=0xb0 & hl_b_ind & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 hl_b_ind); A = tmp; }
+ :subc A, hl_c_ind is op=0x61; op=0xb2 & hl_c_ind & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 hl_c_ind); A = tmp; }
+ :subc A, es_addr16_abs is op=0x11; op=0x3F; es_addr16_abs & A { local tmp:1; subc_flags(tmp, A, *[ram]:1 es_addr16_abs); A = tmp; }
+@@ -619,7 +620,7 @@
+ :and A, saddr is op=0x5B; saddr & A { local tmp:1 = A & (*[ram]:1 saddr); A = tmp; Z = tmp == 0; Z = tmp == 0; }
+ :and A, addr16_abs is op=0x5F; addr16_abs & A { local tmp:1 = A & (*[ram]:1 addr16_abs); A = tmp; Z = tmp == 0; }
+ :and A, hl_ind is op=0x5D & hl_ind & A { local tmp:1 = A & (*[ram]:1 hl_ind); A = tmp; Z = tmp == 0; }
+-:and A, addr8_hl_rel is op=0x5E & addr8_hl_rel & A { local tmp:1 = A & (*[ram]:1 addr8_hl_rel); A = tmp; Z = tmp == 0; }
++:and A, addr8_hl_rel is op=0x5E & A; addr8_hl_rel { local tmp:1 = A & (*[ram]:1 addr8_hl_rel); A = tmp; Z = tmp == 0; }
+ :and A, hl_b_ind is op=0x61; op=0xD0 & hl_b_ind & A { local tmp:1 = A & (*[ram]:1 hl_b_ind); A = tmp; Z = tmp == 0; }
+ :and A, hl_c_ind is op=0x61; op=0xD2 & hl_c_ind & A { local tmp:1 = A & (*[ram]:1 hl_c_ind); A = tmp; Z = tmp == 0; }
+ :and A, es_addr16_abs is op=0x11; op=0x5F; es_addr16_abs & A { local tmp:1 = A & (*[ram]:1 es_addr16_abs); A = tmp; Z = tmp == 0; }
+@@ -641,7 +642,7 @@
+ :or A, saddr is op=0x6B; saddr & A { local tmp:1 = A | (*[ram]:1 saddr); A = tmp; Z = tmp == 0; }
+ :or A, addr16_abs is op=0x6F; addr16_abs & A { local tmp:1 = A | (*[ram]:1 addr16_abs); A = tmp; Z = tmp == 0; }
+ :or A, hl_ind is op=0x6D & hl_ind & A { local tmp:1 = A | (*[ram]:1 hl_ind); A = tmp; Z = tmp == 0; }
+-:or A, addr8_hl_rel is op=0x6E & addr8_hl_rel & A { local tmp:1 = A | (*[ram]:1 addr8_hl_rel); A = tmp; Z = tmp == 0; }
++:or A, addr8_hl_rel is op=0x6E & A; addr8_hl_rel { local tmp:1 = A | (*[ram]:1 addr8_hl_rel); A = tmp; Z = tmp == 0; }
+ :or A, hl_b_ind is op=0x61; op=0xE0 & hl_b_ind & A { local tmp:1 = A | (*[ram]:1 hl_b_ind); A = tmp; Z = tmp == 0; }
+ :or A, hl_c_ind is op=0x61; op=0xE2 & hl_c_ind & A { local tmp:1 = A | (*[ram]:1 hl_c_ind); A = tmp; Z = tmp == 0; }
+ :or A, es_addr16_abs is op=0x11; op=0x6F; es_addr16_abs & A { local tmp:1 = A | (*[ram]:1 es_addr16_abs); A = tmp; Z = tmp == 0; }
+@@ -660,7 +661,7 @@
+ :xor A, saddr is op=0x7B; saddr & A { local tmp:1 = A ^ (*[ram]:1 saddr); A = tmp; Z = tmp == 0; }
+ :xor A, addr16_abs is op=0x7F; addr16_abs & A { local tmp:1 = A ^ (*[ram]:1 addr16_abs); A = tmp; Z = tmp == 0; }
+ :xor A, hl_ind is op=0x7D & hl_ind & A { local tmp:1 = A ^ (*[ram]:1 hl_ind); A = tmp; Z = tmp == 0; }
+-:xor A, addr8_hl_rel is op=0x7E & addr8_hl_rel & A { local tmp:1 = A ^ (*[ram]:1 addr8_hl_rel); A = tmp; Z = tmp == 0; }
++:xor A, addr8_hl_rel is op=0x7E & A; addr8_hl_rel { local tmp:1 = A ^ (*[ram]:1 addr8_hl_rel); A = tmp; Z = tmp == 0; }
+ :xor A, hl_b_ind is op=0x61; op=0xF0 & hl_b_ind & A { local tmp:1 = A ^ (*[ram]:1 hl_b_ind); A = tmp; Z = tmp == 0; }
+ :xor A, hl_c_ind is op=0x61; op=0xF2 & hl_c_ind & A { local tmp:1 = A ^ (*[ram]:1 hl_c_ind); A = tmp; Z = tmp == 0; }
+ :xor A, es_addr16_abs is op=0x11; op=0x7F; es_addr16_abs & A { local tmp:1 = A ^ (*[ram]:1 es_addr16_abs); A = tmp; Z = tmp == 0; }
+@@ -683,7 +684,7 @@
+ :cmp A, saddr is op=0x4B; saddr & A { cmp_flags(A, *[ram]:1 saddr); }
+ :cmp A, addr16_abs is op=0x4F; addr16_abs & A { cmp_flags( A, *[ram]:1 addr16_abs); }
+ :cmp A, hl_ind is op=0x4D & hl_ind & A { cmp_flags(A, *[ram]:1 hl_ind); }
+-:cmp A, addr8_hl_rel is op=0x4E & addr8_hl_rel & A { cmp_flags(A, *[ram]:1 addr8_hl_rel); }
++:cmp A, addr8_hl_rel is op=0x4E & A; addr8_hl_rel { cmp_flags(A, *[ram]:1 addr8_hl_rel); }
+ :cmp A, hl_b_ind is op=0x61; op=0xC0 & hl_b_ind & A { cmp_flags(A, *[ram]:1 hl_b_ind); }
+ :cmp A, hl_c_ind is op=0x61; op=0xC2 & hl_c_ind & A { cmp_flags(A, *[ram]:1 hl_c_ind); }
+ :cmp addr16_abs, data8 is op=0x40; addr16_abs; data8 { cmp_flags(*[ram]:1 addr16_abs, data8); }
+@@ -765,8 +766,8 @@
+ 	AC = 0;
+ }
+ :cmpw AX, data16 is op=0x44 ; data16 & AX { cmpw(AX, data16); }
+-:cmpw AX, BC is op=0x45 & AX & BC { cmpw(AX, BC); }
+-:cmpw AX, DE is op=0x46 & AX & DE { cmpw(AX, DE); }
++:cmpw AX, BC is op=0x43 & AX & BC { cmpw(AX, BC); }
++:cmpw AX, DE is op=0x45 & AX & DE { cmpw(AX, DE); }
+ :cmpw AX, HL is op=0x47 & AX & HL { cmpw(AX, HL); }
+ :cmpw AX, saddrp is op=0x46; saddrp & AX { cmpw(AX, *[ram]:2 saddrp); }
+ :cmpw AX, addr16_abs is op=0x42; addr16_abs & AX { cmpw(AX, *[ram]:2 addr16_abs); }
+@@ -1169,7 +1170,7 @@
+ }
+ 
+ # callt
+-callt_addr: val is data8 & data0_1=0 [ val = 80 + (data8 - 0x84)/8; ] { export *[const]:3 val; }
++callt_addr: val is data8 & data_lsb=0 [ val = 80 + (data8 - 0x84)/8; ] { export *[const]:3 val; }
+ :callt callt_addr is op=0x61; callt_addr {
+ 	local tmp:4 = inst_next;
+ 	push32(tmp);

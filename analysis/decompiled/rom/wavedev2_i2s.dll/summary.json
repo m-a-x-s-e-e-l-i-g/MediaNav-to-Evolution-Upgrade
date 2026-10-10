@@ -1,0 +1,3583 @@
+{
+  "program": "wavedev2_i2s.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "fec5ab038cf274c4cf74a6553f9a81328bba7100c8ec9b17438658a7fae9d67c",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_purecall"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "NKDbgPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeGetCallerTrust"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSafeCopyMemory"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FreeIntChainHandler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "OpenDeviceKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDone"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptInitialize"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_new"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_delete"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__ll_div"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__ull_div"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegQueryValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCloseKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegSetValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegOpenKeyExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "OALStallExecution"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "READ_REGISTER_ULONG"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "WRITE_REGISTER_ULONG"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmUnmapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmMapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptConnect"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalGetDMAHwIntr"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalInitDmaChannel"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalAllocateDMAChannel"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalStartDMA"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalSetDMAForReceive"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalStopDMA"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalGetNextDMABuffer"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalActivateDMABuffer"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalAckDMAInterrupt"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalCheckForDMAInterrupt"
+    }
+  ],
+  "functions_attempted": 222,
+  "functions_decompiled": 222,
+  "functions": [
+    {
+      "address": "c0942078",
+      "name": "FUN_c0942078",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000016",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09420ac",
+      "name": "WAV_Init",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c0948128",
+          "name": "FUN_c0948128",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09420c8",
+      "name": "WAV_Deinit",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0947630",
+          "name": "FUN_c0947630",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09420e8",
+      "name": "WAV_Open",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c0949080",
+          "name": "operator_new",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942118",
+      "name": "WAV_Close",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942138",
+      "name": "FUN_c0942138",
+      "body_addresses": 1336,
+      "calls": [
+        {
+          "address": "c0943ab8",
+          "name": "FUN_c0943ab8",
+          "external": false
+        },
+        {
+          "address": "c0944178",
+          "name": "FUN_c0944178",
+          "external": false
+        },
+        {
+          "address": "c0943f40",
+          "name": "FUN_c0943f40",
+          "external": false
+        },
+        {
+          "address": "c0948aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09436d4",
+          "name": "FUN_c09436d4",
+          "external": false
+        },
+        {
+          "address": "c09436fc",
+          "name": "FUN_c09436fc",
+          "external": false
+        },
+        {
+          "address": "c09436cc",
+          "name": "FUN_c09436cc",
+          "external": false
+        },
+        {
+          "address": "c09435f4",
+          "name": "FUN_c09435f4",
+          "external": false
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0942fc4",
+          "name": "FUN_c0942fc4",
+          "external": false
+        },
+        {
+          "address": "c0943e34",
+          "name": "FUN_c0943e34",
+          "external": false
+        },
+        {
+          "address": "c0948a98",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0945ccc",
+          "name": "FUN_c0945ccc",
+          "external": false
+        },
+        {
+          "address": "c0947b1c",
+          "name": "FUN_c0947b1c",
+          "external": false
+        },
+        {
+          "address": "c094776c",
+          "name": "FUN_c094776c",
+          "external": false
+        },
+        {
+          "address": "c094415c",
+          "name": "FUN_c094415c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0943080",
+          "name": "FUN_c0943080",
+          "external": false
+        },
+        {
+          "address": "c09477dc",
+          "name": "FUN_c09477dc",
+          "external": false
+        },
+        {
+          "address": "c0947390",
+          "name": "FUN_c0947390",
+          "external": false
+        },
+        {
+          "address": "c0942d00",
+          "name": "FUN_c0942d00",
+          "external": false
+        },
+        {
+          "address": "c09473e0",
+          "name": "FUN_c09473e0",
+          "external": false
+        },
+        {
+          "address": "c0943888",
+          "name": "FUN_c0943888",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942708",
+      "name": "FUN_c0942708",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942714",
+      "name": "WAV_IOControl",
+      "body_addresses": 312,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0942138",
+          "name": "FUN_c0942138",
+          "external": false
+        },
+        {
+          "address": "c0947b48",
+          "name": "FUN_c0947b48",
+          "external": false
+        },
+        {
+          "address": "c0947208",
+          "name": "FUN_c0947208",
+          "external": false
+        },
+        {
+          "address": "c0948ac8",
+          "name": "CeGetCallerTrust",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094284c",
+      "name": "FUN_c094284c",
+      "body_addresses": 76,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942898",
+      "name": "FUN_c0942898",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09428a0",
+      "name": "FUN_c09428a0",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09428b4",
+      "name": "FUN_c09428b4",
+      "body_addresses": 184,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c094296c",
+      "name": "FUN_c094296c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c09428b4",
+          "name": "FUN_c09428b4",
+          "external": false
+        },
+        {
+          "address": "c0943738",
+          "name": "FUN_c0943738",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09429e0",
+      "name": "FUN_c09429e0",
+      "body_addresses": 160,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942a80",
+      "name": "FUN_c0942a80",
+      "body_addresses": 96,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942ae0",
+      "name": "FUN_c0942ae0",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "c0943878",
+          "name": "FUN_c0943878",
+          "external": false
+        },
+        {
+          "address": "c0943888",
+          "name": "FUN_c0943888",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942bd0",
+      "name": "FUN_c0942bd0",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942c24",
+      "name": "FUN_c0942c24",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0947e50",
+          "name": "FUN_c0947e50",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942c44",
+      "name": "FUN_c0942c44",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c09477a8",
+          "name": "FUN_c09477a8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942c64",
+      "name": "FUN_c0942c64",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c09490d0",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942c98",
+      "name": "FUN_c0942c98",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c09490d0",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942ccc",
+      "name": "FUN_c0942ccc",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c09490d0",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942d00",
+      "name": "FUN_c0942d00",
+      "body_addresses": 296,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942e28",
+      "name": "FUN_c0942e28",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942e7c",
+      "name": "FUN_c0942e7c",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942e84",
+      "name": "FUN_c0942e84",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0942e94",
+      "name": "FUN_c0942e94",
+      "body_addresses": 304,
+      "calls": [
+        {
+          "address": "c0948ad8",
+          "name": "CeSafeCopyMemory",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0942fc4",
+      "name": "FUN_c0942fc4",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c09490b0",
+          "name": "memcmp",
+          "external": false
+        },
+        {
+          "address": "c0942e94",
+          "name": "FUN_c0942e94",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943060",
+      "name": "FUN_c0943060",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0942bd0",
+          "name": "FUN_c0942bd0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943080",
+      "name": "FUN_c0943080",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "c0942bd0",
+          "name": "FUN_c0942bd0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09430c0",
+      "name": "FUN_c09430c0",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094310c",
+      "name": "FUN_c094310c",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943158",
+      "name": "FUN_c0943158",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09431a4",
+      "name": "FUN_c09431a4",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09431f0",
+      "name": "FUN_c09431f0",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094323c",
+      "name": "FUN_c094323c",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943288",
+      "name": "FUN_c0943288",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09435cc",
+          "name": "FUN_c09435cc",
+          "external": false
+        },
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09432d4",
+      "name": "FUN_c09432d4",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0947cdc",
+          "name": "FUN_c0947cdc",
+          "external": false
+        },
+        {
+          "address": "c0942e28",
+          "name": "FUN_c0942e28",
+          "external": false
+        },
+        {
+          "address": "c09490e0",
+          "name": "__ll_div",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094332c",
+      "name": "FUN_c094332c",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0942e28",
+          "name": "FUN_c0942e28",
+          "external": false
+        },
+        {
+          "address": "c09490e0",
+          "name": "__ll_div",
+          "external": false
+        },
+        {
+          "address": "c0947cf8",
+          "name": "FUN_c0947cf8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943384",
+      "name": "FUN_c0943384",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0949080",
+          "name": "operator_new",
+          "external": false
+        },
+        {
+          "address": "c09435b8",
+          "name": "FUN_c09435b8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09433d4",
+      "name": "FUN_c09433d4",
+      "body_addresses": 484,
+      "calls": [
+        {
+          "address": "c0949080",
+          "name": "operator_new",
+          "external": false
+        },
+        {
+          "address": "c09435b8",
+          "name": "FUN_c09435b8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09435b8",
+      "name": "FUN_c09435b8",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09435cc",
+      "name": "FUN_c09435cc",
+      "body_addresses": 16,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09435dc",
+      "name": "FUN_c09435dc",
+      "body_addresses": 24,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09435f4",
+      "name": "FUN_c09435f4",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09435fc",
+      "name": "FUN_c09435fc",
+      "body_addresses": 52,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943630",
+      "name": "FUN_c0943630",
+      "body_addresses": 52,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943664",
+      "name": "FUN_c0943664",
+      "body_addresses": 52,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943698",
+      "name": "FUN_c0943698",
+      "body_addresses": 52,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09436cc",
+      "name": "FUN_c09436cc",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09436d4",
+      "name": "FUN_c09436d4",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09436fc",
+      "name": "FUN_c09436fc",
+      "body_addresses": 60,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943738",
+      "name": "FUN_c0943738",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943740",
+      "name": "FUN_c0943740",
+      "body_addresses": 312,
+      "calls": [
+        {
+          "address": "c09490d0",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c0942898",
+          "name": "FUN_c0942898",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943878",
+      "name": "FUN_c0943878",
+      "body_addresses": 16,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943888",
+      "name": "FUN_c0943888",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0942a80",
+          "name": "FUN_c0942a80",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09438e4",
+      "name": "FUN_c09438e4",
+      "body_addresses": 204,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09439b0",
+      "name": "FUN_c09439b0",
+      "body_addresses": 264,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943ab8",
+      "name": "FUN_c0943ab8",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c0943888",
+          "name": "FUN_c0943888",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943b54",
+      "name": "FUN_c0943b54",
+      "body_addresses": 276,
+      "calls": [
+        {
+          "address": "c09428a0",
+          "name": "FUN_c09428a0",
+          "external": false
+        },
+        {
+          "address": "c0945acc",
+          "name": "FUN_c0945acc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943d40",
+      "name": "FUN_c0943d40",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "c0943740",
+          "name": "FUN_c0943740",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943e34",
+      "name": "FUN_c0943e34",
+      "body_addresses": 16,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943e44",
+      "name": "FUN_c0943e44",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943e88",
+      "name": "FUN_c0943e88",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0943e94",
+      "name": "FUN_c0943e94",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c0943888",
+          "name": "FUN_c0943888",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943f40",
+      "name": "FUN_c0943f40",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c0947b1c",
+          "name": "FUN_c0947b1c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943f8c",
+      "name": "FUN_c0943f8c",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c09490e0",
+          "name": "__ll_div",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0943ff0",
+      "name": "FUN_c0943ff0",
+      "body_addresses": 260,
+      "calls": [
+        {
+          "address": "c09439b0",
+          "name": "FUN_c09439b0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944130",
+      "name": "FUN_c0944130",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c094413c",
+      "name": "FUN_c094413c",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c09490f0",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094415c",
+      "name": "FUN_c094415c",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c0942fc4",
+          "name": "FUN_c0942fc4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944178",
+      "name": "FUN_c0944178",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c0945ccc",
+          "name": "FUN_c0945ccc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944194",
+      "name": "FUN_c0944194",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09441d8",
+      "name": "FUN_c09441d8",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0943b54",
+          "name": "FUN_c0943b54",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944234",
+      "name": "FUN_c0944234",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c0947b1c",
+          "name": "FUN_c0947b1c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094429c",
+      "name": "FUN_c094429c",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c0943d40",
+          "name": "FUN_c0943d40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09442d0",
+      "name": "FUN_c09442d0",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c09435fc",
+          "name": "FUN_c09435fc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09442f4",
+      "name": "FUN_c09442f4",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c09435fc",
+          "name": "FUN_c09435fc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944318",
+      "name": "FUN_c0944318",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c09435fc",
+          "name": "FUN_c09435fc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094433c",
+      "name": "FUN_c094433c",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09439b0",
+          "name": "FUN_c09439b0",
+          "external": false
+        },
+        {
+          "address": "c0943e88",
+          "name": "FUN_c0943e88",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944388",
+      "name": "FUN_c0944388",
+      "body_addresses": 500,
+      "calls": [
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094457c",
+      "name": "FUN_c094457c",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0943d40",
+          "name": "FUN_c0943d40",
+          "external": false
+        },
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09445d8",
+      "name": "FUN_c09445d8",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0943e94",
+          "name": "FUN_c0943e94",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944630",
+      "name": "FUN_c0944630",
+      "body_addresses": 464,
+      "calls": [
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        },
+        {
+          "address": "c0942e84",
+          "name": "FUN_c0942e84",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944800",
+      "name": "FUN_c0944800",
+      "body_addresses": 460,
+      "calls": [
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        },
+        {
+          "address": "c0942e84",
+          "name": "FUN_c0942e84",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09449cc",
+      "name": "FUN_c09449cc",
+      "body_addresses": 536,
+      "calls": [
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        },
+        {
+          "address": "c0942e84",
+          "name": "FUN_c0942e84",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944be4",
+      "name": "FUN_c0944be4",
+      "body_addresses": 528,
+      "calls": [
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        },
+        {
+          "address": "c0942e84",
+          "name": "FUN_c0942e84",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944df4",
+      "name": "FUN_c0944df4",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "c09490d0",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944e98",
+      "name": "FUN_c0944e98",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c09458c0",
+          "name": "FUN_c09458c0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944ee0",
+      "name": "FUN_c0944ee0",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0943b54",
+          "name": "FUN_c0943b54",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944f30",
+      "name": "FUN_c0944f30",
+      "body_addresses": 204,
+      "calls": [
+        {
+          "address": "c0943740",
+          "name": "FUN_c0943740",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0944ffc",
+      "name": "FUN_c0944ffc",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c0949100",
+          "name": "__ull_div",
+          "external": false
+        },
+        {
+          "address": "c0942e7c",
+          "name": "FUN_c0942e7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09450a8",
+      "name": "FUN_c09450a8",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c0945acc",
+          "name": "FUN_c0945acc",
+          "external": false
+        },
+        {
+          "address": "c0945ad4",
+          "name": "FUN_c0945ad4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945124",
+      "name": "FUN_c0945124",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c094596c",
+          "name": "FUN_c094596c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094517c",
+      "name": "FUN_c094517c",
+      "body_addresses": 208,
+      "calls": [
+        {
+          "address": "c094591c",
+          "name": "FUN_c094591c",
+          "external": false
+        },
+        {
+          "address": "c0944ffc",
+          "name": "FUN_c0944ffc",
+          "external": false
+        },
+        {
+          "address": "c0942e84",
+          "name": "FUN_c0942e84",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094524c",
+      "name": "FUN_c094524c",
+      "body_addresses": 88,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09452a4",
+      "name": "FUN_c09452a4",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c0942e84",
+          "name": "FUN_c0942e84",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09452d4",
+      "name": "FUN_c09452d4",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c0943888",
+          "name": "FUN_c0943888",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094531c",
+      "name": "FUN_c094531c",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0943e94",
+          "name": "FUN_c0943e94",
+          "external": false
+        },
+        {
+          "address": "c0945124",
+          "name": "FUN_c0945124",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945378",
+      "name": "FUN_c0945378",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c0944234",
+          "name": "FUN_c0944234",
+          "external": false
+        },
+        {
+          "address": "c0945124",
+          "name": "FUN_c0945124",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09453c4",
+      "name": "FUN_c09453c4",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "c0945b0c",
+          "name": "FUN_c0945b0c",
+          "external": false
+        },
+        {
+          "address": "c09450a8",
+          "name": "FUN_c09450a8",
+          "external": false
+        },
+        {
+          "address": "c0943878",
+          "name": "FUN_c0943878",
+          "external": false
+        },
+        {
+          "address": "c0945adc",
+          "name": "FUN_c0945adc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09454b0",
+      "name": "FUN_c09454b0",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "c094596c",
+          "name": "FUN_c094596c",
+          "external": false
+        },
+        {
+          "address": "c09453c4",
+          "name": "FUN_c09453c4",
+          "external": false
+        },
+        {
+          "address": "c09450a8",
+          "name": "FUN_c09450a8",
+          "external": false
+        },
+        {
+          "address": "c0945124",
+          "name": "FUN_c0945124",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945584",
+      "name": "FUN_c0945584",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "c094596c",
+          "name": "FUN_c094596c",
+          "external": false
+        },
+        {
+          "address": "c09453c4",
+          "name": "FUN_c09453c4",
+          "external": false
+        },
+        {
+          "address": "c09450a8",
+          "name": "FUN_c09450a8",
+          "external": false
+        },
+        {
+          "address": "c09454b0",
+          "name": "FUN_c09454b0",
+          "external": false
+        },
+        {
+          "address": "c0944ffc",
+          "name": "FUN_c0944ffc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094565c",
+      "name": "FUN_c094565c",
+      "body_addresses": 232,
+      "calls": [
+        {
+          "address": "c09439b0",
+          "name": "FUN_c09439b0",
+          "external": false
+        },
+        {
+          "address": "c0945584",
+          "name": "FUN_c0945584",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945774",
+      "name": "FUN_c0945774",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945780",
+      "name": "FUN_c0945780",
+      "body_addresses": 320,
+      "calls": [
+        {
+          "address": "c094565c",
+          "name": "FUN_c094565c",
+          "external": false
+        },
+        {
+          "address": "c0945b78",
+          "name": "FUN_c0945b78",
+          "external": false
+        },
+        {
+          "address": "c09435dc",
+          "name": "FUN_c09435dc",
+          "external": false
+        },
+        {
+          "address": "c094413c",
+          "name": "FUN_c094413c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09458c0",
+      "name": "FUN_c09458c0",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0944ee0",
+          "name": "FUN_c0944ee0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094591c",
+      "name": "FUN_c094591c",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c09452a4",
+          "name": "FUN_c09452a4",
+          "external": false
+        },
+        {
+          "address": "c094524c",
+          "name": "FUN_c094524c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094596c",
+      "name": "FUN_c094596c",
+      "body_addresses": 76,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09459b8",
+      "name": "FUN_c09459b8",
+      "body_addresses": 276,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945acc",
+      "name": "FUN_c0945acc",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945ad4",
+      "name": "FUN_c0945ad4",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945adc",
+      "name": "FUN_c0945adc",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c09458c0",
+          "name": "FUN_c09458c0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945b0c",
+      "name": "FUN_c0945b0c",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c094591c",
+          "name": "FUN_c094591c",
+          "external": false
+        },
+        {
+          "address": "c09458c0",
+          "name": "FUN_c09458c0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945b78",
+      "name": "FUN_c0945b78",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c09452d4",
+          "name": "FUN_c09452d4",
+          "external": false
+        },
+        {
+          "address": "c09459b8",
+          "name": "FUN_c09459b8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945c20",
+      "name": "FUN_c0945c20",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945c74",
+      "name": "FUN_c0945c74",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945c7c",
+      "name": "FUN_c0945c7c",
+      "body_addresses": 80,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945ccc",
+      "name": "FUN_c0945ccc",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0945cd4",
+      "name": "FUN_c0945cd4",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945d18",
+      "name": "FUN_c0945d18",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0945c7c",
+          "name": "FUN_c0945c7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945d7c",
+      "name": "FUN_c0945d7c",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "c0945c20",
+          "name": "FUN_c0945c20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945e44",
+      "name": "FUN_c0945e44",
+      "body_addresses": 220,
+      "calls": [
+        {
+          "address": "c0945c20",
+          "name": "FUN_c0945c20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945f20",
+      "name": "FUN_c0945f20",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0945d18",
+          "name": "FUN_c0945d18",
+          "external": false
+        },
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945f70",
+      "name": "FUN_c0945f70",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0947684",
+          "name": "FUN_c0947684",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945f90",
+      "name": "FUN_c0945f90",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c09476e8",
+          "name": "FUN_c09476e8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0945fb0",
+      "name": "FUN_c0945fb0",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0945d18",
+          "name": "FUN_c0945d18",
+          "external": false
+        },
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946008",
+      "name": "FUN_c0946008",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c094773c",
+          "name": "FUN_c094773c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946028",
+      "name": "FUN_c0946028",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0947734",
+          "name": "FUN_c0947734",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946048",
+      "name": "FUN_c0946048",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c0945c7c",
+          "name": "FUN_c0945c7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09460a4",
+      "name": "FUN_c09460a4",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09460e8",
+      "name": "FUN_c09460e8",
+      "body_addresses": 56,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0946120",
+      "name": "FUN_c0946120",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c0946048",
+          "name": "FUN_c0946048",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946184",
+      "name": "FUN_c0946184",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c09476f0",
+          "name": "FUN_c09476f0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09461a4",
+      "name": "FUN_c09461a4",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c09476b4",
+          "name": "FUN_c09476b4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09461c4",
+      "name": "FUN_c09461c4",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c0946048",
+          "name": "FUN_c0946048",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946214",
+      "name": "FUN_c0946214",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c09476f8",
+          "name": "FUN_c09476f8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946234",
+      "name": "FUN_c0946234",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0947700",
+          "name": "FUN_c0947700",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946254",
+      "name": "FUN_c0946254",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c0945c7c",
+          "name": "FUN_c0945c7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09462c0",
+      "name": "FUN_c09462c0",
+      "body_addresses": 320,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0946400",
+      "name": "FUN_c0946400",
+      "body_addresses": 216,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09464d8",
+      "name": "FUN_c09464d8",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0946254",
+          "name": "FUN_c0946254",
+          "external": false
+        },
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946540",
+      "name": "FUN_c0946540",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946594",
+      "name": "FUN_c0946594",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c0946254",
+          "name": "FUN_c0946254",
+          "external": false
+        },
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094660c",
+      "name": "FUN_c094660c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c0945c20",
+          "name": "FUN_c0945c20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09466d4",
+      "name": "FUN_c09466d4",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c0946048",
+          "name": "FUN_c0946048",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946740",
+      "name": "FUN_c0946740",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c09478a0",
+          "name": "FUN_c09478a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094677c",
+      "name": "FUN_c094677c",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c0946048",
+          "name": "FUN_c0946048",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09467dc",
+      "name": "FUN_c09467dc",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c09478a0",
+          "name": "FUN_c09478a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094680c",
+      "name": "FUN_c094680c",
+      "body_addresses": 312,
+      "calls": [
+        {
+          "address": "c0945c74",
+          "name": "FUN_c0945c74",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946944",
+      "name": "FUN_c0946944",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09469ac",
+      "name": "FUN_c09469ac",
+      "body_addresses": 112,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0946a1c",
+      "name": "FUN_c0946a1c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946a90",
+      "name": "FUN_c0946a90",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c0948ae8",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946b3c",
+      "name": "FUN_c0946b3c",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c0948af8",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946ba4",
+      "name": "FUN_c0946ba4",
+      "body_addresses": 744,
+      "calls": [
+        {
+          "address": "c0949110",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c0945c20",
+          "name": "FUN_c0945c20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0946e8c",
+      "name": "FUN_c0946e8c",
+      "body_addresses": 572,
+      "calls": [
+        {
+          "address": "c0945c20",
+          "name": "FUN_c0945c20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09470c8",
+      "name": "FUN_c09470c8",
+      "body_addresses": 112,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0947138",
+      "name": "FUN_c0947138",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c09469ac",
+          "name": "FUN_c09469ac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09471c0",
+      "name": "FUN_c09471c0",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c0949080",
+          "name": "operator_new",
+          "external": false
+        },
+        {
+          "address": "c094680c",
+          "name": "FUN_c094680c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947208",
+      "name": "FUN_c0947208",
+      "body_addresses": 344,
+      "calls": [
+        {
+          "address": "c0946ba4",
+          "name": "FUN_c0946ba4",
+          "external": false
+        },
+        {
+          "address": "c0946e8c",
+          "name": "FUN_c0946e8c",
+          "external": false
+        },
+        {
+          "address": "c0946b3c",
+          "name": "FUN_c0946b3c",
+          "external": false
+        },
+        {
+          "address": "c09470c8",
+          "name": "FUN_c09470c8",
+          "external": false
+        },
+        {
+          "address": "c0946a90",
+          "name": "FUN_c0946a90",
+          "external": false
+        },
+        {
+          "address": "c0946a1c",
+          "name": "FUN_c0946a1c",
+          "external": false
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0947138",
+          "name": "FUN_c0947138",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947384",
+      "name": "FUN_c0947384",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0947390",
+      "name": "FUN_c0947390",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c09469ac",
+          "name": "FUN_c09469ac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09473e0",
+      "name": "FUN_c09473e0",
+      "body_addresses": 48,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0947410",
+      "name": "FUN_c0947410",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947454",
+      "name": "FUN_c0947454",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947498",
+      "name": "FUN_c0947498",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09474dc",
+      "name": "FUN_c09474dc",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947520",
+      "name": "FUN_c0947520",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947564",
+      "name": "FUN_c0947564",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09475a8",
+      "name": "FUN_c09475a8",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09475ec",
+      "name": "FUN_c09475ec",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0949090",
+          "name": "operator_delete",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947630",
+      "name": "FUN_c0947630",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c09481a4",
+          "name": "FUN_c09481a4",
+          "external": false
+        },
+        {
+          "address": "c0948b18",
+          "name": "FreeIntChainHandler",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947684",
+      "name": "FUN_c0947684",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c0943060",
+          "name": "FUN_c0943060",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09476b4",
+      "name": "FUN_c09476b4",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c0943060",
+          "name": "FUN_c0943060",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09476e8",
+      "name": "FUN_c09476e8",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09476f0",
+      "name": "FUN_c09476f0",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09476f8",
+      "name": "FUN_c09476f8",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0947700",
+      "name": "FUN_c0947700",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c0943060",
+          "name": "FUN_c0943060",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947734",
+      "name": "FUN_c0947734",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c094773c",
+      "name": "FUN_c094773c",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c0943060",
+          "name": "FUN_c0943060",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094776c",
+      "name": "FUN_c094776c",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c09484c4",
+          "name": "FUN_c09484c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09477a8",
+      "name": "FUN_c09477a8",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c0948440",
+          "name": "FUN_c0948440",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09477dc",
+      "name": "FUN_c09477dc",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c09484c4",
+          "name": "FUN_c09484c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947818",
+      "name": "FUN_c0947818",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "c0948b28",
+          "name": "OpenDeviceKey",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09478a0",
+      "name": "FUN_c09478a0",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "RegSetValueExW",
+          "external": true
+        },
+        {
+          "address": "c0948b28",
+          "name": "OpenDeviceKey",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094791c",
+      "name": "FUN_c094791c",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c09490f0",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c0948554",
+          "name": "FUN_c0948554",
+          "external": false
+        },
+        {
+          "address": "c0942ae0",
+          "name": "FUN_c0942ae0",
+          "external": false
+        },
+        {
+          "address": "c09485a0",
+          "name": "FUN_c09485a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09479ac",
+      "name": "FUN_c09479ac",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c0948554",
+          "name": "FUN_c0948554",
+          "external": false
+        },
+        {
+          "address": "c0942ae0",
+          "name": "FUN_c0942ae0",
+          "external": false
+        },
+        {
+          "address": "c09485a0",
+          "name": "FUN_c09485a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947a28",
+      "name": "FUN_c0947a28",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "c0948aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09485f0",
+          "name": "FUN_c09485f0",
+          "external": false
+        },
+        {
+          "address": "c09484c4",
+          "name": "FUN_c09484c4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c0948b38",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "c094791c",
+          "name": "FUN_c094791c",
+          "external": false
+        },
+        {
+          "address": "c0948a98",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09479ac",
+          "name": "FUN_c09479ac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947b00",
+      "name": "FUN_c0947b00",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c0947a28",
+          "name": "FUN_c0947a28",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947b1c",
+      "name": "FUN_c0947b1c",
+      "body_addresses": 44,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0947b48",
+      "name": "FUN_c0947b48",
+      "body_addresses": 404,
+      "calls": [
+        {
+          "address": "c0948aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09490f0",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c09481a4",
+          "name": "FUN_c09481a4",
+          "external": false
+        },
+        {
+          "address": "c09489cc",
+          "name": "FUN_c09489cc",
+          "external": false
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0948a98",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947cdc",
+      "name": "FUN_c0947cdc",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c09489ec",
+          "name": "FUN_c09489ec",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947cf8",
+      "name": "FUN_c0947cf8",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c0948894",
+          "name": "FUN_c0948894",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947d14",
+      "name": "FUN_c0947d14",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "RegOpenKeyExW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947ddc",
+      "name": "FUN_c0947ddc",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c0948b48",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c094284c",
+          "name": "FUN_c094284c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947e50",
+      "name": "FUN_c0947e50",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c0948440",
+          "name": "FUN_c0948440",
+          "external": false
+        },
+        {
+          "address": "c094791c",
+          "name": "FUN_c094791c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947ec4",
+      "name": "FUN_c0947ec4",
+      "body_addresses": 180,
+      "calls": [
+        {
+          "address": "c0947818",
+          "name": "FUN_c0947818",
+          "external": false
+        },
+        {
+          "address": "c0948b58",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000003",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c0948b68",
+          "name": "InterruptInitialize",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0947f78",
+      "name": "FUN_c0947f78",
+      "body_addresses": 432,
+      "calls": [
+        {
+          "address": "c0947ec4",
+          "name": "FUN_c0947ec4",
+          "external": false
+        },
+        {
+          "address": "c0948940",
+          "name": "FUN_c0948940",
+          "external": false
+        },
+        {
+          "address": "c0947818",
+          "name": "FUN_c0947818",
+          "external": false
+        },
+        {
+          "address": "c09481a4",
+          "name": "FUN_c09481a4",
+          "external": false
+        },
+        {
+          "address": "c0948340",
+          "name": "FUN_c0948340",
+          "external": false
+        },
+        {
+          "address": "c09471c0",
+          "name": "FUN_c09471c0",
+          "external": false
+        },
+        {
+          "address": "c09478a0",
+          "name": "FUN_c09478a0",
+          "external": false
+        },
+        {
+          "address": "c0947d14",
+          "name": "FUN_c0947d14",
+          "external": false
+        },
+        {
+          "address": "c09483c0",
+          "name": "FUN_c09483c0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948128",
+      "name": "FUN_c0948128",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c0949080",
+          "name": "operator_new",
+          "external": false
+        },
+        {
+          "address": "c0947ddc",
+          "name": "FUN_c0947ddc",
+          "external": false
+        },
+        {
+          "address": "c0947f78",
+          "name": "FUN_c0947f78",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09481a4",
+      "name": "FUN_c09481a4",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09481ac",
+      "name": "FUN_c09481ac",
+      "body_addresses": 404,
+      "calls": [
+        {
+          "address": "c0948ba8",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c0948b88",
+          "name": "READ_REGISTER_ULONG",
+          "external": false
+        },
+        {
+          "address": "c0948b78",
+          "name": "OALStallExecution",
+          "external": false
+        },
+        {
+          "address": "c0948bb8",
+          "name": "MmMapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0948b98",
+          "name": "WRITE_REGISTER_ULONG",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948340",
+      "name": "FUN_c0948340",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0948bd8",
+          "name": "HalGetDMAHwIntr",
+          "external": false
+        },
+        {
+          "address": "c0948bc8",
+          "name": "InterruptConnect",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09483c0",
+      "name": "FUN_c09483c0",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c0948be8",
+          "name": "HalInitDmaChannel",
+          "external": false
+        },
+        {
+          "address": "c0948bf8",
+          "name": "HalAllocateDMAChannel",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948440",
+      "name": "FUN_c0948440",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c0948c18",
+          "name": "HalSetDMAForReceive",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c0948b98",
+          "name": "WRITE_REGISTER_ULONG",
+          "external": false
+        },
+        {
+          "address": "c0948c08",
+          "name": "HalStartDMA",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09484c4",
+      "name": "FUN_c09484c4",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c0948c28",
+          "name": "HalStopDMA",
+          "external": false
+        },
+        {
+          "address": "c0948b98",
+          "name": "WRITE_REGISTER_ULONG",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948554",
+      "name": "FUN_c0948554",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c0948c38",
+          "name": "HalGetNextDMABuffer",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09485a0",
+      "name": "FUN_c09485a0",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c0948c48",
+          "name": "HalActivateDMABuffer",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09485f0",
+      "name": "FUN_c09485f0",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "c0948c68",
+          "name": "HalCheckForDMAInterrupt",
+          "external": false
+        },
+        {
+          "address": "c0948c58",
+          "name": "HalAckDMAInterrupt",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948660",
+      "name": "FUN_c0948660",
+      "body_addresses": 564,
+      "calls": [
+        {
+          "address": "c0948b88",
+          "name": "READ_REGISTER_ULONG",
+          "external": false
+        },
+        {
+          "address": "c0948b98",
+          "name": "WRITE_REGISTER_ULONG",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948894",
+      "name": "FUN_c0948894",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0948660",
+          "name": "FUN_c0948660",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948940",
+      "name": "FUN_c0948940",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "c0948ba8",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0948bb8",
+          "name": "MmMapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09481ac",
+          "name": "FUN_c09481ac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09489cc",
+      "name": "FUN_c09489cc",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0948940",
+          "name": "FUN_c0948940",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09489ec",
+      "name": "FUN_c09489ec",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c0948ab8",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c0948660",
+          "name": "FUN_c0948660",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948c78",
+      "name": "FUN_c0948c78",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "c0948fd0",
+          "name": "FUN_c0948fd0",
+          "external": false
+        },
+        {
+          "address": "c0942078",
+          "name": "FUN_c0942078",
+          "external": false
+        },
+        {
+          "address": "c0948f58",
+          "name": "FUN_c0948f58",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948db4",
+      "name": "FUN_c0948db4",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c0949120",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948de0",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c094900c",
+          "name": "FUN_c094900c",
+          "external": false
+        },
+        {
+          "address": "c0948c78",
+          "name": "FUN_c0948c78",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948e38",
+      "name": "FUN_c0948e38",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c0948b08",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0948f7c",
+          "name": "FUN_c0948f7c",
+          "external": false
+        },
+        {
+          "address": "c0949130",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c0949150",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c0949160",
+          "name": "TerminateProcess",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948f58",
+      "name": "FUN_c0948f58",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c0948e38",
+          "name": "FUN_c0948e38",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0948f7c",
+      "name": "FUN_c0948f7c",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0948fd0",
+      "name": "FUN_c0948fd0",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c0948f7c",
+          "name": "FUN_c0948f7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c094900c",
+      "name": "FUN_c094900c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c0949140",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

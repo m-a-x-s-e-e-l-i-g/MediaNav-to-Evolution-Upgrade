@@ -1,0 +1,1088 @@
+{
+  "program": "romfsd.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "980d792fa273b1716d300110efd58a8a24077d7d9d8d69d8a634b649b771ad3b",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "FSDMGR.DLL",
+      "label": "FSDMGR_RegisterVolume"
+    },
+    {
+      "library": "FSDMGR.DLL",
+      "label": "FSDMGR_DeregisterVolume"
+    },
+    {
+      "library": "FSDMGR.DLL",
+      "label": "FSDMGR_CreateFileHandle"
+    },
+    {
+      "library": "FSDMGR.DLL",
+      "label": "FSDMGR_CreateSearchHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "MatchesWildcardMask"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetRomFileBytes"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetRomFileInfo"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_wcsnicmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcslen"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    }
+  ],
+  "functions_attempted": 55,
+  "functions_decompiled": 55,
+  "functions": [
+    {
+      "address": "c0151084",
+      "name": "FUN_c0151084",
+      "body_addresses": 228,
+      "calls": [
+        {
+          "address": "c015308c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c015307c",
+          "name": "_wcsnicmp",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151168",
+      "name": "FUN_c0151168",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c015308c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c015307c",
+          "name": "_wcsnicmp",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151230",
+      "name": "FSD_MountDisk",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0152a60",
+          "name": "FSDMGR_RegisterVolume",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151288",
+      "name": "FSD_UnmountDisk",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c0152a70",
+          "name": "FSDMGR_DeregisterVolume",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01512ac",
+      "name": "FSD_CreateDirectoryW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01512d4",
+      "name": "FSD_RemoveDirectoryW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01512fc",
+      "name": "FSD_GetFileAttributesW",
+      "body_addresses": 516,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c015308c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c0151084",
+          "name": "FUN_c0151084",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c015307c",
+          "name": "_wcsnicmp",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151530",
+      "name": "FUN_c0151530",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c015153c",
+      "name": "FSD_SetFileAttributesW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151564",
+      "name": "FSD_DeleteFileW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c015158c",
+      "name": "FSD_MoveFileW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01515b4",
+      "name": "FSD_RegisterFileSystemFunction",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c01515bc",
+      "name": "FSD_DeleteAndRenameFileW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01515e4",
+      "name": "FSD_FlushFileBuffers",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c015160c",
+      "name": "FSD_GetFileTime",
+      "body_addresses": 332,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c015177c",
+      "name": "FUN_c015177c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0151788",
+      "name": "FSD_SetFileTime",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01517b0",
+      "name": "FSD_SetEndOfFile",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01517d8",
+      "name": "FSD_CreateFileW",
+      "body_addresses": 440,
+      "calls": [
+        {
+          "address": "c0152b00",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0152af0",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0151168",
+          "name": "FUN_c0151168",
+          "external": false
+        },
+        {
+          "address": "c0151084",
+          "name": "FUN_c0151084",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152a80",
+          "name": "FSDMGR_CreateFileHandle",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01519c4",
+      "name": "FUN_c01519c4",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c01519d0",
+      "name": "FUN_c01519d0",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c01530ac",
+          "name": "wcscmp",
+          "external": false
+        },
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151a7c",
+      "name": "FUN_c0151a7c",
+      "body_addresses": 560,
+      "calls": [
+        {
+          "address": "c0152aa0",
+          "name": "MatchesWildcardMask",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c015308c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c01519d0",
+          "name": "FUN_c01519d0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151cac",
+      "name": "FSD_FindFirstFileW",
+      "body_addresses": 404,
+      "calls": [
+        {
+          "address": "c0152b00",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0152af0",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0151084",
+          "name": "FUN_c0151084",
+          "external": false
+        },
+        {
+          "address": "c0151a7c",
+          "name": "FUN_c0151a7c",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152a90",
+          "name": "FSDMGR_CreateSearchHandle",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c01530bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151e70",
+      "name": "FUN_c0151e70",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0151e7c",
+      "name": "FSD_FindNextFileW",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c0151a7c",
+          "name": "FUN_c0151a7c",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151f38",
+      "name": "FUN_c0151f38",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0151f44",
+      "name": "FSD_FindClose",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c0152af0",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0151fe0",
+      "name": "FUN_c0151fe0",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0151fec",
+      "name": "FSD_CloseFile",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c0152af0",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152088",
+      "name": "FUN_c0152088",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0152094",
+      "name": "FSD_ReadFile",
+      "body_addresses": 344,
+      "calls": [
+        {
+          "address": "c0152ab0",
+          "name": "GetRomFileBytes",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152210",
+      "name": "FUN_c0152210",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c015221c",
+      "name": "FSD_ReadFileWithSeek",
+      "body_addresses": 408,
+      "calls": [
+        {
+          "address": "c0152ab0",
+          "name": "GetRomFileBytes",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01523d8",
+      "name": "FUN_c01523d8",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c01523e4",
+      "name": "FSD_WriteFile",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c015240c",
+      "name": "FSD_WriteFileWithSeek",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152434",
+      "name": "FSD_SetFilePointer",
+      "body_addresses": 820,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c015278c",
+      "name": "FUN_c015278c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0152798",
+      "name": "FSD_GetFileInformationByHandle",
+      "body_addresses": 312,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01528f4",
+      "name": "FUN_c01528f4",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0152900",
+      "name": "FSD_GetFileSize",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        },
+        {
+          "address": "c0152ac0",
+          "name": "GetRomFileInfo",
+          "external": false
+        },
+        {
+          "address": "c0152ad0",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152ae0",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c01529fc",
+      "name": "FUN_c01529fc",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0152a08",
+      "name": "FUN_c0152a08",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0152b20",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152b10",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152b30",
+      "name": "FUN_c0152b30",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "c0153040",
+          "name": "FUN_c0153040",
+          "external": false
+        },
+        {
+          "address": "c0152fc8",
+          "name": "FUN_c0152fc8",
+          "external": false
+        },
+        {
+          "address": "c0152a08",
+          "name": "FUN_c0152a08",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152c6c",
+      "name": "FUN_c0152c6c",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c01530cc",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152c98",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0152cf0",
+          "name": "FUN_c0152cf0",
+          "external": false
+        },
+        {
+          "address": "c0152b30",
+          "name": "FUN_c0152b30",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152cf0",
+      "name": "FUN_c0152cf0",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c01530dc",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152d64",
+      "name": "FUN_c0152d64",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c0152de4",
+          "name": "FUN_c0152de4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152db8",
+      "name": "FUN_c0152db8",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c0152d64",
+          "name": "FUN_c0152d64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152de4",
+      "name": "FUN_c0152de4",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c01530ec",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152e2c",
+      "name": "FUN_c0152e2c",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c015309c",
+          "name": "__C_specific_handler",
+          "external": false
+        },
+        {
+          "address": "c0152d64",
+          "name": "FUN_c0152d64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152ea8",
+      "name": "FUN_c0152ea8",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c015310c",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c01530fc",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c0152b10",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0152fec",
+          "name": "FUN_c0152fec",
+          "external": false
+        },
+        {
+          "address": "c015311c",
+          "name": "TerminateProcess",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152fc8",
+      "name": "FUN_c0152fc8",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c0152ea8",
+          "name": "FUN_c0152ea8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0152fec",
+      "name": "FUN_c0152fec",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0153040",
+      "name": "FUN_c0153040",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c0152fec",
+          "name": "FUN_c0152fec",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

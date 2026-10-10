@@ -1,0 +1,2469 @@
+{
+  "program": "serial.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "60a48547c40e9cc3701d0280d6158956c8c44ad261e8701363d1b58d15632f33",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "CEDDK.DLL",
+      "label": "READ_PORT_UCHAR"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "WRITE_PORT_UCHAR"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ExitThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EventModify"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDisable"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDone"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedDecrement"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSafeCopyMemory"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedIncrement"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedCompareExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptInitialize"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "OpenDeviceKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeFreeAsynchronousBuffer"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeAllocAsynchronousBuffer"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadLibraryW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "KernelLibIoControl"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FreePhysMem"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadIntChainHandler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FreeIntChainHandler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptMask"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memmove"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeGetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetTickCount"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegQueryValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCloseKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetProcAddressW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FreeLibrary"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegOpenKeyExW"
+    }
+  ],
+  "functions_attempted": 104,
+  "functions_decompiled": 104,
+  "functions": [
+    {
+      "address": "c06f1670",
+      "name": "FUN_c06f1670",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000004",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f16a4",
+      "name": "FUN_c06f16a4",
+      "body_addresses": 336,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f17f4",
+      "name": "FUN_c06f17f4",
+      "body_addresses": 196,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000d",
+          "name": "CeGetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c06f7ac8",
+          "name": "InterruptDisable",
+          "external": false
+        },
+        {
+          "address": "c06f7ad8",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CeSetThreadPriority",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f18b8",
+      "name": "FUN_c06f18b8",
+      "body_addresses": 828,
+      "calls": [
+        {
+          "address": "c06f7fbc",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f1bf4",
+      "name": "COM_PreClose",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f1d00",
+      "name": "COM_Close",
+      "body_addresses": 424,
+      "calls": [
+        {
+          "address": "c06f17f4",
+          "name": "FUN_c06f17f4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7ae8",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "SetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c06f7af8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f1ea8",
+      "name": "FUN_c06f1ea8",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f1bf4",
+          "name": "COM_PreClose",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f1eec",
+      "name": "COM_PreDeinit",
+      "body_addresses": 208,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f1bf4",
+          "name": "COM_PreClose",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f1fbc",
+      "name": "COM_Deinit",
+      "body_addresses": 408,
+      "calls": [
+        {
+          "address": "c06f17f4",
+          "name": "FUN_c06f17f4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7ae8",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c06f1d00",
+          "name": "COM_Close",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7af8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f2154",
+      "name": "COM_Read",
+      "body_addresses": 1176,
+      "calls": [
+        {
+          "address": "c06f7b08",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "GetTickCount",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7b28",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7b18",
+          "name": "CeSafeCopyMemory",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f25ec",
+      "name": "COM_Seek",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f25f4",
+      "name": "COM_PowerUp",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f2638",
+      "name": "COM_PowerDown",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f267c",
+      "name": "FUN_c06f267c",
+      "body_addresses": 444,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7b28",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "c06f7b38",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c06f7b08",
+          "name": "InterlockedDecrement",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f2850",
+      "name": "FUN_c06f2850",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f285c",
+      "name": "FUN_c06f285c",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7b38",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f294c",
+      "name": "COM_IOControl",
+      "body_addresses": 2488,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f18b8",
+          "name": "FUN_c06f18b8",
+          "external": false
+        },
+        {
+          "address": "c06f1ea8",
+          "name": "FUN_c06f1ea8",
+          "external": false
+        },
+        {
+          "address": "c06f267c",
+          "name": "FUN_c06f267c",
+          "external": false
+        },
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7fdc",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c06f7b38",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c06f7fbc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7b28",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c06f7b08",
+          "name": "InterlockedDecrement",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f33b8",
+      "name": "FUN_c06f33b8",
+      "body_addresses": 1012,
+      "calls": [
+        {
+          "address": "c06f16a4",
+          "name": "FUN_c06f16a4",
+          "external": false
+        },
+        {
+          "address": "c06f7b58",
+          "name": "ExitThread",
+          "external": false
+        },
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        },
+        {
+          "address": "c06f7b28",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "c06f7fec",
+          "name": "memmove",
+          "external": false
+        },
+        {
+          "address": "c06f285c",
+          "name": "FUN_c06f285c",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c06f7b08",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c06f7b48",
+          "name": "InterlockedCompareExchange",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f37ac",
+      "name": "FUN_c06f37ac",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c06f33b8",
+          "name": "FUN_c06f33b8",
+          "external": false
+        },
+        {
+          "address": "c06f7ad8",
+          "name": "InterruptDone",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f385c",
+      "name": "FUN_c06f385c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c06f7b68",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "c06f7ad8",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "c06f7b78",
+          "name": "InterruptInitialize",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f38f4",
+      "name": "COM_Init",
+      "body_addresses": 732,
+      "calls": [
+        {
+          "address": "c06f7b88",
+          "name": "OpenDeviceKey",
+          "external": false
+        },
+        {
+          "address": "c06f7b98",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001c",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001b",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "c06f385c",
+          "name": "FUN_c06f385c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001e",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c06f7fdc",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c06f1fbc",
+          "name": "COM_Deinit",
+          "external": false
+        },
+        {
+          "address": "c06f5314",
+          "name": "FUN_c06f5314",
+          "external": false
+        },
+        {
+          "address": "c06f7ba8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f3bd0",
+      "name": "COM_Open",
+      "body_addresses": 828,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f385c",
+          "name": "FUN_c06f385c",
+          "external": false
+        },
+        {
+          "address": "c06f18b8",
+          "name": "FUN_c06f18b8",
+          "external": false
+        },
+        {
+          "address": "c06f7ae8",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7fdc",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c06f7af8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c06f7b98",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001e",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7ba8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f3f0c",
+      "name": "COM_Write",
+      "body_addresses": 604,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f16a4",
+          "name": "FUN_c06f16a4",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c06f7b28",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "c06f285c",
+          "name": "FUN_c06f285c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c06f7b08",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c06f7bc8",
+          "name": "CeAllocAsynchronousBuffer",
+          "external": false
+        },
+        {
+          "address": "c06f7bb8",
+          "name": "CeFreeAsynchronousBuffer",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f4168",
+      "name": "FUN_c06f4168",
+      "body_addresses": 772,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000024",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "c06f7bd8",
+          "name": "LoadLibraryW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f446c",
+      "name": "FUN_c06f446c",
+      "body_addresses": 748,
+      "calls": [
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f4758",
+      "name": "DetectModem",
+      "body_addresses": 600,
+      "calls": [
+        {
+          "address": "c06f4168",
+          "name": "FUN_c06f4168",
+          "external": false
+        },
+        {
+          "address": "c06f7ffc",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        },
+        {
+          "address": "c06f446c",
+          "name": "FUN_c06f446c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f49b0",
+      "name": "FUN_c06f49b0",
+      "body_addresses": 104,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f4a18",
+      "name": "FUN_c06f4a18",
+      "body_addresses": 228,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000001c",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001b",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000026",
+          "name": "RegOpenKeyExW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f4afc",
+      "name": "FUN_c06f4afc",
+      "body_addresses": 440,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000001c",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001b",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000026",
+          "name": "RegOpenKeyExW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f4cb4",
+      "name": "FUN_c06f4cb4",
+      "body_addresses": 596,
+      "calls": [
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        },
+        {
+          "address": "c06f446c",
+          "name": "FUN_c06f446c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f4f08",
+      "name": "FUN_c06f4f08",
+      "body_addresses": 304,
+      "calls": [
+        {
+          "address": "c06f7ae8",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c06f4168",
+          "name": "FUN_c06f4168",
+          "external": false
+        },
+        {
+          "address": "c06f4afc",
+          "name": "FUN_c06f4afc",
+          "external": false
+        },
+        {
+          "address": "c06f4a18",
+          "name": "FUN_c06f4a18",
+          "external": false
+        },
+        {
+          "address": "c06f7ba8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5038",
+      "name": "FUN_c06f5038",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "c06f599c",
+          "name": "FUN_c06f599c",
+          "external": false
+        },
+        {
+          "address": "c06f5bc8",
+          "name": "FUN_c06f5bc8",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f512c",
+      "name": "FUN_c06f512c",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "c06f7fbc",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5174",
+      "name": "FUN_c06f5174",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c06f7ae8",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c06f5038",
+          "name": "FUN_c06f5038",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f51cc",
+      "name": "FUN_c06f51cc",
+      "body_addresses": 328,
+      "calls": [
+        {
+          "address": "c06f4cb4",
+          "name": "FUN_c06f4cb4",
+          "external": false
+        },
+        {
+          "address": "c06f5a64",
+          "name": "FUN_c06f5a64",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7894",
+          "name": "FUN_c06f7894",
+          "external": false
+        },
+        {
+          "address": "c06f5ba8",
+          "name": "FUN_c06f5ba8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5314",
+      "name": "FUN_c06f5314",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c06f7ba8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5358",
+      "name": "FUN_c06f5358",
+      "body_addresses": 168,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5400",
+      "name": "FUN_c06f5400",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5358",
+          "name": "FUN_c06f5358",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5468",
+      "name": "FUN_c06f5468",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5490",
+      "name": "FUN_c06f5490",
+      "body_addresses": 116,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5504",
+      "name": "FUN_c06f5504",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5490",
+          "name": "FUN_c06f5490",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5570",
+      "name": "FUN_c06f5570",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5598",
+      "name": "FUN_c06f5598",
+      "body_addresses": 92,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f55f4",
+      "name": "FUN_c06f55f4",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f5504",
+          "name": "FUN_c06f5504",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5400",
+          "name": "FUN_c06f5400",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f56b4",
+      "name": "FUN_c06f56b4",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f56dc",
+      "name": "FUN_c06f56dc",
+      "body_addresses": 624,
+      "calls": [
+        {
+          "address": "c06f7bf8",
+          "name": "FreePhysMem",
+          "external": false
+        },
+        {
+          "address": "c06f7be8",
+          "name": "KernelLibIoControl",
+          "external": false
+        },
+        {
+          "address": "c06f7c08",
+          "name": "LoadIntChainHandler",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f594c",
+      "name": "FUN_c06f594c",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c06f7bf8",
+          "name": "FreePhysMem",
+          "external": false
+        },
+        {
+          "address": "c06f7c18",
+          "name": "FreeIntChainHandler",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f599c",
+      "name": "FUN_c06f599c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5a3c",
+      "name": "FUN_c06f5a3c",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5a64",
+      "name": "FUN_c06f5a64",
+      "body_addresses": 324,
+      "calls": [
+        {
+          "address": "c06f7b98",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f56dc",
+          "name": "FUN_c06f56dc",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001e",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c06f55f4",
+          "name": "FUN_c06f55f4",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5ba8",
+      "name": "FUN_c06f5ba8",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c06f55f4",
+          "name": "FUN_c06f55f4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5bc8",
+      "name": "FUN_c06f5bc8",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c06f594c",
+          "name": "FUN_c06f594c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c06f7af8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5c1c",
+      "name": "FUN_c06f5c1c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5c94",
+      "name": "FUN_c06f5c94",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5cbc",
+      "name": "FUN_c06f5cbc",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5d34",
+      "name": "FUN_c06f5d34",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5d5c",
+      "name": "FUN_c06f5d5c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5dd4",
+      "name": "FUN_c06f5dd4",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5dfc",
+      "name": "FUN_c06f5dfc",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5e74",
+      "name": "FUN_c06f5e74",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5e9c",
+      "name": "FUN_c06f5e9c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5f14",
+      "name": "FUN_c06f5f14",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5f3c",
+      "name": "FUN_c06f5f3c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5fb4",
+      "name": "FUN_c06f5fb4",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f5fdc",
+      "name": "FUN_c06f5fdc",
+      "body_addresses": 220,
+      "calls": [
+        {
+          "address": "c06f7c28",
+          "name": "InterruptMask",
+          "external": false
+        },
+        {
+          "address": "c06f5598",
+          "name": "FUN_c06f5598",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f60b8",
+      "name": "FUN_c06f60b8",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f5fdc",
+          "name": "FUN_c06f5fdc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f6190",
+      "name": "FUN_c06f6190",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f61b8",
+      "name": "FUN_c06f61b8",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f62bc",
+      "name": "FUN_c06f62bc",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f62e4",
+      "name": "FUN_c06f62e4",
+      "body_addresses": 260,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f63f8",
+      "name": "FUN_c06f63f8",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f6420",
+      "name": "FUN_c06f6420",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f64f8",
+      "name": "FUN_c06f64f8",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f6520",
+      "name": "FUN_c06f6520",
+      "body_addresses": 868,
+      "calls": [
+        {
+          "address": "c06f5490",
+          "name": "FUN_c06f5490",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5358",
+          "name": "FUN_c06f5358",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f68a4",
+      "name": "FUN_c06f68a4",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f68cc",
+      "name": "FUN_c06f68cc",
+      "body_addresses": 636,
+      "calls": [
+        {
+          "address": "c06f5400",
+          "name": "FUN_c06f5400",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f6b54",
+      "name": "FUN_c06f6b54",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f6b7c",
+      "name": "FUN_c06f6b7c",
+      "body_addresses": 1272,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a98",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5400",
+          "name": "FUN_c06f5400",
+          "external": false
+        },
+        {
+          "address": "c06f7ad8",
+          "name": "InterruptDone",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7090",
+      "name": "FUN_c06f7090",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f70b8",
+      "name": "FUN_c06f70b8",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f70e0",
+      "name": "FUN_c06f70e0",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5400",
+          "name": "FUN_c06f5400",
+          "external": false
+        },
+        {
+          "address": "c06f7a78",
+          "name": "READ_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7168",
+      "name": "FUN_c06f7168",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7190",
+      "name": "FUN_c06f7190",
+      "body_addresses": 228,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f5504",
+          "name": "FUN_c06f5504",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7278",
+      "name": "FUN_c06f7278",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f72a0",
+      "name": "FUN_c06f72a0",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c06f7190",
+          "name": "FUN_c06f7190",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f72bc",
+      "name": "FUN_c06f72bc",
+      "body_addresses": 208,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f73a8",
+      "name": "FUN_c06f73a8",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f73d8",
+      "name": "FUN_c06f73d8",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c06f5504",
+          "name": "FUN_c06f5504",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7474",
+      "name": "FUN_c06f7474",
+      "body_addresses": 164,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f751c",
+      "name": "FUN_c06f751c",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7544",
+      "name": "FUN_c06f7544",
+      "body_addresses": 500,
+      "calls": [
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f5400",
+          "name": "FUN_c06f5400",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f774c",
+      "name": "FUN_c06f774c",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7774",
+      "name": "FUN_c06f7774",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "c06f6420",
+          "name": "FUN_c06f6420",
+          "external": false
+        },
+        {
+          "address": "c06f61b8",
+          "name": "FUN_c06f61b8",
+          "external": false
+        },
+        {
+          "address": "c06f60b8",
+          "name": "FUN_c06f60b8",
+          "external": false
+        },
+        {
+          "address": "c06f7fbc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c06f62e4",
+          "name": "FUN_c06f62e4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7894",
+      "name": "FUN_c06f7894",
+      "body_addresses": 440,
+      "calls": [
+        {
+          "address": "c06f6420",
+          "name": "FUN_c06f6420",
+          "external": false
+        },
+        {
+          "address": "c06f7ab8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f5504",
+          "name": "FUN_c06f5504",
+          "external": false
+        },
+        {
+          "address": "c06f55f4",
+          "name": "FUN_c06f55f4",
+          "external": false
+        },
+        {
+          "address": "c06f7aa8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7a88",
+          "name": "WRITE_PORT_UCHAR",
+          "external": false
+        },
+        {
+          "address": "c06f61b8",
+          "name": "FUN_c06f61b8",
+          "external": false
+        },
+        {
+          "address": "c06f60b8",
+          "name": "FUN_c06f60b8",
+          "external": false
+        },
+        {
+          "address": "c06f5400",
+          "name": "FUN_c06f5400",
+          "external": false
+        },
+        {
+          "address": "c06f62e4",
+          "name": "FUN_c06f62e4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7a50",
+      "name": "FUN_c06f7a50",
+      "body_addresses": 40,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7c38",
+      "name": "entry",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f7cac",
+          "name": "FUN_c06f7cac",
+          "external": false
+        },
+        {
+          "address": "c06f7f08",
+          "name": "FUN_c06f7f08",
+          "external": false
+        },
+        {
+          "address": "c06f1670",
+          "name": "FUN_c06f1670",
+          "external": false
+        },
+        {
+          "address": "c06f7f80",
+          "name": "FUN_c06f7f80",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7cac",
+      "name": "FUN_c06f7cac",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c06f800c",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7d20",
+      "name": "FUN_c06f7d20",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c06f7da0",
+          "name": "FUN_c06f7da0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7d74",
+      "name": "FUN_c06f7d74",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c06f7d20",
+          "name": "FUN_c06f7d20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7da0",
+      "name": "FUN_c06f7da0",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c06f801c",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7de8",
+      "name": "FUN_c06f7de8",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c06f803c",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "c06f7b38",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c06f802c",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c06f7af8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c06f7f2c",
+          "name": "FUN_c06f7f2c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7f08",
+      "name": "FUN_c06f7f08",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c06f7de8",
+          "name": "FUN_c06f7de8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7f2c",
+      "name": "FUN_c06f7f2c",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c06f7f80",
+      "name": "FUN_c06f7f80",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c06f7f2c",
+          "name": "FUN_c06f7f2c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

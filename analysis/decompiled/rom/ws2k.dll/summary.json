@@ -1,0 +1,7414 @@
+{
+  "program": "ws2k.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "dfd5f4494f0f2602158d682e85f1942fbb8d738022780c2e2d4492293af29c8e",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "_purecall"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EventModify"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__GetUserKData"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TlsCall"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TlsSetValue"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TlsGetValue"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedCompareExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_new"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_delete"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_isctype"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memmove"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_new[]"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "malloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "realloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_msize"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForMultipleObjects"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateFileW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeviceIoControl"
+    }
+  ],
+  "functions_attempted": 367,
+  "functions_decompiled": 367,
+  "functions": [
+    {
+      "address": "c04f10a4",
+      "name": "FUN_c04f10a4",
+      "body_addresses": 124,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1128",
+      "name": "__WSAFDIsSet",
+      "body_addresses": 72,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1170",
+      "name": "htons",
+      "body_addresses": 24,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1188",
+      "name": "htonl",
+      "body_addresses": 44,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f11b4",
+      "name": "inet_addr",
+      "body_addresses": 708,
+      "calls": [
+        {
+          "address": "c04fe5e8",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c04fe5d8",
+          "name": "_isctype",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1478",
+      "name": "freeaddrinfo",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c04fdf60",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1494",
+      "name": "FUN_c04f1494",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04fdf90",
+          "name": "TlsGetValue",
+          "external": false
+        },
+        {
+          "address": "c04fdf80",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c04fdf70",
+          "name": "TlsSetValue",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f14f0",
+      "name": "FUN_c04f14f0",
+      "body_addresses": 108,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f155c",
+      "name": "getprotobynumber",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1584",
+      "name": "getprotobyname",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f15ac",
+      "name": "getservbyport",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f15d4",
+      "name": "getservbyname",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f15fc",
+      "name": "inet_ntoa",
+      "body_addresses": 204,
+      "calls": [
+        {
+          "address": "c04f1494",
+          "name": "FUN_c04f1494",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f16c8",
+      "name": "WSAAsyncSelect",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f16f0",
+      "name": "WSACloseEvent",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1714",
+      "name": "WSACreateEvent",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CreateEventW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1744",
+      "name": "WSAGetLastError",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000d",
+          "name": "GetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1768",
+      "name": "WSAGetOverlappedResult",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1790",
+      "name": "WSAJoinLeaf",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f17b8",
+      "name": "WSAResetEvent",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c04fdf10",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f17d4",
+      "name": "WSASetEvent",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c04fdf10",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f17f0",
+      "name": "WSASetLastError",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1814",
+      "name": "WSASetServiceW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f183c",
+      "name": "WSAWaitForMultipleEvents",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "WaitForMultipleObjects",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1860",
+      "name": "FUN_c04f1860",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000f",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        },
+        {
+          "address": "c04fdf30",
+          "name": "TlsCall",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f18a8",
+      "name": "FUN_c04f18a8",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1910",
+      "name": "FUN_c04f1910",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000010",
+          "name": "DeviceIoControl",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000d",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fdfa0",
+          "name": "InterlockedCompareExchange",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "CreateFileW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1a28",
+      "name": "FUN_c04f1a28",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "c04fe5f8",
+          "name": "memmove",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe5a8",
+          "name": "operator_new",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1afc",
+      "name": "FUN_c04f1afc",
+      "body_addresses": 232,
+      "calls": [
+        {
+          "address": "c04fe5f8",
+          "name": "memmove",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe5a8",
+          "name": "operator_new",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1bfc",
+      "name": "FUN_c04f1bfc",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c04fe268",
+          "name": "FUN_c04fe268",
+          "external": false
+        },
+        {
+          "address": "c04fdf40",
+          "name": "InitializeCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1c5c",
+      "name": "FUN_c04f1c5c",
+      "body_addresses": 180,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1d10",
+      "name": "FUN_c04f1d10",
+      "body_addresses": 180,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1dc4",
+      "name": "FUN_c04f1dc4",
+      "body_addresses": 196,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1e88",
+      "name": "FUN_c04f1e88",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1ef0",
+      "name": "FUN_c04f1ef0",
+      "body_addresses": 180,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f1fa4",
+      "name": "FUN_c04f1fa4",
+      "body_addresses": 196,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2068",
+      "name": "FUN_c04f2068",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f20d0",
+      "name": "FUN_c04f20d0",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe5f8",
+          "name": "memmove",
+          "external": false
+        },
+        {
+          "address": "c04f1a28",
+          "name": "FUN_c04f1a28",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f216c",
+      "name": "FUN_c04f216c",
+      "body_addresses": 164,
+      "calls": [
+        {
+          "address": "c04fe5f8",
+          "name": "memmove",
+          "external": false
+        },
+        {
+          "address": "c04f1afc",
+          "name": "FUN_c04f1afc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2210",
+      "name": "FUN_c04f2210",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c04f216c",
+          "name": "FUN_c04f216c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2260",
+      "name": "FUN_c04f2260",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2308",
+      "name": "FUN_c04f2308",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f23b0",
+      "name": "FUN_c04f23b0",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2458",
+      "name": "FUN_c04f2458",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2500",
+      "name": "FUN_c04f2500",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2580",
+      "name": "FUN_c04f2580",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2600",
+      "name": "FUN_c04f2600",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2674",
+      "name": "FUN_c04f2674",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f271c",
+      "name": "FUN_c04f271c",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f27c4",
+      "name": "FUN_c04f27c4",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2844",
+      "name": "FUN_c04f2844",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f28c4",
+      "name": "FUN_c04f28c4",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f296c",
+      "name": "FUN_c04f296c",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c04fe618",
+          "name": "operator_new[]",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f29f4",
+      "name": "FUN_c04f29f4",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2a20",
+      "name": "FUN_c04f2a20",
+      "body_addresses": 148,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2ab4",
+      "name": "FUN_c04f2ab4",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c04f20d0",
+          "name": "FUN_c04f20d0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2b30",
+      "name": "FUN_c04f2b30",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f2ab4",
+          "name": "FUN_c04f2ab4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2b8c",
+      "name": "FUN_c04f2b8c",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c04f2210",
+          "name": "FUN_c04f2210",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2c38",
+      "name": "FUN_c04f2c38",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f28c4",
+          "name": "FUN_c04f28c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2cac",
+      "name": "FUN_c04f2cac",
+      "body_addresses": 148,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2d40",
+      "name": "FUN_c04f2d40",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2d94",
+      "name": "FUN_c04f2d94",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1ef0",
+          "name": "FUN_c04f1ef0",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2e1c",
+      "name": "FUN_c04f2e1c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2eb4",
+      "name": "FUN_c04f2eb4",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1ef0",
+          "name": "FUN_c04f1ef0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2f08",
+      "name": "FUN_c04f2f08",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f2f98",
+      "name": "FUN_c04f2f98",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3020",
+      "name": "FUN_c04f3020",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3074",
+      "name": "FUN_c04f3074",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1dc4",
+          "name": "FUN_c04f1dc4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f30c8",
+      "name": "FUN_c04f30c8",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04f2b30",
+          "name": "FUN_c04f2b30",
+          "external": false
+        },
+        {
+          "address": "c04f2500",
+          "name": "FUN_c04f2500",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3130",
+      "name": "FUN_c04f3130",
+      "body_addresses": 180,
+      "calls": [
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f2ab4",
+          "name": "FUN_c04f2ab4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f31e4",
+      "name": "FUN_c04f31e4",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3274",
+      "name": "FUN_c04f3274",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1e88",
+          "name": "FUN_c04f1e88",
+          "external": false
+        },
+        {
+          "address": "c04f1dc4",
+          "name": "FUN_c04f1dc4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f32e0",
+      "name": "FUN_c04f32e0",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3334",
+      "name": "FUN_c04f3334",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3388",
+      "name": "FUN_c04f3388",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04f2b8c",
+          "name": "FUN_c04f2b8c",
+          "external": false
+        },
+        {
+          "address": "c04f271c",
+          "name": "FUN_c04f271c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f33f0",
+      "name": "FUN_c04f33f0",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "c04f2210",
+          "name": "FUN_c04f2210",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f34fc",
+      "name": "FUN_c04f34fc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f2f98",
+          "name": "FUN_c04f2f98",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3584",
+      "name": "FUN_c04f3584",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f3020",
+          "name": "FUN_c04f3020",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f35d8",
+      "name": "FUN_c04f35d8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3670",
+      "name": "FUN_c04f3670",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f2e1c",
+          "name": "FUN_c04f2e1c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3700",
+      "name": "FUN_c04f3700",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3790",
+      "name": "FUN_c04f3790",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2f08",
+          "name": "FUN_c04f2f08",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3828",
+      "name": "FUN_c04f3828",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f38c0",
+      "name": "FUN_c04f38c0",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3950",
+      "name": "FUN_c04f3950",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f39e0",
+      "name": "FUN_c04f39e0",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2a20",
+          "name": "FUN_c04f2a20",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3a78",
+      "name": "FUN_c04f3a78",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3acc",
+      "name": "FUN_c04f3acc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3b54",
+      "name": "FUN_c04f3b54",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f3074",
+          "name": "FUN_c04f3074",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3bec",
+      "name": "FUN_c04f3bec",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c04f1e88",
+          "name": "FUN_c04f1e88",
+          "external": false
+        },
+        {
+          "address": "c04f1dc4",
+          "name": "FUN_c04f1dc4",
+          "external": false
+        },
+        {
+          "address": "c04f3274",
+          "name": "FUN_c04f3274",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3c58",
+      "name": "FUN_c04f3c58",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04f2674",
+          "name": "FUN_c04f2674",
+          "external": false
+        },
+        {
+          "address": "c04f2580",
+          "name": "FUN_c04f2580",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3cdc",
+      "name": "FUN_c04f3cdc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f1ef0",
+          "name": "FUN_c04f1ef0",
+          "external": false
+        },
+        {
+          "address": "c04f3334",
+          "name": "FUN_c04f3334",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3d64",
+      "name": "FUN_c04f3d64",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f34fc",
+          "name": "FUN_c04f34fc",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3dec",
+      "name": "FUN_c04f3dec",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f3584",
+          "name": "FUN_c04f3584",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3e40",
+      "name": "FUN_c04f3e40",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04f2580",
+          "name": "FUN_c04f2580",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3ec4",
+      "name": "FUN_c04f3ec4",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f39e0",
+          "name": "FUN_c04f39e0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3f54",
+      "name": "FUN_c04f3f54",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f3fb0",
+      "name": "FUN_c04f3fb0",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f3acc",
+          "name": "FUN_c04f3acc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4040",
+      "name": "FUN_c04f4040",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f3b54",
+          "name": "FUN_c04f3b54",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f40d0",
+      "name": "FUN_c04f40d0",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f31e4",
+          "name": "FUN_c04f31e4",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4124",
+      "name": "FUN_c04f4124",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f41bc",
+      "name": "FUN_c04f41bc",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2f98",
+          "name": "FUN_c04f2f98",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4254",
+      "name": "FUN_c04f4254",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c04f1e88",
+          "name": "FUN_c04f1e88",
+          "external": false
+        },
+        {
+          "address": "c04f3bec",
+          "name": "FUN_c04f3bec",
+          "external": false
+        },
+        {
+          "address": "c04f1dc4",
+          "name": "FUN_c04f1dc4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f42c0",
+      "name": "FUN_c04f42c0",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f3020",
+          "name": "FUN_c04f3020",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4314",
+      "name": "FUN_c04f4314",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f30c8",
+          "name": "FUN_c04f30c8",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4378",
+      "name": "FUN_c04f4378",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f2844",
+          "name": "FUN_c04f2844",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4400",
+      "name": "FUN_c04f4400",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4498",
+      "name": "FUN_c04f4498",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f44f4",
+      "name": "FUN_c04f44f4",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f2844",
+          "name": "FUN_c04f2844",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f457c",
+      "name": "FUN_c04f457c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f45f0",
+      "name": "FUN_c04f45f0",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f464c",
+      "name": "FUN_c04f464c",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f46a8",
+      "name": "FUN_c04f46a8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4740",
+      "name": "FUN_c04f4740",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f47d8",
+      "name": "FUN_c04f47d8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f2a20",
+          "name": "FUN_c04f2a20",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4870",
+      "name": "FUN_c04f4870",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f2600",
+          "name": "FUN_c04f2600",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f48d4",
+      "name": "FUN_c04f48d4",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f3334",
+          "name": "FUN_c04f3334",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4928",
+      "name": "FUN_c04f4928",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f499c",
+      "name": "FUN_c04f499c",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f2600",
+          "name": "FUN_c04f2600",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4a00",
+      "name": "FUN_c04f4a00",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4a88",
+      "name": "FUN_c04f4a88",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2f08",
+          "name": "FUN_c04f2f08",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4adc",
+      "name": "FUN_c04f4adc",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f30c8",
+          "name": "FUN_c04f30c8",
+          "external": false
+        },
+        {
+          "address": "c04f4314",
+          "name": "FUN_c04f4314",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4b40",
+      "name": "FUN_c04f4b40",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f3130",
+          "name": "FUN_c04f3130",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4ba8",
+      "name": "FUN_c04f4ba8",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4c30",
+      "name": "FUN_c04f4c30",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f2f08",
+          "name": "FUN_c04f2f08",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4c84",
+      "name": "FUN_c04f4c84",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f3d64",
+          "name": "FUN_c04f3d64",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4d0c",
+      "name": "FUN_c04f4d0c",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f3dec",
+          "name": "FUN_c04f3dec",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4d60",
+      "name": "FUN_c04f4d60",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f3388",
+          "name": "FUN_c04f3388",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4dc4",
+      "name": "FUN_c04f4dc4",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f46a8",
+          "name": "FUN_c04f46a8",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4e4c",
+      "name": "FUN_c04f4e4c",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        },
+        {
+          "address": "c04f4740",
+          "name": "FUN_c04f4740",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4ed4",
+      "name": "FUN_c04f4ed4",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f4f70",
+      "name": "FUN_c04f4f70",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f500c",
+      "name": "FUN_c04f500c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f3f54",
+          "name": "FUN_c04f3f54",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f50a8",
+      "name": "FUN_c04f50a8",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fe5a8",
+          "name": "operator_new",
+          "external": false
+        },
+        {
+          "address": "c04f296c",
+          "name": "FUN_c04f296c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5130",
+      "name": "FUN_c04f5130",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f4ed4",
+          "name": "FUN_c04f4ed4",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5238",
+      "name": "FUN_c04f5238",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        },
+        {
+          "address": "c04f4f70",
+          "name": "FUN_c04f4f70",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5350",
+      "name": "FUN_c04f5350",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f500c",
+          "name": "FUN_c04f500c",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f3f54",
+          "name": "FUN_c04f3f54",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5458",
+      "name": "FUN_c04f5458",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3e40",
+          "name": "FUN_c04f3e40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f54f0",
+      "name": "FUN_c04f54f0",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f41bc",
+          "name": "FUN_c04f41bc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5580",
+      "name": "FUN_c04f5580",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f4254",
+          "name": "FUN_c04f4254",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f55e4",
+      "name": "FUN_c04f55e4",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f32e0",
+          "name": "FUN_c04f32e0",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f567c",
+      "name": "FUN_c04f567c",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4314",
+          "name": "FUN_c04f4314",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5704",
+      "name": "FUN_c04f5704",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f3130",
+          "name": "FUN_c04f3130",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f57b4",
+      "name": "FUN_c04f57b4",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f4400",
+          "name": "FUN_c04f4400",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5828",
+      "name": "FUN_c04f5828",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4498",
+          "name": "FUN_c04f4498",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f589c",
+      "name": "FUN_c04f589c",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f457c",
+          "name": "FUN_c04f457c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5924",
+      "name": "FUN_c04f5924",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3f54",
+          "name": "FUN_c04f3f54",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f59bc",
+      "name": "FUN_c04f59bc",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f3f54",
+          "name": "FUN_c04f3f54",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5a18",
+      "name": "FUN_c04f5a18",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f45f0",
+          "name": "FUN_c04f45f0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5a8c",
+      "name": "FUN_c04f5a8c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f464c",
+          "name": "FUN_c04f464c",
+          "external": false
+        },
+        {
+          "address": "c04f2458",
+          "name": "FUN_c04f2458",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5b00",
+      "name": "FUN_c04f5b00",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f3c58",
+          "name": "FUN_c04f3c58",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5b5c",
+      "name": "FUN_c04f5b5c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f3c58",
+          "name": "FUN_c04f3c58",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5bf4",
+      "name": "FUN_c04f5bf4",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f3f54",
+          "name": "FUN_c04f3f54",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5c8c",
+      "name": "FUN_c04f5c8c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f3f54",
+          "name": "FUN_c04f3f54",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5d24",
+      "name": "FUN_c04f5d24",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4870",
+          "name": "FUN_c04f4870",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5dac",
+      "name": "FUN_c04f5dac",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c04f48d4",
+          "name": "FUN_c04f48d4",
+          "external": false
+        },
+        {
+          "address": "c04f2068",
+          "name": "FUN_c04f2068",
+          "external": false
+        },
+        {
+          "address": "c04f1fa4",
+          "name": "FUN_c04f1fa4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5e18",
+      "name": "FUN_c04f5e18",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f2600",
+          "name": "FUN_c04f2600",
+          "external": false
+        },
+        {
+          "address": "c04f499c",
+          "name": "FUN_c04f499c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5e7c",
+      "name": "FUN_c04f5e7c",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f3cdc",
+          "name": "FUN_c04f3cdc",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5f04",
+      "name": "FUN_c04f5f04",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f4a88",
+          "name": "FUN_c04f4a88",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f5f94",
+      "name": "FUN_c04f5f94",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4adc",
+          "name": "FUN_c04f4adc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f601c",
+      "name": "FUN_c04f601c",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f4b40",
+          "name": "FUN_c04f4b40",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6070",
+      "name": "FUN_c04f6070",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f4c30",
+          "name": "FUN_c04f4c30",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6108",
+      "name": "FUN_c04f6108",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f4c84",
+          "name": "FUN_c04f4c84",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6190",
+      "name": "FUN_c04f6190",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f4d0c",
+          "name": "FUN_c04f4d0c",
+          "external": false
+        },
+        {
+          "address": "c04f1d10",
+          "name": "FUN_c04f1d10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f61e4",
+      "name": "FUN_c04f61e4",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f4ba8",
+          "name": "FUN_c04f4ba8",
+          "external": false
+        },
+        {
+          "address": "c04f2844",
+          "name": "FUN_c04f2844",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f627c",
+      "name": "FUN_c04f627c",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f457c",
+          "name": "FUN_c04f457c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f62d8",
+      "name": "FUN_c04f62d8",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f457c",
+          "name": "FUN_c04f457c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6334",
+      "name": "FUN_c04f6334",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f4dc4",
+          "name": "FUN_c04f4dc4",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f63bc",
+      "name": "FUN_c04f63bc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        },
+        {
+          "address": "c04f4e4c",
+          "name": "FUN_c04f4e4c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6444",
+      "name": "FUN_c04f6444",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f5458",
+          "name": "FUN_c04f5458",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f64e0",
+      "name": "FUN_c04f64e0",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f4124",
+          "name": "FUN_c04f4124",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f657c",
+      "name": "FUN_c04f657c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f567c",
+          "name": "FUN_c04f567c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6618",
+      "name": "FUN_c04f6618",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f4378",
+          "name": "FUN_c04f4378",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f66b4",
+      "name": "FUN_c04f66b4",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f57b4",
+          "name": "FUN_c04f57b4",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6750",
+      "name": "FUN_c04f6750",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f5828",
+          "name": "FUN_c04f5828",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f67ec",
+      "name": "FUN_c04f67ec",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f44f4",
+          "name": "FUN_c04f44f4",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6888",
+      "name": "FUN_c04f6888",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f589c",
+          "name": "FUN_c04f589c",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6924",
+      "name": "FUN_c04f6924",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f5924",
+          "name": "FUN_c04f5924",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f69c0",
+      "name": "FUN_c04f69c0",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f59bc",
+          "name": "FUN_c04f59bc",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6a5c",
+      "name": "FUN_c04f6a5c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f5a18",
+          "name": "FUN_c04f5a18",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6af8",
+      "name": "FUN_c04f6af8",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f5a8c",
+          "name": "FUN_c04f5a8c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6b94",
+      "name": "FUN_c04f6b94",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f6444",
+          "name": "FUN_c04f6444",
+          "external": false
+        },
+        {
+          "address": "c04f5458",
+          "name": "FUN_c04f5458",
+          "external": false
+        },
+        {
+          "address": "c04f35d8",
+          "name": "FUN_c04f35d8",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6c9c",
+      "name": "FUN_c04f6c9c",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f64e0",
+          "name": "FUN_c04f64e0",
+          "external": false
+        },
+        {
+          "address": "c04f4124",
+          "name": "FUN_c04f4124",
+          "external": false
+        },
+        {
+          "address": "c04f2d40",
+          "name": "FUN_c04f2d40",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6db4",
+      "name": "FUN_c04f6db4",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f5704",
+          "name": "FUN_c04f5704",
+          "external": false
+        },
+        {
+          "address": "c04f567c",
+          "name": "FUN_c04f567c",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f657c",
+          "name": "FUN_c04f657c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6ebc",
+      "name": "FUN_c04f6ebc",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f6618",
+          "name": "FUN_c04f6618",
+          "external": false
+        },
+        {
+          "address": "c04f2d94",
+          "name": "FUN_c04f2d94",
+          "external": false
+        },
+        {
+          "address": "c04f4378",
+          "name": "FUN_c04f4378",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f6fd4",
+      "name": "FUN_c04f6fd4",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f3670",
+          "name": "FUN_c04f3670",
+          "external": false
+        },
+        {
+          "address": "c04f66b4",
+          "name": "FUN_c04f66b4",
+          "external": false
+        },
+        {
+          "address": "c04f57b4",
+          "name": "FUN_c04f57b4",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f70dc",
+      "name": "FUN_c04f70dc",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f5828",
+          "name": "FUN_c04f5828",
+          "external": false
+        },
+        {
+          "address": "c04f6750",
+          "name": "FUN_c04f6750",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f3700",
+          "name": "FUN_c04f3700",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f71e4",
+      "name": "FUN_c04f71e4",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f44f4",
+          "name": "FUN_c04f44f4",
+          "external": false
+        },
+        {
+          "address": "c04f2eb4",
+          "name": "FUN_c04f2eb4",
+          "external": false
+        },
+        {
+          "address": "c04f67ec",
+          "name": "FUN_c04f67ec",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f72fc",
+      "name": "FUN_c04f72fc",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f3790",
+          "name": "FUN_c04f3790",
+          "external": false
+        },
+        {
+          "address": "c04f6888",
+          "name": "FUN_c04f6888",
+          "external": false
+        },
+        {
+          "address": "c04f589c",
+          "name": "FUN_c04f589c",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7404",
+      "name": "FUN_c04f7404",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f6924",
+          "name": "FUN_c04f6924",
+          "external": false
+        },
+        {
+          "address": "c04f5924",
+          "name": "FUN_c04f5924",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f3828",
+          "name": "FUN_c04f3828",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f750c",
+      "name": "FUN_c04f750c",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f59bc",
+          "name": "FUN_c04f59bc",
+          "external": false
+        },
+        {
+          "address": "c04f69c0",
+          "name": "FUN_c04f69c0",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7614",
+      "name": "FUN_c04f7614",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f6a5c",
+          "name": "FUN_c04f6a5c",
+          "external": false
+        },
+        {
+          "address": "c04f38c0",
+          "name": "FUN_c04f38c0",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04f5a18",
+          "name": "FUN_c04f5a18",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f771c",
+      "name": "FUN_c04f771c",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f6af8",
+          "name": "FUN_c04f6af8",
+          "external": false
+        },
+        {
+          "address": "c04f3950",
+          "name": "FUN_c04f3950",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f5a8c",
+          "name": "FUN_c04f5a8c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7824",
+      "name": "FUN_c04f7824",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        },
+        {
+          "address": "c04f5b5c",
+          "name": "FUN_c04f5b5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7898",
+      "name": "FUN_c04f7898",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f46a8",
+          "name": "FUN_c04f46a8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f78f4",
+      "name": "FUN_c04f78f4",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f4740",
+          "name": "FUN_c04f4740",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7950",
+      "name": "FUN_c04f7950",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f5c8c",
+          "name": "FUN_c04f5c8c",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f79c4",
+      "name": "FUN_c04f79c4",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f5d24",
+          "name": "FUN_c04f5d24",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7a38",
+      "name": "FUN_c04f7a38",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f5dac",
+          "name": "FUN_c04f5dac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7ac8",
+      "name": "FUN_c04f7ac8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4928",
+          "name": "FUN_c04f4928",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7b60",
+      "name": "FUN_c04f7b60",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f7898",
+          "name": "FUN_c04f7898",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7be8",
+      "name": "FUN_c04f7be8",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f5e18",
+          "name": "FUN_c04f5e18",
+          "external": false
+        },
+        {
+          "address": "c04f2600",
+          "name": "FUN_c04f2600",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7c4c",
+      "name": "FUN_c04f7c4c",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f78f4",
+          "name": "FUN_c04f78f4",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7cd4",
+      "name": "FUN_c04f7cd4",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f4a00",
+          "name": "FUN_c04f4a00",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7d30",
+      "name": "FUN_c04f7d30",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f5f04",
+          "name": "FUN_c04f5f04",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7dc8",
+      "name": "FUN_c04f7dc8",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f5f94",
+          "name": "FUN_c04f5f94",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7e50",
+      "name": "FUN_c04f7e50",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04f601c",
+          "name": "FUN_c04f601c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7ee8",
+      "name": "FUN_c04f7ee8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f5b00",
+          "name": "FUN_c04f5b00",
+          "external": false
+        },
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f7f80",
+      "name": "FUN_c04f7f80",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f6070",
+          "name": "FUN_c04f6070",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8010",
+      "name": "FUN_c04f8010",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4ba8",
+          "name": "FUN_c04f4ba8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f80a8",
+      "name": "FUN_c04f80a8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f4d60",
+          "name": "FUN_c04f4d60",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8140",
+      "name": "FUN_c04f8140",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c04f33f0",
+          "name": "FUN_c04f33f0",
+          "external": false
+        },
+        {
+          "address": "c04f2cac",
+          "name": "FUN_c04f2cac",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f81ac",
+      "name": "FUN_c04f81ac",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f627c",
+          "name": "FUN_c04f627c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8234",
+      "name": "FUN_c04f8234",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f62d8",
+          "name": "FUN_c04f62d8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f82bc",
+      "name": "FUN_c04f82bc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f6334",
+          "name": "FUN_c04f6334",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8344",
+      "name": "FUN_c04f8344",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        },
+        {
+          "address": "c04f63bc",
+          "name": "FUN_c04f63bc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f83cc",
+      "name": "FUN_c04f83cc",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f5b00",
+          "name": "FUN_c04f5b00",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8468",
+      "name": "FUN_c04f8468",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f7824",
+          "name": "FUN_c04f7824",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8504",
+      "name": "FUN_c04f8504",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f7898",
+          "name": "FUN_c04f7898",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f85a0",
+      "name": "FUN_c04f85a0",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f78f4",
+          "name": "FUN_c04f78f4",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f863c",
+      "name": "FUN_c04f863c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f5bf4",
+          "name": "FUN_c04f5bf4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f86d8",
+      "name": "FUN_c04f86d8",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f7950",
+          "name": "FUN_c04f7950",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8774",
+      "name": "FUN_c04f8774",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f79c4",
+          "name": "FUN_c04f79c4",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8810",
+      "name": "WSACleanup",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f5130",
+          "name": "FUN_c04f5130",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8870",
+      "name": "closesocket",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04f5238",
+          "name": "FUN_c04f5238",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f88d8",
+      "name": "listen",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f5350",
+          "name": "FUN_c04f5350",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8944",
+      "name": "shutdown",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f5350",
+          "name": "FUN_c04f5350",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f89b0",
+      "name": "FUN_c04f89b0",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f5b00",
+          "name": "FUN_c04f5b00",
+          "external": false
+        },
+        {
+          "address": "c04f2a20",
+          "name": "FUN_c04f2a20",
+          "external": false
+        },
+        {
+          "address": "c04f83cc",
+          "name": "FUN_c04f83cc",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8ac8",
+      "name": "FUN_c04f8ac8",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f3ec4",
+          "name": "FUN_c04f3ec4",
+          "external": false
+        },
+        {
+          "address": "c04f7824",
+          "name": "FUN_c04f7824",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f8468",
+          "name": "FUN_c04f8468",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8bd0",
+      "name": "FUN_c04f8bd0",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f2f98",
+          "name": "FUN_c04f2f98",
+          "external": false
+        },
+        {
+          "address": "c04f7898",
+          "name": "FUN_c04f7898",
+          "external": false
+        },
+        {
+          "address": "c04f8504",
+          "name": "FUN_c04f8504",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8cd8",
+      "name": "FUN_c04f8cd8",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f3020",
+          "name": "FUN_c04f3020",
+          "external": false
+        },
+        {
+          "address": "c04f85a0",
+          "name": "FUN_c04f85a0",
+          "external": false
+        },
+        {
+          "address": "c04f78f4",
+          "name": "FUN_c04f78f4",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8de0",
+      "name": "FUN_c04f8de0",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f3a78",
+          "name": "FUN_c04f3a78",
+          "external": false
+        },
+        {
+          "address": "c04f863c",
+          "name": "FUN_c04f863c",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f5bf4",
+          "name": "FUN_c04f5bf4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f8ef8",
+      "name": "FUN_c04f8ef8",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f7950",
+          "name": "FUN_c04f7950",
+          "external": false
+        },
+        {
+          "address": "c04f86d8",
+          "name": "FUN_c04f86d8",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f3fb0",
+          "name": "FUN_c04f3fb0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9000",
+      "name": "FUN_c04f9000",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f4040",
+          "name": "FUN_c04f4040",
+          "external": false
+        },
+        {
+          "address": "c04f79c4",
+          "name": "FUN_c04f79c4",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f8774",
+          "name": "FUN_c04f8774",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9108",
+      "name": "FUN_c04f9108",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        },
+        {
+          "address": "c04f7b60",
+          "name": "FUN_c04f7b60",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f917c",
+      "name": "FUN_c04f917c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f2308",
+          "name": "FUN_c04f2308",
+          "external": false
+        },
+        {
+          "address": "c04f7be8",
+          "name": "FUN_c04f7be8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f91f0",
+      "name": "FUN_c04f91f0",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f7cd4",
+          "name": "FUN_c04f7cd4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9278",
+      "name": "FUN_c04f9278",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f7d30",
+          "name": "FUN_c04f7d30",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9308",
+      "name": "FUN_c04f9308",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f7dc8",
+          "name": "FUN_c04f7dc8",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f937c",
+      "name": "FUN_c04f937c",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f7e50",
+          "name": "FUN_c04f7e50",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f940c",
+      "name": "FUN_c04f940c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f7f80",
+          "name": "FUN_c04f7f80",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f94a4",
+      "name": "FUN_c04f94a4",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f6108",
+          "name": "FUN_c04f6108",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9534",
+      "name": "FUN_c04f9534",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f6190",
+          "name": "FUN_c04f6190",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f95c4",
+      "name": "FUN_c04f95c4",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f8010",
+          "name": "FUN_c04f8010",
+          "external": false
+        },
+        {
+          "address": "c04f2c38",
+          "name": "FUN_c04f2c38",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9628",
+      "name": "FUN_c04f9628",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f80a8",
+          "name": "FUN_c04f80a8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f96b0",
+      "name": "FUN_c04f96b0",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f8140",
+          "name": "FUN_c04f8140",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9748",
+      "name": "FUN_c04f9748",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f61e4",
+          "name": "FUN_c04f61e4",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f97e0",
+      "name": "FUN_c04f97e0",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f81ac",
+          "name": "FUN_c04f81ac",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9854",
+      "name": "FUN_c04f9854",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f8234",
+          "name": "FUN_c04f8234",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f98dc",
+      "name": "FUN_c04f98dc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f82bc",
+          "name": "FUN_c04f82bc",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9964",
+      "name": "FUN_c04f9964",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f8344",
+          "name": "FUN_c04f8344",
+          "external": false
+        },
+        {
+          "address": "c04f27c4",
+          "name": "FUN_c04f27c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f99ec",
+      "name": "FUN_c04f99ec",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f7ac8",
+          "name": "FUN_c04f7ac8",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9a88",
+      "name": "FUN_c04f9a88",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f9108",
+          "name": "FUN_c04f9108",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9b24",
+      "name": "FUN_c04f9b24",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f917c",
+          "name": "FUN_c04f917c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9bc0",
+      "name": "FUN_c04f9bc0",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f7c4c",
+          "name": "FUN_c04f7c4c",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9c5c",
+      "name": "FUN_c04f9c5c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f91f0",
+          "name": "FUN_c04f91f0",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9cf8",
+      "name": "WSAStartup",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04f6b94",
+          "name": "FUN_c04f6b94",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9d60",
+      "name": "connect",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f6c9c",
+          "name": "FUN_c04f6c9c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9de0",
+      "name": "gethostbyname",
+      "body_addresses": 196,
+      "calls": [
+        {
+          "address": "c04f1494",
+          "name": "FUN_c04f1494",
+          "external": false
+        },
+        {
+          "address": "c04f6db4",
+          "name": "FUN_c04f6db4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f14f0",
+          "name": "FUN_c04f14f0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9ea4",
+      "name": "gethostname",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f6ebc",
+          "name": "FUN_c04f6ebc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9f20",
+      "name": "getpeername",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04f6fd4",
+          "name": "FUN_c04f6fd4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04f9fa4",
+      "name": "getsockname",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04f6fd4",
+          "name": "FUN_c04f6fd4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa028",
+      "name": "ioctlsocket",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c04f70dc",
+          "name": "FUN_c04f70dc",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa0d0",
+      "name": "sethostname",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c04f71e4",
+          "name": "FUN_c04f71e4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa14c",
+      "name": "WSAConnect",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f9d60",
+          "name": "connect",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa1b0",
+      "name": "WSAEnumNameSpaceProvidersW",
+      "body_addresses": 196,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f72fc",
+          "name": "FUN_c04f72fc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa274",
+      "name": "WSAEnumNetworkEvents",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f7404",
+          "name": "FUN_c04f7404",
+          "external": false
+        },
+        {
+          "address": "c04fdf20",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa320",
+      "name": "WSAEventSelect",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f750c",
+          "name": "FUN_c04f750c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fdf20",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa3bc",
+      "name": "WSAHtonl",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f7614",
+          "name": "FUN_c04f7614",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa42c",
+      "name": "WSAHtons",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "c04f771c",
+          "name": "FUN_c04f771c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa49c",
+      "name": "WSANtohl",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f7614",
+          "name": "FUN_c04f7614",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa50c",
+      "name": "WSANtohs",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "c04f771c",
+          "name": "FUN_c04f771c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa57c",
+      "name": "FUN_c04fa57c",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f99ec",
+          "name": "FUN_c04f99ec",
+          "external": false
+        },
+        {
+          "address": "c04f7ac8",
+          "name": "FUN_c04f7ac8",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f40d0",
+          "name": "FUN_c04f40d0",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa694",
+      "name": "FUN_c04fa694",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f9108",
+          "name": "FUN_c04f9108",
+          "external": false
+        },
+        {
+          "address": "c04f54f0",
+          "name": "FUN_c04f54f0",
+          "external": false
+        },
+        {
+          "address": "c04f9a88",
+          "name": "FUN_c04f9a88",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa79c",
+      "name": "FUN_c04fa79c",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f9b24",
+          "name": "FUN_c04f9b24",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f917c",
+          "name": "FUN_c04f917c",
+          "external": false
+        },
+        {
+          "address": "c04f5580",
+          "name": "FUN_c04f5580",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa8a4",
+      "name": "FUN_c04fa8a4",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f7c4c",
+          "name": "FUN_c04f7c4c",
+          "external": false
+        },
+        {
+          "address": "c04f9bc0",
+          "name": "FUN_c04f9bc0",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04f42c0",
+          "name": "FUN_c04f42c0",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fa9bc",
+      "name": "FUN_c04fa9bc",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f91f0",
+          "name": "FUN_c04f91f0",
+          "external": false
+        },
+        {
+          "address": "c04f9c5c",
+          "name": "FUN_c04f9c5c",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04f55e4",
+          "name": "FUN_c04f55e4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04faac4",
+      "name": "FUN_c04faac4",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f7ee8",
+          "name": "FUN_c04f7ee8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fab20",
+      "name": "FUN_c04fab20",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f94a4",
+          "name": "FUN_c04f94a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fabb0",
+      "name": "FUN_c04fabb0",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f95c4",
+          "name": "FUN_c04f95c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fac24",
+      "name": "FUN_c04fac24",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f9628",
+          "name": "FUN_c04f9628",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fac98",
+      "name": "FUN_c04fac98",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04f96b0",
+          "name": "FUN_c04f96b0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fad28",
+      "name": "FUN_c04fad28",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04fab20",
+          "name": "FUN_c04fab20",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        },
+        {
+          "address": "c04fe608",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fadc0",
+      "name": "FUN_c04fadc0",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04f9534",
+          "name": "FUN_c04f9534",
+          "external": false
+        },
+        {
+          "address": "c04f1c5c",
+          "name": "FUN_c04f1c5c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fae14",
+      "name": "FUN_c04fae14",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f97e0",
+          "name": "FUN_c04f97e0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fae9c",
+      "name": "FUN_c04fae9c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f9854",
+          "name": "FUN_c04f9854",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04faf10",
+      "name": "FUN_c04faf10",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04f9308",
+          "name": "FUN_c04f9308",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fafac",
+      "name": "FUN_c04fafac",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04faac4",
+          "name": "FUN_c04faac4",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb048",
+      "name": "FUN_c04fb048",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fabb0",
+          "name": "FUN_c04fabb0",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb0e4",
+      "name": "FUN_c04fb0e4",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04fac24",
+          "name": "FUN_c04fac24",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb180",
+      "name": "socket",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f89b0",
+          "name": "FUN_c04f89b0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb1f4",
+      "name": "accept",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f8ac8",
+          "name": "FUN_c04f8ac8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb288",
+      "name": "recv",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04f8bd0",
+          "name": "FUN_c04f8bd0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb2f0",
+      "name": "send",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c04f8cd8",
+          "name": "FUN_c04f8cd8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb354",
+      "name": "setsockopt",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c04f8de0",
+          "name": "FUN_c04f8de0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb3c0",
+      "name": "getsockopt",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f8ef8",
+          "name": "FUN_c04f8ef8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb450",
+      "name": "WSAAccept",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "c04fb1f4",
+          "name": "accept",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb490",
+      "name": "WSAEnumProtocolsW",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04f9000",
+          "name": "FUN_c04f9000",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb54c",
+      "name": "FUN_c04fb54c",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f9308",
+          "name": "FUN_c04f9308",
+          "external": false
+        },
+        {
+          "address": "c04f937c",
+          "name": "FUN_c04f937c",
+          "external": false
+        },
+        {
+          "address": "c04faf10",
+          "name": "FUN_c04faf10",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb664",
+      "name": "FUN_c04fb664",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fafac",
+          "name": "FUN_c04fafac",
+          "external": false
+        },
+        {
+          "address": "c04f47d8",
+          "name": "FUN_c04f47d8",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04faac4",
+          "name": "FUN_c04faac4",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb76c",
+      "name": "FUN_c04fb76c",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fabb0",
+          "name": "FUN_c04fabb0",
+          "external": false
+        },
+        {
+          "address": "c04f7a38",
+          "name": "FUN_c04f7a38",
+          "external": false
+        },
+        {
+          "address": "c04fb048",
+          "name": "FUN_c04fb048",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb874",
+      "name": "FUN_c04fb874",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fb0e4",
+          "name": "FUN_c04fb0e4",
+          "external": false
+        },
+        {
+          "address": "c04fac98",
+          "name": "FUN_c04fac98",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fac24",
+          "name": "FUN_c04fac24",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb97c",
+      "name": "FUN_c04fb97c",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c04f9748",
+          "name": "FUN_c04f9748",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fb9d8",
+      "name": "FUN_c04fb9d8",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c04fad28",
+          "name": "FUN_c04fad28",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fba68",
+      "name": "FUN_c04fba68",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04fae14",
+          "name": "FUN_c04fae14",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbadc",
+      "name": "FUN_c04fbadc",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04fae9c",
+          "name": "FUN_c04fae9c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbb64",
+      "name": "FUN_c04fbb64",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f98dc",
+          "name": "FUN_c04f98dc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbbe8",
+      "name": "FUN_c04fbbe8",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04f9964",
+          "name": "FUN_c04f9964",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbc6c",
+      "name": "FUN_c04fbc6c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fb97c",
+          "name": "FUN_c04fb97c",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbd08",
+      "name": "FUN_c04fbd08",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04fba68",
+          "name": "FUN_c04fba68",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbda4",
+      "name": "bind",
+      "body_addresses": 164,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fa57c",
+          "name": "FUN_c04fa57c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbe48",
+      "name": "recvfrom",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "c04fa694",
+          "name": "FUN_c04fa694",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbedc",
+      "name": "select",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "c04fa79c",
+          "name": "FUN_c04fa79c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fbfb0",
+      "name": "sendto",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c04fa8a4",
+          "name": "FUN_c04fa8a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc034",
+      "name": "gethostbyaddr",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "c04f1494",
+          "name": "FUN_c04f1494",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fa9bc",
+          "name": "FUN_c04fa9bc",
+          "external": false
+        },
+        {
+          "address": "c04f14f0",
+          "name": "FUN_c04f14f0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc128",
+      "name": "FUN_c04fc128",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c04fb76c",
+          "name": "FUN_c04fb76c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc190",
+      "name": "FUN_c04fc190",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fb97c",
+          "name": "FUN_c04fb97c",
+          "external": false
+        },
+        {
+          "address": "c04fbc6c",
+          "name": "FUN_c04fbc6c",
+          "external": false
+        },
+        {
+          "address": "c04f5e7c",
+          "name": "FUN_c04f5e7c",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc298",
+      "name": "FUN_c04fc298",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04f9278",
+          "name": "FUN_c04f9278",
+          "external": false
+        },
+        {
+          "address": "c04fbd08",
+          "name": "FUN_c04fbd08",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fba68",
+          "name": "FUN_c04fba68",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc3a0",
+      "name": "FUN_c04fc3a0",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04fbb64",
+          "name": "FUN_c04fbb64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc414",
+      "name": "FUN_c04fc414",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04fc3a0",
+          "name": "FUN_c04fc3a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc49c",
+      "name": "FUN_c04fc49c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04f23b0",
+          "name": "FUN_c04f23b0",
+          "external": false
+        },
+        {
+          "address": "c04fbbe8",
+          "name": "FUN_c04fbbe8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc534",
+      "name": "FUN_c04fc534",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fbadc",
+          "name": "FUN_c04fbadc",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc5d0",
+      "name": "FUN_c04fc5d0",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fc3a0",
+          "name": "FUN_c04fc3a0",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc66c",
+      "name": "FUN_c04fc66c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04fbbe8",
+          "name": "FUN_c04fbbe8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc708",
+      "name": "getaddrinfo",
+      "body_addresses": 284,
+      "calls": [
+        {
+          "address": "c04fb54c",
+          "name": "FUN_c04fb54c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fdf80",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c04fdf60",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc824",
+      "name": "WSASocketW",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04fb664",
+          "name": "FUN_c04fb664",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc898",
+      "name": "WSAAddressToStringW",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fc128",
+          "name": "FUN_c04fc128",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc934",
+      "name": "WSAStringToAddressW",
+      "body_addresses": 160,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fb874",
+          "name": "FUN_c04fb874",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fc9d4",
+      "name": "FUN_c04fc9d4",
+      "body_addresses": 120,
+      "calls": [
+        {
+          "address": "c04fc190",
+          "name": "FUN_c04fc190",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fca4c",
+      "name": "FUN_c04fca4c",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "c04fc298",
+          "name": "FUN_c04fc298",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fcabc",
+      "name": "FUN_c04fcabc",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f940c",
+          "name": "FUN_c04f940c",
+          "external": false
+        },
+        {
+          "address": "c04fc534",
+          "name": "FUN_c04fc534",
+          "external": false
+        },
+        {
+          "address": "c04fbadc",
+          "name": "FUN_c04fbadc",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fcbd4",
+      "name": "FUN_c04fcbd4",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fc5d0",
+          "name": "FUN_c04fc5d0",
+          "external": false
+        },
+        {
+          "address": "c04fc3a0",
+          "name": "FUN_c04fc3a0",
+          "external": false
+        },
+        {
+          "address": "c04fab20",
+          "name": "FUN_c04fab20",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fccdc",
+      "name": "FUN_c04fccdc",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04f9534",
+          "name": "FUN_c04f9534",
+          "external": false
+        },
+        {
+          "address": "c04fc66c",
+          "name": "FUN_c04fc66c",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        },
+        {
+          "address": "c04fbbe8",
+          "name": "FUN_c04fbbe8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fcdf4",
+      "name": "FUN_c04fcdf4",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04fc414",
+          "name": "FUN_c04fc414",
+          "external": false
+        },
+        {
+          "address": "c04f2260",
+          "name": "FUN_c04f2260",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fce68",
+      "name": "FUN_c04fce68",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fcdf4",
+          "name": "FUN_c04fcdf4",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fcf04",
+      "name": "FUN_c04fcf04",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c04fc49c",
+          "name": "FUN_c04fc49c",
+          "external": false
+        },
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fcfa0",
+      "name": "getnameinfo",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c04fc9d4",
+          "name": "FUN_c04fc9d4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd04c",
+      "name": "WSAControl",
+      "body_addresses": 300,
+      "calls": [
+        {
+          "address": "c04fca4c",
+          "name": "FUN_c04fca4c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd178",
+      "name": "FUN_c04fd178",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c04fcabc",
+          "name": "FUN_c04fcabc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd1f8",
+      "name": "FUN_c04fd1f8",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04fcbd4",
+          "name": "FUN_c04fcbd4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd290",
+      "name": "FUN_c04fd290",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c04fccdc",
+          "name": "FUN_c04fccdc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd328",
+      "name": "FUN_c04fd328",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "c04fce68",
+          "name": "FUN_c04fce68",
+          "external": false
+        },
+        {
+          "address": "c04fb9d8",
+          "name": "FUN_c04fb9d8",
+          "external": false
+        },
+        {
+          "address": "c04fcdf4",
+          "name": "FUN_c04fcdf4",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd430",
+      "name": "FUN_c04fd430",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c04fc49c",
+          "name": "FUN_c04fc49c",
+          "external": false
+        },
+        {
+          "address": "c04fadc0",
+          "name": "FUN_c04fadc0",
+          "external": false
+        },
+        {
+          "address": "c04f50a8",
+          "name": "FUN_c04f50a8",
+          "external": false
+        },
+        {
+          "address": "c04fe5b8",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c04fcf04",
+          "name": "FUN_c04fcf04",
+          "external": false
+        },
+        {
+          "address": "c04f10a4",
+          "name": "FUN_c04f10a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd548",
+      "name": "WSAIoctl",
+      "body_addresses": 352,
+      "calls": [
+        {
+          "address": "c04fd178",
+          "name": "FUN_c04fd178",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fdf20",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd6a8",
+      "name": "WSARecv",
+      "body_addresses": 416,
+      "calls": [
+        {
+          "address": "c04fd1f8",
+          "name": "FUN_c04fd1f8",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fe5e8",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd848",
+      "name": "WSASend",
+      "body_addresses": 416,
+      "calls": [
+        {
+          "address": "c04fd290",
+          "name": "FUN_c04fd290",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fe5e8",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fd9e8",
+      "name": "FUN_c04fd9e8",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "c04fd328",
+          "name": "FUN_c04fd328",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fda98",
+      "name": "FUN_c04fda98",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "c04fd430",
+          "name": "FUN_c04fd430",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fdb48",
+      "name": "WSARecvFrom",
+      "body_addresses": 496,
+      "calls": [
+        {
+          "address": "c04fd9e8",
+          "name": "FUN_c04fd9e8",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fe5e8",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fdd38",
+      "name": "WSASendTo",
+      "body_addresses": 472,
+      "calls": [
+        {
+          "address": "c04fda98",
+          "name": "FUN_c04fda98",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c04fe5e8",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fdfb0",
+      "name": "entry",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04fe4f4",
+          "name": "FUN_c04fe4f4",
+          "external": false
+        },
+        {
+          "address": "c04fe298",
+          "name": "FUN_c04fe298",
+          "external": false
+        },
+        {
+          "address": "c04fe56c",
+          "name": "FUN_c04fe56c",
+          "external": false
+        },
+        {
+          "address": "c04f1860",
+          "name": "FUN_c04f1860",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe024",
+      "name": "FUN_c04fe024",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "c04fe658",
+          "name": "_msize",
+          "external": false
+        },
+        {
+          "address": "c04fe638",
+          "name": "malloc",
+          "external": false
+        },
+        {
+          "address": "c04fe648",
+          "name": "realloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe130",
+      "name": "FUN_c04fe130",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "c04fdfa0",
+          "name": "InterlockedCompareExchange",
+          "external": false
+        },
+        {
+          "address": "c04fdf40",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c04fe698",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c04fdf50",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c04fe638",
+          "name": "malloc",
+          "external": false
+        },
+        {
+          "address": "c04fe628",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c04fe024",
+          "name": "FUN_c04fe024",
+          "external": false
+        },
+        {
+          "address": "c04fe21c",
+          "name": "FUN_c04fe21c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe21c",
+      "name": "FUN_c04fe21c",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c04fe6a8",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe268",
+      "name": "FUN_c04fe268",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "c04fe130",
+          "name": "FUN_c04fe130",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe298",
+      "name": "FUN_c04fe298",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c04fe678",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe30c",
+      "name": "FUN_c04fe30c",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c04fe38c",
+          "name": "FUN_c04fe38c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe360",
+      "name": "FUN_c04fe360",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c04fe30c",
+          "name": "FUN_c04fe30c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe38c",
+      "name": "FUN_c04fe38c",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c04fe688",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe3d4",
+      "name": "FUN_c04fe3d4",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c04fe6c8",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "c04fe6b8",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c04fdf50",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c04fe628",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c04fe518",
+          "name": "FUN_c04fe518",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe4f4",
+      "name": "FUN_c04fe4f4",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c04fe3d4",
+          "name": "FUN_c04fe3d4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe518",
+      "name": "FUN_c04fe518",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe56c",
+      "name": "FUN_c04fe56c",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c04fe518",
+          "name": "FUN_c04fe518",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe6d8",
+      "name": "FUN_c04fe6d8",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c04fe268",
+          "name": "FUN_c04fe268",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe6f8",
+      "name": "FUN_c04fe6f8",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c04f1bfc",
+          "name": "FUN_c04f1bfc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe714",
+      "name": "FUN_c04fe714",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c04fdf50",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c04fe734",
+      "name": "FUN_c04fe734",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c04f18a8",
+          "name": "FUN_c04f18a8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

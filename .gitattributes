@@ -1,3 +1,14 @@
-# Preserve byte-exact hashes for the exported build evidence and source snapshot.
-Upgrade_706MAX04_MAXmade/*.json -text whitespace=cr-at-eol linguist-generated=true
-Upgrade_706MAX04_MAXmade/build-sources/* -text whitespace=cr-at-eol linguist-generated=true
+# Preserve byte-exact source and evidence pins across Windows/Linux checkouts.
+tools/** -text whitespace=cr-at-eol
+analysis/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol linguist-generated=true
+analysis/firmware/rl78-local-decoder.patch whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab,cr-at-eol
+# These historical patch sources are pinned by completed evidence; retain their bytes.
+tools/build_bt_startup_audio_development_v2.py whitespace=-blank-at-eof,cr-at-eol
+tools/patch_usb_reliability.py whitespace=-blank-at-eol,cr-at-eol
+releases/**/*.json -text whitespace=cr-at-eol linguist-generated=true
+releases/**/build-sources/** -text whitespace=cr-at-eol linguist-generated=true
+src/**/*.json -text whitespace=cr-at-eol
+src/ui/** binary
+assets/**/*.jpg binary
+assets/**/*.png binary
+docs/publication-manifest.json -text whitespace=cr-at-eol linguist-generated=true

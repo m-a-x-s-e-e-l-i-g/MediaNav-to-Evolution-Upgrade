@@ -1,0 +1,1019 @@
+{
+  "program": "shcore.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "d9bad32ba9c73c3e484f51478ed09a8170c2ba41423726f0437e2dae78d6ee8b",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCchCopyW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CharNextW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CharPrevW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCchCopyNW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CharUpperBuffW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CharLowerW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CharUpperW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCchPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCchCatW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ReleaseDC"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetTextExtentExPointW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetDC"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcschr"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcslen"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_wcsicmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcsncpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscat"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_wcsnicmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetFileAttributesW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "lstrcmpW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegOpenKeyExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegQueryValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCloseKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "lstrcmpiW"
+    },
+    {
+      "library": "OLE32.DLL",
+      "label": "CLSIDFromString"
+    }
+  ],
+  "functions_attempted": 45,
+  "functions_decompiled": 45,
+  "functions": [
+    {
+      "address": "405d10fc",
+      "name": "FUN_405d10fc",
+      "body_addresses": 216,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "405d11d4",
+      "name": "PathIsValidFileName",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "405d10fc",
+          "name": "FUN_405d10fc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d122c",
+      "name": "PathIsValidPath",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "405d10fc",
+          "name": "FUN_405d10fc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1284",
+      "name": "PathIsRemovableDevice",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "405d2be8",
+          "name": "StringCchCopyW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "GetFileAttributesW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d135c",
+      "name": "PathRemoveBlanksW",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        },
+        {
+          "address": "405d303c",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1404",
+      "name": "PathRemoveTrailingSlashes",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000004",
+          "name": "lstrcmpW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1498",
+      "name": "PathGetArgsW",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1528",
+      "name": "PathRemoveArgsW",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "405d1498",
+          "name": "PathGetArgsW",
+          "external": false
+        },
+        {
+          "address": "405d2c08",
+          "name": "CharPrevW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d158c",
+      "name": "PathRemoveQuotesAndArgs",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        },
+        {
+          "address": "405d1528",
+          "name": "PathRemoveArgsW",
+          "external": false
+        },
+        {
+          "address": "405d303c",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1618",
+      "name": "PathRemoveQuotes",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        },
+        {
+          "address": "405d303c",
+          "name": "wcscpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d16a8",
+      "name": "PathFindExtensionW",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1728",
+      "name": "PathFindFileNameW",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d17b4",
+      "name": "PathStripPathW",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "405d303c",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "405d1728",
+          "name": "PathFindFileNameW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d17f0",
+      "name": "PathCompactSlashes",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "405d304c",
+          "name": "wcslen",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1888",
+      "name": "PathIsDirectoryW",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "GetFileAttributesW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d18d0",
+      "name": "PathGetAssociation",
+      "body_addresses": 440,
+      "calls": [
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "405d303c",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "RegOpenKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1a88",
+      "name": "PathIsGUID",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "CLSIDFromString",
+          "external": true
+        },
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1ad0",
+      "name": "PathIsURLW",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "405d2c18",
+          "name": "StringCchCopyNW",
+          "external": false
+        },
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "RegOpenKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "405d302c",
+          "name": "wcschr",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1bc0",
+      "name": "FUN_405d1bc0",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "405d304c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "405d305c",
+          "name": "_wcsicmp",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1c54",
+      "name": "PathIsExe",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "405d1bc0",
+          "name": "FUN_405d1bc0",
+          "external": false
+        },
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1c88",
+      "name": "PathIsLink",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "405d305c",
+          "name": "_wcsicmp",
+          "external": false
+        },
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1cd0",
+      "name": "PathIsExtension",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "405d305c",
+          "name": "_wcsicmp",
+          "external": false
+        },
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1d28",
+      "name": "PathMakePrettyW",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "405d2c38",
+          "name": "CharLowerW",
+          "external": false
+        },
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        },
+        {
+          "address": "405d2c28",
+          "name": "CharUpperBuffW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1db0",
+      "name": "PathFileExistsW",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "GetFileAttributesW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1df0",
+      "name": "PathRemoveExtensionW",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d1e1c",
+      "name": "PathRemoveFileSpecW",
+      "body_addresses": 76,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "405d1e68",
+      "name": "FUN_405d1e68",
+      "body_addresses": 516,
+      "calls": [
+        {
+          "address": "405d2c48",
+          "name": "CharUpperW",
+          "external": false
+        },
+        {
+          "address": "405d1e68",
+          "name": "FUN_405d1e68",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d206c",
+      "name": "PathMatchSpecW",
+      "body_addresses": 160,
+      "calls": [
+        {
+          "address": "405d1e68",
+          "name": "FUN_405d1e68",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d210c",
+      "name": "FUN_405d210c",
+      "body_addresses": 252,
+      "calls": [
+        {
+          "address": "405d2bf8",
+          "name": "CharNextW",
+          "external": false
+        },
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        },
+        {
+          "address": "405d302c",
+          "name": "wcschr",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2208",
+      "name": "PathMakeUniqueNameEx",
+      "body_addresses": 972,
+      "calls": [
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "405d1e1c",
+          "name": "PathRemoveFileSpecW",
+          "external": false
+        },
+        {
+          "address": "405d2c58",
+          "name": "StringCchPrintfW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000d",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "405d2c68",
+          "name": "StringCchCatW",
+          "external": false
+        },
+        {
+          "address": "405d304c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "405d2be8",
+          "name": "StringCchCopyW",
+          "external": false
+        },
+        {
+          "address": "405d210c",
+          "name": "FUN_405d210c",
+          "external": false
+        },
+        {
+          "address": "405d1728",
+          "name": "PathFindFileNameW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "GetFileAttributesW",
+          "external": true
+        },
+        {
+          "address": "405d16a8",
+          "name": "PathFindExtensionW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d25d4",
+      "name": "PathFindRootDevice",
+      "body_addresses": 196,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "405d2698",
+      "name": "PathIsSameDevice",
+      "body_addresses": 396,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000010",
+          "name": "lstrcmpiW",
+          "external": true
+        },
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "405d306c",
+          "name": "wcsncpy",
+          "external": false
+        },
+        {
+          "address": "405d25d4",
+          "name": "PathFindRootDevice",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "GetFileAttributesW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2824",
+      "name": "PathCompactPathW",
+      "body_addresses": 756,
+      "calls": [
+        {
+          "address": "405d2c78",
+          "name": "ReleaseDC",
+          "external": false
+        },
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "405d2c98",
+          "name": "GetDC",
+          "external": false
+        },
+        {
+          "address": "405d2c08",
+          "name": "CharPrevW",
+          "external": false
+        },
+        {
+          "address": "405d304c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "405d303c",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "405d306c",
+          "name": "wcsncpy",
+          "external": false
+        },
+        {
+          "address": "405d307c",
+          "name": "wcscat",
+          "external": false
+        },
+        {
+          "address": "405d2c88",
+          "name": "GetTextExtentExPointW",
+          "external": false
+        },
+        {
+          "address": "405d1728",
+          "name": "PathFindFileNameW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2b18",
+      "name": "PathIsDatabase",
+      "body_addresses": 164,
+      "calls": [
+        {
+          "address": "405d309c",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "405d308c",
+          "name": "_wcsnicmp",
+          "external": false
+        },
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        },
+        {
+          "address": "405d304c",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "GetFileAttributesW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2bbc",
+      "name": "PathMakeUniqueName",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "405d2208",
+          "name": "PathMakeUniqueNameEx",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2ca8",
+      "name": "entry",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "405d2d1c",
+          "name": "FUN_405d2d1c",
+          "external": false
+        },
+        {
+          "address": "405d2f78",
+          "name": "FUN_405d2f78",
+          "external": false
+        },
+        {
+          "address": "405d2ff0",
+          "name": "FUN_405d2ff0",
+          "external": false
+        },
+        {
+          "address": "405d30dc",
+          "name": "FUN_405d30dc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2d1c",
+      "name": "FUN_405d2d1c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "405d30ac",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2d90",
+      "name": "FUN_405d2d90",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "405d2e10",
+          "name": "FUN_405d2e10",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2de4",
+      "name": "FUN_405d2de4",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "405d2d90",
+          "name": "FUN_405d2d90",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2e10",
+      "name": "FUN_405d2e10",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "405d30bc",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2e58",
+      "name": "FUN_405d2e58",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "405d2f9c",
+          "name": "FUN_405d2f9c",
+          "external": false
+        },
+        {
+          "address": "405d3108",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "405d3118",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "405d30f8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "405d30cc",
+          "name": "free",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2f78",
+      "name": "FUN_405d2f78",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "405d2e58",
+          "name": "FUN_405d2e58",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d2f9c",
+      "name": "FUN_405d2f9c",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "405d2ff0",
+      "name": "FUN_405d2ff0",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "405d2f9c",
+          "name": "FUN_405d2f9c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "405d30dc",
+      "name": "FUN_405d30dc",
+      "body_addresses": 28,
+      "calls": [],
+      "decompiled": true
+    }
+  ]
+}

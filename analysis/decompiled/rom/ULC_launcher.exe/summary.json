@@ -1,0 +1,352 @@
+{
+  "program": "ULC_launcher.exe",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "b5994d5a4e44964b4aaff75f75e3ded40bde2aca793562f31225637ada6cc95e",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateProcessW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "NKDbgPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateFileW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeviceIoControl"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    }
+  ],
+  "functions_attempted": 15,
+  "functions_decompiled": 15,
+  "functions": [
+    {
+      "address": "00011268",
+      "name": "FUN_00011268",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "CreateFileW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000112d8",
+      "name": "FUN_000112d8",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "0001150c",
+          "name": "CreateProcessW",
+          "external": false
+        },
+        {
+          "address": "00011934",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "0001134c",
+      "name": "FUN_0001134c",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000004",
+          "name": "DeviceIoControl",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "CreateFileW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000113f4",
+      "name": "FUN_000113f4",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "00011268",
+          "name": "FUN_00011268",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "000112d8",
+          "name": "FUN_000112d8",
+          "external": false
+        },
+        {
+          "address": "0001134c",
+          "name": "FUN_0001134c",
+          "external": false
+        },
+        {
+          "address": "0001151c",
+          "name": "NKDbgPrintfW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000114e0",
+      "name": "FUN_000114e0",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "000113f4",
+          "name": "FUN_000113f4",
+          "external": false
+        },
+        {
+          "address": "0001151c",
+          "name": "NKDbgPrintfW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "0001152c",
+      "name": "FUN_0001152c",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "00011858",
+          "name": "FUN_00011858",
+          "external": false
+        },
+        {
+          "address": "000114e0",
+          "name": "FUN_000114e0",
+          "external": false
+        },
+        {
+          "address": "00011838",
+          "name": "FUN_00011838",
+          "external": false
+        },
+        {
+          "address": "000118f8",
+          "name": "FUN_000118f8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000115c0",
+      "name": "FUN_000115c0",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "00011944",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011600",
+      "name": "entry",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "0001152c",
+          "name": "FUN_0001152c",
+          "external": false
+        },
+        {
+          "address": "0001165c",
+          "name": "FUN_0001165c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "0001165c",
+      "name": "FUN_0001165c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "00011964",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000116d0",
+      "name": "FUN_000116d0",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "00011974",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011718",
+      "name": "FUN_00011718",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "00011984",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "000119b4",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "00011994",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "000118a4",
+          "name": "FUN_000118a4",
+          "external": false
+        },
+        {
+          "address": "000119a4",
+          "name": "InterlockedExchange",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011838",
+      "name": "FUN_00011838",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "00011718",
+          "name": "FUN_00011718",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011858",
+      "name": "FUN_00011858",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "000119b4",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "000118a4",
+          "name": "FUN_000118a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000118a4",
+      "name": "FUN_000118a4",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "000118f8",
+      "name": "FUN_000118f8",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "000118a4",
+          "name": "FUN_000118a4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

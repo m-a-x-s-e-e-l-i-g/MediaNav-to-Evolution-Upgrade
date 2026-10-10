@@ -1,0 +1,246 @@
+{
+  "program": "camera.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "5971cdeb8ed54f413a21d88f8b15c69dbe56af40f512284603ea4c471695aaa2",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmUnmapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptDisconnect"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptConnect"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmMapIoSpace"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDisable"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDone"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "NKDbgPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptInitialize"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    }
+  ],
+  "functions_attempted": 8,
+  "functions_decompiled": 8,
+  "functions": [
+    {
+      "address": "c0972cd0",
+      "name": "FUN_c0972cd0",
+      "body_addresses": 424,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "Sleep",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0972e78",
+      "name": "CAM_Deinit",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c09734a0",
+          "name": "InterruptDisable",
+          "external": false
+        },
+        {
+          "address": "c0973460",
+          "name": "InterruptDisconnect",
+          "external": false
+        },
+        {
+          "address": "c0973490",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0973450",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0972f10",
+      "name": "CAM_Open",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0972f18",
+      "name": "CAM_Close",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0972f20",
+      "name": "CAM_PowerUp",
+      "body_addresses": 24,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0972f38",
+      "name": "CAM_PowerDown",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0972f4c",
+      "name": "CAM_IOControl",
+      "body_addresses": 1040,
+      "calls": [
+        {
+          "address": "c0972cd0",
+          "name": "FUN_c0972cd0",
+          "external": false
+        },
+        {
+          "address": "c09734f0",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c09734c0",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c09734b0",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c097335c",
+      "name": "CAM_Init",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "c0972e78",
+          "name": "CAM_Deinit",
+          "external": false
+        },
+        {
+          "address": "c0973470",
+          "name": "InterruptConnect",
+          "external": false
+        },
+        {
+          "address": "c09734d0",
+          "name": "InterruptInitialize",
+          "external": false
+        },
+        {
+          "address": "c0973480",
+          "name": "MmMapIoSpace",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c09734e0",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c09734b0",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "c0973500",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

@@ -1,0 +1,923 @@
+{
+  "program": "cMgrLog.exe",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "32a0827494e7fc8ca9357076b5ef242e96a3159a8ad3e8e67099752c25343a2a",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CheckRadioButton"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateWindowExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "PostQuitMessage"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DestroyWindow"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EndPaint"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DrawTextW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SelectObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateFontIndirectW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wsprintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetTextColor"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetBkMode"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "BeginPaint"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetWindowPos"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ShowWindow"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DefWindowProcW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegisterClassW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetStockObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadIconW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "UpdateWindow"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadStringW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetMessageW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DispatchMessageW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TranslateMessage"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TranslateAcceleratorW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadAcceleratorsW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "MapViewOfFile"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "UnmapViewOfFile"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__3_YAXPAX_Z"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__2_YAPAXI_Z"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FindFirstFileW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CopyFileW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateMutexW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ReleaseMutex"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateFileMappingW"
+    },
+    {
+      "library": "COMMCTRL.DLL",
+      "label": "CommandBar_Show"
+    },
+    {
+      "library": "CMNDLL.DLL",
+      "label": "DbgSetAllDebugOnOff"
+    },
+    {
+      "library": "CMNDLL.DLL",
+      "label": "DbgSetAllDebugLevel"
+    },
+    {
+      "library": "CMNDLL.DLL",
+      "label": "DbgDebugPrint"
+    }
+  ],
+  "functions_attempted": 31,
+  "functions_decompiled": 31,
+  "functions": [
+    {
+      "address": "00011000",
+      "name": "FUN_00011000",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "00012408",
+          "name": "FUN_00012408",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "FindFirstFileW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000110bc",
+      "name": "FUN_000110bc",
+      "body_addresses": 2244,
+      "calls": [
+        {
+          "address": "000121e4",
+          "name": "wsprintfW",
+          "external": false
+        },
+        {
+          "address": "00012184",
+          "name": "DestroyWindow",
+          "external": false
+        },
+        {
+          "address": "000121f4",
+          "name": "SetTextColor",
+          "external": false
+        },
+        {
+          "address": "00012204",
+          "name": "SetBkMode",
+          "external": false
+        },
+        {
+          "address": "00012234",
+          "name": "ShowWindow",
+          "external": false
+        },
+        {
+          "address": "00012244",
+          "name": "DefWindowProcW",
+          "external": false
+        },
+        {
+          "address": "00012194",
+          "name": "EndPaint",
+          "external": false
+        },
+        {
+          "address": "00012154",
+          "name": "CheckRadioButton",
+          "external": false
+        },
+        {
+          "address": "00012408",
+          "name": "FUN_00012408",
+          "external": false
+        },
+        {
+          "address": "00012450",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "00012164",
+          "name": "CreateWindowExW",
+          "external": false
+        },
+        {
+          "address": "000121a4",
+          "name": "DeleteObject",
+          "external": false
+        },
+        {
+          "address": "00012174",
+          "name": "PostQuitMessage",
+          "external": false
+        },
+        {
+          "address": "00012214",
+          "name": "BeginPaint",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000030",
+          "name": "DbgDebugPrint",
+          "external": true
+        },
+        {
+          "address": "000121c4",
+          "name": "SelectObject",
+          "external": false
+        },
+        {
+          "address": "00012224",
+          "name": "SetWindowPos",
+          "external": false
+        },
+        {
+          "address": "000121d4",
+          "name": "CreateFontIndirectW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000031",
+          "name": "DbgSetAllDebugLevel",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000010",
+          "name": "CopyFileW",
+          "external": true
+        },
+        {
+          "address": "000121b4",
+          "name": "DrawTextW",
+          "external": false
+        },
+        {
+          "address": "00011000",
+          "name": "FUN_00011000",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000032",
+          "name": "DbgSetAllDebugOnOff",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011994",
+      "name": "FUN_00011994",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "00012264",
+          "name": "GetStockObject",
+          "external": false
+        },
+        {
+          "address": "00012274",
+          "name": "LoadIconW",
+          "external": false
+        },
+        {
+          "address": "00012254",
+          "name": "RegisterClassW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011a00",
+      "name": "FUN_00011a00",
+      "body_addresses": 328,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000002f",
+          "name": "CommandBar_Show",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000019",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "00012234",
+          "name": "ShowWindow",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001a",
+          "name": "CreateMutexW",
+          "external": true
+        },
+        {
+          "address": "00012294",
+          "name": "LoadStringW",
+          "external": false
+        },
+        {
+          "address": "00011994",
+          "name": "FUN_00011994",
+          "external": false
+        },
+        {
+          "address": "00012408",
+          "name": "FUN_00012408",
+          "external": false
+        },
+        {
+          "address": "00012164",
+          "name": "CreateWindowExW",
+          "external": false
+        },
+        {
+          "address": "00012284",
+          "name": "UpdateWindow",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011b48",
+      "name": "FUN_00011b48",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "000122c4",
+          "name": "TranslateMessage",
+          "external": false
+        },
+        {
+          "address": "00011a00",
+          "name": "FUN_00011a00",
+          "external": false
+        },
+        {
+          "address": "000122e4",
+          "name": "LoadAcceleratorsW",
+          "external": false
+        },
+        {
+          "address": "000122d4",
+          "name": "TranslateAcceleratorW",
+          "external": false
+        },
+        {
+          "address": "000122a4",
+          "name": "GetMessageW",
+          "external": false
+        },
+        {
+          "address": "000122b4",
+          "name": "DispatchMessageW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011be0",
+      "name": "FUN_00011be0",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "000125c8",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011c34",
+      "name": "FUN_00011c34",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "00011c40",
+      "name": "FUN_00011c40",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "000125c8",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011c8c",
+      "name": "FUN_00011c8c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "00011c98",
+      "name": "FUN_00011c98",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000019",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "ReleaseMutex",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001a",
+          "name": "CreateMutexW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011d20",
+      "name": "FUN_00011d20",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000019",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "ReleaseMutex",
+          "external": true
+        },
+        {
+          "address": "000122f4",
+          "name": "MapViewOfFile",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "CreateFileMappingW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011e48",
+      "name": "FUN_00011e48",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000019",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "ReleaseMutex",
+          "external": true
+        },
+        {
+          "address": "000122f4",
+          "name": "MapViewOfFile",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "CreateFileMappingW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011f60",
+      "name": "MSHM_Dll_MakeMappingReadWrite",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "00011d20",
+          "name": "FUN_00011d20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011f90",
+      "name": "MSHM_Dll_MakeMappingReadOnly",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "00011e48",
+          "name": "FUN_00011e48",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011fc0",
+      "name": "MSHM_Dll_Read",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "00011be0",
+          "name": "FUN_00011be0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011fdc",
+      "name": "MSHM_Dll_Write",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "00011c40",
+          "name": "FUN_00011c40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00011ff8",
+      "name": "FUN_00011ff8",
+      "body_addresses": 160,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "00012304",
+          "name": "UnmapViewOfFile",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "ReleaseMutex",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00012098",
+      "name": "MSHM_Dll_DestoryShmClassObj",
+      "body_addresses": 56,
+      "calls": [
+        {
+          "address": "000125d8",
+          "name": "__3_YAXPAX_Z",
+          "external": false
+        },
+        {
+          "address": "00011ff8",
+          "name": "FUN_00011ff8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000120d0",
+      "name": "MSHM_Dll_CreateShmClassObj",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "000125d8",
+          "name": "__3_YAXPAX_Z",
+          "external": false
+        },
+        {
+          "address": "00011c98",
+          "name": "FUN_00011c98",
+          "external": false
+        },
+        {
+          "address": "000125e8",
+          "name": "__2_YAPAXI_Z",
+          "external": false
+        },
+        {
+          "address": "00011ff8",
+          "name": "FUN_00011ff8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00012314",
+      "name": "FUN_00012314",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "00012728",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00012388",
+      "name": "FUN_00012388",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "00012408",
+          "name": "FUN_00012408",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000123dc",
+      "name": "FUN_000123dc",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "00012388",
+          "name": "FUN_00012388",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00012408",
+      "name": "FUN_00012408",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "00012738",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00012460",
+      "name": "FUN_00012460",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "000127f8",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "000127d8",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "00012748",
+          "name": "FUN_00012748",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "0001254c",
+      "name": "FUN_0001254c",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "00012460",
+          "name": "FUN_00012460",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "0001256c",
+      "name": "FUN_0001256c",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "000127f8",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "00012748",
+          "name": "FUN_00012748",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000125f8",
+      "name": "FUN_000125f8",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "00011b48",
+          "name": "FUN_00011b48",
+          "external": false
+        },
+        {
+          "address": "0001254c",
+          "name": "FUN_0001254c",
+          "external": false
+        },
+        {
+          "address": "0001279c",
+          "name": "FUN_0001279c",
+          "external": false
+        },
+        {
+          "address": "0001256c",
+          "name": "FUN_0001256c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "0001268c",
+      "name": "FUN_0001268c",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "000127e8",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "000126cc",
+      "name": "entry",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "00012314",
+          "name": "FUN_00012314",
+          "external": false
+        },
+        {
+          "address": "000125f8",
+          "name": "FUN_000125f8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "00012748",
+      "name": "FUN_00012748",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "0001279c",
+      "name": "FUN_0001279c",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "00012748",
+          "name": "FUN_00012748",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 # MediaNav MAXmade — 7.0.6.MAX04
 
+MAXmade is now developed here: patch tools, decompiled code, technical research and release evidence are published alongside this guide. Downloadable LGU files live in **GitHub Releases**.
+
 Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
 ![MediaNav Evolution home screen with Radio, Media, Phone, Map, Nav and Settings](assets/medianav-evolution-home.png)
 
-[Download upgrade.lgu](Upgrade_706MAX04_MAXmade/upgrade.lgu) · [Package details and checksum](Upgrade_706MAX04_MAXmade/README.md) · [Previous FavreMod guide](Upgrade_705MD_FavreMod/README.md)
+[Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX04/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX04/README.md) · [Developer guide](docs/development.md)
 
 ## Why upgrade from 4.1.0 to 7.0.6.MAX04?
 
@@ -30,9 +32,9 @@ MAXmade builds on that upgrade and adds:
 
 | Home | Media |
 | --- | --- |
-| ![MAX04 home screen](Upgrade_706MAX04_MAXmade/screenshots/home-after.jpg) | ![MAX04 media player](Upgrade_706MAX04_MAXmade/screenshots/media-after.jpg) |
+| ![MAX04 home screen](assets/ui/max04/home-after.jpg) | ![MAX04 media player](assets/ui/max04/media-after.jpg) |
 
-UI previews from real assets, with sample data and approximate fonts. Full before/after comparisons are in the [MAX04 release notes](Upgrade_706MAX04_MAXmade/README.md).
+UI previews from real assets, with sample data and approximate fonts. Full before/after comparisons are in the [MAX04 release notes](releases/7.0.6.MAX04/README.md).
 
 ## Compatibility
 
@@ -42,7 +44,7 @@ You can upgrade directly to **7.0.6.MAX04**; installing 7.0.5.MD first is not re
 
 **Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
 
-The [previous guide lists vehicles and versions tested with the original upgrade](Upgrade_705MD_FavreMod/README.md#confirmed-working-on). Those reports do not yet confirm MAXmade compatibility.
+The [historical compatibility reports list vehicles and versions tested with the original upgrade](docs/compatibility.md#original-conversion-reports). Those reports do not yet confirm MAXmade compatibility.
 
 ## ⚠️ Check the [open issues](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues) before you upgrade!
 
@@ -60,7 +62,7 @@ Just to warn you that this update is not always succesful and can introduce some
 2. Back up your unit if possible.
 3. Write down your vehicle settings and radio presets; the update can replace them.
 4. Use a USB stick of **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
-5. Download [upgrade.lgu](Upgrade_706MAX04_MAXmade/upgrade.lgu) using GitHub's **Download raw file** button. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
+5. Download [upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX04/upgrade.lgu) from the release assets. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
 
 This updates the system software as well as the apps. Installing MAXmade and returning to an older version have not yet been tested on the unit.
 
@@ -113,16 +115,24 @@ Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` di
 
 ### Returning to an older version
 
-Returning from MAXmade to an older version has not been tested. The updater may refuse an older version number, and copying back the apps alone does not undo the full system update. The [previous FavreMod guide](Upgrade_705MD_FavreMod/README.md) keeps the older instructions for reference.
+Returning from MAXmade to an older version has not been tested. The updater may refuse an older version number, and copying back the apps alone does not undo the full system update. The [compatibility notes](docs/compatibility.md#older-downgrade-instructions) explain the historical procedure and its limits.
 
 ## Technical details
 
-For the download checksum, what is included and how the update was checked, see the [package notes](Upgrade_706MAX04_MAXmade/README.md) and [SHA256SUMS.txt](Upgrade_706MAX04_MAXmade/SHA256SUMS.txt).
+For the download checksum, what is included and how the update was checked, see the [package notes](releases/7.0.6.MAX04/README.md) and [SHA256SUMS.txt](releases/7.0.6.MAX04/SHA256SUMS.txt).
 
-## Previous release and credits
+## Development
 
-The original **7.0.5.MD** instructions are preserved in [Upgrade_705MD_FavreMod/README.md](Upgrade_705MD_FavreMod/README.md), alongside the original LGU. The separate [File_Corruption_Fix](File_Corruption_Fix) and [remove_md_super_evo](remove_md_super_evo) packages remain available for the legacy guide.
+| Start here | Contents |
+| --- | --- |
+| [Developer guide](docs/development.md) | Setup, repository layout and full-payload reproduction |
+| [Source and tools](tools/README.md) | Patch code, verification fixtures, Ghidra exports and UI generators |
+| [Research index](docs/research.md) | How the applications, Bluetooth, USB, updater and platform work |
+| [Decompiled source](docs/source-index.md) | Address-linked C exports and module metadata |
+| [Release workflow](docs/releases.md) | Full LGU builds, checks and GitHub Releases |
 
-MAXmade builds on the original [Upgrade_705MD_FavreMod](Upgrade_705MD_FavreMod) conversion and its accompanying navigation fix. Their original contributions remain credited. Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1).
+## Credits
 
-The improvements are listed above; the [package notes](Upgrade_706MAX04_MAXmade/README.md) describe the individual file changes.
+MAXmade builds on the original **7.0.5.MD / FavreMod** conversion, DBoot and the included navigation corruption fix. Original contributors retain credit. Special thanks to [KwidTechsolutions](https://www.youtube.com/@KwidTechsolutions1).
+
+[Provenance and credits](docs/provenance.md) records the original sources and tool versions. The old standalone packages remain in Git history; the current complete LGU is distributed through Releases.

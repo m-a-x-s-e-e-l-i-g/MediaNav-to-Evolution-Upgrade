@@ -1,0 +1,157 @@
+{
+  "source": "extracted\\705md\\upgrade\\Storage Card\\System\\AppMain.exe",
+  "patch": {
+    "source_sha256": "6a03280b71b49701766e47709802a190eca48a4a73406b27e18ad8618d5603c8",
+    "base_sha256": "6a03280b71b49701766e47709802a190eca48a4a73406b27e18ad8618d5603c8",
+    "draft_sha256": "6e6b893ddc5da74932e6ff8797f4435dbb730ee094564b1d2f5c40837f857f8a",
+    "edits": [
+      {
+        "va": "0x139964",
+        "offset": "0x128d64",
+        "bytes": 208,
+        "before_hex": "06020624000005245a00a4277903050c5800a0a71500083c2538600240f6062503010524c800050c5800a4271500043c441c85241000a4278903050c4200062425486002258000002550200100002895feff00150200292523402a0142480800ffff34251a00801a25900000258860020000289625580000256000011000aa270000499511002c110000000001006b2520006829faff001502004a252528600228e6040c2520a002258040000800001600000000010052262a405402ecff001502003126020000100000000001001024",
+        "after_hex": "2580000025506002000048953000001102004a2500fa09250001292dfaff2011000000002a000010010010240000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "original_hex": "06020624000005245a00a4277903050c5800a0a71500083c2538600240f6062503010524c800050c5800a4271500043c441c85241000a4278903050c4200062425486002258000002550200100002895feff00150200292523402a0142480800ffff34251a00801a25900000258860020000289625580000256000011000aa270000499511002c110000000001006b2520006829faff001502004a252528600228e6040c2520a002258040000800001600000000010052262a405402ecff001502003126020000100000000001001024",
+        "reason": "Replace repeated Arabic-table/full-string scans and unused local copies with one equivalent UTF16 range scan",
+        "assembly": {
+          "start": "0x139964",
+          "end": "0x139a34",
+          "used_bytes": 44,
+          "labels": {
+            "scan": "0x13996c"
+          },
+          "assembly": "\n        move s0, zero\n        move t2, s3\n    scan:\n        lhu t0, 0(t2)\n        beqz t0, 0x139a34\n        addiu t2, t2, 2\n        addiu t1, t0, -0x600\n        sltiu t1, t1, 0x100\n        beqz t1, scan\n        nop\n        b 0x139a34\n        addiu s0, zero, 1\n    "
+        }
+      }
+    ],
+    "native_execution": false,
+    "executable_written": false,
+    "build_allowed": false
+  },
+  "checks": {
+    "exhaustive_utf16_cases": 65536,
+    "positive_units": 256,
+    "multi_unit_cases": 172,
+    "null_pointer_cases": 2,
+    "benchmarks": [
+      {
+        "length": 0,
+        "original": {
+          "result": 0,
+          "instructions": 54,
+          "text_unit_reads": 1,
+          "crt_calls": [
+            "memset",
+            "_snwprintf",
+            "memcpy"
+          ],
+          "cookie_checked": true,
+          "abi_preserved": true
+        },
+        "repaired": {
+          "result": 0,
+          "instructions": 32,
+          "text_unit_reads": 1,
+          "crt_calls": [],
+          "cookie_checked": true,
+          "abi_preserved": true
+        }
+      },
+      {
+        "length": 8,
+        "original": {
+          "result": 0,
+          "instructions": 2937,
+          "text_unit_reads": 153,
+          "crt_calls": [
+            "memset",
+            "_snwprintf",
+            "memcpy"
+          ],
+          "cookie_checked": true,
+          "abi_preserved": true
+        },
+        "repaired": {
+          "result": 0,
+          "instructions": 88,
+          "text_unit_reads": 9,
+          "crt_calls": [],
+          "cookie_checked": true,
+          "abi_preserved": true
+        }
+      },
+      {
+        "length": 32,
+        "original": {
+          "result": 0,
+          "instructions": 21561,
+          "text_unit_reads": 2145,
+          "crt_calls": [
+            "memset",
+            "_snwprintf",
+            "memcpy"
+          ],
+          "cookie_checked": true,
+          "abi_preserved": true
+        },
+        "repaired": {
+          "result": 0,
+          "instructions": 256,
+          "text_unit_reads": 33,
+          "crt_calls": [],
+          "cookie_checked": true,
+          "abi_preserved": true
+        }
+      },
+      {
+        "length": 128,
+        "original": {
+          "result": 0,
+          "instructions": 245817,
+          "text_unit_reads": 33153,
+          "crt_calls": [
+            "memset",
+            "_snwprintf",
+            "memcpy"
+          ],
+          "cookie_checked": true,
+          "abi_preserved": true
+        },
+        "repaired": {
+          "result": 0,
+          "instructions": 928,
+          "text_unit_reads": 129,
+          "crt_calls": [],
+          "cookie_checked": true,
+          "abi_preserved": true
+        }
+      },
+      {
+        "length": 270,
+        "original": {
+          "result": 0,
+          "instructions": 1016877,
+          "text_unit_reads": 146611,
+          "crt_calls": [
+            "memset",
+            "_snwprintf",
+            "memcpy"
+          ],
+          "cookie_checked": true,
+          "abi_preserved": true
+        },
+        "repaired": {
+          "result": 0,
+          "instructions": 1922,
+          "text_unit_reads": 271,
+          "crt_calls": [],
+          "cookie_checked": true,
+          "abi_preserved": true
+        }
+      }
+    ],
+    "native_execution": false,
+    "unit_tested": false,
+    "measurement": "Interpreted instruction and source-read counts, CRT hook internals excluded; no wall-clock or screen timing"
+  }
+}

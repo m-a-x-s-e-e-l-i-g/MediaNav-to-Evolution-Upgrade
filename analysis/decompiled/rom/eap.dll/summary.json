@@ -1,0 +1,2380 @@
+{
+  "program": "eap.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "89fb0a5396b9063ce548434207b763c24fa4f11640367167b50777842ae87e20",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "CXPORT.DLL",
+      "label": "CxLogRegister"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CxLogDeregister"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CXUtilGetProcAddresses"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CTECancelEvent"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CTEInitTimer"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CxLogMsg"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CTEStopTimer"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CTEScheduleEvent"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CTEInitEvent"
+    },
+    {
+      "library": "CXPORT.DLL",
+      "label": "CTEStartTimer"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadLibraryW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCchCopyW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCchCopyNW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "swprintf"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcslen"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcschr"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_wtol"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FreeLibrary"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetProcAddressW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "MultiByteToWideChar"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegOpenKeyExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegQueryValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCloseKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCreateKeyExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegDeleteValueW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegSetValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegEnumValueW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegEnumKeyExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegDeleteKeyW"
+    }
+  ],
+  "functions_attempted": 81,
+  "functions_decompiled": 81,
+  "functions": [
+    {
+      "address": "c05d143c",
+      "name": "FUN_c05d143c",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c05d1a34",
+          "name": "FUN_c05d1a34",
+          "external": false
+        },
+        {
+          "address": "c05d31ec",
+          "name": "FUN_c05d31ec",
+          "external": false
+        },
+        {
+          "address": "c05d4468",
+          "name": "CxLogRegister",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d14a8",
+      "name": "FUN_c05d14a8",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c05d1a60",
+          "name": "FUN_c05d1a60",
+          "external": false
+        },
+        {
+          "address": "c05d3214",
+          "name": "FUN_c05d3214",
+          "external": false
+        },
+        {
+          "address": "c05d4478",
+          "name": "CxLogDeregister",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d150c",
+      "name": "DllEntry",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c05d143c",
+          "name": "FUN_c05d143c",
+          "external": false
+        },
+        {
+          "address": "c05d14a8",
+          "name": "FUN_c05d14a8",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1568",
+      "name": "EapFreeConnectionData",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1584",
+      "name": "EapInvokeInteractiveUI",
+      "body_addresses": 304,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "c05d579c",
+          "name": "swprintf",
+          "external": false
+        },
+        {
+          "address": "c05d4488",
+          "name": "CXUtilGetProcAddresses",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "c05d4824",
+          "name": "FUN_c05d4824",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d16b4",
+      "name": "FUN_c05d16b4",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d173c",
+      "name": "FUN_c05d173c",
+      "body_addresses": 180,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d17f0",
+      "name": "FUN_c05d17f0",
+      "body_addresses": 444,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "c05d579c",
+          "name": "swprintf",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "c05d57ac",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "c05d4824",
+          "name": "FUN_c05d4824",
+          "external": false
+        },
+        {
+          "address": "c05d53b8",
+          "name": "LoadLibraryW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000018",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d19ac",
+      "name": "FUN_c05d19ac",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c05d16b4",
+          "name": "FUN_c05d16b4",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d17f0",
+          "name": "FUN_c05d17f0",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1a18",
+      "name": "FUN_c05d1a18",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c05d173c",
+          "name": "FUN_c05d173c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1a34",
+      "name": "FUN_c05d1a34",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c05d53d8",
+          "name": "InitializeCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1a60",
+      "name": "FUN_c05d1a60",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c05d53e8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1a84",
+      "name": "EapInvokeConfigUI",
+      "body_addresses": 332,
+      "calls": [
+        {
+          "address": "c05d19ac",
+          "name": "FUN_c05d19ac",
+          "external": false
+        },
+        {
+          "address": "c05d4488",
+          "name": "CXUtilGetProcAddresses",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d173c",
+          "name": "FUN_c05d173c",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1bd0",
+      "name": "FUN_c05d1bd0",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "c05d53b8",
+          "name": "LoadLibraryW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1c8c",
+      "name": "FUN_c05d1c8c",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "c05d53b8",
+          "name": "LoadLibraryW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1d7c",
+      "name": "FUN_c05d1d7c",
+      "body_addresses": 356,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d1c8c",
+          "name": "FUN_c05d1c8c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000018",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "c05d1bd0",
+          "name": "FUN_c05d1bd0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1ee0",
+      "name": "FUN_c05d1ee0",
+      "body_addresses": 160,
+      "calls": [
+        {
+          "address": "c05d1c8c",
+          "name": "FUN_c05d1c8c",
+          "external": false
+        },
+        {
+          "address": "c05d1bd0",
+          "name": "FUN_c05d1bd0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d1f80",
+      "name": "FUN_c05d1f80",
+      "body_addresses": 176,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2030",
+      "name": "FUN_c05d2030",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c05d1a18",
+          "name": "FUN_c05d1a18",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2098",
+      "name": "FUN_c05d2098",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c05d19ac",
+          "name": "FUN_c05d19ac",
+          "external": false
+        },
+        {
+          "address": "c05d2030",
+          "name": "FUN_c05d2030",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d210c",
+      "name": "FUN_c05d210c",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2198",
+      "name": "FUN_c05d2198",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d4498",
+          "name": "CTECancelEvent",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d21e0",
+      "name": "FUN_c05d21e0",
+      "body_addresses": 252,
+      "calls": [
+        {
+          "address": "c05d34a0",
+          "name": "FUN_c05d34a0",
+          "external": false
+        },
+        {
+          "address": "c05d57cc",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c05d2198",
+          "name": "FUN_c05d2198",
+          "external": false
+        },
+        {
+          "address": "c05d57ac",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d2030",
+          "name": "FUN_c05d2030",
+          "external": false
+        },
+        {
+          "address": "c05d53e8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d22dc",
+      "name": "EapSessionSetConnectionData",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2384",
+      "name": "EapSessionSetUserData",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d242c",
+      "name": "EapSessionSetIdentity",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "c05d57cc",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c05d57dc",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d24c0",
+      "name": "EapSessionSetPassword",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "c05d57cc",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c05d57dc",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2554",
+      "name": "FUN_c05d2554",
+      "body_addresses": 632,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "c05d579c",
+          "name": "swprintf",
+          "external": false
+        },
+        {
+          "address": "c05d57dc",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c05d57ec",
+          "name": "wcschr",
+          "external": false
+        },
+        {
+          "address": "c05d1d7c",
+          "name": "FUN_c05d1d7c",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c05d57cc",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c05d53f8",
+          "name": "StringCchCopyW",
+          "external": false
+        },
+        {
+          "address": "c05d57ac",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5408",
+          "name": "StringCchCopyNW",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d27cc",
+      "name": "FUN_c05d27cc",
+      "body_addresses": 504,
+      "calls": [
+        {
+          "address": "c05d57cc",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "c05d4488",
+          "name": "CXUtilGetProcAddresses",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d57dc",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d29c4",
+      "name": "EapSessionGetIdentity",
+      "body_addresses": 704,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "c05d242c",
+          "name": "EapSessionSetIdentity",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d57dc",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d57fc",
+          "name": "wcscmp",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d24c0",
+          "name": "EapSessionSetPassword",
+          "external": false
+        },
+        {
+          "address": "c05d2098",
+          "name": "FUN_c05d2098",
+          "external": false
+        },
+        {
+          "address": "c05d2554",
+          "name": "FUN_c05d2554",
+          "external": false
+        },
+        {
+          "address": "c05d27cc",
+          "name": "FUN_c05d27cc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2c84",
+      "name": "EapSessionCreate",
+      "body_addresses": 392,
+      "calls": [
+        {
+          "address": "c05d57ac",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d53d8",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d44a8",
+          "name": "CTEInitTimer",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2e20",
+      "name": "EapSessionDestroy",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d1ee0",
+          "name": "FUN_c05d1ee0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2e80",
+      "name": "EapSessionReset",
+      "body_addresses": 192,
+      "calls": [
+        {
+          "address": "c05d34a0",
+          "name": "FUN_c05d34a0",
+          "external": false
+        },
+        {
+          "address": "c05d2198",
+          "name": "FUN_c05d2198",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d3234",
+          "name": "FUN_c05d3234",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d2030",
+          "name": "FUN_c05d2030",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2f40",
+      "name": "FUN_c05d2f40",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c05d4488",
+          "name": "CXUtilGetProcAddresses",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d2fe8",
+      "name": "EapSessionSendIdentityRequest",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d42d8",
+          "name": "FUN_c05d42d8",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3070",
+      "name": "EapSessionProcessRxPacket",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d4364",
+          "name": "FUN_c05d4364",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d411c",
+          "name": "FUN_c05d411c",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3100",
+      "name": "EapSessionRxImpliedSuccessPacket",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c05d3c84",
+          "name": "FUN_c05d3c84",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3174",
+      "name": "EapSessionProcessAuthenticationResult",
+      "body_addresses": 120,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d4280",
+          "name": "FUN_c05d4280",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d31ec",
+      "name": "FUN_c05d31ec",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "c05d53d8",
+          "name": "InitializeCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3214",
+      "name": "FUN_c05d3214",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c05d53e8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3234",
+      "name": "FUN_c05d3234",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "c05d44b8",
+          "name": "CxLogMsg",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d32c8",
+      "name": "FUN_c05d32c8",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3370",
+      "name": "FUN_c05d3370",
+      "body_addresses": 304,
+      "calls": [
+        {
+          "address": "c05d57ac",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c05d44b8",
+          "name": "CxLogMsg",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d34a0",
+      "name": "FUN_c05d34a0",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d44c8",
+          "name": "CTEStopTimer",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d34e0",
+      "name": "FUN_c05d34e0",
+      "body_addresses": 224,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d32c8",
+          "name": "FUN_c05d32c8",
+          "external": false
+        },
+        {
+          "address": "c05d36e0",
+          "name": "FUN_c05d36e0",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d35c0",
+      "name": "FUN_c05d35c0",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d44e8",
+          "name": "CTEInitEvent",
+          "external": false
+        },
+        {
+          "address": "c05d44d8",
+          "name": "CTEScheduleEvent",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d36e0",
+      "name": "FUN_c05d36e0",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c05d44f8",
+          "name": "CTEStartTimer",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d210c",
+          "name": "FUN_c05d210c",
+          "external": false
+        },
+        {
+          "address": "c05d44c8",
+          "name": "CTEStopTimer",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3748",
+      "name": "FUN_c05d3748",
+      "body_addresses": 684,
+      "calls": [
+        {
+          "address": "c05d22dc",
+          "name": "EapSessionSetConnectionData",
+          "external": false
+        },
+        {
+          "address": "c05d2384",
+          "name": "EapSessionSetUserData",
+          "external": false
+        },
+        {
+          "address": "c05d3234",
+          "name": "FUN_c05d3234",
+          "external": false
+        },
+        {
+          "address": "c05d32c8",
+          "name": "FUN_c05d32c8",
+          "external": false
+        },
+        {
+          "address": "c05d36e0",
+          "name": "FUN_c05d36e0",
+          "external": false
+        },
+        {
+          "address": "c05d24c0",
+          "name": "EapSessionSetPassword",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d39f4",
+      "name": "FUN_c05d39f4",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c05d3748",
+          "name": "FUN_c05d3748",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d1584",
+          "name": "EapInvokeInteractiveUI",
+          "external": false
+        },
+        {
+          "address": "c05d3370",
+          "name": "FUN_c05d3370",
+          "external": false
+        },
+        {
+          "address": "c05d2f40",
+          "name": "FUN_c05d2f40",
+          "external": false
+        },
+        {
+          "address": "c05d32c8",
+          "name": "FUN_c05d32c8",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3b14",
+      "name": "FUN_c05d3b14",
+      "body_addresses": 260,
+      "calls": [
+        {
+          "address": "c05d3748",
+          "name": "FUN_c05d3748",
+          "external": false
+        },
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d3234",
+          "name": "FUN_c05d3234",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3c18",
+      "name": "FUN_c05d3c18",
+      "body_addresses": 108,
+      "calls": [
+        {
+          "address": "c05d53a8",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d3b14",
+          "name": "FUN_c05d3b14",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d5398",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3c84",
+      "name": "FUN_c05d3c84",
+      "body_addresses": 164,
+      "calls": [
+        {
+          "address": "c05d35c0",
+          "name": "FUN_c05d35c0",
+          "external": false
+        },
+        {
+          "address": "c05d3370",
+          "name": "FUN_c05d3370",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3d28",
+      "name": "FUN_c05d3d28",
+      "body_addresses": 508,
+      "calls": [
+        {
+          "address": "c05d35c0",
+          "name": "FUN_c05d35c0",
+          "external": false
+        },
+        {
+          "address": "c05d3c84",
+          "name": "FUN_c05d3c84",
+          "external": false
+        },
+        {
+          "address": "c05d3234",
+          "name": "FUN_c05d3234",
+          "external": false
+        },
+        {
+          "address": "c05d3b14",
+          "name": "FUN_c05d3b14",
+          "external": false
+        },
+        {
+          "address": "c05d1f80",
+          "name": "FUN_c05d1f80",
+          "external": false
+        },
+        {
+          "address": "c05d2098",
+          "name": "FUN_c05d2098",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d3f24",
+      "name": "FUN_c05d3f24",
+      "body_addresses": 504,
+      "calls": [
+        {
+          "address": "c05d3c84",
+          "name": "FUN_c05d3c84",
+          "external": false
+        },
+        {
+          "address": "c05d21e0",
+          "name": "FUN_c05d21e0",
+          "external": false
+        },
+        {
+          "address": "c05d3234",
+          "name": "FUN_c05d3234",
+          "external": false
+        },
+        {
+          "address": "c05d1f80",
+          "name": "FUN_c05d1f80",
+          "external": false
+        },
+        {
+          "address": "c05d44c8",
+          "name": "CTEStopTimer",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000018",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c05d2098",
+          "name": "FUN_c05d2098",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "MultiByteToWideChar",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d411c",
+      "name": "FUN_c05d411c",
+      "body_addresses": 356,
+      "calls": [
+        {
+          "address": "c05d3748",
+          "name": "FUN_c05d3748",
+          "external": false
+        },
+        {
+          "address": "c05d3f24",
+          "name": "FUN_c05d3f24",
+          "external": false
+        },
+        {
+          "address": "c05d3c84",
+          "name": "FUN_c05d3c84",
+          "external": false
+        },
+        {
+          "address": "c05d3d28",
+          "name": "FUN_c05d3d28",
+          "external": false
+        },
+        {
+          "address": "c05d3234",
+          "name": "FUN_c05d3234",
+          "external": false
+        },
+        {
+          "address": "c05d32c8",
+          "name": "FUN_c05d32c8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4280",
+      "name": "FUN_c05d4280",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c05d3748",
+          "name": "FUN_c05d3748",
+          "external": false
+        },
+        {
+          "address": "c05d3370",
+          "name": "FUN_c05d3370",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d42d8",
+      "name": "FUN_c05d42d8",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "c05d3748",
+          "name": "FUN_c05d3748",
+          "external": false
+        },
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4364",
+      "name": "FUN_c05d4364",
+      "body_addresses": 260,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4508",
+      "name": "EapUtilAuthAttributeGetVendorSpecific",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "c05d580c",
+          "name": "memcmp",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d45d0",
+      "name": "EapUtilAuthAttributeInsertVSA",
+      "body_addresses": 224,
+      "calls": [
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d46b0",
+      "name": "EapUtilAuthAttributeArrayAlloc",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4710",
+      "name": "EapUtilAuthAttributeArrayFree",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d478c",
+      "name": "EapUtilExtractMPPEKey",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c05d4508",
+          "name": "EapUtilAuthAttributeGetVendorSpecific",
+          "external": false
+        },
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4824",
+      "name": "FUN_c05d4824",
+      "body_addresses": 500,
+      "calls": [
+        {
+          "address": "c05d57ac",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c05d4b6c",
+          "name": "RegReadValues",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4a18",
+      "name": "FUN_c05d4a18",
+      "body_addresses": 196,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "c05d581c",
+          "name": "_wtol",
+          "external": false
+        },
+        {
+          "address": "c05d57bc",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c05d4824",
+          "name": "FUN_c05d4824",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4adc",
+      "name": "EapEnumExtensions",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "c05d519c",
+          "name": "RegTraverseKey",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4b6c",
+      "name": "RegReadValues",
+      "body_addresses": 804,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "RegOpenKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000021",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "c05d53c8",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c05d5388",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d4e90",
+      "name": "RegWriteValues",
+      "body_addresses": 428,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "RegDeleteValueW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000025",
+          "name": "RegCreateKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000024",
+          "name": "RegSetValueExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000021",
+          "name": "RegCloseKey",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d503c",
+      "name": "RegDeleteKeyValues",
+      "body_addresses": 352,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "RegDeleteValueW",
+          "external": true
+        },
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "RegOpenKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000026",
+          "name": "RegEnumValueW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000021",
+          "name": "RegCloseKey",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d519c",
+      "name": "RegTraverseKey",
+      "body_addresses": 348,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "RegOpenKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000027",
+          "name": "RegEnumKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000021",
+          "name": "RegCloseKey",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d52f8",
+      "name": "FUN_c05d52f8",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "RegDeleteKeyW",
+          "external": true
+        },
+        {
+          "address": "c05d519c",
+          "name": "RegTraverseKey",
+          "external": false
+        },
+        {
+          "address": "c05d503c",
+          "name": "RegDeleteKeyValues",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d536c",
+      "name": "RegDeleteKeyAndContents",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "c05d52f8",
+          "name": "FUN_c05d52f8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d5418",
+      "name": "entry",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c05d5760",
+          "name": "FUN_c05d5760",
+          "external": false
+        },
+        {
+          "address": "c05d548c",
+          "name": "FUN_c05d548c",
+          "external": false
+        },
+        {
+          "address": "c05d150c",
+          "name": "DllEntry",
+          "external": false
+        },
+        {
+          "address": "c05d56e8",
+          "name": "FUN_c05d56e8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d548c",
+      "name": "FUN_c05d548c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c05d582c",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d5500",
+      "name": "FUN_c05d5500",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c05d5580",
+          "name": "FUN_c05d5580",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d5554",
+      "name": "FUN_c05d5554",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c05d5500",
+          "name": "FUN_c05d5500",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d5580",
+      "name": "FUN_c05d5580",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c05d583c",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d55c8",
+      "name": "FUN_c05d55c8",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c05d584c",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c05d570c",
+          "name": "FUN_c05d570c",
+          "external": false
+        },
+        {
+          "address": "c05d586c",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "c05d53e8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c05d585c",
+          "name": "InterlockedExchange",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d56e8",
+      "name": "FUN_c05d56e8",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c05d55c8",
+          "name": "FUN_c05d55c8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c05d570c",
+      "name": "FUN_c05d570c",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c05d5760",
+      "name": "FUN_c05d5760",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c05d570c",
+          "name": "FUN_c05d570c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

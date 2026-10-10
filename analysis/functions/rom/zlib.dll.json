@@ -1,0 +1,2136 @@
+{
+  "module": "rom/zlib.dll",
+  "sha256": "1b3ef3cb314b72f188fadfb19cffe961b028d20d3fefc5350a3221e9879d43e8",
+  "scope": "Function boundaries from .pdata; labels and call edges are static candidates, not proved behavior",
+  "functions": [
+    {
+      "begin_va": "0x401432b8",
+      "end_va": "0x401432f4",
+      "bytes": 60,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401432c4",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "get_crc_table"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401432d8",
+          "kind": "direct_call",
+          "target_va": "0x4014322c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401432f4",
+      "end_va": "0x401434f8",
+      "bytes": 516,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014330c",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "crc32"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40143338",
+          "kind": "direct_call",
+          "target_va": "0x4014322c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401434f8",
+      "end_va": "0x401435b0",
+      "bytes": 184,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40143508",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x40143538",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401435b0",
+      "end_va": "0x401439d8",
+      "bytes": 1064,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401435d4",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "deflate"
+        }
+      ],
+      "imports": [
+        {
+          "va": "0x401438c4",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memset@1047",
+          "constant_arg_candidates": {
+            "$a1": 0
+          }
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x4014378c",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x40143878",
+          "kind": "direct_call",
+          "target_va": "0x401475ec"
+        },
+        {
+          "va": "0x40143890",
+          "kind": "direct_call",
+          "target_va": "0x40147548"
+        },
+        {
+          "va": "0x401438cc",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x40143970",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x40143838",
+          "kind": "indirect_call",
+          "register": "$t1"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401439d8",
+      "end_va": "0x40143ad8",
+      "bytes": 256,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401439ec",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "deflateEnd"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0x40143a38",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40143a54",
+          "kind": "indirect_call",
+          "register": "$t1"
+        },
+        {
+          "va": "0x40143a70",
+          "kind": "indirect_call",
+          "register": "$t1"
+        },
+        {
+          "va": "0x40143a8c",
+          "kind": "indirect_call",
+          "register": "$t1"
+        },
+        {
+          "va": "0x40143a9c",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40143ad8",
+      "end_va": "0x40143cfc",
+      "bytes": 548,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40143aec",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40143cfc",
+      "end_va": "0x40143f54",
+      "bytes": 600,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40143d1c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x40143d94",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x40143eb0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x40143e9c",
+          "kind": "direct_call",
+          "target_va": "0x401430c8"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40143f54",
+      "end_va": "0x4014413c",
+      "bytes": 488,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40143f6c",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40143f9c",
+          "kind": "direct_call",
+          "target_va": "0x40143cfc"
+        },
+        {
+          "va": "0x40144004",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x40144014",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x40144068",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x40144078",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x401440f4",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x40144104",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014413c",
+      "end_va": "0x401445f4",
+      "bytes": 1208,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014415c",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014418c",
+          "kind": "direct_call",
+          "target_va": "0x40143cfc"
+        },
+        {
+          "va": "0x40144264",
+          "kind": "direct_call",
+          "target_va": "0x40143ad8"
+        },
+        {
+          "va": "0x4014451c",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x4014452c",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x401445a4",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x401445b4",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401445f4",
+      "end_va": "0x40144bd8",
+      "bytes": 1508,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40144620",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014465c",
+          "kind": "direct_call",
+          "target_va": "0x40143cfc"
+        },
+        {
+          "va": "0x40144758",
+          "kind": "direct_call",
+          "target_va": "0x40143ad8"
+        },
+        {
+          "va": "0x4014498c",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x4014499c",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x40144a88",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x40144a98",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        },
+        {
+          "va": "0x40144b88",
+          "kind": "direct_call",
+          "target_va": "0x40147860"
+        },
+        {
+          "va": "0x40144b98",
+          "kind": "direct_call",
+          "target_va": "0x401434f8"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40144bd8",
+      "end_va": "0x40144d30",
+      "bytes": 344,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40144be8",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "deflateReset"
+        }
+      ],
+      "imports": [
+        {
+          "va": "0x40144c98",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memset@1047",
+          "constant_arg_candidates": {
+            "$a1": 0
+          }
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x40144c60",
+          "kind": "direct_call",
+          "target_va": "0x40147124"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40144d30",
+      "end_va": "0x40145000",
+      "bytes": 720,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40144d5c",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "deflateInit2_"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40144fac",
+          "kind": "direct_call",
+          "target_va": "0x40144bd8"
+        },
+        {
+          "va": "0x40144fbc",
+          "kind": "direct_call",
+          "target_va": "0x401439d8"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x40144e78",
+          "kind": "indirect_call",
+          "register": "$t1"
+        },
+        {
+          "va": "0x40144ef0",
+          "kind": "indirect_call",
+          "register": "$t1"
+        },
+        {
+          "va": "0x40144f08",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40144f20",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40144f40",
+          "kind": "indirect_call",
+          "register": "$t1"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145000",
+      "end_va": "0x40145034",
+      "bytes": 52,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145008",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "deflateInit_"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40145020",
+          "kind": "direct_call",
+          "target_va": "0x40144d30"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145034",
+      "end_va": "0x4014509c",
+      "bytes": 104,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014503c",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateReset"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014507c",
+          "kind": "direct_call",
+          "target_va": "0x40147ca0"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014509c",
+      "end_va": "0x40145110",
+      "bytes": 116,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401450a8",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateEnd"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401450d8",
+          "kind": "direct_call",
+          "target_va": "0x40148884"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x401450e8",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145110",
+      "end_va": "0x40145284",
+      "bytes": 372,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145124",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateInit2_"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40145218",
+          "kind": "direct_call",
+          "target_va": "0x40147d58"
+        },
+        {
+          "va": "0x40145240",
+          "kind": "direct_call",
+          "target_va": "0x40145034"
+        },
+        {
+          "va": "0x40145254",
+          "kind": "direct_call",
+          "target_va": "0x4014509c"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x401451a0",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145284",
+      "end_va": "0x401452a8",
+      "bytes": 36,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014528c",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateInit_"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40145294",
+          "kind": "direct_call",
+          "target_va": "0x40145110"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401452a8",
+      "end_va": "0x40145888",
+      "bytes": 1504,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401452d4",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflate"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401454b4",
+          "kind": "direct_call",
+          "target_va": "0x40147e48"
+        },
+        {
+          "va": "0x40145508",
+          "kind": "direct_call",
+          "target_va": "0x40147ca0"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": [
+        {
+          "va": "0x4014532c",
+          "kind": "string",
+          "target_va": "0x40141160",
+          "text": "incorrect data check"
+        },
+        {
+          "va": "0x40145330",
+          "kind": "string",
+          "target_va": "0x40141148",
+          "text": "incorrect header check"
+        },
+        {
+          "va": "0x40145334",
+          "kind": "string",
+          "target_va": "0x40141134",
+          "text": "invalid window size"
+        },
+        {
+          "va": "0x40145338",
+          "kind": "string",
+          "target_va": "0x40141118",
+          "text": "unknown compression method"
+        },
+        {
+          "va": "0x40145864",
+          "kind": "string",
+          "target_va": "0x40141108",
+          "text": "need dictionary"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x40145888",
+      "end_va": "0x4014596c",
+      "bytes": 228,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401458a4",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateSetDictionary"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401458e0",
+          "kind": "direct_call",
+          "target_va": "0x401430c8"
+        },
+        {
+          "va": "0x4014592c",
+          "kind": "direct_call",
+          "target_va": "0x401488f4"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014596c",
+      "end_va": "0x40145aa0",
+      "bytes": 308,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145980",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateSync"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40145a60",
+          "kind": "direct_call",
+          "target_va": "0x40145034"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145aa0",
+      "end_va": "0x40145ae8",
+      "bytes": 72,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145aa8",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "inflateSyncPoint"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40145ac8",
+          "kind": "direct_call",
+          "target_va": "0x4014893c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145ae8",
+      "end_va": "0x40145b94",
+      "bytes": 172,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145af8",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "uncompress"
+        }
+      ],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40145b24",
+          "kind": "direct_call",
+          "target_va": "0x40145284"
+        },
+        {
+          "va": "0x40145b3c",
+          "kind": "direct_call",
+          "target_va": "0x401452a8"
+        },
+        {
+          "va": "0x40145b54",
+          "kind": "direct_call",
+          "target_va": "0x4014509c"
+        },
+        {
+          "va": "0x40145b70",
+          "kind": "direct_call",
+          "target_va": "0x4014509c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": [
+        {
+          "va": "0x40145b10",
+          "kind": "string",
+          "target_va": "0x4014104c",
+          "text": "1.1.4"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x40145ba0",
+      "end_va": "0x40145bc0",
+      "bytes": 32,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145ba8",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x40145bac",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!calloc@1346",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145bc0",
+      "end_va": "0x40145bdc",
+      "bytes": 28,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145bc8",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x40145bc8",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40145d18",
+      "end_va": "0x40145fb4",
+      "bytes": 668,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40145d34",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401460e0",
+      "end_va": "0x40146734",
+      "bytes": 1620,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401460f4",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40146734",
+      "end_va": "0x40146a20",
+      "bytes": 748,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40146744",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401469f4",
+          "kind": "direct_call",
+          "target_va": "0x401460e0"
+        },
+        {
+          "va": "0x40146a04",
+          "kind": "direct_call",
+          "target_va": "0x401460e0"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40146a20",
+      "end_va": "0x40146f44",
+      "bytes": 1316,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40146a3c",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401471c0",
+      "end_va": "0x40147548",
+      "bytes": 904,
+      "handler_va": "0x4014a328",
+      "handler_data_va": "0x4014a630",
+      "prolog_end_va": "0x401471e8",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40147334",
+          "kind": "direct_call",
+          "target_va": "0x40145bdc"
+        },
+        {
+          "va": "0x40147384",
+          "kind": "direct_call",
+          "target_va": "0x40145bdc"
+        },
+        {
+          "va": "0x40147430",
+          "kind": "direct_call",
+          "target_va": "0x40145bdc"
+        },
+        {
+          "va": "0x4014746c",
+          "kind": "direct_call",
+          "target_va": "0x40145d18"
+        },
+        {
+          "va": "0x40147514",
+          "kind": "direct_call",
+          "target_va": "0x4014a354"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40147548",
+      "end_va": "0x401475ec",
+      "bytes": 164,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40147550",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401475d8",
+          "kind": "direct_call",
+          "target_va": "0x40146fe4"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401475ec",
+      "end_va": "0x40147860",
+      "bytes": 628,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40147600",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40147710",
+          "kind": "direct_call",
+          "target_va": "0x40146f44"
+        },
+        {
+          "va": "0x40147838",
+          "kind": "direct_call",
+          "target_va": "0x40146f44"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40147860",
+      "end_va": "0x40147ca0",
+      "bytes": 1088,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40147880",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40147930",
+          "kind": "direct_call",
+          "target_va": "0x401471c0"
+        },
+        {
+          "va": "0x4014793c",
+          "kind": "direct_call",
+          "target_va": "0x401471c0"
+        },
+        {
+          "va": "0x4014794c",
+          "kind": "direct_call",
+          "target_va": "0x40145fb4"
+        },
+        {
+          "va": "0x4014795c",
+          "kind": "direct_call",
+          "target_va": "0x40145fb4"
+        },
+        {
+          "va": "0x40147968",
+          "kind": "direct_call",
+          "target_va": "0x401471c0"
+        },
+        {
+          "va": "0x40147a14",
+          "kind": "direct_call",
+          "target_va": "0x40147548"
+        },
+        {
+          "va": "0x40147b84",
+          "kind": "direct_call",
+          "target_va": "0x40146734"
+        },
+        {
+          "va": "0x40147b94",
+          "kind": "direct_call",
+          "target_va": "0x40146a20"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40147ca0",
+      "end_va": "0x40147d58",
+      "bytes": 184,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40147cb0",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40147d04",
+          "kind": "direct_call",
+          "target_va": "0x40149138"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x40147ce8",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40147d34",
+          "kind": "indirect_call",
+          "register": "$t1"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40147d58",
+      "end_va": "0x40147e48",
+      "bytes": 240,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40147d70",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40147e20",
+          "kind": "direct_call",
+          "target_va": "0x40147ca0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x40147d88",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40147db0",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40147dc8",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40147de0",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40147df8",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40147e48",
+      "end_va": "0x40148884",
+      "bytes": 2620,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40147e74",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x401481c8",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x40147fec",
+          "kind": "direct_call",
+          "target_va": "0x401499c4"
+        },
+        {
+          "va": "0x40148004",
+          "kind": "direct_call",
+          "target_va": "0x40148958"
+        },
+        {
+          "va": "0x4014812c",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        },
+        {
+          "va": "0x401483ac",
+          "kind": "direct_call",
+          "target_va": "0x401496bc"
+        },
+        {
+          "va": "0x401485f0",
+          "kind": "direct_call",
+          "target_va": "0x401497cc"
+        },
+        {
+          "va": "0x40148614",
+          "kind": "direct_call",
+          "target_va": "0x40148958"
+        },
+        {
+          "va": "0x40148670",
+          "kind": "direct_call",
+          "target_va": "0x401489d0"
+        },
+        {
+          "va": "0x40148688",
+          "kind": "direct_call",
+          "target_va": "0x40149138"
+        },
+        {
+          "va": "0x4014873c",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        },
+        {
+          "va": "0x4014882c",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x40148284",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40148630",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x401487d0",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x401487f0",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": [
+        {
+          "va": "0x40147f90",
+          "kind": "string",
+          "target_va": "0x40141c54",
+          "text": "invalid block type"
+        },
+        {
+          "va": "0x40148794",
+          "kind": "string",
+          "target_va": "0x40141c34",
+          "text": "invalid stored block lengths"
+        },
+        {
+          "va": "0x401487b8",
+          "kind": "string",
+          "target_va": "0x40141c10",
+          "text": "too many length or distance symbols"
+        },
+        {
+          "va": "0x40148800",
+          "kind": "string",
+          "target_va": "0x40141bf4",
+          "text": "invalid bit length repeat"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x40148884",
+      "end_va": "0x401488f4",
+      "bytes": 112,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40148894",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x401488a4",
+          "kind": "direct_call",
+          "target_va": "0x40147ca0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x401488b4",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x401488c4",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x401488d4",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401488f4",
+      "end_va": "0x4014893c",
+      "bytes": 72,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40148904",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x40148910",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40148958",
+      "end_va": "0x401489d0",
+      "bytes": 120,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40148970",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0x40148990",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401489d0",
+      "end_va": "0x40149138",
+      "bytes": 1896,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401489fc",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40148af0",
+          "kind": "direct_call",
+          "target_va": "0x40149b88"
+        },
+        {
+          "va": "0x40148e78",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        },
+        {
+          "va": "0x40148f84",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        },
+        {
+          "va": "0x4014904c",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        },
+        {
+          "va": "0x401490e8",
+          "kind": "direct_call",
+          "target_va": "0x401499f8"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": [
+        {
+          "va": "0x4014909c",
+          "kind": "string",
+          "target_va": "0x40141c80",
+          "text": "invalid literal/length code"
+        },
+        {
+          "va": "0x401490b8",
+          "kind": "string",
+          "target_va": "0x40141c68",
+          "text": "invalid distance code"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x40149138",
+      "end_va": "0x40149164",
+      "bytes": 44,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40149140",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0x40149150",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40149164",
+      "end_va": "0x401496bc",
+      "bytes": 1368,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014918c",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x401496bc",
+      "end_va": "0x401497cc",
+      "bytes": 272,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401496dc",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40149744",
+          "kind": "direct_call",
+          "target_va": "0x40149164"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x40149700",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x4014979c",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": [
+        {
+          "va": "0x40149760",
+          "kind": "string",
+          "target_va": "0x40142fd8",
+          "text": "oversubscribed dynamic bit lengths tree"
+        },
+        {
+          "va": "0x40149788",
+          "kind": "string",
+          "target_va": "0x40142fb4",
+          "text": "incomplete dynamic bit lengths tree"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x401497cc",
+      "end_va": "0x401499c4",
+      "bytes": 504,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x401497f8",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x40149870",
+          "kind": "direct_call",
+          "target_va": "0x40149164"
+        },
+        {
+          "va": "0x401498c8",
+          "kind": "direct_call",
+          "target_va": "0x40149164"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x4014981c",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x401498fc",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x40149988",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": [
+        {
+          "va": "0x4014991c",
+          "kind": "string",
+          "target_va": "0x40143084",
+          "text": "oversubscribed distance tree"
+        },
+        {
+          "va": "0x40149934",
+          "kind": "string",
+          "target_va": "0x40143068",
+          "text": "incomplete distance tree"
+        },
+        {
+          "va": "0x4014994c",
+          "kind": "string",
+          "target_va": "0x40143044",
+          "text": "empty distance tree with lengths"
+        },
+        {
+          "va": "0x40149960",
+          "kind": "string",
+          "target_va": "0x40143020",
+          "text": "oversubscribed literal/length tree"
+        },
+        {
+          "va": "0x40149974",
+          "kind": "string",
+          "target_va": "0x40143000",
+          "text": "incomplete literal/length tree"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x401499f8",
+      "end_va": "0x40149b88",
+      "bytes": 400,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40149a1c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x40149aac",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x40149b44",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0x40149a94",
+          "kind": "indirect_call",
+          "register": "$t3"
+        },
+        {
+          "va": "0x40149b2c",
+          "kind": "indirect_call",
+          "register": "$t3"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x40149b88",
+      "end_va": "0x4014a074",
+      "bytes": 1260,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x40149ba8",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": [
+        {
+          "va": "0x40149fc4",
+          "kind": "string",
+          "target_va": "0x40141c80",
+          "text": "invalid literal/length code"
+        },
+        {
+          "va": "0x4014a01c",
+          "kind": "string",
+          "target_va": "0x40141c68",
+          "text": "invalid distance code"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x4014a074",
+      "end_va": "0x4014a0a0",
+      "bytes": 44,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a07c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x4014a088",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!DisableThreadLibraryCalls@1232",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a0a0",
+      "end_va": "0x4014a1dc",
+      "bytes": 316,
+      "handler_va": "0x4014a5c0",
+      "handler_data_va": "0x4014a638",
+      "prolog_end_va": "0x4014a0c4",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014a114",
+          "kind": "direct_call",
+          "target_va": "0x4014a534"
+        },
+        {
+          "va": "0x4014a140",
+          "kind": "direct_call",
+          "target_va": "0x4014a074"
+        },
+        {
+          "va": "0x4014a158",
+          "kind": "direct_call",
+          "target_va": "0x4014a4bc"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x4014a0fc",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0x4014a180",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a1dc",
+      "end_va": "0x4014a208",
+      "bytes": 44,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a1e4",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x4014a1f0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!_XcptFilter@1645",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a208",
+      "end_va": "0x4014a260",
+      "bytes": 88,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a21c",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014a230",
+          "kind": "direct_call",
+          "target_va": "0x4014a260"
+        },
+        {
+          "va": "0x4014a240",
+          "kind": "direct_call",
+          "target_va": "0x4014a0a0"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a260",
+      "end_va": "0x4014a2d4",
+      "bytes": 116,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a270",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x4014a290",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!__security_gen_cookie2@2696",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a2d4",
+      "end_va": "0x4014a328",
+      "bytes": 84,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a2dc",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014a314",
+          "kind": "direct_call",
+          "target_va": "0x4014a354"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a328",
+      "end_va": "0x4014a354",
+      "bytes": 44,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a330",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014a33c",
+          "kind": "direct_call",
+          "target_va": "0x4014a2d4"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a354",
+      "end_va": "0x4014a39c",
+      "bytes": 72,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a354",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x4014a394",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!__report_gsfailure@1876",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a39c",
+      "end_va": "0x4014a4bc",
+      "bytes": 288,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a3b4",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x4014a418",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x4014a464",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!TerminateProcess@544",
+          "constant_arg_candidates": {
+            "$a0": 66
+          }
+        },
+        {
+          "va": "0x4014a47c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterlockedExchange@12",
+          "constant_arg_candidates": {
+            "$a0": 1075098840,
+            "$a1": 0
+          }
+        },
+        {
+          "va": "0x4014a490",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!DeleteCriticalSection@3",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x4014a498",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x4014a43c",
+          "kind": "direct_call",
+          "target_va": "0x4014a4e0"
+        },
+        {
+          "va": "0x4014a450",
+          "kind": "direct_call",
+          "target_va": "0x4014a4e0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x4014a3f8",
+          "kind": "indirect_call",
+          "register": "$t2"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a4bc",
+      "end_va": "0x4014a4e0",
+      "bytes": 36,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a4c4",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014a4cc",
+          "kind": "direct_call",
+          "target_va": "0x4014a39c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a4e0",
+      "end_va": "0x4014a534",
+      "bytes": 84,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a4f0",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0x4014a508",
+          "kind": "indirect_call",
+          "register": "$t1"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x4014a534",
+      "end_va": "0x4014a570",
+      "bytes": 60,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x4014a53c",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x4014a548",
+          "kind": "direct_call",
+          "target_va": "0x4014a4e0"
+        },
+        {
+          "va": "0x4014a55c",
+          "kind": "direct_call",
+          "target_va": "0x4014a4e0"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    }
+  ],
+  "unmapped_calls": [
+    {
+      "va": "0x401417fc",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x40141800",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x40141804",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x40141808",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x4014180c",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x40141810",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x40141814",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x40141818",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x4014181c",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x40141820",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x40141824",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x40141828",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x4014182c",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x40141830",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x40141834",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x40141838",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x4014183c",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141840",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141844",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141848",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x4014184c",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141850",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141854",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141858",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x4014185c",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141860",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141864",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141868",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x4014186c",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141870",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141874",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x40141878",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x4014187c",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x40141880",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x40141884",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x40141888",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x4014188c",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x40141890",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x40141894",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x40141898",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x4014189c",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418a0",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418a4",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418a8",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418ac",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418b0",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418b4",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401418b8",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x401419cc",
+      "kind": "direct_call",
+      "target_va": "0x40303030"
+    },
+    {
+      "va": "0x401419d0",
+      "kind": "direct_call",
+      "target_va": "0x44343434"
+    },
+    {
+      "va": "0x401419d4",
+      "kind": "direct_call",
+      "target_va": "0x48383838"
+    },
+    {
+      "va": "0x401419d8",
+      "kind": "direct_call",
+      "target_va": "0x4c3c3c3c"
+    },
+    {
+      "va": "0x4014a8a8",
+      "kind": "direct_call",
+      "target_va": "0x40c0ae24"
+    },
+    {
+      "va": "0x4014a8f0",
+      "kind": "direct_call",
+      "target_va": "0x41c76388"
+    },
+    {
+      "va": "0x4014a8f4",
+      "kind": "direct_call",
+      "target_va": "0x40862888"
+    }
+  ]
+}
