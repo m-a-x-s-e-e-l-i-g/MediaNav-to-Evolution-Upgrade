@@ -46,3 +46,4 @@ jobs:
       - run: python tools/build_usb_metadata_copies_development.py --baseline build/max04-reproduced/payload --out build/usb-metadata-copies-development
       - run: python -m unittest discover -s tools -p test_usb_catalog_initialization.py
       - run: python tools/build_usb_catalog_initialization_development.py --baseline build/max04-reproduced/payload --out build/usb-catalog-initialization-development
+      - run: python tools/verify_usb_catalog_readiness.py --candidate "build/usb-catalog-initialization-development/payload/upgrade/Storage Card/System/MgrUSB.exe" --report build/usb-catalog-readiness.json
