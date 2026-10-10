@@ -79,6 +79,7 @@
 - [Album-art graphics guards](../analysis/artwork-gdi-guards-development.md): check context/selection failures and dispose of failed renders in the correct ownership order.
 - [Compact album-art stack](../analysis/artwork-stack-frame-development.md): remove 3,648 unused reserved bytes while retaining live buffers, saved registers and GS cookie handling.
 - [Field-sized metadata snapshots](../analysis/usb-metadata-copies-development.md): retain normal/resume outputs while reducing repeated whole-tag copies.
+- [Catalog initialization](../analysis/usb-catalog-initialization-development.md): initialize the directory pointer before reset can clear through reused object storage.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
