@@ -5,6 +5,7 @@ COM and registry/lock/time calls are fixtures; no Windows CE or codec execution.
 import hashlib
 import itertools
 import struct
+from collections import Counter
 
 import pefile
 
@@ -143,12 +144,18 @@ class Initialization(Graph):
         return sum(self.refs.values())
 
     def record(self, label, result):
+        # Preserve counts and both boundaries of long polling/retry traces;
+        # publishing every identical iteration adds noise without new evidence.
+        complete = len(self.events) <= 24
+        trace = self.events.copy() if complete else self.events[:12]+self.events[-12:]
         return dict(name=label, result=result, live_references=self.live(),
                     slots=[self.vm.read(OBJECT+off) for off in (4, 8, 0xC, 0x10, 0x14, 0x18)],
                     acquisitions=len(self.acquisitions), releases=len(self.released),
                     graph_flag=self.vm.read(INSTANCE+0x28), creates=self.creations,
                     state_queries=self.index, notifications=self.notifications,
-                    locks=self.locks.copy(), **{'events': self.events.copy()})
+                    locks=self.locks.copy(), event_counts=dict(Counter(e['api'] for e in self.events)),
+                    event_trace=trace, event_trace_complete=complete,
+                    event_trace_omitted=len(self.events)-len(trace))
 
 
 def structure(previous, candidate, recipe):
