@@ -9,7 +9,7 @@ from patch_usb_folders import folder_assemble as assemble
 from patch_usb_graph_state import BASE, TEARDOWN
 from patch_updater_copy_safety import frame, end
 
-BASE_SHA = "b508cfa1a697d829fb335e3df42828a5ea514c67d2acd7fbae00546a55b7d3d5"
+BASE_SHA = "47bf72cd7fddd8e38000f553976abc7a489f66672b8c05cb0003696cfe52fea6"
 CLEANUP, CAPACITY = 0x40B00, 0x100
 
 # Called from the original RenderFile epilogue with s0=result, s1=manager.

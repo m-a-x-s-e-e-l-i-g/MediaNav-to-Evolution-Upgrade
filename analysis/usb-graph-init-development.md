@@ -23,7 +23,7 @@ API context: [IGraphBuilder::RenderFile](https://learn.microsoft.com/en-us/windo
 
 ## Evidence
 
-- [Instruction report](firmware/usb-graph-init-development.json): **360 initialization cases** and **386 retained graph-state cases**, executed against the written candidate.
+- [Instruction report](firmware/usb-graph-init-development.json): **360 initialization cases** and **431 retained graph-state cases**, executed against the written candidate. The corrected PR #26 held-seek exit is included, with actual caller cleanup/return checks.
 - Covers three failure HRESULTs, all initialization stages, retry after failure, failed/pending cleanup, successful no-op cleanup, shared interface identities, 32 consecutive failures, `LoadFile` error/readiness handling and three alternate load addresses.
 - Reference fixtures count each acquired reference separately, even when several interface pointers share an identity. Calls preserve stack, return address and callee-saved registers with adversarial API clobbers.
 - [Retained USB checks](firmware/usb-graph-init-retained.json): **72,212 passing cases** for save/resume, folders, sorting, WMA/shuffle, artwork, playlists and earlier input/encoding behavior. All 224 legacy Python snapshots and eight historical inputs match their recorded hashes.
@@ -43,7 +43,7 @@ python -m unittest discover -s tools -p test_usb_graph_init.py
 
 - The builder verifies the complete MAX04 input, applies the two pinned stages, reads back every member and tests the written executable before writing completion metadata.
 - Refuses wrong input bytes, missing/extra members, overlapping directories and existing outputs.
-- GitHub Actions reproduces MAX04 and runs the 746 combined graph checks. The full historical USB suite uses recorded local stage inputs and is not claimed to run in CI.
+- GitHub Actions reproduces MAX04 and runs the 791 combined graph checks. The full historical USB suite uses recorded local stage inputs and is not claimed to run in CI.
 - No LGU, version bump or published-release replacement.
 
 ## Device validation still needed
