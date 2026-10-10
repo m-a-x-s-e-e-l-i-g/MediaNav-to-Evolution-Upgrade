@@ -8,6 +8,7 @@
 - [strings/](strings): static extracted text references.
 - [firmware/](firmware): contract evidence, instruction traces, bounded fixture results and decoder patches.
 - [Research index](../docs/research.md): application, Bluetooth, USB, UI, updater, boot and driver notes.
+- [Updater diagnostic evidence](issue-upgrade-stalls/README.md): 210 progress-screen fixture traces and static recovery-DLL metadata.
 
 ## Interpretation
 

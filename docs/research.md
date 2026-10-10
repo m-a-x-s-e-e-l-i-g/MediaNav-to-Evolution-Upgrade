@@ -145,3 +145,4 @@
 - [research-status](../analysis/research-status.md)
 - [review-update-contracts](../analysis/review-update-contracts.md)
 - [upgrade-stall-investigation](../analysis/upgrade-stall-investigation.md)
+- [Updater diagnostic evidence](../analysis/issue-upgrade-stalls/README.md): progress-screen traces and recovery-DLL inspection metadata.
