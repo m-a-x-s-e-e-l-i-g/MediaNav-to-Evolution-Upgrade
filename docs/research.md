@@ -75,6 +75,7 @@
 - [USB playback recovery candidate](../analysis/usb-playback-recovery-development.md): confirmed Stop status, failed resume/reload seeks and unavailable position output; preserves loader recovery.
 - [USB duration output candidate](../analysis/usb-duration-output-development.md): reject stale duration output while preserving valid bounds and seeking without a known duration.
 - [USB completion event candidate](../analysis/usb-completion-event-development.md): retain progress after unavailable queries and reuse one checked duration at track completion.
+- [Album-art draw failure candidate](../analysis/artwork-draw-failure-development.md): reject failed image draws, release the temporary bitmap and retain the existing no-artwork fallback.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
