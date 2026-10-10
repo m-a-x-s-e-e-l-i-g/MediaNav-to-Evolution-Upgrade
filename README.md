@@ -1,14 +1,12 @@
 # MediaNav MAXmade — 7.0.6.MAX04
 
-MAXmade is now developed here: patch tools, decompiled code, technical research and release evidence are published alongside this guide. Downloadable LGU files live in **GitHub Releases**.
-
 Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
 | Home | Media |
 | --- | --- |
 | ![MAX04 home screen](assets/ui/max04/home-after.jpg) | ![MAX04 media player](assets/ui/max04/media-after.jpg) |
 
-UI previews from real assets, with sample data and approximate fonts. Full before/after comparisons are in the [MAX04 release notes](releases/7.0.6.MAX04/README.md).
+Full before/after comparisons are in the [MAX04 release notes](releases/7.0.6.MAX04/README.md).
 
 [Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX04/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX04/README.md) · [Developer guide](docs/development.md)
 
