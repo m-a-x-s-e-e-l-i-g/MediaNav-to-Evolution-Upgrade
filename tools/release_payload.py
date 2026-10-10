@@ -74,14 +74,17 @@ def extract_lgu(raw, plan, destination):
     expected = {r["path"]: r for r in plan["members"]}
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
         entries = archive.infolist()
-        if len(entries) != len(expected) or {e.filename for e in entries} != set(expected):
+        # The native PC writer stores Windows separators. ZipInfo normalizes
+        # these on Windows but retains them on Linux; normalize explicitly.
+        names = [str(member(e.filename.replace("\\", "/"))) for e in entries]
+        if (len(entries) != len(expected) or set(names) != set(expected)
+                or len({name.casefold() for name in names}) != len(names)):
             raise ValueError("Baseline package member set changed")
-        for entry in entries:
-            name = member(entry.filename)
+        for entry, name in zip(entries, names):
             if entry.is_dir():
                 raise ValueError("Unexpected directory member")
             value = archive.read(entry, pwd=b"I_LOVE_LG^^")
-            row = expected[entry.filename]
+            row = expected[name]
             if len(value) != row["before_bytes"] or sha(value) != row["before_sha256"]:
                 raise ValueError(f"Baseline member mismatch: {name}")
             target = destination / str(name)

@@ -1,9 +1,13 @@
 """Check complete-copy behavior and refusal of unsafe or mismatched build inputs."""
 import json
+import io
 from pathlib import Path
+import struct
 import tempfile
 import unittest
-from release_payload import member, plan_at, reproduce, sha
+import zipfile
+import zlib
+from release_payload import ROOT, extract_lgu, member, plan_at, reproduce, sha
 
 
 class ReleasePayloadTests(unittest.TestCase):
@@ -73,6 +77,32 @@ class ReleasePayloadTests(unittest.TestCase):
         path.write_text(json.dumps(self.plan))
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             plan_at(path)
+
+    def test_lgu_with_native_windows_paths_extracts_portably(self):
+        values = {"upgrade/app": b"application", "upgrade/boot": b"retained boot"}
+        stream = io.BytesIO()
+        with zipfile.ZipFile(stream, "w") as archive:
+            for name, raw in values.items():
+                entry = zipfile.ZipInfo("placeholder")
+                entry.filename = name.replace("/", "\\")
+                entry.orig_filename = entry.filename
+                archive.writestr(entry, raw)
+        decoded = stream.getvalue()
+        encoded = bytearray(decoded)
+        key = bytes.fromhex(json.loads((ROOT / "src/container/lgu0.json").read_bytes())["xor_hex"])
+        for index, value in enumerate(key):
+            encoded[index::1024] = encoded[index::1024].translate(bytes(n ^ value for n in range(256)))
+        header = bytearray(1024)
+        header[:4] = b"LGU0"
+        struct.pack_into("<Q", header, 12, len(header) + len(encoded))
+        struct.pack_into("<I", header, 24, zlib.crc32(decoded))
+        package = bytes(header + encoded)
+        plan = {"baseline_lgu_sha256": sha(package),
+                "members": [self.row(name, raw, raw) for name, raw in values.items()]}
+        destination = self.root / "extracted"
+        extract_lgu(package, plan, destination)
+        self.assertEqual({p.relative_to(destination).as_posix(): p.read_bytes()
+                          for p in destination.rglob("*") if p.is_file()}, values)
 
 
 if __name__ == "__main__":
