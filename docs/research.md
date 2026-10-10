@@ -81,6 +81,7 @@
 - [Field-sized metadata snapshots](../analysis/usb-metadata-copies-development.md): retain normal/resume outputs while reducing repeated whole-tag copies.
 - [Catalog initialization](../analysis/usb-catalog-initialization-development.md): initialize the directory pointer before reset can clear through reused object storage.
 - [Catalog allocation failures](../analysis/usb-catalog-readiness.md): required storage, premature scan dispatch and constraints for bounded recovery.
+- [Catalog storage recovery](../analysis/usb-catalog-recovery-development.md): bounded retries and readiness before scan dispatch, preserving successful buffers and cancellation cleanup.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
