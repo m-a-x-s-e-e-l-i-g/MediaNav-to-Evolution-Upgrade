@@ -83,6 +83,7 @@
 - [Catalog allocation failures](../analysis/usb-catalog-readiness.md): required storage, premature scan dispatch and constraints for bounded recovery.
 - [Catalog storage recovery](../analysis/usb-catalog-recovery-development.md): bounded retries and readiness before scan dispatch, preserving successful buffers and cancellation cleanup.
 - [USB scan coordination](../analysis/usb-scan-coordination.md): controlled boot/attach overlap, shared catalog resets and lost busy/boot status.
+- [Shuffle lifecycle](../analysis/usb-shuffle-lifecycle.md): old shuffle results and saved settings published across USB reset, including a new request restoring the enabled flag.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
