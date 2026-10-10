@@ -36,3 +36,5 @@ jobs:
       - run: python tools/build_usb_duration_output_development.py --baseline build/max04-reproduced/payload --out build/usb-duration-output-development
       - run: python -m unittest discover -s tools -p test_usb_completion_event.py
       - run: python tools/build_usb_completion_event_development.py --baseline build/max04-reproduced/payload --out build/usb-completion-event-development
+      - run: python -m unittest discover -s tools -p test_artwork_draw_failure.py
+      - run: python tools/build_artwork_draw_failure_development.py --baseline build/max04-reproduced/payload --out build/artwork-draw-failure-development
