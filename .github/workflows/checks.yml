@@ -30,3 +30,5 @@ jobs:
       - run: python tools/build_usb_seek_completion_development.py --baseline build/max04-reproduced/payload --out build/usb-seek-completion-development
       - run: python -m unittest discover -s tools -p test_usb_playback_start.py
       - run: python tools/build_usb_playback_start_development.py --baseline build/max04-reproduced/payload --out build/usb-playback-start-development
+      - run: python -m unittest discover -s tools -p test_usb_playback_recovery.py
+      - run: python tools/build_usb_playback_recovery_development.py --baseline build/max04-reproduced/payload --out build/usb-playback-recovery-development
