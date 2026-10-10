@@ -68,6 +68,7 @@
 ## USB, media and iPod
 
 - [USB playback state candidate](../analysis/usb-graph-state-development.md): bounded polling and caller failure handling after MAX04.
+- [Failed USB graph initialization](../analysis/usb-graph-init-development.md): partial-resource cleanup and retry after initialization errors; builds on the playback state candidate.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)

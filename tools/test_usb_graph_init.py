@@ -1,0 +1,47 @@
+"""Failed-init builder refusal and preservation checks."""
+from pathlib import Path
+import tempfile
+import unittest
+
+from build_usb_graph_init_development import build
+from patch_usb_graph_init import patch
+
+
+class RefusalTests(unittest.TestCase):
+    def test_wrong_input_refused(self):
+        with self.assertRaisesRegex(ValueError, 'exact PR-26'):
+            patch(b'not the checked graph-state input')
+
+    def test_existing_output_preserved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root/'previous'
+            output.mkdir()
+            sentinel = output/'keep.txt'
+            sentinel.write_bytes(b'previous verified work')
+            with self.assertRaisesRegex(ValueError, 'never overwritten'):
+                build(root/'missing', output)
+            self.assertEqual(sentinel.read_bytes(), b'previous verified work')
+            self.assertEqual(list(output.iterdir()), [sentinel])
+
+    def test_incomplete_and_extra_members_no_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            baseline = root/'input'
+            baseline.mkdir()
+            for extra in (False, True):
+                if extra:
+                    (baseline/'unexpected.exe').write_bytes(b'unexpected')
+                with self.assertRaisesRegex(ValueError, 'missing/extra'):
+                    build(baseline, root/'output')
+                self.assertFalse((root/'output').exists())
+
+    def test_input_output_overlap_refused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            baseline = Path(directory)
+            with self.assertRaisesRegex(ValueError, 'separate directories'):
+                build(baseline, baseline/'output')
+
+
+if __name__ == '__main__':
+    unittest.main()
