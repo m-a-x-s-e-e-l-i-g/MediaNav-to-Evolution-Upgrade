@@ -24,3 +24,5 @@ jobs:
       - run: python tools/build_usb_graph_state_development.py --baseline build/max04-reproduced/payload --out build/usb-graph-state-development
       - run: python -m unittest discover -s tools -p test_usb_graph_init.py
       - run: python tools/build_usb_graph_init_development.py --baseline build/max04-reproduced/payload --out build/usb-graph-init-development
+      - run: python -m unittest discover -s tools -p test_usb_seek_timing.py
+      - run: python tools/build_usb_seek_timing_development.py --baseline build/max04-reproduced/payload --out build/usb-seek-timing-development
