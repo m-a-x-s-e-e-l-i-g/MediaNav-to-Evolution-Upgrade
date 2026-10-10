@@ -1,0 +1,396 @@
+{
+  "program": "i2cbus.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "a15e4c841ff707697601f36359ea6a11f2be0cbe0634a5c7dec69632429ad0f9",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateFileW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeviceIoControl"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "OALStallExecution"
+    }
+  ],
+  "functions_attempted": 21,
+  "functions_decompiled": 21,
+  "functions": [
+    {
+      "address": "c093104c",
+      "name": "entry",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0931054",
+      "name": "I2C_Init",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c09319a4",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0931994",
+          "name": "InitializeCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09310a0",
+      "name": "I2C_Deinit",
+      "body_addresses": 56,
+      "calls": [
+        {
+          "address": "c09319c4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09319b4",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09310d8",
+      "name": "I2C_Open",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09310ec",
+      "name": "I2C_Close",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0931100",
+      "name": "I2C_Read",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0931108",
+      "name": "I2C_Seek",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0931110",
+      "name": "I2C_PowerDown",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0931118",
+      "name": "FUN_c0931118",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09311a0",
+      "name": "FUN_c09311a0",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000003",
+          "name": "Sleep",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931234",
+      "name": "FUN_c0931234",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c093130c",
+      "name": "FUN_c093130c",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09313a8",
+      "name": "FUN_c09313a8",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931464",
+      "name": "FUN_c0931464",
+      "body_addresses": 284,
+      "calls": [
+        {
+          "address": "c093130c",
+          "name": "FUN_c093130c",
+          "external": false
+        },
+        {
+          "address": "c09319d4",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09311a0",
+          "name": "FUN_c09311a0",
+          "external": false
+        },
+        {
+          "address": "c0931234",
+          "name": "FUN_c0931234",
+          "external": false
+        },
+        {
+          "address": "c09319e4",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0931118",
+          "name": "FUN_c0931118",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931580",
+      "name": "FUN_c0931580",
+      "body_addresses": 464,
+      "calls": [
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        },
+        {
+          "address": "c093130c",
+          "name": "FUN_c093130c",
+          "external": false
+        },
+        {
+          "address": "c09319d4",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09311a0",
+          "name": "FUN_c09311a0",
+          "external": false
+        },
+        {
+          "address": "c0931234",
+          "name": "FUN_c0931234",
+          "external": false
+        },
+        {
+          "address": "c09319e4",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0931118",
+          "name": "FUN_c0931118",
+          "external": false
+        },
+        {
+          "address": "c09313a8",
+          "name": "FUN_c09313a8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931750",
+      "name": "IICOpen",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "CreateFileW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931798",
+      "name": "IICClose",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09317bc",
+      "name": "IICWriteData",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "DeviceIoControl",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931810",
+      "name": "IICReadData",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "DeviceIoControl",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c093186c",
+      "name": "I2C_IOControl",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "c0931464",
+          "name": "FUN_c0931464",
+          "external": false
+        },
+        {
+          "address": "c09319f4",
+          "name": "OALStallExecution",
+          "external": false
+        },
+        {
+          "address": "c0931580",
+          "name": "FUN_c0931580",
+          "external": false
+        },
+        {
+          "address": "c09319d4",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000009",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c09319e4",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0931a04",
+      "name": "FUN_c0931a04",
+      "body_addresses": 88,
+      "calls": [],
+      "decompiled": true
+    }
+  ]
+}

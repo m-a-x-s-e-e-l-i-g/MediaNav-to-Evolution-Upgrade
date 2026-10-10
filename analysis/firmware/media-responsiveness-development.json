@@ -1,0 +1,3064 @@
+{
+  "app_recipe": {
+    "source_sha256": "bddf03995a63b41a1d6cc180be03e8b56b882d0989a5a73c60ed974f9790a4e3",
+    "base_sha256": "bddf03995a63b41a1d6cc180be03e8b56b882d0989a5a73c60ed974f9790a4e3",
+    "draft_sha256": "236ef346d273b3529a3318b17219b8135eb8bb5184bd34178337e8a72df5902c",
+    "edits": [
+      {
+        "va": "0x13e654",
+        "offset": "0x12da54",
+        "bytes": 20,
+        "before_hex": "08000426252820025ff8040c300000ae1c004010",
+        "after_hex": "25200002bef9040c252820021f004014300000ae",
+        "original_hex": "08000426252820025ff8040c300000ae1c004010",
+        "reason": "Run the existing move/cancel handler before clearing pressed state; an outside release cancels hold and returns without generating a tap",
+        "assembly": {
+          "start": "0x13e654",
+          "end": "0x13e668",
+          "used_bytes": 20,
+          "labels": {},
+          "assembly": "\n            move a0, s0\n            jal 0x13e6f8\n            move a1, s1\n            bnez v0, 0x13e6e0\n            sw zero, 0x30(s0)\n        "
+        }
+      },
+      {
+        "va": "0x13e674",
+        "offset": "0x12da74",
+        "bytes": 4,
+        "before_hex": "1800a810",
+        "after_hex": "1500a810",
+        "original_hex": "1800a810",
+        "reason": "An inside release with event -1 still clears active selection and hold timers, without dispatching a click",
+        "assembly": {
+          "start": "0x13e674",
+          "end": "0x13e678",
+          "used_bytes": 4,
+          "labels": {},
+          "assembly": "beq a1, t0, 0x13e6cc"
+        }
+      },
+      {
+        "va": "0x1397e8",
+        "offset": "0x128be8",
+        "bytes": 152,
+        "before_hex": "06020624000005241200a427258800007903050c1000a0a71500083c2538000240f6062503010524c800050c1000a427252800022548a0000000a894feff00150200a5242340a90042480800ffff2c25110080192558000000000896255000019005492d040020150000000000064a2d080040150000000001006b25020008262a486c01f4ff201525800001020000100000000001001124",
+        "after_hex": "2588000025500002000048952200001102004a2570fa09257000292dfaff2011000000001c00001001001124000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "original_hex": "06020624000005241200a427258800007903050c1000a0a71500083c2538000240f6062503010524c800050c1000a427252800022548a0000000a894feff00150200a5242340a90042480800ffff2c25110080192558000000000896255000019005492d040020150000000000064a2d080040150000000001006b25020008262a486c01f4ff201525800001020000100000000001001124",
+        "reason": "Replace unused formatted copy and length-then-range passes with one equivalent Hebrew UTF16 range scan; keep frame and cookie check",
+        "assembly": {
+          "start": "0x1397e8",
+          "end": "0x139880",
+          "used_bytes": 44,
+          "labels": {
+            "scan": "0x1397f0"
+          },
+          "assembly": "\n            move s1, zero\n            move t2, s0\n        scan:\n            lhu t0, 0(t2)\n            beqz t0, 0x139880\n            addiu t2, t2, 2\n            addiu t1, t0, -0x590\n            sltiu t1, t1, 0x70\n            beqz t1, scan\n            nop\n            b 0x139880\n            addiu s1, zero, 1\n        "
+        }
+      }
+    ],
+    "native_execution": false,
+    "executable_written": false,
+    "build_allowed": false
+  },
+  "usb_recipe": {
+    "source_sha256": "bb435bc428664845a21ffe7bce7a813db06b7e7f92408d297dbbeade94507cd2",
+    "base_sha256": "bb435bc428664845a21ffe7bce7a813db06b7e7f92408d297dbbeade94507cd2",
+    "draft_sha256": "408783c05921a92d885c63f9ccecee0c18c5e1725790cb623f8fa124ddb8085e",
+    "edits": [
+      {
+        "va": "0x1bb70",
+        "offset": "0xaf70",
+        "bytes": 8,
+        "before_hex": "b81a282603000989",
+        "after_hex": "0900001000000000",
+        "original_hex": "b81a282603000989",
+        "reason": "Free bytes are not a track identity; retain full saved path, file size/volume serial, disk API success, total disk bytes and graph-load checks",
+        "assembly": {
+          "start": "0x1bb70",
+          "end": "0x1bb78",
+          "used_bytes": 8,
+          "labels": {},
+          "assembly": "b 0x1bb98\nnop"
+        }
+      }
+    ],
+    "native_execution": false,
+    "executable_written": false,
+    "build_allowed": false
+  },
+  "checks": {
+    "touch": {
+      "cases": 115,
+      "traces": [
+        {
+          "name": "original outside release then queued timers",
+          "old": {
+            "actions": [
+              3,
+              4
+            ],
+            "selected": 1090519040,
+            "pressed": 0,
+            "repeat": 1,
+            "timers": [
+              1015
+            ]
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1002,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": false,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": false,
+          "held": true,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": false,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            360,
+            320
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            501,
+            320
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            400,
+            292
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            400,
+            377
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            0,
+            0
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "outside release",
+          "event": 1004,
+          "repeat": true,
+          "held": true,
+          "xy": [
+            -1,
+            -1
+          ],
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": false,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            361,
+            376
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            500,
+            293
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up"
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            "up",
+            1015
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "move",
+            "up",
+            1014
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            1014,
+            1015,
+            "move",
+            "up",
+            1015
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              3,
+              4,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "unchanged inside/move behavior",
+          "events": [
+            "up",
+            "up",
+            1014
+          ],
+          "xy": [
+            400,
+            320
+          ],
+          "repeat": true,
+          "new": {
+            "actions": [
+              2
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "invalid-event release",
+          "repeat": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "invalid-event release",
+          "repeat": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "release without down",
+          "enabled": false,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "release without down",
+          "enabled": true,
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "window-up caller",
+          "held": false,
+          "xy": [
+            350,
+            320
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "window-up caller",
+          "held": false,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "window-up caller",
+          "held": true,
+          "xy": [
+            350,
+            320
+          ],
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        },
+        {
+          "name": "window-up caller",
+          "held": true,
+          "xy": [
+            799,
+            479
+          ],
+          "new": {
+            "actions": [
+              3,
+              5
+            ],
+            "selected": 0,
+            "pressed": 0,
+            "repeat": 0,
+            "timers": []
+          }
+        }
+      ],
+      "native_touch_event_order_observed": false
+    },
+    "usb_resume": {
+      "cases": 20,
+      "traces": [
+        {
+          "name": "unchanged",
+          "old": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          },
+          "new": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "added small file",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "removed file",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "changed free high DWORD",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "USB nearly full",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "other volume",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          }
+        },
+        {
+          "name": "same capacity other volume",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          }
+        },
+        {
+          "name": "track changed size",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          }
+        },
+        {
+          "name": "track removed",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ]
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "file-info failure",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info"
+            ]
+          }
+        },
+        {
+          "name": "disk API failure",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          }
+        },
+        {
+          "name": "changed capacity low",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          }
+        },
+        {
+          "name": "changed capacity high",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          }
+        },
+        {
+          "name": "graph rejects track",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "changed free and graph rejects",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "empty path",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": []
+          },
+          "new": {
+            "result": 0,
+            "seeks": [],
+            "events": []
+          }
+        },
+        {
+          "name": "relative path",
+          "old": {
+            "result": 0,
+            "seeks": [],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk"
+            ]
+          },
+          "new": {
+            "result": 1,
+            "seeks": [
+              42
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "preserved position",
+          "position": 0,
+          "new": {
+            "result": 1,
+            "seeks": [
+              0
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "preserved position",
+          "position": 1,
+          "new": {
+            "result": 1,
+            "seeks": [
+              1
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "name": "preserved position",
+          "position": 299,
+          "new": {
+            "result": 1,
+            "seeks": [
+              299
+            ],
+            "events": [
+              [
+                "open",
+                "\\MD\\Music\\Track.mp3"
+              ],
+              "file-info",
+              "disk",
+              [
+                "metadata",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ],
+              [
+                "graph",
+                "\\MD\\Music\\Track.mp3",
+                1
+              ]
+            ]
+          }
+        }
+      ],
+      "unaligned_merge_cases": 4,
+      "scan_order": "Resume loads the saved path before library scanning; the existing search then rematches the live track index",
+      "identity_limit": "Existing size/serial/capacity checks are retained; equal-size content changes and cloned volume serials are not newly detected"
+    },
+    "performance": {
+      "exhaustive_utf16_cases": 65536,
+      "mixed_cases": 140,
+      "benchmarks": [
+        {
+          "length": 0,
+          "old": {
+            "result": 0,
+            "text_reads": 1,
+            "instructions": 38,
+            "unused_crt_calls": [
+              "memset",
+              "_snwprintf"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "text_reads": 1,
+            "instructions": 21,
+            "unused_crt_calls": []
+          }
+        },
+        {
+          "length": 8,
+          "old": {
+            "result": 0,
+            "text_reads": 17,
+            "instructions": 144,
+            "unused_crt_calls": [
+              "memset",
+              "_snwprintf"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "text_reads": 9,
+            "instructions": 77,
+            "unused_crt_calls": []
+          }
+        },
+        {
+          "length": 32,
+          "old": {
+            "result": 0,
+            "text_reads": 65,
+            "instructions": 456,
+            "unused_crt_calls": [
+              "memset",
+              "_snwprintf"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "text_reads": 33,
+            "instructions": 245,
+            "unused_crt_calls": []
+          }
+        },
+        {
+          "length": 128,
+          "old": {
+            "result": 0,
+            "text_reads": 257,
+            "instructions": 1704,
+            "unused_crt_calls": [
+              "memset",
+              "_snwprintf"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "text_reads": 129,
+            "instructions": 917,
+            "unused_crt_calls": []
+          }
+        },
+        {
+          "length": 270,
+          "old": {
+            "result": 0,
+            "text_reads": 541,
+            "instructions": 3550,
+            "unused_crt_calls": [
+              "memset",
+              "_snwprintf"
+            ]
+          },
+          "new": {
+            "result": 0,
+            "text_reads": 271,
+            "instructions": 1911,
+            "unused_crt_calls": []
+          }
+        }
+      ],
+      "unchanged_draw_call_sites": [
+        "0x139ec8",
+        "0x13a7ec",
+        "0x13b7c0",
+        "0x13bac0",
+        "0x13bf74",
+        "0x13c600",
+        "0x13c70c",
+        "0x13cd58"
+      ],
+      "measurement": "Interpreted instruction/read counts only; CRT internals and native elapsed time excluded",
+      "startup_wait_changed": false,
+      "audio_switch_waits_changed": false
+    },
+    "native_execution": false,
+    "hardware_tested": false
+  }
+}

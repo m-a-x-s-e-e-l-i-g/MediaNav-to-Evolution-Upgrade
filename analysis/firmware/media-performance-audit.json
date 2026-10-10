@@ -1,0 +1,1867 @@
+{
+  "app_sha256": "bddf03995a63b41a1d6cc180be03e8b56b882d0989a5a73c60ed974f9790a4e3",
+  "evidence": [
+    {
+      "function": "0x130e50",
+      "meaning": "manager startup",
+      "bytes": 556,
+      "sha256": "236c084d5c7618f6c66e0f03d4385210dd08fd97c2f2ba422863aa6c576930ba",
+      "blocking_sites": [
+        {
+          "va": "0x130ffc",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "call_hex": "0x100f809",
+          "milliseconds": 600
+        }
+      ]
+    },
+    {
+      "function": "0xd9114",
+      "meaning": "USB/iPod resume launch selection",
+      "bytes": 328,
+      "sha256": "dc6c3f95a4ae69f209670e601549e6937a1897ebadf96150d1a5d91dece1b614",
+      "blocking_sites": []
+    },
+    {
+      "function": "0xd9f04",
+      "meaning": "requestChangeAudioSource",
+      "bytes": 3516,
+      "sha256": "92199de302b79d789de4856d05f3f6a6aab159330a79555d0820c9b0979c41be",
+      "blocking_sites": [
+        {
+          "va": "0xda104",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        },
+        {
+          "va": "0xda13c",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "call_hex": "0x100f809",
+          "milliseconds": 200
+        },
+        {
+          "va": "0xda1d4",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        },
+        {
+          "va": "0xda22c",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "call_hex": "0x100f809",
+          "milliseconds": 200
+        },
+        {
+          "va": "0xda30c",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        },
+        {
+          "va": "0xda364",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "call_hex": "0x100f809",
+          "milliseconds": 200
+        },
+        {
+          "va": "0xda830",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        },
+        {
+          "va": "0xdaa94",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x120f809"
+        }
+      ]
+    },
+    {
+      "function": "0xd95a8",
+      "meaning": "requestChangeOverlayAudioSource",
+      "bytes": 2148,
+      "sha256": "a48d0f73b110be4a308cb2feeec1dee63251886037799c1a356bc9cdba1f28ec",
+      "blocking_sites": [
+        {
+          "va": "0xd987c",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        },
+        {
+          "va": "0xd98a8",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        },
+        {
+          "va": "0xd99c0",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "call_hex": "0x100f809",
+          "milliseconds": 500
+        },
+        {
+          "va": "0xd9c90",
+          "symbol": "CmnDll.dll!IpcSendMsg",
+          "call_hex": "0x100f809"
+        }
+      ]
+    }
+  ],
+  "startup_cases": 48,
+  "startup_traces": [
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 0,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 0,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 1,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 1,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 2,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 2,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 3,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 3,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 4,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 4,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 7,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": false,
+      "last_source": 7,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 0,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 0,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 1,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 1,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 2,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 2,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 3,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 3,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 4,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 4,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 7,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": false,
+      "usb_inserted": true,
+      "last_source": 7,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 0,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 0,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 1,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 1,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 2,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 2,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 3,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 3,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 4,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 4,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 7,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": false,
+      "last_source": 7,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 0,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 0,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 1,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 1,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 2,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 2,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 3,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 3,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": true
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 4,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 4,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 7,
+      "dab": false,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        }
+      ]
+    },
+    {
+      "ipod_inserted": true,
+      "usb_inserted": true,
+      "last_source": 7,
+      "dab": true,
+      "events": [
+        {
+          "operation": "launch",
+          "manager": "MgrIpod",
+          "resume": false
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrUSB",
+          "resume": false
+        },
+        {
+          "operation": "restore other audio source"
+        },
+        {
+          "operation": "fixed wait",
+          "milliseconds": 600
+        },
+        {
+          "operation": "launch",
+          "manager": "Blue"
+        },
+        {
+          "operation": "boot-status IPC",
+          "sender": 21,
+          "receiver": 3,
+          "command": 183
+        },
+        {
+          "operation": "launch",
+          "manager": "MgrDAB"
+        }
+      ]
+    }
+  ],
+  "conclusion": "The 600 ms startup sleep follows media-manager launches and precedes Blue/boot-status publication. Source selection contains three separate 200 ms sleep sites; overlay restoration has a separate 500 ms site. Branches are not additive latency measurements.",
+  "next_measurement": "Compare ignition to usable home screen, first/warm screen changes, and radio/USB/Bluetooth switch-to-audio with a matched original/candidate on the same unit. Trace media-manager readiness before shortening waits.",
+  "waits_changed": false,
+  "native_execution": false,
+  "elapsed_time_measured": false,
+  "excluded_scope": "No broad Bluetooth RX timeout/power/controller/cache work resumed"
+}

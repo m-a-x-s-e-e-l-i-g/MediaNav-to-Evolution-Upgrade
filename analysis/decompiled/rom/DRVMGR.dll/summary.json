@@ -1,0 +1,502 @@
+{
+  "program": "DRVMGR.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "eef794a2c6e211d252832a30b59dbf5dab74045f377c9253653c0dc4c2740400",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "NKDbgPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmUnmapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmMapIoSpace"
+    },
+    {
+      "library": "GPINTR.DLL",
+      "label": "GPINTR_SetPinConfiguration"
+    },
+    {
+      "library": "GPINTR.DLL",
+      "label": "GPINTR_GetPinState"
+    }
+  ],
+  "functions_attempted": 22,
+  "functions_decompiled": 22,
+  "functions": [
+    {
+      "address": "c09a13b4",
+      "name": "FUN_c09a13b4",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09a13bc",
+      "name": "MGR_Deinit",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "c09a1d40",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09a1d30",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a13f0",
+      "name": "FUN_c09a13f0",
+      "body_addresses": 224,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c09a1da0",
+          "name": "GPINTR_SetPinConfiguration",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a14d0",
+      "name": "FUN_c09a14d0",
+      "body_addresses": 400,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c09a1d50",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c09a1da0",
+          "name": "GPINTR_SetPinConfiguration",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1660",
+      "name": "FUN_c09a1660",
+      "body_addresses": 160,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "Sleep",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1700",
+      "name": "MGR_Init",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c09a1d70",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c09a14d0",
+          "name": "FUN_c09a14d0",
+          "external": false
+        },
+        {
+          "address": "c09a1d60",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09a1d40",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09a1d50",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c09a1d30",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c09a13f0",
+          "name": "FUN_c09a13f0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1784",
+      "name": "MGR_Open",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1798",
+      "name": "MGR_Close",
+      "body_addresses": 20,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09a17ac",
+      "name": "FUN_c09a17ac",
+      "body_addresses": 72,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09a17f4",
+      "name": "FUN_c09a17f4",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c09a1d80",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09a1d90",
+          "name": "MmMapIoSpace",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1844",
+      "name": "FUN_c09a1844",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c09a1d80",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09a1d90",
+          "name": "MmMapIoSpace",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a189c",
+      "name": "FUN_c09a189c",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c09a17ac",
+          "name": "FUN_c09a17ac",
+          "external": false
+        },
+        {
+          "address": "c09a1d80",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09a1d90",
+          "name": "MmMapIoSpace",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a18f0",
+      "name": "FUN_c09a18f0",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c09a17ac",
+          "name": "FUN_c09a17ac",
+          "external": false
+        },
+        {
+          "address": "c09a1d80",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09a1d90",
+          "name": "MmMapIoSpace",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a194c",
+      "name": "MGR_IOControl",
+      "body_addresses": 952,
+      "calls": [
+        {
+          "address": "c09a1660",
+          "name": "FUN_c09a1660",
+          "external": false
+        },
+        {
+          "address": "c09a17f4",
+          "name": "FUN_c09a17f4",
+          "external": false
+        },
+        {
+          "address": "c09a14d0",
+          "name": "FUN_c09a14d0",
+          "external": false
+        },
+        {
+          "address": "c09a1db0",
+          "name": "GPINTR_GetPinState",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c09a1d50",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c09a189c",
+          "name": "FUN_c09a189c",
+          "external": false
+        },
+        {
+          "address": "c09a18f0",
+          "name": "FUN_c09a18f0",
+          "external": false
+        },
+        {
+          "address": "c09a1da0",
+          "name": "GPINTR_SetPinConfiguration",
+          "external": false
+        },
+        {
+          "address": "c09a1844",
+          "name": "FUN_c09a1844",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1dc0",
+      "name": "FUN_c09a1dc0",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "c09a20a0",
+          "name": "FUN_c09a20a0",
+          "external": false
+        },
+        {
+          "address": "c09a2118",
+          "name": "FUN_c09a2118",
+          "external": false
+        },
+        {
+          "address": "c09a13b4",
+          "name": "FUN_c09a13b4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1efc",
+      "name": "FUN_c09a1efc",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c09a21c8",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1f28",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c09a1dc0",
+          "name": "FUN_c09a1dc0",
+          "external": false
+        },
+        {
+          "address": "c09a2154",
+          "name": "FUN_c09a2154",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a1f80",
+      "name": "FUN_c09a1f80",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c09a2208",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c09a1d40",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09a20c4",
+          "name": "FUN_c09a20c4",
+          "external": false
+        },
+        {
+          "address": "c09a2218",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "c09a21e8",
+          "name": "free",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a20a0",
+      "name": "FUN_c09a20a0",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c09a1f80",
+          "name": "FUN_c09a1f80",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a20c4",
+      "name": "FUN_c09a20c4",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09a2118",
+      "name": "FUN_c09a2118",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c09a20c4",
+          "name": "FUN_c09a20c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09a2154",
+      "name": "FUN_c09a2154",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c09a21f8",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

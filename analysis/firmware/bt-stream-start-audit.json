@@ -1,0 +1,818 @@
+{
+  "scope": "Read-only bounded MIPS StartInd interpretation. Filter/API/transport outcomes are fixtures, not hardware evidence or an incident reproduction.",
+  "conclusion": "Open/start failure still reaches successful start response, AV state 3, shared output flag 1 and AppMain stream notifications when audio is requested. Original, published and development routine bytes are identical.",
+  "cases": 21,
+  "modules": {
+    "original": {
+      "path": "extracted\\705md\\upgrade\\Storage Card\\System\\Blue.exe",
+      "sha256": "5e659f513327c84964a929ea9b9e3192384b3031fa6e6ffb6ad76b02af1b7c7b",
+      "routine_sha256": "515bfa45b8d073dd66a8e3690125bb7e82981e12a67c73ab7c812145e4f87de0",
+      "cases": [
+        {
+          "name": "success",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 169
+        },
+        {
+          "name": "open_and_start_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 0
+            },
+            {
+              "opcode": 4,
+              "result": 0
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 185
+        },
+        {
+          "name": "start_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 0
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "stop_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 0
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "close_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 0
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "audio_not_requested",
+          "audio_requested": 0,
+          "filter_calls": [],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 0,
+          "play_state": 1,
+          "instructions": 130
+        },
+        {
+          "name": "wrong_stream_state",
+          "audio_requested": 1,
+          "filter_calls": [],
+          "response": [
+            {
+              "type": 26,
+              "error": 49
+            }
+          ],
+          "app_messages": [],
+          "av_state": 1,
+          "output_flag": 0,
+          "play_state": 0,
+          "instructions": 84
+        }
+      ]
+    },
+    "published_MAX03": {
+      "path": "build\\maxmade-7.0.6.MAX03\\payload\\upgrade\\Storage Card\\System\\Blue.exe",
+      "sha256": "86db75416ce9196412a3c46c1036da3aa151eacc409f7c22db3461e81fe3308a",
+      "routine_sha256": "515bfa45b8d073dd66a8e3690125bb7e82981e12a67c73ab7c812145e4f87de0",
+      "cases": [
+        {
+          "name": "success",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 169
+        },
+        {
+          "name": "open_and_start_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 0
+            },
+            {
+              "opcode": 4,
+              "result": 0
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 185
+        },
+        {
+          "name": "start_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 0
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "stop_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 0
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "close_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 0
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "audio_not_requested",
+          "audio_requested": 0,
+          "filter_calls": [],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 0,
+          "play_state": 1,
+          "instructions": 130
+        },
+        {
+          "name": "wrong_stream_state",
+          "audio_requested": 1,
+          "filter_calls": [],
+          "response": [
+            {
+              "type": 26,
+              "error": 49
+            }
+          ],
+          "app_messages": [],
+          "av_state": 1,
+          "output_flag": 0,
+          "play_state": 0,
+          "instructions": 84
+        }
+      ]
+    },
+    "current_development": {
+      "path": "build\\usb-option-snapshot-development-01\\payload\\upgrade\\Storage Card\\System\\Blue.exe",
+      "sha256": "86db75416ce9196412a3c46c1036da3aa151eacc409f7c22db3461e81fe3308a",
+      "routine_sha256": "515bfa45b8d073dd66a8e3690125bb7e82981e12a67c73ab7c812145e4f87de0",
+      "cases": [
+        {
+          "name": "success",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 169
+        },
+        {
+          "name": "open_and_start_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 0
+            },
+            {
+              "opcode": 4,
+              "result": 0
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 185
+        },
+        {
+          "name": "start_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 0
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "stop_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 0
+            },
+            {
+              "opcode": 3,
+              "result": 1
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "close_failure",
+          "audio_requested": 1,
+          "filter_calls": [
+            {
+              "opcode": 5,
+              "result": 1
+            },
+            {
+              "opcode": 3,
+              "result": 0
+            },
+            {
+              "opcode": 2,
+              "result": 1
+            },
+            {
+              "opcode": 4,
+              "result": 1
+            }
+          ],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 1,
+          "play_state": 1,
+          "instructions": 177
+        },
+        {
+          "name": "audio_not_requested",
+          "audio_requested": 0,
+          "filter_calls": [],
+          "response": [
+            {
+              "type": 26,
+              "error": 0
+            }
+          ],
+          "app_messages": [
+            [
+              2,
+              50792449,
+              0
+            ],
+            [
+              2,
+              50794753,
+              1
+            ]
+          ],
+          "av_state": 3,
+          "output_flag": 0,
+          "play_state": 1,
+          "instructions": 130
+        },
+        {
+          "name": "wrong_stream_state",
+          "audio_requested": 1,
+          "filter_calls": [],
+          "response": [
+            {
+              "type": 26,
+              "error": 49
+            }
+          ],
+          "app_messages": [],
+          "av_state": 1,
+          "output_flag": 0,
+          "play_state": 0,
+          "instructions": 84
+        }
+      ]
+    }
+  },
+  "tool_sha256": "d666b05bece0f7bf1a705984bc8677c9e376a252b492dd3011e0dff16466af03"
+}

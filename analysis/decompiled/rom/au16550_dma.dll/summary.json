@@ -1,0 +1,1985 @@
+{
+  "program": "au16550_dma.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "1dbd95d24545048c6ecd21a3bdfa83a7096d598bb7a2318a0ff74479e2a1857e",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "CEDDK.DLL",
+      "label": "READ_PORT_ULONG"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "WRITE_PORT_ULONG"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "GetPBUSSpeed"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptDisconnect"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmUnmapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalAckDMAInterrupt"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalCheckForDMAInterrupt"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalActivateDMABuffer"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalGetDMABufferRxSize"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalGetNextDMABuffer"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptConnect"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalGetDMAHwIntr"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalStartDMA"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalSetDMAForReceive"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalInitDmaChannel"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "HalAllocateDMAChannel"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmMapIoSpace"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ExitThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EventModify"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetInterruptEvent"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "NKDbgPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "OpenDeviceKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptInitialize"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDisable"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDone"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedDecrement"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSafeCopyMemory"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedIncrement"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedCompareExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeFreeAsynchronousBuffer"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeAllocAsynchronousBuffer"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "malloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memmove"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegQueryValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCloseKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeGetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "Sleep"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetTickCount"
+    }
+  ],
+  "functions_attempted": 55,
+  "functions_decompiled": 55,
+  "functions": [
+    {
+      "address": "c088119c",
+      "name": "FUN_c088119c",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c0883a70",
+          "name": "FUN_c0883a70",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881270",
+      "name": "FUN_c0881270",
+      "body_addresses": 160,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c0883a70",
+          "name": "FUN_c0883a70",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881310",
+      "name": "FUN_c0881310",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c088539c",
+          "name": "GetPBUSSpeed",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08813a8",
+      "name": "FUN_c08813a8",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c088147c",
+      "name": "FUN_c088147c",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881514",
+      "name": "FUN_c0881514",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c08856b4",
+          "name": "malloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881550",
+      "name": "FUN_c0881550",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "c08856c4",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c08853bc",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c08854bc",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08853ac",
+          "name": "InterruptDisconnect",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08815f8",
+      "name": "FUN_c08815f8",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08853ac",
+          "name": "InterruptDisconnect",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c088168c",
+      "name": "FUN_c088168c",
+      "body_addresses": 316,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c08853cc",
+          "name": "HalAckDMAInterrupt",
+          "external": false
+        },
+        {
+          "address": "c08853dc",
+          "name": "HalCheckForDMAInterrupt",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08817c8",
+      "name": "FUN_c08817c8",
+      "body_addresses": 376,
+      "calls": [
+        {
+          "address": "c088540c",
+          "name": "HalGetNextDMABuffer",
+          "external": false
+        },
+        {
+          "address": "c08853ec",
+          "name": "HalActivateDMABuffer",
+          "external": false
+        },
+        {
+          "address": "c08856d4",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c088119c",
+          "name": "FUN_c088119c",
+          "external": false
+        },
+        {
+          "address": "c08853fc",
+          "name": "HalGetDMABufferRxSize",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881940",
+      "name": "FUN_c0881940",
+      "body_addresses": 364,
+      "calls": [
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c0881270",
+          "name": "FUN_c0881270",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088540c",
+          "name": "HalGetNextDMABuffer",
+          "external": false
+        },
+        {
+          "address": "c08853ec",
+          "name": "HalActivateDMABuffer",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08856d4",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c088119c",
+          "name": "FUN_c088119c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881aac",
+      "name": "FUN_c0881aac",
+      "body_addresses": 184,
+      "calls": [
+        {
+          "address": "c0881270",
+          "name": "FUN_c0881270",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881b64",
+      "name": "FUN_c0881b64",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088119c",
+          "name": "FUN_c088119c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881bec",
+      "name": "FUN_c0881bec",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881c68",
+      "name": "FUN_c0881c68",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881cfc",
+      "name": "FUN_c0881cfc",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881d60",
+      "name": "FUN_c0881d60",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881dbc",
+      "name": "FUN_c0881dbc",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881e20",
+      "name": "FUN_c0881e20",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881e84",
+      "name": "FUN_c0881e84",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881ee8",
+      "name": "FUN_c0881ee8",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881f44",
+      "name": "FUN_c0881f44",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0881f90",
+      "name": "FUN_c0881f90",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c0881270",
+          "name": "FUN_c0881270",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882014",
+      "name": "FUN_c0882014",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088119c",
+          "name": "FUN_c088119c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882174",
+      "name": "FUN_c0882174",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "c08856e4",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08821fc",
+      "name": "FUN_c08821fc",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882280",
+      "name": "FUN_c0882280",
+      "body_addresses": 308,
+      "calls": [
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088147c",
+          "name": "FUN_c088147c",
+          "external": false
+        },
+        {
+          "address": "c0881310",
+          "name": "FUN_c0881310",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08813a8",
+          "name": "FUN_c08813a8",
+          "external": false
+        },
+        {
+          "address": "c08856d4",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08823bc",
+      "name": "FUN_c08823bc",
+      "body_addresses": 120,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c08854cc",
+          "name": "SetInterruptEvent",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882434",
+      "name": "FUN_c0882434",
+      "body_addresses": 740,
+      "calls": [
+        {
+          "address": "c08854fc",
+          "name": "OpenDeviceKey",
+          "external": false
+        },
+        {
+          "address": "c088541c",
+          "name": "InterruptConnect",
+          "external": false
+        },
+        {
+          "address": "c088546c",
+          "name": "HalAllocateDMAChannel",
+          "external": false
+        },
+        {
+          "address": "c088543c",
+          "name": "HalStartDMA",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "c08854dc",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08856e4",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c088547c",
+          "name": "MmMapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c088542c",
+          "name": "HalGetDMAHwIntr",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001a",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c0881550",
+          "name": "FUN_c0881550",
+          "external": false
+        },
+        {
+          "address": "c08854ec",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c088544c",
+          "name": "HalSetDMAForReceive",
+          "external": false
+        },
+        {
+          "address": "c08856b4",
+          "name": "malloc",
+          "external": false
+        },
+        {
+          "address": "c088545c",
+          "name": "HalInitDmaChannel",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000019",
+          "name": "RegCloseKey",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882718",
+      "name": "FUN_c0882718",
+      "body_addresses": 572,
+      "calls": [
+        {
+          "address": "c088550c",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "GetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c088147c",
+          "name": "FUN_c088147c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001f",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c088551c",
+          "name": "InterruptInitialize",
+          "external": false
+        },
+        {
+          "address": "c088541c",
+          "name": "InterruptConnect",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08813a8",
+          "name": "FUN_c08813a8",
+          "external": false
+        },
+        {
+          "address": "c088119c",
+          "name": "FUN_c088119c",
+          "external": false
+        },
+        {
+          "address": "c088537c",
+          "name": "READ_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c0881310",
+          "name": "FUN_c0881310",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001a",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c08854ec",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c088538c",
+          "name": "WRITE_PORT_ULONG",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0881270",
+          "name": "FUN_c0881270",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882954",
+      "name": "entry",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882988",
+      "name": "FUN_c0882988",
+      "body_addresses": 336,
+      "calls": [
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882ad8",
+      "name": "FUN_c0882ad8",
+      "body_addresses": 196,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001f",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000026",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c088552c",
+          "name": "InterruptDisable",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088553c",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000027",
+          "name": "CeGetThreadPriority",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882b9c",
+      "name": "FUN_c0882b9c",
+      "body_addresses": 828,
+      "calls": [
+        {
+          "address": "c08856d4",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882ed8",
+      "name": "FUN_c0882ed8",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0882fe4",
+      "name": "COM_Close",
+      "body_addresses": 424,
+      "calls": [
+        {
+          "address": "c0882ad8",
+          "name": "FUN_c0882ad8",
+          "external": false
+        },
+        {
+          "address": "c088554c",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000002a",
+          "name": "SetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c08854bc",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c088318c",
+      "name": "FUN_c088318c",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "c0882ed8",
+          "name": "FUN_c0882ed8",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08831d0",
+      "name": "COM_Deinit",
+      "body_addresses": 408,
+      "calls": [
+        {
+          "address": "c0882ad8",
+          "name": "FUN_c0882ad8",
+          "external": false
+        },
+        {
+          "address": "c088554c",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0882fe4",
+          "name": "COM_Close",
+          "external": false
+        },
+        {
+          "address": "c08854bc",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0883368",
+      "name": "COM_Read",
+      "body_addresses": 1176,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c088555c",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000002d",
+          "name": "GetTickCount",
+          "external": true
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088557c",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c088556c",
+          "name": "CeSafeCopyMemory",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0883800",
+      "name": "COM_Seek",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0883808",
+      "name": "COM_PowerUp",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c088384c",
+      "name": "COM_PowerDown",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0883890",
+      "name": "FUN_c0883890",
+      "body_addresses": 444,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c088555c",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088557c",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c088558c",
+          "name": "InterlockedExchange",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0883a64",
+      "name": "FUN_c0883a64",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0883a70",
+      "name": "FUN_c0883a70",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c088558c",
+          "name": "InterlockedExchange",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0883b60",
+      "name": "COM_IOControl",
+      "body_addresses": 2488,
+      "calls": [
+        {
+          "address": "c0882b9c",
+          "name": "FUN_c0882b9c",
+          "external": false
+        },
+        {
+          "address": "c088555c",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c0883890",
+          "name": "FUN_c0883890",
+          "external": false
+        },
+        {
+          "address": "c088318c",
+          "name": "FUN_c088318c",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088566c",
+          "name": "FUN_c088566c",
+          "external": false
+        },
+        {
+          "address": "c08856d4",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c088558c",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c08856e4",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088557c",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08845cc",
+      "name": "FUN_c08845cc",
+      "body_addresses": 1012,
+      "calls": [
+        {
+          "address": "c08855ac",
+          "name": "ExitThread",
+          "external": false
+        },
+        {
+          "address": "c088555c",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c0882988",
+          "name": "FUN_c0882988",
+          "external": false
+        },
+        {
+          "address": "c0885704",
+          "name": "memmove",
+          "external": false
+        },
+        {
+          "address": "c0883a70",
+          "name": "FUN_c0883a70",
+          "external": false
+        },
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088559c",
+          "name": "InterlockedCompareExchange",
+          "external": false
+        },
+        {
+          "address": "c088566c",
+          "name": "FUN_c088566c",
+          "external": false
+        },
+        {
+          "address": "c088557c",
+          "name": "InterlockedIncrement",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08849c0",
+      "name": "FUN_c08849c0",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000026",
+          "name": "Sleep",
+          "external": true
+        },
+        {
+          "address": "c08845cc",
+          "name": "FUN_c08845cc",
+          "external": false
+        },
+        {
+          "address": "c088553c",
+          "name": "InterruptDone",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0884a70",
+      "name": "FUN_c0884a70",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c088550c",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "c088551c",
+          "name": "InterruptInitialize",
+          "external": false
+        },
+        {
+          "address": "c088553c",
+          "name": "InterruptDone",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0884b08",
+      "name": "COM_Init",
+      "body_addresses": 732,
+      "calls": [
+        {
+          "address": "c08856e4",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c08854fc",
+          "name": "OpenDeviceKey",
+          "external": false
+        },
+        {
+          "address": "c08831d0",
+          "name": "COM_Deinit",
+          "external": false
+        },
+        {
+          "address": "c0881514",
+          "name": "FUN_c0881514",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001a",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c0884a70",
+          "name": "FUN_c0884a70",
+          "external": false
+        },
+        {
+          "address": "c08855bc",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "c08854dc",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000019",
+          "name": "RegCloseKey",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0884de4",
+      "name": "COM_Open",
+      "body_addresses": 828,
+      "calls": [
+        {
+          "address": "c0882b9c",
+          "name": "FUN_c0882b9c",
+          "external": false
+        },
+        {
+          "address": "c088554c",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001f",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854bc",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08854dc",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08856e4",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001a",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c0884a70",
+          "name": "FUN_c0884a70",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c08855bc",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0885120",
+      "name": "COM_Write",
+      "body_addresses": 604,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000017",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c088555c",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c0882988",
+          "name": "FUN_c0882988",
+          "external": false
+        },
+        {
+          "address": "c08855cc",
+          "name": "CeFreeAsynchronousBuffer",
+          "external": false
+        },
+        {
+          "address": "c0883a70",
+          "name": "FUN_c0883a70",
+          "external": false
+        },
+        {
+          "address": "c088548c",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c088549c",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c08855dc",
+          "name": "CeAllocAsynchronousBuffer",
+          "external": false
+        },
+        {
+          "address": "c08854ac",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c088557c",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000028",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c08855ec",
+      "name": "FUN_c08855ec",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "c088566c",
+          "name": "FUN_c088566c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0885640",
+      "name": "FUN_c0885640",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c08855ec",
+          "name": "FUN_c08855ec",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c088566c",
+      "name": "FUN_c088566c",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "c0885714",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

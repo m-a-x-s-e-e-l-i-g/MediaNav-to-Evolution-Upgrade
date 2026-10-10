@@ -1,0 +1,710 @@
+{
+  "program": "winsock.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "6791aca56b63636e018ed02905139d90cd85603812b7f96771b6f3b3e55fb631",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "WS2.DLL",
+      "label": "WSACleanup"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "WSAStartup"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "socket"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "closesocket"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "accept"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "bind"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "connect"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "getsockopt"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "inet_addr"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "inet_ntoa"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "ioctlsocket"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "listen"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "recv"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "recvfrom"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "select"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "send"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "sendto"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "shutdown"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "getpeername"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "getsockname"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "gethostbyaddr"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "gethostbyname"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "gethostname"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "sethostname"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "WSAIoctl"
+    },
+    {
+      "library": "WS2.DLL",
+      "label": "setsockopt"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    }
+  ],
+  "functions_attempted": 41,
+  "functions_decompiled": 41,
+  "functions": [
+    {
+      "address": "403f1060",
+      "name": "WSAStartup",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "403f15d0",
+          "name": "WSACleanup",
+          "external": false
+        },
+        {
+          "address": "403f15e0",
+          "name": "WSAStartup",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1134",
+      "name": "WSACleanup",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000023",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "403f15d0",
+          "name": "WSACleanup",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f117c",
+      "name": "socket",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f15f0",
+          "name": "socket",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1198",
+      "name": "closesocket",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1600",
+          "name": "closesocket",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f11b4",
+      "name": "accept",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1610",
+          "name": "accept",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f11d0",
+      "name": "bind",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1620",
+          "name": "bind",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f11ec",
+      "name": "connect",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1630",
+          "name": "connect",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1208",
+      "name": "getsockopt",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "403f1640",
+          "name": "getsockopt",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1228",
+      "name": "inet_addr",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1650",
+          "name": "inet_addr",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1244",
+      "name": "inet_ntoa",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1660",
+          "name": "inet_ntoa",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1260",
+      "name": "ioctlsocket",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1670",
+          "name": "ioctlsocket",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f127c",
+      "name": "listen",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1680",
+          "name": "listen",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1298",
+      "name": "recv",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1690",
+          "name": "recv",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f12b4",
+      "name": "recvfrom",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "403f16a0",
+          "name": "recvfrom",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f12dc",
+      "name": "select",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "403f16b0",
+          "name": "select",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f12fc",
+      "name": "send",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f16c0",
+          "name": "send",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1318",
+      "name": "sendto",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "403f16d0",
+          "name": "sendto",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1340",
+      "name": "shutdown",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f16e0",
+          "name": "shutdown",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f135c",
+      "name": "getpeername",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f16f0",
+          "name": "getpeername",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1378",
+      "name": "getsockname",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1700",
+          "name": "getsockname",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1394",
+      "name": "__WSAFDIsSet",
+      "body_addresses": 72,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "403f13dc",
+      "name": "WsControl",
+      "body_addresses": 60,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "403f1418",
+      "name": "EnumProtocolsW",
+      "body_addresses": 36,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "403f143c",
+      "name": "gethostbyaddr",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1710",
+          "name": "gethostbyaddr",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1458",
+      "name": "gethostbyname",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1720",
+          "name": "gethostbyname",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1474",
+      "name": "gethostname",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1730",
+          "name": "gethostname",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1490",
+      "name": "sethostname",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "403f1740",
+          "name": "sethostname",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f14ac",
+      "name": "WSAIoctl",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "403f1750",
+          "name": "WSAIoctl",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f14ec",
+      "name": "setsockopt",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "403f1760",
+          "name": "setsockopt",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f150c",
+      "name": "htons",
+      "body_addresses": 24,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "403f1524",
+      "name": "htonl",
+      "body_addresses": 44,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "403f1550",
+      "name": "FUN_403f1550",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "403f1af4",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000022",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        },
+        {
+          "address": "403f18d8",
+          "name": "FUN_403f18d8",
+          "external": false
+        },
+        {
+          "address": "403f15e0",
+          "name": "WSAStartup",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1770",
+      "name": "entry",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "403f1ab8",
+          "name": "FUN_403f1ab8",
+          "external": false
+        },
+        {
+          "address": "403f17e4",
+          "name": "FUN_403f17e4",
+          "external": false
+        },
+        {
+          "address": "403f1a40",
+          "name": "FUN_403f1a40",
+          "external": false
+        },
+        {
+          "address": "403f1550",
+          "name": "FUN_403f1550",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f17e4",
+      "name": "FUN_403f17e4",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "403f1b04",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1858",
+      "name": "FUN_403f1858",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "403f18d8",
+          "name": "FUN_403f18d8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f18ac",
+      "name": "FUN_403f18ac",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "403f1858",
+          "name": "FUN_403f1858",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f18d8",
+      "name": "FUN_403f18d8",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "403f1b14",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1920",
+      "name": "FUN_403f1920",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "403f1b24",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "403f1a64",
+          "name": "FUN_403f1a64",
+          "external": false
+        },
+        {
+          "address": "403f1b34",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "403f1b54",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "403f1b44",
+          "name": "InterlockedExchange",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1a40",
+      "name": "FUN_403f1a40",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "403f1920",
+          "name": "FUN_403f1920",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403f1a64",
+      "name": "FUN_403f1a64",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "403f1ab8",
+      "name": "FUN_403f1ab8",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "403f1a64",
+          "name": "FUN_403f1a64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

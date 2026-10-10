@@ -1,0 +1,679 @@
+{
+  "module": "rom/USB_PHY_enable.exe",
+  "sha256": "5a8d30fa17120919c7817c3d8cb42f9e38ce02472fe2ebe2e7c949742e221792",
+  "scope": "Function boundaries from .pdata; labels and call edges are static candidates, not proved behavior",
+  "functions": [
+    {
+      "begin_va": "0x11074",
+      "end_va": "0x11120",
+      "bytes": 172,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11080",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x110ac",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!CreateFileW@168",
+          "constant_arg_candidates": {
+            "$a0": 69692,
+            "$a1": 0,
+            "$a2": 0,
+            "$a3": 0
+          }
+        },
+        {
+          "va": "0x110f4",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!DeviceIoControl@179",
+          "constant_arg_candidates": {
+            "$a1": 3,
+            "$a3": 1
+          }
+        },
+        {
+          "va": "0x11104",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!CloseHandle@553",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": [
+        {
+          "va": "0x110a8",
+          "kind": "string",
+          "target_va": "0x1103c",
+          "text": "MGR1:"
+        }
+      ]
+    },
+    {
+      "begin_va": "0x11120",
+      "end_va": "0x1114c",
+      "bytes": 44,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11128",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11138",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x1114c",
+      "end_va": "0x111dc",
+      "bytes": 144,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11160",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11174",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!iswctype@193",
+          "constant_arg_candidates": {
+            "$a1": 8
+          }
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x111dc",
+      "end_va": "0x112a0",
+      "bytes": 196,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x111f4",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11210",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!iswctype@193",
+          "constant_arg_candidates": {
+            "$a1": 8
+          }
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x1124c",
+          "kind": "direct_call",
+          "target_va": "0x1114c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x112a0",
+      "end_va": "0x11478",
+      "bytes": 472,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x112cc",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x112dc",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!wcslen@63",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x11320",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!malloc@1041",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x1134c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x11374",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!iswctype@193",
+          "constant_arg_candidates": {
+            "$a1": 8
+          }
+        },
+        {
+          "va": "0x113c4",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x11304",
+          "kind": "direct_call",
+          "target_va": "0x111dc"
+        },
+        {
+          "va": "0x113b0",
+          "kind": "direct_call",
+          "target_va": "0x1114c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11478",
+      "end_va": "0x11570",
+      "bytes": 248,
+      "handler_va": "0x11af0",
+      "handler_data_va": "0x11d38",
+      "prolog_end_va": "0x1148c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x114ac",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!GetModuleFileNameW@537",
+          "constant_arg_candidates": {
+            "$a2": 256
+          }
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x114c0",
+          "kind": "direct_call",
+          "target_va": "0x1172c"
+        },
+        {
+          "va": "0x114d0",
+          "kind": "direct_call",
+          "target_va": "0x11a4c"
+        },
+        {
+          "va": "0x114d8",
+          "kind": "direct_call",
+          "target_va": "0x117cc"
+        },
+        {
+          "va": "0x114f0",
+          "kind": "direct_call",
+          "target_va": "0x112a0"
+        },
+        {
+          "va": "0x11504",
+          "kind": "direct_call",
+          "target_va": "0x1172c"
+        },
+        {
+          "va": "0x11524",
+          "kind": "direct_call",
+          "target_va": "0x11074"
+        },
+        {
+          "va": "0x11534",
+          "kind": "direct_call",
+          "target_va": "0x1170c"
+        },
+        {
+          "va": "0x11540",
+          "kind": "direct_call",
+          "target_va": "0x1172c"
+        },
+        {
+          "va": "0x1154c",
+          "kind": "direct_call",
+          "target_va": "0x11b6c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11570",
+      "end_va": "0x115b0",
+      "bytes": 64,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11580",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11594",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!_XcptFilter@1645",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x115b0",
+      "end_va": "0x115ec",
+      "bytes": 60,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x115c0",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x115c4",
+          "kind": "direct_call",
+          "target_va": "0x11a7c"
+        },
+        {
+          "va": "0x115d0",
+          "kind": "direct_call",
+          "target_va": "0x11478"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x115ec",
+      "end_va": "0x1170c",
+      "bytes": 288,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11604",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11668",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x116b4",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!TerminateProcess@544",
+          "constant_arg_candidates": {
+            "$a0": 66
+          }
+        },
+        {
+          "va": "0x116cc",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterlockedExchange@12",
+          "constant_arg_candidates": {
+            "$a0": 73856,
+            "$a1": 0
+          }
+        },
+        {
+          "va": "0x116e0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!DeleteCriticalSection@3",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x116e8",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x1168c",
+          "kind": "direct_call",
+          "target_va": "0x11778"
+        },
+        {
+          "va": "0x116a0",
+          "kind": "direct_call",
+          "target_va": "0x11778"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0x11648",
+          "kind": "indirect_call",
+          "register": "$t2"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x1170c",
+      "end_va": "0x1172c",
+      "bytes": 32,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11714",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x11718",
+          "kind": "direct_call",
+          "target_va": "0x115ec"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x1172c",
+      "end_va": "0x11778",
+      "bytes": 76,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11738",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11760",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!TerminateProcess@544",
+          "constant_arg_candidates": {
+            "$a0": 66
+          }
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x11754",
+          "kind": "direct_call",
+          "target_va": "0x11778"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11778",
+      "end_va": "0x117cc",
+      "bytes": 84,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11788",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0x117a0",
+          "kind": "indirect_call",
+          "register": "$t1"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0x117cc",
+      "end_va": "0x11808",
+      "bytes": 60,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x117d4",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x117e0",
+          "kind": "direct_call",
+          "target_va": "0x11778"
+        },
+        {
+          "va": "0x117f4",
+          "kind": "direct_call",
+          "target_va": "0x11778"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11808",
+      "end_va": "0x11914",
+      "bytes": 268,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x1182c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x1185c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!_msize@1049",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x11878",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!malloc@1041",
+          "constant_arg_candidates": {
+            "$a0": 16
+          }
+        },
+        {
+          "va": "0x118a4",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!realloc@1054",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x118b8",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!realloc@1054",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11914",
+      "end_va": "0x11a00",
+      "bytes": 236,
+      "handler_va": "0x11c88",
+      "handler_data_va": "0x11d50",
+      "prolog_end_va": "0x11930",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11950",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!malloc@1041",
+          "constant_arg_candidates": {
+            "$a0": 20
+          }
+        },
+        {
+          "va": "0x11968",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InitializeCriticalSection@2",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x1197c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterlockedCompareExchange@1492",
+          "constant_arg_candidates": {
+            "$a2": 0
+          }
+        },
+        {
+          "va": "0x11990",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!DeleteCriticalSection@3",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x1199c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!free@1018",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0x119b0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!EnterCriticalSection@4",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x119bc",
+          "kind": "direct_call",
+          "target_va": "0x11808"
+        },
+        {
+          "va": "0x119d0",
+          "kind": "direct_call",
+          "target_va": "0x11a00"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11a00",
+      "end_va": "0x11a4c",
+      "bytes": 76,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11a0c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11a20",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!LeaveCriticalSection@5",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11a4c",
+      "end_va": "0x11a7c",
+      "bytes": 48,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11a54",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x11a54",
+          "kind": "direct_call",
+          "target_va": "0x11914"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11a7c",
+      "end_va": "0x11af0",
+      "bytes": 116,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11a8c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11aac",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!__security_gen_cookie2@2696",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11af0",
+      "end_va": "0x11b6c",
+      "bytes": 124,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11b08",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11b48",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!__C_specific_handler@87",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0x11b34",
+          "kind": "direct_call",
+          "target_va": "0x11bb4"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11b6c",
+      "end_va": "0x11bb4",
+      "bytes": 72,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11b6c",
+      "label_candidates": [],
+      "imports": [
+        {
+          "va": "0x11bac",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!__report_gsfailure@1876",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0x11bb4",
+      "end_va": "0x11c08",
+      "bytes": 84,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0x11bbc",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [
+        {
+          "va": "0x11bf4",
+          "kind": "direct_call",
+          "target_va": "0x11b6c"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    }
+  ],
+  "unmapped_calls": []
+}

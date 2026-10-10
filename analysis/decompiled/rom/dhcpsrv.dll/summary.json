@@ -1,0 +1,411 @@
+{
+  "program": "dhcpsrv.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "1283040d1ad04257b96f56699ec9babf31bce810b0516ea4e368d67f12f1635e",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memchr"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "strlen"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    }
+  ],
+  "functions_attempted": 20,
+  "functions_decompiled": 20,
+  "functions": [
+    {
+      "address": "40331064",
+      "name": "DllMain",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000001",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403310a0",
+      "name": "FUN_403310a0",
+      "body_addresses": 404,
+      "calls": [
+        {
+          "address": "40331f78",
+          "name": "memset",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331234",
+      "name": "FUN_40331234",
+      "body_addresses": 100,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40331298",
+      "name": "FUN_40331298",
+      "body_addresses": 764,
+      "calls": [
+        {
+          "address": "40331f68",
+          "name": "memchr",
+          "external": false
+        },
+        {
+          "address": "40331234",
+          "name": "FUN_40331234",
+          "external": false
+        },
+        {
+          "address": "40331f88",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40331f98",
+          "name": "strlen",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331594",
+      "name": "FUN_40331594",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "40331b40",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403315e8",
+      "name": "DHCPServerFreePacket",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "40331b50",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331608",
+      "name": "FUN_40331608",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "40331f78",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "40331f88",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331690",
+      "name": "FUN_40331690",
+      "body_addresses": 420,
+      "calls": [
+        {
+          "address": "40331608",
+          "name": "FUN_40331608",
+          "external": false
+        },
+        {
+          "address": "40331298",
+          "name": "FUN_40331298",
+          "external": false
+        },
+        {
+          "address": "40331fa8",
+          "name": "memcmp",
+          "external": false
+        },
+        {
+          "address": "40331594",
+          "name": "FUN_40331594",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331834",
+      "name": "FUN_40331834",
+      "body_addresses": 380,
+      "calls": [
+        {
+          "address": "40331608",
+          "name": "FUN_40331608",
+          "external": false
+        },
+        {
+          "address": "40331298",
+          "name": "FUN_40331298",
+          "external": false
+        },
+        {
+          "address": "40331fa8",
+          "name": "memcmp",
+          "external": false
+        },
+        {
+          "address": "40331594",
+          "name": "FUN_40331594",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "403319b8",
+      "name": "DHCPServerProcessPacket",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "40331fa8",
+          "name": "memcmp",
+          "external": false
+        },
+        {
+          "address": "403310a0",
+          "name": "FUN_403310a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331a80",
+      "name": "DHCPServerSessionNew",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "40331b40",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331b10",
+      "name": "DHCPServerSessionDelete",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "40331b50",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331b60",
+      "name": "FUN_40331b60",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "40331eb8",
+          "name": "FUN_40331eb8",
+          "external": false
+        },
+        {
+          "address": "40331e40",
+          "name": "FUN_40331e40",
+          "external": false
+        },
+        {
+          "address": "40331064",
+          "name": "DllMain",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331c9c",
+      "name": "FUN_40331c9c",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "40331fb8",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331cc8",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "40331ef4",
+          "name": "FUN_40331ef4",
+          "external": false
+        },
+        {
+          "address": "40331b60",
+          "name": "FUN_40331b60",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331d20",
+      "name": "FUN_40331d20",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "40331fd8",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "40332008",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "40331e64",
+          "name": "FUN_40331e64",
+          "external": false
+        },
+        {
+          "address": "40332018",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "40331ff8",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331e40",
+      "name": "FUN_40331e40",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "40331d20",
+          "name": "FUN_40331d20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331e64",
+      "name": "FUN_40331e64",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40331eb8",
+      "name": "FUN_40331eb8",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "40331e64",
+          "name": "FUN_40331e64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40331ef4",
+      "name": "FUN_40331ef4",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "40331fe8",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "program": "RVD.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "dc01f8489ec603d5ac371d740e7b2f1e1d11289f3c543e7a6d356a844977027e",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "RVC.DLL",
+      "label": "DrawRVC"
+    },
+    {
+      "library": "RVC.DLL",
+      "label": "GetRVCVersion"
+    },
+    {
+      "library": "RVC.DLL",
+      "label": "SetRVCWnd"
+    },
+    {
+      "library": "RVC.DLL",
+      "label": "StartRVC"
+    },
+    {
+      "library": "RVC.DLL",
+      "label": "StopRVC"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ShowWindow"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetWindowPos"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    }
+  ],
+  "functions_attempted": 14,
+  "functions_decompiled": 14,
+  "functions": [
+    {
+      "address": "10001000",
+      "name": "FUN_10001000",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "10001008",
+      "name": "DrawRVD",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "100010f8",
+          "name": "DrawRVC",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "10001024",
+      "name": "GetRVDVersion",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "10001108",
+          "name": "GetRVCVersion",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "10001040",
+      "name": "SetRVDWnd",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "10001118",
+          "name": "SetRVCWnd",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "10001070",
+      "name": "StartRVD",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "10001128",
+          "name": "StartRVC",
+          "external": false
+        },
+        {
+          "address": "10001158",
+          "name": "SetWindowPos",
+          "external": false
+        },
+        {
+          "address": "10001148",
+          "name": "ShowWindow",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "100010cc",
+      "name": "StopRVD",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "10001148",
+          "name": "ShowWindow",
+          "external": false
+        },
+        {
+          "address": "10001138",
+          "name": "StopRVC",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "10001168",
+      "name": "FUN_10001168",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "100014d0",
+          "name": "FUN_100014d0",
+          "external": false
+        },
+        {
+          "address": "10001000",
+          "name": "FUN_10001000",
+          "external": false
+        },
+        {
+          "address": "10001458",
+          "name": "FUN_10001458",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "100012a4",
+      "name": "FUN_100012a4",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "10001328",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "100012d0",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "10001168",
+          "name": "FUN_10001168",
+          "external": false
+        },
+        {
+          "address": "1000151c",
+          "name": "FUN_1000151c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "10001338",
+      "name": "FUN_10001338",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "100015b0",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "100015c0",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "10001590",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "1000147c",
+          "name": "FUN_1000147c",
+          "external": false
+        },
+        {
+          "address": "100015d0",
+          "name": "TerminateProcess",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "10001458",
+      "name": "FUN_10001458",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "10001338",
+          "name": "FUN_10001338",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "1000147c",
+      "name": "FUN_1000147c",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "100014d0",
+      "name": "FUN_100014d0",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "1000147c",
+          "name": "FUN_1000147c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "1000151c",
+      "name": "FUN_1000151c",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "100015a0",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

@@ -1,0 +1,1136 @@
+{
+  "program": "diskcache.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "84845b835c1e6ba305d4ec97f91e4892911320555664b54fc17a14c8e5d2201d",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "FSDMGR.DLL",
+      "label": "FSDMGR_DiskIoControl"
+    },
+    {
+      "library": "FSDMGR.DLL",
+      "label": "FSDMGR_GetRegistryValue"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EventModify"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalReAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "VirtualFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetEventData"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetEventData"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "VirtualAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_delete"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "operator_new"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSetThreadPriority"
+    }
+  ],
+  "functions_attempted": 46,
+  "functions_decompiled": 46,
+  "functions": [
+    {
+      "address": "c03610c8",
+      "name": "FUN_c03610c8",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "WaitForSingleObject",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036113c",
+      "name": "DeleteCache",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "c03617a4",
+          "name": "FUN_c03617a4",
+          "external": false
+        },
+        {
+          "address": "c036384c",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03622c8",
+          "name": "FUN_c03622c8",
+          "external": false
+        },
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361204",
+      "name": "ResizeCache",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        },
+        {
+          "address": "c0362afc",
+          "name": "FUN_c0362afc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361254",
+      "name": "CachedRead",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        },
+        {
+          "address": "c0362e04",
+          "name": "FUN_c0362e04",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03612b8",
+      "name": "CachedWrite",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        },
+        {
+          "address": "c0363064",
+          "name": "FUN_c0363064",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036131c",
+      "name": "FlushCache",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c03622c8",
+          "name": "FUN_c03622c8",
+          "external": false
+        },
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036137c",
+      "name": "SyncCache",
+      "body_addresses": 8,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0361384",
+      "name": "InvalidateCache",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c03624fc",
+          "name": "FUN_c03624fc",
+          "external": false
+        },
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03613e4",
+      "name": "CacheIoControl",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c03632bc",
+          "name": "FUN_c03632bc",
+          "external": false
+        },
+        {
+          "address": "c03610c8",
+          "name": "FUN_c03610c8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361464",
+      "name": "FUN_c0361464",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "c03633c4",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03633b4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000d",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000f",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        },
+        {
+          "address": "c03633a4",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03614fc",
+      "name": "CreateCache",
+      "body_addresses": 616,
+      "calls": [
+        {
+          "address": "c03617a4",
+          "name": "FUN_c03617a4",
+          "external": false
+        },
+        {
+          "address": "c036384c",
+          "name": "operator_delete",
+          "external": false
+        },
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c036385c",
+          "name": "operator_new",
+          "external": false
+        },
+        {
+          "address": "c03633e4",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0363374",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c0362878",
+          "name": "FUN_c0362878",
+          "external": false
+        },
+        {
+          "address": "c0361764",
+          "name": "FUN_c0361764",
+          "external": false
+        },
+        {
+          "address": "c03633d4",
+          "name": "LocalReAlloc",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361764",
+      "name": "FUN_c0361764",
+      "body_addresses": 64,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c03617a4",
+      "name": "FUN_c03617a4",
+      "body_addresses": 276,
+      "calls": [
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0363374",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c03633b4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0363404",
+          "name": "SetEventData",
+          "external": false
+        },
+        {
+          "address": "c03633f4",
+          "name": "VirtualFree",
+          "external": false
+        },
+        {
+          "address": "c03633a4",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03618b8",
+      "name": "FUN_c03618b8",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000014",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "c0363354",
+          "name": "FSDMGR_DiskIoControl",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036194c",
+      "name": "FUN_c036194c",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "c036387c",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03619d8",
+      "name": "FUN_c03619d8",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c03619e4",
+      "name": "FUN_c03619e4",
+      "body_addresses": 348,
+      "calls": [
+        {
+          "address": "c03618b8",
+          "name": "FUN_c03618b8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361b40",
+      "name": "FUN_c0361b40",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "c0363374",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361ba0",
+      "name": "FUN_c0361ba0",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "c0363374",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361c08",
+      "name": "FUN_c0361c08",
+      "body_addresses": 888,
+      "calls": [
+        {
+          "address": "c0361ba0",
+          "name": "FUN_c0361ba0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c03618b8",
+          "name": "FUN_c03618b8",
+          "external": false
+        },
+        {
+          "address": "c03633e4",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0363354",
+          "name": "FSDMGR_DiskIoControl",
+          "external": false
+        },
+        {
+          "address": "c03633a4",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0361f80",
+      "name": "FUN_c0361f80",
+      "body_addresses": 428,
+      "calls": [
+        {
+          "address": "c0361c08",
+          "name": "FUN_c0361c08",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036212c",
+      "name": "FUN_c036212c",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "c0361c08",
+          "name": "FUN_c0361c08",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0362218",
+      "name": "FUN_c0362218",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c0363414",
+          "name": "GetEventData",
+          "external": false
+        },
+        {
+          "address": "c036212c",
+          "name": "FUN_c036212c",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03622c8",
+      "name": "FUN_c03622c8",
+      "body_addresses": 396,
+      "calls": [
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0361f80",
+          "name": "FUN_c0361f80",
+          "external": false
+        },
+        {
+          "address": "c0363354",
+          "name": "FSDMGR_DiskIoControl",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0362470",
+      "name": "FUN_c0362470",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c036247c",
+      "name": "FUN_c036247c",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "c0361ba0",
+          "name": "FUN_c0361ba0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03624fc",
+      "name": "FUN_c03624fc",
+      "body_addresses": 256,
+      "calls": [
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c036247c",
+          "name": "FUN_c036247c",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036261c",
+      "name": "FUN_c036261c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0362628",
+      "name": "FUN_c0362628",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "c0362218",
+          "name": "FUN_c0362218",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0362648",
+      "name": "FUN_c0362648",
+      "body_addresses": 224,
+      "calls": [
+        {
+          "address": "c036387c",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "c0361b40",
+          "name": "FUN_c0361b40",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0362738",
+      "name": "FUN_c0362738",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0362744",
+      "name": "FUN_c0362744",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c0363354",
+          "name": "FSDMGR_DiskIoControl",
+          "external": false
+        },
+        {
+          "address": "c036247c",
+          "name": "FUN_c036247c",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c036286c",
+      "name": "FUN_c036286c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c0362878",
+      "name": "FUN_c0362878",
+      "body_addresses": 644,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000016",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c03633c4",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03633e4",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c0363364",
+          "name": "FSDMGR_GetRegistryValue",
+          "external": false
+        },
+        {
+          "address": "c036388c",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c03619e4",
+          "name": "FUN_c03619e4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000d",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c0363404",
+          "name": "SetEventData",
+          "external": false
+        },
+        {
+          "address": "c03633a4",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0363434",
+          "name": "VirtualAlloc",
+          "external": false
+        },
+        {
+          "address": "c0363424",
+          "name": "CreateThread",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0362afc",
+      "name": "FUN_c0362afc",
+      "body_addresses": 776,
+      "calls": [
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03633e4",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c03619e4",
+          "name": "FUN_c03619e4",
+          "external": false
+        },
+        {
+          "address": "c036388c",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c03622c8",
+          "name": "FUN_c03622c8",
+          "external": false
+        },
+        {
+          "address": "c03633f4",
+          "name": "VirtualFree",
+          "external": false
+        },
+        {
+          "address": "c03633a4",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "c0363434",
+          "name": "VirtualAlloc",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0362e04",
+      "name": "FUN_c0362e04",
+      "body_addresses": 608,
+      "calls": [
+        {
+          "address": "c0362648",
+          "name": "FUN_c0362648",
+          "external": false
+        },
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03618b8",
+          "name": "FUN_c03618b8",
+          "external": false
+        },
+        {
+          "address": "c0361f80",
+          "name": "FUN_c0361f80",
+          "external": false
+        },
+        {
+          "address": "c036194c",
+          "name": "FUN_c036194c",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0363064",
+      "name": "FUN_c0363064",
+      "body_addresses": 600,
+      "calls": [
+        {
+          "address": "c0362648",
+          "name": "FUN_c0362648",
+          "external": false
+        },
+        {
+          "address": "c0363394",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03618b8",
+          "name": "FUN_c03618b8",
+          "external": false
+        },
+        {
+          "address": "c0361f80",
+          "name": "FUN_c0361f80",
+          "external": false
+        },
+        {
+          "address": "c036247c",
+          "name": "FUN_c036247c",
+          "external": false
+        },
+        {
+          "address": "c0363384",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03632bc",
+      "name": "FUN_c03632bc",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000015",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "c0362744",
+          "name": "FUN_c0362744",
+          "external": false
+        },
+        {
+          "address": "c0363354",
+          "name": "FSDMGR_DiskIoControl",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0363444",
+      "name": "FUN_c0363444",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "c036379c",
+          "name": "FUN_c036379c",
+          "external": false
+        },
+        {
+          "address": "c0363724",
+          "name": "FUN_c0363724",
+          "external": false
+        },
+        {
+          "address": "c0361464",
+          "name": "FUN_c0361464",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0363580",
+      "name": "FUN_c0363580",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c036389c",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03635ac",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c0363444",
+          "name": "FUN_c0363444",
+          "external": false
+        },
+        {
+          "address": "c03637d8",
+          "name": "FUN_c03637d8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0363604",
+      "name": "FUN_c0363604",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "c0363748",
+          "name": "FUN_c0363748",
+          "external": false
+        },
+        {
+          "address": "c03633b4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c03638cc",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "c03638dc",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "c03638ac",
+          "name": "free",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0363724",
+      "name": "FUN_c0363724",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c0363604",
+          "name": "FUN_c0363604",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c0363748",
+      "name": "FUN_c0363748",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c036379c",
+      "name": "FUN_c036379c",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c0363748",
+          "name": "FUN_c0363748",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c03637d8",
+      "name": "FUN_c03637d8",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c03638bc",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

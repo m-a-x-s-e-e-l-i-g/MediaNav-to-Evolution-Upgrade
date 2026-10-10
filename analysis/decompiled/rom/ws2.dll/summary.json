@@ -1,0 +1,4183 @@
+{
+  "program": "ws2.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "c10f9f20cbe444e2da65a34071f4743fb1aa49807d5e71ad00d5adeb68ac30b0",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "EventModify"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LoadLibraryW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForAPIReady"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TlsCall"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TlsSetValue"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TlsGetValue"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__GetUserKData"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSafeCopyMemory"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "StringCbCopyW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcmp"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcscpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcslen"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_isctype"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "strcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "strlen"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "sprintf"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "wcstombs"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__report_gsfailure"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "FreeLibrary"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetProcAddressW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetModuleHandleW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeGetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForMultipleObjects"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ResumeThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "MultiByteToWideChar"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegOpenKeyExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegQueryValueExW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "RegCloseKey"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WideCharToMultiByte"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    }
+  ],
+  "functions_attempted": 180,
+  "functions_decompiled": 180,
+  "functions": [
+    {
+      "address": "4028112c",
+      "name": "FUN_4028112c",
+      "body_addresses": 180,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402811e0",
+      "name": "FUN_402811e0",
+      "body_addresses": 252,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402812dc",
+      "name": "FUN_402812dc",
+      "body_addresses": 104,
+      "calls": [
+        {
+          "address": "4028a1f4",
+          "name": "memcmp",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40281344",
+      "name": "FUN_40281344",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402813a0",
+      "name": "FUN_402813a0",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281344",
+          "name": "FUN_40281344",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40281420",
+      "name": "FUN_40281420",
+      "body_addresses": 252,
+      "calls": [
+        {
+          "address": "402812dc",
+          "name": "FUN_402812dc",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281344",
+          "name": "FUN_40281344",
+          "external": false
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028151c",
+      "name": "FUN_4028151c",
+      "body_addresses": 864,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "402812dc",
+          "name": "FUN_402812dc",
+          "external": false
+        },
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "4028a204",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "40289d34",
+          "name": "LoadLibraryW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402818c0",
+      "name": "FUN_402818c0",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402818cc",
+      "name": "FUN_402818cc",
+      "body_addresses": 812,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "4028a204",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "40289d34",
+          "name": "LoadLibraryW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        },
+        {
+          "address": "402812dc",
+          "name": "FUN_402812dc",
+          "external": false
+        },
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "4028112c",
+          "name": "FUN_4028112c",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40281bf8",
+      "name": "FUN_40281bf8",
+      "body_addresses": 524,
+      "calls": [
+        {
+          "address": "402812dc",
+          "name": "FUN_402812dc",
+          "external": false
+        },
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "4028a234",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "4028a224",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "4028a204",
+          "name": "wcscpy",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40281e20",
+      "name": "FUN_40281e20",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40281e2c",
+      "name": "FUN_40281e2c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40281e38",
+      "name": "FUN_40281e38",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40281f68",
+      "name": "FUN_40281f68",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40281f74",
+      "name": "WPUCompleteOverlappedRequest",
+      "body_addresses": 232,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289cf4",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028205c",
+      "name": "FUN_4028205c",
+      "body_addresses": 484,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282240",
+      "name": "FUN_40282240",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282360",
+      "name": "FUN_40282360",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028246c",
+      "name": "WSASocketW",
+      "body_addresses": 712,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "4028112c",
+          "name": "FUN_4028112c",
+          "external": false
+        },
+        {
+          "address": "4028151c",
+          "name": "FUN_4028151c",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282734",
+      "name": "socket",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "4028246c",
+          "name": "WSASocketW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282758",
+      "name": "closesocket",
+      "body_addresses": 344,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402828b0",
+      "name": "WSAAccept",
+      "body_addresses": 472,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "4028112c",
+          "name": "FUN_4028112c",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282a88",
+      "name": "accept",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "402828b0",
+          "name": "WSAAccept",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282aa8",
+      "name": "WSAGetOverlappedResult",
+      "body_addresses": 248,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282ba0",
+      "name": "FUN_40282ba0",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282c68",
+      "name": "FUN_40282c68",
+      "body_addresses": 88,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40282cd4",
+      "name": "FUN_40282cd4",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40282ce0",
+      "name": "bind",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282c68",
+          "name": "FUN_40282c68",
+          "external": false
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282d9c",
+      "name": "getpeername",
+      "body_addresses": 204,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282c68",
+          "name": "FUN_40282c68",
+          "external": false
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282e68",
+      "name": "getsockname",
+      "body_addresses": 204,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282c68",
+          "name": "FUN_40282c68",
+          "external": false
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40282f34",
+      "name": "htons",
+      "body_addresses": 24,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40282f4c",
+      "name": "htonl",
+      "body_addresses": 44,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40282f78",
+      "name": "inet_addr",
+      "body_addresses": 708,
+      "calls": [
+        {
+          "address": "4028a224",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "4028a254",
+          "name": "_isctype",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028323c",
+      "name": "inet_ntoa",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "40284a24",
+          "name": "FUN_40284a24",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283310",
+      "name": "WSAHtonl",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283414",
+      "name": "FUN_40283414",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40283420",
+      "name": "WSAHtons",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283510",
+      "name": "FUN_40283510",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "4028351c",
+      "name": "WSANtohl",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "40283310",
+          "name": "WSAHtonl",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283538",
+      "name": "WSANtohs",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "40283420",
+          "name": "WSAHtons",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283554",
+      "name": "WSAAddressToStringW",
+      "body_addresses": 380,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "4028151c",
+          "name": "FUN_4028151c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402836d0",
+      "name": "WSAStringToAddressW",
+      "body_addresses": 312,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "4028151c",
+          "name": "FUN_4028151c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40281420",
+          "name": "FUN_40281420",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283808",
+      "name": "WSAJoinLeaf",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402838f4",
+      "name": "FUN_402838f4",
+      "body_addresses": 352,
+      "calls": [
+        {
+          "address": "40289d54",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "40289d64",
+          "name": "WaitForAPIReady",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000b",
+          "name": "GetModuleHandleW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283a54",
+      "name": "FUN_40283a54",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000010",
+          "name": "CeGetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000000f",
+          "name": "CeSetThreadPriority",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283a98",
+      "name": "WSACancelAsyncRequest",
+      "body_addresses": 180,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "402838f4",
+          "name": "FUN_402838f4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283b4c",
+      "name": "FUN_40283b4c",
+      "body_addresses": 560,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "4028a274",
+          "name": "strlen",
+          "external": false
+        },
+        {
+          "address": "4028a264",
+          "name": "strcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283d7c",
+      "name": "FUN_40283d7c",
+      "body_addresses": 176,
+      "calls": [
+        {
+          "address": "40285df4",
+          "name": "WSAEventSelect",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283e2c",
+      "name": "FUN_40283e2c",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "40285ea0",
+          "name": "WSAEnumNetworkEvents",
+          "external": false
+        },
+        {
+          "address": "40283d7c",
+          "name": "FUN_40283d7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40283f38",
+      "name": "FUN_40283f38",
+      "body_addresses": 380,
+      "calls": [
+        {
+          "address": "40283e2c",
+          "name": "FUN_40283e2c",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "WaitForMultipleObjects",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402840b4",
+      "name": "FUN_402840b4",
+      "body_addresses": 460,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "4028810c",
+          "name": "gethostbyname",
+          "external": false
+        },
+        {
+          "address": "4028a284",
+          "name": "sprintf",
+          "external": false
+        },
+        {
+          "address": "40283b4c",
+          "name": "FUN_40283b4c",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289388",
+          "name": "getaddrinfo",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284280",
+      "name": "FUN_40284280",
+      "body_addresses": 384,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40289d74",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "4028a274",
+          "name": "strlen",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000013",
+          "name": "ResumeThread",
+          "external": true
+        },
+        {
+          "address": "402838f4",
+          "name": "FUN_402838f4",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40283a54",
+          "name": "FUN_40283a54",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284400",
+      "name": "WSAAsyncGetHostByName",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "40284280",
+          "name": "FUN_40284280",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284428",
+      "name": "WSAAsyncGetAddrInfo",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "40284280",
+          "name": "FUN_40284280",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284454",
+      "name": "FUN_40284454",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "40289d74",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "40284f54",
+          "name": "WSACreateEvent",
+          "external": false
+        },
+        {
+          "address": "40285df4",
+          "name": "WSAEventSelect",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40283a54",
+          "name": "FUN_40283a54",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028457c",
+      "name": "WSAAsyncSelect",
+      "body_addresses": 392,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "402838f4",
+          "name": "FUN_402838f4",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284454",
+          "name": "FUN_40284454",
+          "external": false
+        },
+        {
+          "address": "402863a4",
+          "name": "ioctlsocket",
+          "external": false
+        },
+        {
+          "address": "40289cf4",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40283d7c",
+          "name": "FUN_40283d7c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284704",
+      "name": "FUN_40284704",
+      "body_addresses": 28,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40284720",
+      "name": "WSAStartup",
+      "body_addresses": 484,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284924",
+      "name": "FUN_40284924",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40284930",
+      "name": "WSACleanup",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "402865b4",
+          "name": "FUN_402865b4",
+          "external": false
+        },
+        {
+          "address": "4028205c",
+          "name": "FUN_4028205c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40286e98",
+          "name": "FUN_40286e98",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "402813a0",
+          "name": "FUN_402813a0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284a24",
+      "name": "FUN_40284a24",
+      "body_addresses": 168,
+      "calls": [
+        {
+          "address": "40289da4",
+          "name": "TlsGetValue",
+          "external": false
+        },
+        {
+          "address": "4028a224",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "40289d94",
+          "name": "TlsSetValue",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284acc",
+      "name": "FUN_40284acc",
+      "body_addresses": 408,
+      "calls": [
+        {
+          "address": "40289d54",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289da4",
+          "name": "TlsGetValue",
+          "external": false
+        },
+        {
+          "address": "40289d84",
+          "name": "TlsCall",
+          "external": false
+        },
+        {
+          "address": "402865b4",
+          "name": "FUN_402865b4",
+          "external": false
+        },
+        {
+          "address": "4028205c",
+          "name": "FUN_4028205c",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40286e98",
+          "name": "FUN_40286e98",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "402813a0",
+          "name": "FUN_402813a0",
+          "external": false
+        },
+        {
+          "address": "40289d94",
+          "name": "TlsSetValue",
+          "external": false
+        },
+        {
+          "address": "40289db4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284c64",
+      "name": "FUN_40284c64",
+      "body_addresses": 52,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40284cac",
+      "name": "FUN_40284cac",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40284cb8",
+      "name": "FUN_40284cb8",
+      "body_addresses": 112,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284d28",
+      "name": "FUN_40284d28",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284d84",
+      "name": "FUN_40284d84",
+      "body_addresses": 64,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284dcc",
+      "name": "FUN_40284dcc",
+      "body_addresses": 68,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40284e34",
+      "name": "FUN_40284e34",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40284e40",
+      "name": "FUN_40284e40",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284e64",
+      "name": "FUN_40284e64",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289cf4",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284ebc",
+      "name": "FUN_40284ebc",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289cf4",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284f14",
+      "name": "FUN_40284f14",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284f34",
+      "name": "FUN_40284f34",
+      "body_addresses": 32,
+      "calls": [
+        {
+          "address": "40284c64",
+          "name": "FUN_40284c64",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284f54",
+      "name": "WSACreateEvent",
+      "body_addresses": 48,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CreateEventW",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284f84",
+      "name": "WSACloseEvent",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284fa8",
+      "name": "WSAResetEvent",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "40289cf4",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284fc4",
+      "name": "WSASetEvent",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "40289cf4",
+          "name": "EventModify",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40284fe0",
+      "name": "WSAWaitForMultipleEvents",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "WaitForMultipleObjects",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285004",
+      "name": "WSAGetLastError",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285028",
+      "name": "WSASetLastError",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028504c",
+      "name": "WSAControl",
+      "body_addresses": 92,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402850a8",
+      "name": "listen",
+      "body_addresses": 152,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285140",
+      "name": "WSAConnect",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40282c68",
+          "name": "FUN_40282c68",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285230",
+      "name": "shutdown",
+      "body_addresses": 196,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402852f4",
+      "name": "connect",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "40285140",
+          "name": "WSAConnect",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028531c",
+      "name": "WSCInstallProvider",
+      "body_addresses": 108,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402853a8",
+      "name": "FUN_402853a8",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402853b4",
+      "name": "WSCDeinstallProvider",
+      "body_addresses": 128,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285454",
+      "name": "FUN_40285454",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285460",
+      "name": "WSCEnumProtocols",
+      "body_addresses": 156,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285528",
+      "name": "FUN_40285528",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285534",
+      "name": "WSAEnumProtocolsW",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402855c0",
+      "name": "WSCInstallNameSpace",
+      "body_addresses": 80,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285610",
+      "name": "WSCUnInstallNameSpace",
+      "body_addresses": 96,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285670",
+      "name": "WSAEnumNameSpaceProvidersW",
+      "body_addresses": 128,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402856f0",
+      "name": "FUN_402856f0",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028579c",
+      "name": "FUN_4028579c",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402857a8",
+      "name": "FUN_402857a8",
+      "body_addresses": 544,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402859dc",
+      "name": "FUN_402859dc",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402859e8",
+      "name": "FUN_402859e8",
+      "body_addresses": 264,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285af0",
+      "name": "FUN_40285af0",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285afc",
+      "name": "select",
+      "body_addresses": 604,
+      "calls": [
+        {
+          "address": "402857a8",
+          "name": "FUN_402857a8",
+          "external": false
+        },
+        {
+          "address": "402856f0",
+          "name": "FUN_402856f0",
+          "external": false
+        },
+        {
+          "address": "402859e8",
+          "name": "FUN_402859e8",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285d84",
+      "name": "FUN_40285d84",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285d90",
+      "name": "__WSAFDIsSet",
+      "body_addresses": 72,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285dd8",
+      "name": "FUN_40285dd8",
+      "body_addresses": 28,
+      "calls": [
+        {
+          "address": "40285d90",
+          "name": "__WSAFDIsSet",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285df4",
+      "name": "WSAEventSelect",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285ea0",
+      "name": "WSAEnumNetworkEvents",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40285f4c",
+      "name": "FUN_40285f4c",
+      "body_addresses": 96,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285fc8",
+      "name": "FUN_40285fc8",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40285fd4",
+      "name": "getsockopt",
+      "body_addresses": 228,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40285f4c",
+          "name": "FUN_40285f4c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402860b8",
+      "name": "setsockopt",
+      "body_addresses": 220,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40285f4c",
+          "name": "FUN_40285f4c",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286194",
+      "name": "WSAIoctl",
+      "body_addresses": 528,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        },
+        {
+          "address": "4028a1f4",
+          "name": "memcmp",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40289dc4",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402863a4",
+      "name": "ioctlsocket",
+      "body_addresses": 56,
+      "calls": [
+        {
+          "address": "40286194",
+          "name": "WSAIoctl",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402863dc",
+      "name": "FUN_402863dc",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "4028a1f4",
+          "name": "memcmp",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286438",
+      "name": "FUN_40286438",
+      "body_addresses": 136,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000005",
+          "name": "FreeLibrary",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402864c0",
+      "name": "FUN_402864c0",
+      "body_addresses": 244,
+      "calls": [
+        {
+          "address": "40286438",
+          "name": "FUN_40286438",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402865b4",
+      "name": "FUN_402865b4",
+      "body_addresses": 144,
+      "calls": [
+        {
+          "address": "40286438",
+          "name": "FUN_40286438",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286644",
+      "name": "FUN_40286644",
+      "body_addresses": 492,
+      "calls": [
+        {
+          "address": "402863dc",
+          "name": "FUN_402863dc",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000007",
+          "name": "GetProcAddressW",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d34",
+          "name": "LoadLibraryW",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286830",
+      "name": "FUN_40286830",
+      "body_addresses": 236,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "4028691c",
+      "name": "FUN_4028691c",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "402864c0",
+          "name": "FUN_402864c0",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286980",
+      "name": "FUN_40286980",
+      "body_addresses": 868,
+      "calls": [
+        {
+          "address": "40289d54",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40286830",
+          "name": "FUN_40286830",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "4028691c",
+          "name": "FUN_4028691c",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40286644",
+          "name": "FUN_40286644",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286d08",
+      "name": "FUN_40286d08",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40286d14",
+      "name": "WSASetServiceW",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "40286980",
+          "name": "FUN_40286980",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286d38",
+      "name": "WSALookupServiceBeginW",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "40286980",
+          "name": "FUN_40286980",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286d60",
+      "name": "FUN_40286d60",
+      "body_addresses": 192,
+      "calls": [
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286e20",
+      "name": "FUN_40286e20",
+      "body_addresses": 120,
+      "calls": [
+        {
+          "address": "40289db4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "4028691c",
+          "name": "FUN_4028691c",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286e98",
+      "name": "FUN_40286e98",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40286e20",
+          "name": "FUN_40286e20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40286f0c",
+      "name": "WSALookupServiceNextW",
+      "body_addresses": 380,
+      "calls": [
+        {
+          "address": "40286d60",
+          "name": "FUN_40286d60",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40286e20",
+          "name": "FUN_40286e20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287088",
+      "name": "WSALookupServiceEnd",
+      "body_addresses": 216,
+      "calls": [
+        {
+          "address": "40286d60",
+          "name": "FUN_40286d60",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40286e20",
+          "name": "FUN_40286e20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287160",
+      "name": "WSANSPIoctl",
+      "body_addresses": 452,
+      "calls": [
+        {
+          "address": "40289dd4",
+          "name": "CeSafeCopyMemory",
+          "external": false
+        },
+        {
+          "address": "40286d60",
+          "name": "FUN_40286d60",
+          "external": false
+        },
+        {
+          "address": "40289d04",
+          "name": "LeaveCriticalSection",
+          "external": false
+        },
+        {
+          "address": "40289d14",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284704",
+          "name": "FUN_40284704",
+          "external": false
+        },
+        {
+          "address": "40286e20",
+          "name": "FUN_40286e20",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287324",
+      "name": "WSARecv",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        },
+        {
+          "address": "40289dc4",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287410",
+      "name": "FUN_40287410",
+      "body_addresses": 240,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40282360",
+          "name": "FUN_40282360",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40289dc4",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287500",
+      "name": "recv",
+      "body_addresses": 76,
+      "calls": [
+        {
+          "address": "40287324",
+          "name": "WSARecv",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028754c",
+      "name": "WSARecvFrom",
+      "body_addresses": 316,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "40282c68",
+          "name": "FUN_40282c68",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        },
+        {
+          "address": "40289dc4",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287688",
+      "name": "recvfrom",
+      "body_addresses": 92,
+      "calls": [
+        {
+          "address": "4028754c",
+          "name": "WSARecvFrom",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402876e4",
+      "name": "WSASend",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        },
+        {
+          "address": "40289dc4",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402877d0",
+      "name": "send",
+      "body_addresses": 68,
+      "calls": [
+        {
+          "address": "402876e4",
+          "name": "WSASend",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287814",
+      "name": "WSASendTo",
+      "body_addresses": 252,
+      "calls": [
+        {
+          "address": "402811e0",
+          "name": "FUN_402811e0",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40282240",
+          "name": "FUN_40282240",
+          "external": false
+        },
+        {
+          "address": "40289dc4",
+          "name": "__GetUserKData",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287910",
+      "name": "sendto",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "40287814",
+          "name": "WSASendTo",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287964",
+      "name": "FUN_40287964",
+      "body_addresses": 112,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402879d4",
+      "name": "FUN_402879d4",
+      "body_addresses": 752,
+      "calls": [
+        {
+          "address": "40286d38",
+          "name": "WSALookupServiceBeginW",
+          "external": false
+        },
+        {
+          "address": "40286f0c",
+          "name": "WSALookupServiceNextW",
+          "external": false
+        },
+        {
+          "address": "4028a274",
+          "name": "strlen",
+          "external": false
+        },
+        {
+          "address": "4028a224",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001b",
+          "name": "MultiByteToWideChar",
+          "external": true
+        },
+        {
+          "address": "40287088",
+          "name": "WSALookupServiceEnd",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287d34",
+      "name": "FUN_40287d34",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40287d40",
+      "name": "FUN_40287d40",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40287d4c",
+      "name": "FUN_40287d4c",
+      "body_addresses": 176,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40287dfc",
+      "name": "FUN_40287dfc",
+      "body_addresses": 380,
+      "calls": [
+        {
+          "address": "4028a274",
+          "name": "strlen",
+          "external": false
+        },
+        {
+          "address": "4028a264",
+          "name": "strcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287f78",
+      "name": "getservbyname",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287fa0",
+      "name": "getservbyport",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40287fc8",
+      "name": "gethostbyaddr",
+      "body_addresses": 324,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "4028a284",
+          "name": "sprintf",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "402879d4",
+          "name": "FUN_402879d4",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40287d4c",
+          "name": "FUN_40287d4c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284a24",
+          "name": "FUN_40284a24",
+          "external": false
+        },
+        {
+          "address": "40287dfc",
+          "name": "FUN_40287dfc",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028810c",
+      "name": "gethostbyname",
+      "body_addresses": 260,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "402879d4",
+          "name": "FUN_402879d4",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40287d4c",
+          "name": "FUN_40287d4c",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40284a24",
+          "name": "FUN_40284a24",
+          "external": false
+        },
+        {
+          "address": "40287dfc",
+          "name": "FUN_40287dfc",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288210",
+      "name": "sethostname",
+      "body_addresses": 204,
+      "calls": [
+        {
+          "address": "40289d64",
+          "name": "WaitForAPIReady",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402882dc",
+      "name": "gethostname",
+      "body_addresses": 464,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000001d",
+          "name": "RegQueryValueExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001e",
+          "name": "RegOpenKeyExW",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001c",
+          "name": "RegCloseKey",
+          "external": true
+        },
+        {
+          "address": "4028a294",
+          "name": "wcstombs",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402884c4",
+      "name": "FUN_402884c4",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "402884d0",
+      "name": "getprotobynumber",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402884f8",
+      "name": "getprotobyname",
+      "body_addresses": 40,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288520",
+      "name": "FUN_40288520",
+      "body_addresses": 220,
+      "calls": [
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402885fc",
+      "name": "FUN_402885fc",
+      "body_addresses": 212,
+      "calls": [
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "402886d0",
+      "name": "FUN_402886d0",
+      "body_addresses": 364,
+      "calls": [
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40288520",
+          "name": "FUN_40288520",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028883c",
+      "name": "FUN_4028883c",
+      "body_addresses": 568,
+      "calls": [
+        {
+          "address": "40286d38",
+          "name": "WSALookupServiceBeginW",
+          "external": false
+        },
+        {
+          "address": "40286f0c",
+          "name": "WSALookupServiceNextW",
+          "external": false
+        },
+        {
+          "address": "4028a224",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "40289de4",
+          "name": "StringCbCopyW",
+          "external": false
+        },
+        {
+          "address": "40287088",
+          "name": "WSALookupServiceEnd",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000012",
+          "name": "GetLastError",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "4028a234",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288a74",
+      "name": "FUN_40288a74",
+      "body_addresses": 132,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40288af8",
+      "name": "FUN_40288af8",
+      "body_addresses": 188,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288bb4",
+      "name": "FUN_40288bb4",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "40282758",
+          "name": "closesocket",
+          "external": false
+        },
+        {
+          "address": "40282734",
+          "name": "socket",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288bfc",
+      "name": "FUN_40288bfc",
+      "body_addresses": 148,
+      "calls": [
+        {
+          "address": "40282758",
+          "name": "closesocket",
+          "external": false
+        },
+        {
+          "address": "40286194",
+          "name": "WSAIoctl",
+          "external": false
+        },
+        {
+          "address": "40282734",
+          "name": "socket",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288c90",
+      "name": "FUN_40288c90",
+      "body_addresses": 132,
+      "calls": [
+        {
+          "address": "4028883c",
+          "name": "FUN_4028883c",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288d14",
+      "name": "FUN_40288d14",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "40289d74",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "40283a54",
+          "name": "FUN_40283a54",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288d78",
+      "name": "FUN_40288d78",
+      "body_addresses": 284,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "WideCharToMultiByte",
+          "external": true
+        },
+        {
+          "address": "40283554",
+          "name": "WSAAddressToStringW",
+          "external": false
+        },
+        {
+          "address": "40285004",
+          "name": "WSAGetLastError",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288e94",
+      "name": "FUN_40288e94",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "WideCharToMultiByte",
+          "external": true
+        },
+        {
+          "address": "4028a234",
+          "name": "wcslen",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40288f80",
+      "name": "getnameinfo",
+      "body_addresses": 932,
+      "calls": [
+        {
+          "address": "40289dd4",
+          "name": "CeSafeCopyMemory",
+          "external": false
+        },
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "4028883c",
+          "name": "FUN_4028883c",
+          "external": false
+        },
+        {
+          "address": "40282f34",
+          "name": "htons",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000020",
+          "name": "WideCharToMultiByte",
+          "external": true
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40287964",
+          "name": "FUN_40287964",
+          "external": false
+        },
+        {
+          "address": "40283554",
+          "name": "WSAAddressToStringW",
+          "external": false
+        },
+        {
+          "address": "40288af8",
+          "name": "FUN_40288af8",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289324",
+      "name": "freeaddrinfo",
+      "body_addresses": 100,
+      "calls": [
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289388",
+      "name": "getaddrinfo",
+      "body_addresses": 2412,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        },
+        {
+          "address": "40288d78",
+          "name": "FUN_40288d78",
+          "external": false
+        },
+        {
+          "address": "40289324",
+          "name": "freeaddrinfo",
+          "external": false
+        },
+        {
+          "address": "4028883c",
+          "name": "FUN_4028883c",
+          "external": false
+        },
+        {
+          "address": "40288e94",
+          "name": "FUN_40288e94",
+          "external": false
+        },
+        {
+          "address": "402836d0",
+          "name": "WSAStringToAddressW",
+          "external": false
+        },
+        {
+          "address": "40289d24",
+          "name": "LocalFree",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "40288bb4",
+          "name": "FUN_40288bb4",
+          "external": false
+        },
+        {
+          "address": "40288a74",
+          "name": "FUN_40288a74",
+          "external": false
+        },
+        {
+          "address": "4028a214",
+          "name": "memcpy",
+          "external": false
+        },
+        {
+          "address": "40288bfc",
+          "name": "FUN_40288bfc",
+          "external": false
+        },
+        {
+          "address": "40288520",
+          "name": "FUN_40288520",
+          "external": false
+        },
+        {
+          "address": "40282f34",
+          "name": "htons",
+          "external": false
+        },
+        {
+          "address": "4028a224",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "4028a274",
+          "name": "strlen",
+          "external": false
+        },
+        {
+          "address": "40288d14",
+          "name": "FUN_40288d14",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000021",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "EXTERNAL:0000001b",
+          "name": "MultiByteToWideChar",
+          "external": true
+        },
+        {
+          "address": "40282f4c",
+          "name": "htonl",
+          "external": false
+        },
+        {
+          "address": "402885fc",
+          "name": "FUN_402885fc",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000a",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "402886d0",
+          "name": "FUN_402886d0",
+          "external": false
+        },
+        {
+          "address": "40289d44",
+          "name": "LocalAlloc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289df4",
+      "name": "entry",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "40289e68",
+          "name": "FUN_40289e68",
+          "external": false
+        },
+        {
+          "address": "4028a1b8",
+          "name": "FUN_4028a1b8",
+          "external": false
+        },
+        {
+          "address": "4028a140",
+          "name": "FUN_4028a140",
+          "external": false
+        },
+        {
+          "address": "40284acc",
+          "name": "FUN_40284acc",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289e68",
+      "name": "FUN_40289e68",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "4028a2a4",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289edc",
+      "name": "FUN_40289edc",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "4028a244",
+          "name": "__C_specific_handler",
+          "external": false
+        },
+        {
+          "address": "40289fa0",
+          "name": "FUN_40289fa0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289f58",
+      "name": "FUN_40289f58",
+      "body_addresses": 72,
+      "calls": [
+        {
+          "address": "4028a2b4",
+          "name": "__report_gsfailure",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289fa0",
+      "name": "FUN_40289fa0",
+      "body_addresses": 84,
+      "calls": [
+        {
+          "address": "40289f58",
+          "name": "FUN_40289f58",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40289ff4",
+      "name": "FUN_40289ff4",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "40289fa0",
+          "name": "FUN_40289fa0",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028a020",
+      "name": "FUN_4028a020",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "4028a2d4",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "40289db4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "4028a2e4",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "4028a2c4",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "4028a164",
+          "name": "FUN_4028a164",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028a140",
+      "name": "FUN_4028a140",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "4028a020",
+          "name": "FUN_4028a020",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4028a164",
+      "name": "FUN_4028a164",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "4028a1b8",
+      "name": "FUN_4028a1b8",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "4028a164",
+          "name": "FUN_4028a164",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

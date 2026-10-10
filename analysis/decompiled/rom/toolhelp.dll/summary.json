@@ -1,0 +1,523 @@
+{
+  "program": "toolhelp.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "c02e5c44a92c77263d0a688ed6246a6ca0ae5299a1aef9de6aaf3c67c028ad8b",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__GetUserKData"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "GetHeapSnapshot"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "THCreateSnapshot"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "VirtualFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "ReadProcessMemory"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "OpenProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memcpy"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedExchange"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "SetLastError"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    }
+  ],
+  "functions_attempted": 28,
+  "functions_decompiled": 28,
+  "functions": [
+    {
+      "address": "40131064",
+      "name": "DllMain",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000002",
+          "name": "DisableThreadLibraryCalls",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131098",
+      "name": "CreateToolhelp32Snapshot",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "40131d84",
+          "name": "__GetUserKData",
+          "external": false
+        },
+        {
+          "address": "40131d94",
+          "name": "GetHeapSnapshot",
+          "external": false
+        },
+        {
+          "address": "40131da4",
+          "name": "THCreateSnapshot",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131114",
+      "name": "CloseToolhelp32Snapshot",
+      "body_addresses": 52,
+      "calls": [
+        {
+          "address": "40131db4",
+          "name": "VirtualFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131148",
+      "name": "Toolhelp32ReadProcessMemory",
+      "body_addresses": 232,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40131d84",
+          "name": "__GetUserKData",
+          "external": false
+        },
+        {
+          "address": "40131dd4",
+          "name": "OpenProcess",
+          "external": false
+        },
+        {
+          "address": "40131dc4",
+          "name": "ReadProcessMemory",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000006",
+          "name": "CloseHandle",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131230",
+      "name": "Process32First",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "401312cc",
+      "name": "Process32Next",
+      "body_addresses": 208,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4013139c",
+      "name": "Thread32First",
+      "body_addresses": 200,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131464",
+      "name": "Thread32Next",
+      "body_addresses": 264,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "4013156c",
+      "name": "Module32First",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131618",
+      "name": "Module32Next",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131704",
+      "name": "FUN_40131704",
+      "body_addresses": 72,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "4013174c",
+      "name": "Heap32ListFirst",
+      "body_addresses": 368,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40131704",
+          "name": "FUN_40131704",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "401318c8",
+      "name": "FUN_401318c8",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "401318d4",
+      "name": "Heap32ListNext",
+      "body_addresses": 328,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40131704",
+          "name": "FUN_40131704",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131a28",
+      "name": "FUN_40131a28",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40131a34",
+      "name": "FUN_40131a34",
+      "body_addresses": 184,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40131aec",
+      "name": "Heap32First",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "40131a34",
+          "name": "FUN_40131a34",
+          "external": false
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131c24",
+      "name": "FUN_40131c24",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40131c30",
+      "name": "Heap32Next",
+      "body_addresses": 316,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000008",
+          "name": "SetLastError",
+          "external": true
+        },
+        {
+          "address": "401321ec",
+          "name": "memcpy",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131d78",
+      "name": "FUN_40131d78",
+      "body_addresses": 12,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "40131de4",
+      "name": "FUN_40131de4",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "40131064",
+          "name": "DllMain",
+          "external": false
+        },
+        {
+          "address": "4013213c",
+          "name": "FUN_4013213c",
+          "external": false
+        },
+        {
+          "address": "401320c4",
+          "name": "FUN_401320c4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131f20",
+      "name": "FUN_40131f20",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "4013220c",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131f4c",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "40131de4",
+          "name": "FUN_40131de4",
+          "external": false
+        },
+        {
+          "address": "40132178",
+          "name": "FUN_40132178",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40131fa4",
+      "name": "FUN_40131fa4",
+      "body_addresses": 288,
+      "calls": [
+        {
+          "address": "401320e8",
+          "name": "FUN_401320e8",
+          "external": false
+        },
+        {
+          "address": "4013225c",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "4013224c",
+          "name": "InterlockedExchange",
+          "external": false
+        },
+        {
+          "address": "4013221c",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "4013223c",
+          "name": "DeleteCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "401320c4",
+      "name": "FUN_401320c4",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "40131fa4",
+          "name": "FUN_40131fa4",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "401320e8",
+      "name": "FUN_401320e8",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "4013213c",
+      "name": "FUN_4013213c",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "401320e8",
+          "name": "FUN_401320e8",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "40132178",
+      "name": "FUN_40132178",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "4013222c",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

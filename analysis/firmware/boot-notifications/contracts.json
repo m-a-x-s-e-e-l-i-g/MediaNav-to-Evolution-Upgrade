@@ -1,0 +1,749 @@
+{
+  "scope": "Static bootnotification and mutable dispatch; no device execution",
+  "image_sha256": "4c5a45266f11cbd2a408c3b9880008a819091e61c61a7283f51949244bd76512",
+  "producer_sha256": "27f06fb61ba6c016155adb9e4985f1df7da53deac298789162e808b8ef625f5d",
+  "initial_control_binding": {
+    "global_ram": "0xfe402",
+    "global_rom": "0x6ef2",
+    "initial_pointer": "0xe6fe",
+    "field": "0x18",
+    "slot_ram": "0xfe716",
+    "slot_rom": "0x7206",
+    "bytes": "b7720100",
+    "target": "0x172b7",
+    "live_binding_verified": false
+  },
+  "rebind_slot": "0xfe716",
+  "rebind_segment_slot": "0xfe718",
+  "direct_store_encoding_audit": {
+    "pointer_stores": [
+      "0x15ea6",
+      "0x15f29",
+      "0x165c3",
+      "0x16702"
+    ],
+    "segment_stores": [
+      "0x15ea9",
+      "0x15f2c",
+      "0x165c6",
+      "0x16705"
+    ],
+    "indirect_or_other_encodings_exhausted": false
+  },
+  "control_targets": [
+    "0x172b7",
+    "0x17316"
+  ],
+  "rebinds": [
+    {
+      "code": "0x15ea3",
+      "role": "init",
+      "target": "0x172b7"
+    },
+    {
+      "code": "0x15f26",
+      "role": "non-init branch",
+      "target": "0x172b7"
+    },
+    {
+      "code": "0x166ff",
+      "role": "manager1 commandFE",
+      "target": "0x172b7"
+    },
+    {
+      "code": "0x165c0",
+      "role": "manager1 command0 later path",
+      "target": "0x17316"
+    }
+  ],
+  "notification": {
+    "manager": 1,
+    "type": 2,
+    "command": 0,
+    "length": 2,
+    "source_ram": "0xfe6f4",
+    "word_little_endian": true,
+    "requires_mcu_state": "0xfe1ea == 3",
+    "flash_status_field": false
+  },
+  "ce": {
+    "handler": "0x21748",
+    "accepted_only_if_field24_zero": true,
+    "boot_init": "0x1f444",
+    "stores_payload_word_at": "this+0x84",
+    "clears_timer_state": "this+0x38",
+    "timer_stop": "0x3006c",
+    "flash_readback_before_timer_stop": false
+  },
+  "exhaustive_word_cases": 65536,
+  "frame_fixtures": [
+    {
+      "word": "0x0",
+      "hex": "aa1200020000ba",
+      "device_observation": false
+    },
+    {
+      "word": "0x1",
+      "hex": "aa1200020100bb",
+      "device_observation": false
+    },
+    {
+      "word": "0x3",
+      "hex": "aa1200020300b9",
+      "device_observation": false
+    },
+    {
+      "word": "0x17",
+      "hex": "aa1200021700ad",
+      "device_observation": false
+    },
+    {
+      "word": "0x100",
+      "hex": "aa1200020001bb",
+      "device_observation": false
+    },
+    {
+      "word": "0xff00",
+      "hex": "aa12000200ff45",
+      "device_observation": false
+    },
+    {
+      "word": "0xffff",
+      "hex": "aa120002ffffba",
+      "device_observation": false
+    }
+  ],
+  "witnesses": [
+    {
+      "address": "0x15ea3",
+      "bytes": "30b772",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 29367,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x15ea6",
+      "bytes": "bf16e7",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1042198,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        },
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x15ea9",
+      "bytes": "cf18e701",
+      "size": 4,
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1042200,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 1,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x15f26",
+      "bytes": "30b772",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 29367,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x15f29",
+      "bytes": "bf16e7",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1042198,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        },
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x166ff",
+      "bytes": "30b772",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 29367,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x16702",
+      "bytes": "bf16e7",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1042198,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        },
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x165c0",
+      "bytes": "301673",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 29462,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x165c3",
+      "bytes": "bf16e7",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1042198,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        },
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x165c6",
+      "bytes": "cf18e701",
+      "size": 4,
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1042200,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 1,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x165cd",
+      "bytes": "34f4e6",
+      "size": 3,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "de",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 59124,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x165da",
+      "bytes": "61ea",
+      "size": 2,
+      "mnemonic": "call",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "de",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x1731f",
+      "bytes": "40eae103",
+      "size": 4,
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "mode": "mem",
+          "value": 0,
+          "addr": 1040874,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 3,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x17323",
+      "bytes": "dd04",
+      "size": 2,
+      "mnemonic": "bz",
+      "operands": [
+        {
+          "mode": "near",
+          "value": 0,
+          "addr": 95017,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x17325",
+      "bytes": "f7",
+      "size": 1,
+      "mnemonic": "clrw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "bc",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x173bf",
+      "bytes": "cc0102",
+      "size": 3,
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "mode": "ind",
+          "value": 0,
+          "addr": 0,
+          "base_reg": "hl",
+          "disp": 1,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "imm",
+          "value": 2,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x173c2",
+      "bytes": "eee900",
+      "size": 3,
+      "mnemonic": "br",
+      "operands": [
+        {
+          "mode": "near",
+          "value": 0,
+          "addr": 95406,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174b8",
+      "bytes": "ac0a",
+      "size": 2,
+      "mnemonic": "movw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        },
+        {
+          "mode": "ind",
+          "value": 0,
+          "addr": 0,
+          "base_reg": "hl",
+          "disp": 10,
+          "bit": 0,
+          "width": "w",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174bf",
+      "bytes": "c1",
+      "size": 1,
+      "mnemonic": "push",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174c0",
+      "bytes": "e6",
+      "size": 1,
+      "mnemonic": "onew",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174c1",
+      "bytes": "a1",
+      "size": 1,
+      "mnemonic": "incw",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174c2",
+      "bytes": "c1",
+      "size": 1,
+      "mnemonic": "push",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174c3",
+      "bytes": "e6",
+      "size": 1,
+      "mnemonic": "onew",
+      "operands": [
+        {
+          "mode": "reg",
+          "reg": "ax",
+          "value": 0,
+          "addr": 0,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    },
+    {
+      "address": "0x174c4",
+      "bytes": "fcb75401",
+      "size": 4,
+      "mnemonic": "call",
+      "operands": [
+        {
+          "mode": "far",
+          "value": 0,
+          "addr": 87223,
+          "disp": 0,
+          "bit": 0,
+          "width": "b",
+          "es": false
+        }
+      ]
+    }
+  ],
+  "ce_evidence": {
+    "path": "extracted\\705md\\upgrade\\Storage Card\\System\\MicomManager.exe",
+    "sha256": "c56e8e08600cd69a656ec487779d3dbb0cea672ae2c5cb2da685b9217e6f8824",
+    "ranges": [
+      {
+        "start": "0x1f444",
+        "end": "0x1f4f4",
+        "role": "Bootstatus WORD load and stop timer before further reads",
+        "bytes": "80f7bd277808bfaf5808b7af5c08b6af6008b5af6408b4af6808b3af6c08b2af7008b1af7408b0af0600083c2048088d2580a000258880005008a8af0200062400000524c900a4272d00a0a3a428010cc800a0a32100062400000524a428010ccb00a4270400089684003226000048a6252020022800a0a35000a0af1bc0000c380020ae0600163c7000332664001024e448c48e010017242538600208000624010005241400b0aff754000c1000b7a3",
+        "sha256": "a829e22611499e0fdab579767680a02ce0c6aae1cc3feee9225ba30bbe794b67"
+      },
+      {
+        "start": "0x21d50",
+        "end": "0x21d70",
+        "role": "Type2 command0 accepted only when powerstate field24 is zero",
+        "bytes": "2400288ede0300150000000025284002117d000c25202002d903001000000000",
+        "sha256": "2e6bcd3e9183b3489bd0e197a70a4d344e38ff296a168077b7c2bf2124bb89f4"
+      },
+      {
+        "start": "0x21748",
+        "end": "0x21790",
+        "role": "OnCommand type gate",
+        "bytes": "a0ffbd275800bfaf3800b7af3c00b6af4000b5af4400b4af4800b3af4c00b2af5000b1af5400b0af2590a0000000488e024a08000f002a3102001524850055112588800003000b24",
+        "sha256": "541184ba735a20ad32742e621614cc9b5209077cd910ea7a0d97c78cfb99d069"
+      },
+      {
+        "start": "0x241ec",
+        "end": "0x2421c",
+        "role": "Periodic manager1 command0",
+        "bytes": "0600093c64000824e448248d0000072401000624010005241800a8af1400a0a35654000c1000a0af3600001000000000",
+        "sha256": "9ae9200a32c489694f0762ed6d8c7948a63f66090bf09b6e00e5ebff697992ea"
+      }
+    ]
+  },
+  "ranges": [
+    {
+      "start": "0x15c96",
+      "end": "0x15cad",
+      "bytes": "cfeae10330e803c130f0555201f3fcea7d00c0629f0ae2"
+    },
+    {
+      "start": "0x15e92",
+      "end": "0x15fc2",
+      "bytes": "c716669161e8ee7f008febe15cf09febe130b772bf16e7cf18e701f50ae2f50be2f50ce2f5f8e6f5f9e6eb0ee48a029efca914e661eaeb1ce48a029efca914e661eaeb1ee48a029efca914e661eae5eae1f5fae6f5fbe6f5fce6f5fde6f6c13088595201f3fcea7d00c0629ff8e630bc02c130e65d5201f3fcea7d00c0629ff9e6fcc17f00eea600fca180007108ebe17138ebe130b772bf16e7cf18e701d50ae2dd0bd90ae2f1fc927e00f50ae2d50be2dd0bd90be2f1fc927e00f50be2d5f7e6dd0bd9f7e6f1fc927e00f5f7e6d5f8e6dd0bd9f8e6f1fc927e00f5f8e6d5f9e6dd0bd9f9e6f1fc927e00f5f9e6cfeae10630435d5201f3fc057e00d2df2faf0ae4f7c3148a0e9efcaa0c1430170061eac0af0ce4f7c3148a0e9efcaa0c14f661eac0fcbc5c01fc7c5701f5eae1c6d7"
+    },
+    {
+      "start": "0x165bc",
+      "end": "0x16606",
+      "bytes": "7100ebe1301673bf16e7cf18e701af02e434f4e6c5148a1a9efcaa1814f661eac0303075c130555e5201f3fcea7d00c0629f0be2af08e4f7c3148a0e9efcaa0c1430030061eac0ee7003"
+    },
+    {
+      "start": "0x166f3",
+      "end": "0x1670f",
+      "bytes": "fcbc5c017108ebe17138ebe130b772bf16e7cf18e701f5eae1ee6702"
+    },
+    {
+      "start": "0x172b7",
+      "end": "0x172e1",
+      "bytes": "c7c1fbf8ff8b2c022c02de11af00e4f7c3148a0e9efcaa0c14e661eac040eae103dd03f7ef01e7c0c6d7"
+    },
+    {
+      "start": "0x17316",
+      "end": "0x174cf",
+      "bytes": "c7c1c1fbf8ffcc01ff40eae103dd04f7eea2018c02320002f0d161f8ee8a002361f8ee40012c1d61f8ee2a019161f8ee83002c1061f8ee27019161f8eeb8002361f8ee30019161f8ee2f019161f8ee2e012c0361f8ee03012c082c03dc69d161f8ee81009161f8ee870091dd729123dc56d1dd7791dd389123dc46d1dd499123dc3991dd3c91dd512323dc2fd1dd44912c03dc2791dd369161f8eeb4002c092c0661d8eede00eeec00cc0102eee900cc0101eee300cc0101eedd00cc0101eed700cc0102eed100cc0104eecb00cc0108eec500cc0108eebf00cc010aeeb900cc0101eeb300cc0104eead00cc0104eea700cc0104eea100ac0a148991df36af00e4e7c312ac0ac14912009dd4791000c18dd49dd6c014e6f7c18dd69efcc061ea1004d50ce2dd25d90ce2f1fc927e00f50ce2ef18d50ce2df1330e803c130e1725201f3fcea7d00c0629f0ce2cc0101ef47cc0104ef42cc010eef3dcc0102ef38cc0101ef33f661490add05cc0104ef28cc0100ef23cc0101ef1ecc0102ef19cc0100ef148febe131050eac0a14899c0161790aef03cc01008c0181dd178c01318ec1ac0ac18c02318ec1e6a1c1e6fcb754011008e71004c6d7"
+    },
+    {
+      "start": "0x154b7",
+      "end": "0x15550",
+      "bytes": "c7c1204afbf8ffcc05aa17040600bc02cc06aa8c525c0f708c075cf061689c078c4a3149708c075c0f61689c078c549c088c589c09cc01008c014e09de1a8c01318e6109561489728c01318e07040a00146299615901efe0cc01018c090c044e0161d3128c01318e61090214897e059c05615901efe58c09318e07040a00148c05998c580c05318ec117040600c1f6fce0e1001004104cc6d7"
+    }
+  ],
+  "limitations": [
+    "Readback/capture of unit state unavailable",
+    "State names remain candidate interpretations",
+    "Other indirect writes or aliases may exist outside followed paths",
+    "Decoder lengths do not prove complete semantics or exact chip",
+    "No claim that the whole CE boot-init body is understood"
+  ]
+}

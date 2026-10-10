@@ -1,0 +1,5923 @@
+{
+  "status": "CBtData original allocation/mapping and destructor fault paths reproduced; live reachability open",
+  "native_execution": false,
+  "executable_written": false,
+  "unit_tested": false,
+  "build_allowed": false,
+  "sources": {
+    "module": "AppMain.exe",
+    "origin": "705md",
+    "path": "extracted\\705md\\upgrade\\Storage Card\\System\\AppMain.exe",
+    "sha256": "6a03280b71b49701766e47709802a190eca48a4a73406b27e18ad8618d5603c8",
+    "ranges": [
+      {
+        "va": "0x110010",
+        "bytes": 560,
+        "boundary": "pdata",
+        "raw_hex": "e0ffbd271800bfaf1000beaf1400b0af25f0a0031700083c1800093c25808000186b08253c812925000008ae2000d0af080000ae0c0000ae040009ae1800083c40810825140000ae180000ae1c0000ae100008ae25480000240000ae040009ae080009ae0c0009ae2c0004264002062400000524280000ae7903050c000000007002042640010624000005247903050c6c0200aeb0030426f40106247903050c000005240b00043c20898434a40500aea80500aeb40500ae46e1040cac0500ae0400043c8026843446e1040cb80502aea00f042446e1040cbc0502ae1100083c0400063c802c0835212008020065c634000005247903050cc40502ae1100063ce0050426a026c6347903050c000005241500093c25400000c80500aeb00500aec00500aecc0508aed00508aeea922935d40508aed80508ae212009022c010624000005247903050cdc0500ae1500043c1694843421200402640006247903050c000005241500043c15000a3cc49184342148040225400000000028ad040028ad080028ad0c0028ad100028ad140028ade6914a35180028ad1c0028ad21200a0204010624000005247903050c200028a51800043c387b888c15000b3c6823092503002a8900002a9980916b3521600b022558000020000aae00008bad04008bad08008bad1500083c0c008bad10008bad14008bada291083518008bad1c008bad2120080222000624000005247903050c20008ba52510000225e8c0031000be8f1400b08f1800bf8f0800e0032000bd27",
+        "sha256": "1855c33dbbd432cf5044f7e5df71b391642d7c910544c40df7ea75e4618692db"
+      },
+      {
+        "va": "0x1102a8",
+        "bytes": 76,
+        "boundary": "pdata",
+        "raw_hex": "e0ffbd271800bfaf1000b1af1400b0af25888000252020021e41040c2580a000010004320300801000000000b800050c25202002251020021000b18f1400b08f1800bf8f0800e0032000bd27",
+        "sha256": "17ea0e837dcc143d59b62757b68de5d4ca4008862616312471171dc64f99a76e"
+      },
+      {
+        "va": "0x1103a4",
+        "bytes": 164,
+        "boundary": "pdata",
+        "raw_hex": "d8ffbd272400bfaf1800beaf1c00b1af2000b0af25f0a0031800113c6065308e18000016000000001500043c7c948434bc00050c000000001000c2af0600401000000000252040000440040c000000000200001000000000251000001300063c1700083c0400442420d6c634f46705251b6c040c606522ae6065308e504f040c252000022510000225e8c0031800be8f1c00b18f2000b08f2400bf8f0800e0032800bd27",
+        "sha256": "b654f03cfe39126f27db1f5b891e93740e1b8597beecf38230b9b6f62dc436d8"
+      },
+      {
+        "va": "0x110478",
+        "bytes": 260,
+        "boundary": "pdata",
+        "raw_hex": "e0ffbd271c00bfaf1000beaf1400b1af1800b0af25f0a0031700083c25808000186b08252000d0af000008ae1800113c6065248e08008010000000000000888c010005240000088d09f800010000000025280000606525ae1800113c6465248e07008010000000000000888c0000088d09f800010100052425200000646524ae1800083c408108251c00048e03008010100008aecaff040c000000001400048e040080101800113c2850288e09f80001000000001800083c3c8108250c00048e03008010040008aecaff040c000000000800048e04008010000000002850288e09f800010000000025e8c0031000be8f1400b18f1800b08f1c00bf8f0800e0032000bd27",
+        "sha256": "2367fef6a1c01baa67aeb3f60c2b6663b80ff7c051bf929e6e0adc9517b0880c"
+      },
+      {
+        "va": "0x113d40",
+        "bytes": 108,
+        "boundary": "pdata",
+        "raw_hex": "e8ffbd271400bfaf1000b0af258080006b4f040c252000027002042640010624000005247903050c6c0200aeb0030426f40106247903050c00000524ffff0424a40504ae2c0004264002062400000524c00500ae7903050c280000ae1000b08f1400bf8f0800e0031800bd27",
+        "sha256": "fcdf6d44029f1d102d4897e23a94e067438159a311bd78878b70672fa1e7b403"
+      },
+      {
+        "va": "0x113dac",
+        "bytes": 280,
+        "boundary": "pdata",
+        "raw_hex": "e8ffbd271400bfaf1000b0af1500083c25808000809108352148080225400000000028ad040028ad080028ad15000a3c0c0028ad100028ad140028ada2914a35180028ad1c0028ad21200a0222000624000005247903050c200028a51100063ce0050426a026c63400000524cc0500aed00500aed40500ae7903050cd80500ae0b00063cb805048e2089c634000005247903050ca80500ae0400063cbc05048e8026c634000005247903050cb40500ae1500083cc491083521480802ffff042425400000a40504aec00500ae000028ad040028ad080028ad15000a3c0c0028ad100028ad140028ade6914a35180028ad1c0028ad21200a0204010624000005247903050c200028a51000b08f1400bf8f0800e0031800bd27",
+        "sha256": "dbb72906a4dd921af57e96ea1966931e26552928c01d417e71a35ac8cf4b7256"
+      },
+      {
+        "va": "0x11b06c",
+        "bytes": 216,
+        "boundary": "pdata",
+        "raw_hex": "d8ffbd272400bfaf1800b2af1c00b1af2000b0af1700083c1800123cf4671125258080002450488e000007240400062400000524ffff04241400b1af09f800011000a0af0c004014040002ae1300083c20d608351000a8af2450488e000007240400062400000524ffff042409f800011400b1af040002ae0400048e0d00801000000000000007240000062404000524c6ff040c1000a0af08004014080002ae1800083c2850088d09f800010400048e040000ae0200001000000224010002241800b28f1c00b18f2000b08f2400bf8f0800e0032800bd27",
+        "sha256": "4c023a4ce10cea4ba97371b7dbac66aaa7a5298956f95222d490bc79c0417c46"
+      },
+      {
+        "va": "0x110708",
+        "bytes": 488,
+        "boundary": "pdata",
+        "raw_hex": "b8ffbd274000bfaf2000b7af2400b6af2800b5af2c00b4af3000b3af3400b2af3800b1af3c00b0af25908000ffff0824a40548ae90fd0824235012011800aaaf259800002588000070025026b00355266c02488e2b4828023f0020110000000021b05001040057262528c002f36b040c2520e00225a040000000888e0c000626000008ae0400898e32000724040009ae08008a8e0800052408000aae0c008b8ee9fd04340c000bae10008c8e10000cae1400888e140008ae1800898e180009ae1c008a8e1c000aae20008b8e20000bae24008c8e24000cae2800888e280008ae2c00898e2c0009ae30008a8e30000aae34008b8e34000bae38008c8e38000cae3c00888e3c0008ae320008241400a8af1800083c8850088d09f800011000b5af000086920400c014000000000100889206000011000000002528c0022520e002f36b040ca40551aec00542ae1800aa8f120000100100732625400000000008ae040008ae080008ae0c0008ae100008ae140008ae180008ae1c0008ae200008ae240008ae280008ae2c0008ae300008ae340008ae380008ae3c0008ae010031266400b5260500282ea9ff0015400010260200601600000000c00540ae2000b78f2400b68f2800b58f2c00b48f3000b38f3400b28f3800b18f3c00b08f4000bf8f0800e0034800bd27",
+        "sha256": "15027e02431711cc6ae6ffe06b2ae79a3487fd69ecafdc0bff94953a8db82033"
+      },
+      {
+        "va": "0x11afcc",
+        "bytes": 120,
+        "boundary": "pdata",
+        "raw_hex": "f0ffbd270c00bfaf0800beaf25f0a0030800888c214805010000c9af0f000011000000000000c28f0c00001000000000251000000000c98f09000010000000000000c28f25e8c0030800be8f0c00bf8f1000bd270800e003000000002510200125e8c0030800be8f0c00bf8f1000bd270800e00300000000",
+        "sha256": "d08bc8ab4d4bad7f986054839e567781d830c93117f74b9f51a3fd3fce323a97"
+      }
+    ]
+  },
+  "core_source": {
+    "module": "coredll.dll",
+    "origin": "rom",
+    "path": "extracted\\705md-rom\\fs\\Windows\\coredll.dll",
+    "sha256": "1197e2aad1a47ddb477673badc45cb5ba7226a724c8d90099713aaee577da32c",
+    "ranges": [
+      {
+        "va": "0x4007be0c",
+        "bytes": 408,
+        "boundary": "reviewed leaf",
+        "raw_hex": "2538a0002528c0002530e00025108000ff00c630004206002530c800004406002530c80023400400030008312348a80051002019000000002528200115000810000000000000000003008a300f000a1001000b3408006a1102000b3403006a11000086a00a00001000000000000086a40700001000000000000086a00252060001008aa40200001000000000000086ac212088001f00a8302348a800215089002c0009100000000025280001040088300700081000000000000086ac040084242128a900fcffa524f2ff00100000000025c8c0002518c000200028310b00081000000000000099ac040083ac080099ac0c0083ac100099ac140083ac180099ac2000842413008a10fcff83ac000099ac040083ac080099ac0c0083ac100099ac140083ac180099ac1c0083ac200099ac240083ac280099ac2c0083ac300099ac340083ac380099ac40008424efff8a14fcff83ac0300a8302348a8002150890005000910000000002528000104008424feff8a14fcff86ac21508500040005100000000001008424feff8a14ffff86a00800e00300000000",
+        "sha256": "81d675a5eed87b1d72f2837209aa1196c84bc7be9f055f12c2e0cc41a4d5a104"
+      }
+    ]
+  },
+  "core_memset_cases": [
+    {
+      "alignment": 0,
+      "count": 0,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 0,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 0,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 0,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 1,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 1,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 1,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 1,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 2,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 2,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 2,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 2,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 3,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 3,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 3,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 3,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 4,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 4,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 4,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 4,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 31,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 31,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 31,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 31,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 32,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 32,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 32,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 32,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 33,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 33,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 33,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 33,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 64,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 64,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 64,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 64,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 65,
+      "value": 0,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 65,
+      "value": 90,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 65,
+      "value": 255,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 0,
+      "count": 65,
+      "value": 291,
+      "returned_pointer": "0x70000004",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 0,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 0,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 0,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 0,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 1,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 1,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 1,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 1,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 2,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 2,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 2,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 2,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 3,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 3,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 3,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 3,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 4,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 4,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 4,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 4,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 31,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 31,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 31,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 31,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 32,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 32,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 32,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 32,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 33,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 33,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 33,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 33,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 64,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 64,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 64,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 64,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 65,
+      "value": 0,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 65,
+      "value": 90,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 65,
+      "value": 255,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 1,
+      "count": 65,
+      "value": 291,
+      "returned_pointer": "0x70000005",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 0,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 0,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 0,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 0,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 1,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 1,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 1,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 1,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 2,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 2,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 2,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 2,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 3,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 3,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 3,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 3,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 4,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 4,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 4,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 4,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 31,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 31,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 31,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 31,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 32,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 32,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 32,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 32,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 33,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 33,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 33,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 33,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 64,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 64,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 64,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 64,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 65,
+      "value": 0,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 65,
+      "value": 90,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 65,
+      "value": 255,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 2,
+      "count": 65,
+      "value": 291,
+      "returned_pointer": "0x70000006",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 0,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 0,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 0,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 0,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 1,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 1,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 1,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 1,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 2,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 2,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 2,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 2,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 3,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 3,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 3,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 3,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 4,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 4,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 4,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 4,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 31,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 31,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 31,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 31,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 32,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 32,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 32,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 32,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 33,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 33,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 33,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 33,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 64,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 64,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 64,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 64,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 65,
+      "value": 0,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 65,
+      "value": 90,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 65,
+      "value": 255,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    },
+    {
+      "alignment": 3,
+      "count": 65,
+      "value": 291,
+      "returned_pointer": "0x70000007",
+      "guards_preserved": true,
+      "abi_preserved": true
+    }
+  ],
+  "vtable": {
+    "va": "0x176b18",
+    "bytes_hex": "a8021100",
+    "target": "0x1102a8"
+  },
+  "constructor_cases": [
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x64000000",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Native constructor/reset clear original record/cache span and return initialized singleton"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": false,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x11b0b4",
+          "address": "0x8",
+          "bytes": 4,
+          "value": "0x63000000"
+        },
+        "returned_object": null,
+        "shared_pointer": "0x0",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": null,
+        "finding": "Allocation failure still reaches shared-map store on address eight"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": false,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 1300000,
+            "success": false
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x0",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": false,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": false
+          },
+          {
+            "kind": "close",
+            "handle": "0x63000000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x0",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": false,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bef0",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e40",
+          "requested_bytes": 756000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "first",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bef0",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e40",
+          "requested_bytes": 756000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "second",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bf18",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e58",
+          "requested_bytes": 272000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "third",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x64000000",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x64000000",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Native constructor/reset clear original record/cache span and return initialized singleton"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": false,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x11b0b4",
+          "address": "0x8",
+          "bytes": 4,
+          "value": "0x63000000"
+        },
+        "returned_object": null,
+        "shared_pointer": "0x0",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": null,
+        "finding": "Allocation failure still reaches shared-map store on address eight"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": false,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 1300000,
+            "success": false
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x0",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": false,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": false
+          },
+          {
+            "kind": "close",
+            "handle": "0x63000000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x0",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": false,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bef0",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e40",
+          "requested_bytes": 756000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "first",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bef0",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e40",
+          "requested_bytes": 756000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "second",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bf18",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e58",
+          "requested_bytes": 272000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "third",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x64000000",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x64000000",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Native constructor/reset clear original record/cache span and return initialized singleton"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": false,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x11b0b4",
+          "address": "0x8",
+          "bytes": 4,
+          "value": "0x63000000"
+        },
+        "returned_object": null,
+        "shared_pointer": "0x0",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": null,
+        "finding": "Allocation failure still reaches shared-map store on address eight"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": false,
+        "view": true,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 1300000,
+            "success": false
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x0",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": false,
+        "heap_allocations": true,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": false
+          },
+          {
+            "kind": "close",
+            "handle": "0x63000000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x0",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": false,
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bef0",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e40",
+          "requested_bytes": 756000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "first",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bef0",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e40",
+          "requested_bytes": 756000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "second",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          }
+        ],
+        "witness": {
+          "kind": "low-write",
+          "pc": "0x4007bf18",
+          "address": "0x0",
+          "bytes": 4,
+          "value": "0x0",
+          "module": "coredll.dll",
+          "caller_pc": "0x113e58",
+          "requested_bytes": 272000
+        },
+        "returned_object": null,
+        "shared_pointer": "0x64000000",
+        "abi_preserved": false,
+        "retry_after_stopped_initialization": {
+          "returned_pointer": "0x41000000",
+          "new_initialization_events": 0,
+          "scope": "Fresh fixture invocation after stopped native fault, not proven CE exception recovery"
+        },
+        "finding": "Failed auxiliary allocation reaches coredll memset store at NULL; registered singleton makes fixture retry skip initialization"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "object_allocation": true,
+        "mapping": true,
+        "view": true,
+        "heap_allocations": "third",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x0"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "witness": null,
+        "returned_object": "0x41000000",
+        "shared_pointer": "0x64000000",
+        "abi_preserved": true,
+        "retry_after_stopped_initialization": null,
+        "finding": "Singleton returned despite absent shared mapping or absent heap buffers"
+      }
+    }
+  ],
+  "destructor_cases": [
+    {
+      "variant": "original",
+      "trace": {
+        "singleton_still_registered": false,
+        "deleting_flag": 0,
+        "entries": [],
+        "events": [
+          {
+            "kind": "unmap",
+            "pointer": "0x704"
+          },
+          {
+            "kind": "close",
+            "handle": "0x703"
+          },
+          {
+            "kind": "unmap",
+            "pointer": "0x702"
+          },
+          {
+            "kind": "close",
+            "handle": "0x701"
+          }
+        ],
+        "witness": null,
+        "abi_preserved": true,
+        "finding": "Cleanup/free returns when singleton was already cleared before entry"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "singleton_still_registered": false,
+        "deleting_flag": 1,
+        "entries": [],
+        "events": [
+          {
+            "kind": "unmap",
+            "pointer": "0x704"
+          },
+          {
+            "kind": "close",
+            "handle": "0x703"
+          },
+          {
+            "kind": "unmap",
+            "pointer": "0x702"
+          },
+          {
+            "kind": "close",
+            "handle": "0x701"
+          },
+          {
+            "kind": "free",
+            "pointer": "0x41000000"
+          }
+        ],
+        "witness": null,
+        "abi_preserved": true,
+        "finding": "Cleanup/free returns when singleton was already cleared before entry"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "singleton_still_registered": true,
+        "deleting_flag": 0,
+        "entries": [
+          {
+            "entry": "0x1102a8",
+            "stack": "0x68000000",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffe0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffffc0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffa0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff80",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff60",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff40",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff20",
+            "singleton": "0x41000000"
+          }
+        ],
+        "events": [],
+        "witness": {
+          "kind": "fourth-destructor-entry",
+          "entry": "0x110478",
+          "stack": "0x67ffff20",
+          "singleton": "0x41000000"
+        },
+        "abi_preserved": false,
+        "finding": "Native self-singleton vtable route re-enters destructor before clearing global or cleanup"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "singleton_still_registered": true,
+        "deleting_flag": 1,
+        "entries": [
+          {
+            "entry": "0x1102a8",
+            "stack": "0x68000000",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffe0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffffc0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffa0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff80",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff60",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff40",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff20",
+            "singleton": "0x41000000"
+          }
+        ],
+        "events": [],
+        "witness": {
+          "kind": "fourth-destructor-entry",
+          "entry": "0x110478",
+          "stack": "0x67ffff20",
+          "singleton": "0x41000000"
+        },
+        "abi_preserved": false,
+        "finding": "Native self-singleton vtable route re-enters destructor before clearing global or cleanup"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "singleton_still_registered": false,
+        "deleting_flag": 0,
+        "entries": [],
+        "events": [
+          {
+            "kind": "unmap",
+            "pointer": "0x704"
+          },
+          {
+            "kind": "close",
+            "handle": "0x703"
+          },
+          {
+            "kind": "unmap",
+            "pointer": "0x702"
+          },
+          {
+            "kind": "close",
+            "handle": "0x701"
+          }
+        ],
+        "witness": null,
+        "abi_preserved": true,
+        "finding": "Cleanup/free returns when singleton was already cleared before entry"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "singleton_still_registered": false,
+        "deleting_flag": 1,
+        "entries": [],
+        "events": [
+          {
+            "kind": "unmap",
+            "pointer": "0x704"
+          },
+          {
+            "kind": "close",
+            "handle": "0x703"
+          },
+          {
+            "kind": "unmap",
+            "pointer": "0x702"
+          },
+          {
+            "kind": "close",
+            "handle": "0x701"
+          },
+          {
+            "kind": "free",
+            "pointer": "0x41000000"
+          }
+        ],
+        "witness": null,
+        "abi_preserved": true,
+        "finding": "Cleanup/free returns when singleton was already cleared before entry"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "singleton_still_registered": true,
+        "deleting_flag": 0,
+        "entries": [
+          {
+            "entry": "0x1102a8",
+            "stack": "0x68000000",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffe0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffffc0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffa0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff80",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff60",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff40",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff20",
+            "singleton": "0x41000000"
+          }
+        ],
+        "events": [],
+        "witness": {
+          "kind": "fourth-destructor-entry",
+          "entry": "0x110478",
+          "stack": "0x67ffff20",
+          "singleton": "0x41000000"
+        },
+        "abi_preserved": false,
+        "finding": "Native self-singleton vtable route re-enters destructor before clearing global or cleanup"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "singleton_still_registered": true,
+        "deleting_flag": 1,
+        "entries": [
+          {
+            "entry": "0x1102a8",
+            "stack": "0x68000000",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffe0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffffc0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffa0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff80",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff60",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff40",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff20",
+            "singleton": "0x41000000"
+          }
+        ],
+        "events": [],
+        "witness": {
+          "kind": "fourth-destructor-entry",
+          "entry": "0x110478",
+          "stack": "0x67ffff20",
+          "singleton": "0x41000000"
+        },
+        "abi_preserved": false,
+        "finding": "Native self-singleton vtable route re-enters destructor before clearing global or cleanup"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "singleton_still_registered": false,
+        "deleting_flag": 0,
+        "entries": [],
+        "events": [
+          {
+            "kind": "unmap",
+            "pointer": "0x704"
+          },
+          {
+            "kind": "close",
+            "handle": "0x703"
+          },
+          {
+            "kind": "unmap",
+            "pointer": "0x702"
+          },
+          {
+            "kind": "close",
+            "handle": "0x701"
+          }
+        ],
+        "witness": null,
+        "abi_preserved": true,
+        "finding": "Cleanup/free returns when singleton was already cleared before entry"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "singleton_still_registered": false,
+        "deleting_flag": 1,
+        "entries": [],
+        "events": [
+          {
+            "kind": "unmap",
+            "pointer": "0x704"
+          },
+          {
+            "kind": "close",
+            "handle": "0x703"
+          },
+          {
+            "kind": "unmap",
+            "pointer": "0x702"
+          },
+          {
+            "kind": "close",
+            "handle": "0x701"
+          },
+          {
+            "kind": "free",
+            "pointer": "0x41000000"
+          }
+        ],
+        "witness": null,
+        "abi_preserved": true,
+        "finding": "Cleanup/free returns when singleton was already cleared before entry"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "singleton_still_registered": true,
+        "deleting_flag": 0,
+        "entries": [
+          {
+            "entry": "0x1102a8",
+            "stack": "0x68000000",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffe0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffffc0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffa0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff80",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff60",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff40",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff20",
+            "singleton": "0x41000000"
+          }
+        ],
+        "events": [],
+        "witness": {
+          "kind": "fourth-destructor-entry",
+          "entry": "0x110478",
+          "stack": "0x67ffff20",
+          "singleton": "0x41000000"
+        },
+        "abi_preserved": false,
+        "finding": "Native self-singleton vtable route re-enters destructor before clearing global or cleanup"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "singleton_still_registered": true,
+        "deleting_flag": 1,
+        "entries": [
+          {
+            "entry": "0x1102a8",
+            "stack": "0x68000000",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffe0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffffc0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffffa0",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff80",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff60",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x1102a8",
+            "stack": "0x67ffff40",
+            "singleton": "0x41000000"
+          },
+          {
+            "entry": "0x110478",
+            "stack": "0x67ffff20",
+            "singleton": "0x41000000"
+          }
+        ],
+        "events": [],
+        "witness": {
+          "kind": "fourth-destructor-entry",
+          "entry": "0x110478",
+          "stack": "0x67ffff20",
+          "singleton": "0x41000000"
+        },
+        "abi_preserved": false,
+        "finding": "Native self-singleton vtable route re-enters destructor before clearing global or cleanup"
+      }
+    }
+  ],
+  "missing_shared_copy_cases": [
+    {
+      "variant": "original",
+      "trace": {
+        "producer_failure": "mapping",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 1300000,
+            "success": false
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "consumer_count": 1,
+        "witness": {
+          "kind": "low-read",
+          "pc": "0x110780",
+          "address": "0x0",
+          "bytes": 4
+        },
+        "finding": "Native mapping failure returns nonzero object; later nonempty copy reads address zero",
+        "scope": "Injected later count; actual producer/CE timing not executed; consumer original/variant bytes interpreted"
+      }
+    },
+    {
+      "variant": "original",
+      "trace": {
+        "producer_failure": "view",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": false
+          },
+          {
+            "kind": "close",
+            "handle": "0x63000000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "consumer_count": 1,
+        "witness": {
+          "kind": "low-read",
+          "pc": "0x110780",
+          "address": "0x0",
+          "bytes": 4
+        },
+        "finding": "Native mapping failure returns nonzero object; later nonempty copy reads address zero",
+        "scope": "Injected later count; actual producer/CE timing not executed; consumer original/variant bytes interpreted"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "producer_failure": "mapping",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 1300000,
+            "success": false
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "consumer_count": 1,
+        "witness": {
+          "kind": "low-read",
+          "pc": "0x110780",
+          "address": "0x0",
+          "bytes": 4
+        },
+        "finding": "Native mapping failure returns nonzero object; later nonempty copy reads address zero",
+        "scope": "Injected later count; actual producer/CE timing not executed; consumer original/variant bytes interpreted"
+      }
+    },
+    {
+      "variant": "eight_record_base",
+      "trace": {
+        "producer_failure": "view",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": false
+          },
+          {
+            "kind": "close",
+            "handle": "0x63000000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "consumer_count": 1,
+        "witness": {
+          "kind": "low-read",
+          "pc": "0x110780",
+          "address": "0x0",
+          "bytes": 4
+        },
+        "finding": "Native mapping failure returns nonzero object; later nonempty copy reads address zero",
+        "scope": "Injected later count; actual producer/CE timing not executed; consumer original/variant bytes interpreted"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "producer_failure": "mapping",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": false
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 1300000,
+            "success": false
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "consumer_count": 1,
+        "witness": {
+          "kind": "low-read",
+          "pc": "0x110780",
+          "address": "0x0",
+          "bytes": 4
+        },
+        "finding": "Native mapping failure returns nonzero object; later nonempty copy reads address zero",
+        "scope": "Injected later count; actual producer/CE timing not executed; consumer original/variant bytes interpreted"
+      }
+    },
+    {
+      "variant": "count_ack",
+      "trace": {
+        "producer_failure": "view",
+        "events": [
+          {
+            "kind": "object-allocation",
+            "bytes": 1414268,
+            "success": true
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 756000,
+            "returned_pointer": "0x66000000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 272000,
+            "returned_pointer": "0x66100000"
+          },
+          {
+            "kind": "heap-allocation",
+            "bytes": 4000,
+            "returned_pointer": "0x66200000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x112c80",
+            "heap_pointer": null,
+            "bytes": 288000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1592ea",
+            "heap_pointer": null,
+            "bytes": 300
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x159416",
+            "heap_pointer": null,
+            "bytes": 100
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "create-mapping",
+            "name": "BlueEarth",
+            "bytes": 0,
+            "success": true
+          },
+          {
+            "kind": "map-view",
+            "success": false
+          },
+          {
+            "kind": "close",
+            "handle": "0x63000000"
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591a2",
+            "heap_pointer": null,
+            "bytes": 34
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x5e0",
+            "heap_pointer": null,
+            "bytes": 1124000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66000000",
+            "bytes": 756000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": null,
+            "heap_pointer": "0x66100000",
+            "bytes": 272000
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x1591e6",
+            "heap_pointer": null,
+            "bytes": 260
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x270",
+            "heap_pointer": null,
+            "bytes": 320
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x3b0",
+            "heap_pointer": null,
+            "bytes": 500
+          },
+          {
+            "kind": "zero-call",
+            "object_offset": "0x2c",
+            "heap_pointer": null,
+            "bytes": 576
+          }
+        ],
+        "consumer_count": 1,
+        "witness": {
+          "kind": "low-read",
+          "pc": "0x110780",
+          "address": "0x0",
+          "bytes": 4
+        },
+        "finding": "Native mapping failure returns nonzero object; later nonempty copy reads address zero",
+        "scope": "Injected later count; actual producer/CE timing not executed; consumer original/variant bytes interpreted"
+      }
+    }
+  ],
+  "original_direct_edges": [
+    "001102c0  jal       0x110478",
+    "0011395c  jal       0x1103a4",
+    "00113b14  jal       0x1103a4",
+    "00114538  jal       0x1103a4"
+  ],
+  "base_variant_sha256": "7a44ab13a6a1ce38bf7565d6c22d6a62dd41b2b95713e2578bbc3df2527276ea",
+  "ack_variant_sha256": "c89f3b16c2f3a62b12e66501966957d38c4a0c4a04088f37b5596ae67d306d4a",
+  "limitations": [
+    "Heap, mapping and close/free are fixtures; no CE, physical memory exhaustion or unit execution",
+    "Large successful memset calls logged as intervals; record/cache span written in fixture RAM; NULL memset executes pinned ROM bytes up to first store",
+    "Recursive path stops at fourth destructor entry; no claim of completed unwind or actual stack exhaustion",
+    "No live destructor caller reachability or shutdown frequency proven; original table/indirect self route interpreted",
+    "Nonempty copy count is injected after native mapping failure; actual later IPC producer/scheduling remain open",
+    "Other objects, failed heap consumers, mapping retry/recovery and complete allocation lifetime remain open"
+  ],
+  "dependencies": {
+    "verify_bt_data_lifecycle.py": "ead893dbf5b02c890bcd1833e81ec2574cc1402f3111f40d401423a2cca36915",
+    "verify_bt_pairing_ui.py": "45a76a2bec9cf296bc02f14121dce494efb7a043adb5f7175ddf2107f2d6dfa9",
+    "verify_bt_database_io.py": "dcf04361089c9ae50f65ed01cd60849b64eb7c76a8f52d9a642e7cd6a6ffee21",
+    "verify_bt_pairing_storage.py": "a95f530fc36b6db4149d7cee9543d37a24d1a5a0a7bc7c6f21c835bdc0c8bc85",
+    "verify_bt_pairing_confirmation.py": "3d863f6bb202c99db51e3eed5f1546e0697f2b6799a7fdbd2c6bf4f95e00dbfd",
+    "draft_bt_pairing_storage.py": "1148bad59e560aa37ff15ec62e63471904f45924406e0bf8d0e3f0683533851c",
+    "draft_bt_list_ack.py": "b7f8b5b1e1a22bcb0bf578a07a4f8050ece1d2b24db45f366924acb561fb87ae",
+    "draft_bt_database_io.py": "f65868717141c540a9e2bd361f9aee8df10da1373e3db2b5e9cd319a3eb60347",
+    "inspect_bt_pairing.py": "871e72ef0415644387dd5a70c9b3c9bf179e8c184253eab41c5f4fabc410123c",
+    "inspect_bt_playback.py": "37c5c948a87c7232e44d24eaa7a302392de8e65b8e35cbfd391e99cac8d5b1a7",
+    "inspect_wave_queue.py": "021c179cdfd2f2d39b5cc2dd2667600e23bd2ac3619b75321933ef20b37391dc",
+    "inspect_bt_lifecycle.py": "d3c83e31b86466adc5523270b2430a7e65a09b0bdc51cbf3093094dd13478658",
+    "patch_bt_playback.py": "772c654a4d6ba646880f833ec7fb05726781ad545242e13c0f07a8a070353813"
+  }
+}

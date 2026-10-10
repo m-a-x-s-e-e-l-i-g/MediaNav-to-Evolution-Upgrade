@@ -1,0 +1,80 @@
+{
+  "usb_sha256": "1a9b713e873f5669174b483771445dcd3a4d4613dba844ebe45085beaee29110",
+  "evidence": [
+    {
+      "start": "0x135f0",
+      "end": "0x13630",
+      "meaning": "sort comparator dispatch",
+      "bytes": 64,
+      "sha256": "c978db51802cebcaaa503abc97b168d166c40f40478d8841312fa6df45f3793f"
+    },
+    {
+      "start": "0x173d8",
+      "end": "0x17464",
+      "meaning": "two temporary sort representations",
+      "bytes": 140,
+      "sha256": "ea4fe37c0c9afc6d0a9af5a1d1fc468f4709856452dabbdbfe25bb6e0db7998a"
+    },
+    {
+      "start": "0x14720",
+      "end": "0x1487c",
+      "meaning": "linear folder-table next lookup",
+      "bytes": 348,
+      "sha256": "a35f0bed455fc90ff7afd4a143d11f325499d7a7b26c7b9bbb15fdfd9ed7b107"
+    },
+    {
+      "start": "0x1b17c",
+      "end": "0x1b1c0",
+      "meaning": "500 ms progress timer setup",
+      "bytes": 68,
+      "sha256": "3cedf1c698cb0d4d6ec84947e702332dd778dcc31736f7a0e2b2d67f774c0ad9"
+    },
+    {
+      "start": "0x1b3b0",
+      "end": "0x1b484",
+      "meaning": "graph position and complete shared status update",
+      "bytes": 212,
+      "sha256": "89518104dc857cbadd6494235d5570713bb196fff3dc84077af35d4dbd1e8ac7"
+    },
+    {
+      "start": "0x20340",
+      "end": "0x203a4",
+      "meaning": "timer 1000 dispatch",
+      "bytes": 100,
+      "sha256": "a85defc27b8d3785b8b633123e021b2e19550fa71f263f33dd90cb790e0133f7"
+    },
+    {
+      "start": "0x24094",
+      "end": "0x240b0",
+      "meaning": "shared writer forwarding",
+      "bytes": 28,
+      "sha256": "67635b5d7cc876c9a8b60b021dccb5ce186ad0d4ee4c3081c0400989962ddf7e"
+    },
+    {
+      "start": "0x23c44",
+      "end": "0x23cd8",
+      "meaning": "shared memcpy without mutex",
+      "bytes": 148,
+      "sha256": "46cbc89fbd3fcfffeccc1cae16fa49c240ddabda677a4be4ae85a6be30e7cf7b"
+    }
+  ],
+  "status": {
+    "nominal_timer_ms": 500,
+    "bytes_per_full_copy": 3670,
+    "writer_has_mutex": false,
+    "skip_or_partial_copy_not_implemented": true
+  },
+  "sorting": {
+    "memset_bytes_per_compare": 2072,
+    "other_zero_store_bytes": 8,
+    "key_build_calls_per_compare": 2,
+    "normalization_cache_not_implemented": true
+  },
+  "folders": {
+    "next_lookup": "linear scan with per-entry Sleep(1)",
+    "iterator_not_changed": true
+  },
+  "next_work": "Measure and cache filename sort representations per catalog generation/locale; trace folder iterator and snapshot ownership before further optimizations.",
+  "native_executed": false,
+  "native_timing_measured": false
+}

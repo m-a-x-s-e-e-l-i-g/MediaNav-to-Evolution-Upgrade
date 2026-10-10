@@ -1,0 +1,574 @@
+{
+  "program": "mae_bsa.dll",
+  "language": "MIPS:LE:32:default",
+  "compiler": "windows",
+  "executable_sha256": "a92168c06fdfc98463481d8ef6f6a160b954c53094faa5e634398f41cead39e4",
+  "scope": "Automatic decompiler candidates; types, data references and behavior require review",
+  "external_symbols": [
+    {
+      "library": "COREDLL.DLL",
+      "label": "__C_specific_handler"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EventModify"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "KernelIoControl"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "NKDbgPrintfW"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LeaveCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "EnterCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DisableThreadLibraryCalls"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDone"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InitializeCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalFree"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "LocalAlloc"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "DeleteCriticalSection"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptDisable"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedDecrement"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterruptInitialize"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateThread"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "InterlockedIncrement"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "memset"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "_XcptFilter"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "free"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "__security_gen_cookie2"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "TerminateProcess"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "WaitForSingleObject"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CloseHandle"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CeSetThreadPriority"
+    },
+    {
+      "library": "COREDLL.DLL",
+      "label": "CreateEventW"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptConnect"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmMapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "MmUnmapIoSpace"
+    },
+    {
+      "library": "CEDDK.DLL",
+      "label": "InterruptDisconnect"
+    }
+  ],
+  "functions_attempted": 19,
+  "functions_decompiled": 19,
+  "functions": [
+    {
+      "address": "c09b1000",
+      "name": "FUN_c09b1000",
+      "body_addresses": 800,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c09b1b24",
+          "name": "NKDbgPrintfW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1320",
+      "name": "BSA_IOControl",
+      "body_addresses": 140,
+      "calls": [
+        {
+          "address": "c09b1000",
+          "name": "FUN_c09b1000",
+          "external": false
+        },
+        {
+          "address": "c09b1b24",
+          "name": "NKDbgPrintfW",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b13ac",
+      "name": "BSA_Init",
+      "body_addresses": 332,
+      "calls": [
+        {
+          "address": "c09b1c44",
+          "name": "memset",
+          "external": false
+        },
+        {
+          "address": "c09b1c04",
+          "name": "InterruptConnect",
+          "external": false
+        },
+        {
+          "address": "c09b1b64",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "c09b1b94",
+          "name": "LocalAlloc",
+          "external": false
+        },
+        {
+          "address": "c09b1b14",
+          "name": "KernelIoControl",
+          "external": false
+        },
+        {
+          "address": "c09b1c14",
+          "name": "MmMapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09b1b74",
+          "name": "InitializeCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09b1b24",
+          "name": "NKDbgPrintfW",
+          "external": false
+        },
+        {
+          "address": "c09b1b84",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b14f8",
+      "name": "BSA_Deinit",
+      "body_addresses": 172,
+      "calls": [
+        {
+          "address": "c09b1c34",
+          "name": "InterruptDisconnect",
+          "external": false
+        },
+        {
+          "address": "c09b1ba4",
+          "name": "DeleteCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09b1c24",
+          "name": "MmUnmapIoSpace",
+          "external": false
+        },
+        {
+          "address": "c09b1b14",
+          "name": "KernelIoControl",
+          "external": false
+        },
+        {
+          "address": "c09b1b84",
+          "name": "LocalFree",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b15a4",
+      "name": "BSA_Close",
+      "body_addresses": 280,
+      "calls": [
+        {
+          "address": "c09b1bb4",
+          "name": "InterruptDisable",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c09b1b14",
+          "name": "KernelIoControl",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000013",
+          "name": "CloseHandle",
+          "external": true
+        },
+        {
+          "address": "c09b1bc4",
+          "name": "InterlockedDecrement",
+          "external": false
+        },
+        {
+          "address": "c09b1b44",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09b1b34",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b16bc",
+      "name": "FUN_c09b16bc",
+      "body_addresses": 344,
+      "calls": [
+        {
+          "address": "c09b1b64",
+          "name": "InterruptDone",
+          "external": false
+        },
+        {
+          "address": "c09b1bd4",
+          "name": "InterruptInitialize",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c09b1b04",
+          "name": "EventModify",
+          "external": false
+        },
+        {
+          "address": "c09b1b44",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CeSetThreadPriority",
+          "external": true
+        },
+        {
+          "address": "c09b1b34",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1814",
+      "name": "BSA_PowerDown",
+      "body_addresses": 124,
+      "calls": [
+        {
+          "address": "EXTERNAL:00000011",
+          "name": "WaitForSingleObject",
+          "external": true
+        },
+        {
+          "address": "c09b1b14",
+          "name": "KernelIoControl",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1890",
+      "name": "BSA_PowerUp",
+      "body_addresses": 156,
+      "calls": [
+        {
+          "address": "c09b1b14",
+          "name": "KernelIoControl",
+          "external": false
+        },
+        {
+          "address": "c09b1b44",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09b1b34",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b192c",
+      "name": "FUN_c09b192c",
+      "body_addresses": 268,
+      "calls": [
+        {
+          "address": "EXTERNAL:0000000e",
+          "name": "CreateEventW",
+          "external": true
+        },
+        {
+          "address": "c09b1be4",
+          "name": "CreateThread",
+          "external": false
+        },
+        {
+          "address": "EXTERNAL:0000000c",
+          "name": "CeSetThreadPriority",
+          "external": true
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1a38",
+      "name": "BSA_Open",
+      "body_addresses": 204,
+      "calls": [
+        {
+          "address": "c09b1bf4",
+          "name": "InterlockedIncrement",
+          "external": false
+        },
+        {
+          "address": "c09b1b14",
+          "name": "KernelIoControl",
+          "external": false
+        },
+        {
+          "address": "c09b192c",
+          "name": "FUN_c09b192c",
+          "external": false
+        },
+        {
+          "address": "c09b1b44",
+          "name": "EnterCriticalSection",
+          "external": false
+        },
+        {
+          "address": "c09b1b34",
+          "name": "LeaveCriticalSection",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1c54",
+      "name": "FUN_c09b1c54",
+      "body_addresses": 296,
+      "calls": [
+        {
+          "address": "c09b1fb4",
+          "name": "FUN_c09b1fb4",
+          "external": false
+        },
+        {
+          "address": "c09b1f10",
+          "name": "FUN_c09b1f10",
+          "external": false
+        },
+        {
+          "address": "c09b1f34",
+          "name": "FUN_c09b1f34",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1d90",
+      "name": "FUN_c09b1d90",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c09b1e14",
+          "name": "_XcptFilter",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1dbc",
+      "name": "entry",
+      "body_addresses": 88,
+      "calls": [
+        {
+          "address": "c09b1c54",
+          "name": "FUN_c09b1c54",
+          "external": false
+        },
+        {
+          "address": "c09b2000",
+          "name": "FUN_c09b2000",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1e24",
+      "name": "FUN_c09b1e24",
+      "body_addresses": 236,
+      "calls": [
+        {
+          "address": "c09b2094",
+          "name": "TerminateProcess",
+          "external": false
+        },
+        {
+          "address": "c09b2074",
+          "name": "free",
+          "external": false
+        },
+        {
+          "address": "c09b1f60",
+          "name": "FUN_c09b1f60",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1f10",
+      "name": "FUN_c09b1f10",
+      "body_addresses": 36,
+      "calls": [
+        {
+          "address": "c09b1e24",
+          "name": "FUN_c09b1e24",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1f34",
+      "name": "FUN_c09b1f34",
+      "body_addresses": 44,
+      "calls": [
+        {
+          "address": "c09b1b54",
+          "name": "DisableThreadLibraryCalls",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1f60",
+      "name": "FUN_c09b1f60",
+      "body_addresses": 84,
+      "calls": [],
+      "decompiled": true
+    },
+    {
+      "address": "c09b1fb4",
+      "name": "FUN_c09b1fb4",
+      "body_addresses": 60,
+      "calls": [
+        {
+          "address": "c09b1f60",
+          "name": "FUN_c09b1f60",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    },
+    {
+      "address": "c09b2000",
+      "name": "FUN_c09b2000",
+      "body_addresses": 116,
+      "calls": [
+        {
+          "address": "c09b2084",
+          "name": "__security_gen_cookie2",
+          "external": false
+        }
+      ],
+      "decompiled": true
+    }
+  ]
+}

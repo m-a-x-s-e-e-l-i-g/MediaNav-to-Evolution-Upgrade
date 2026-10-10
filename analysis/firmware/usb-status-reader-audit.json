@@ -1,0 +1,49 @@
+{
+  "cases": 5,
+  "traces": [
+    {
+      "name": "title length reader",
+      "unterminated_title": false,
+      "measured_characters": 5,
+      "last_read_offset": "0x218",
+      "crosses_title_slot": false
+    },
+    {
+      "name": "title length reader",
+      "unterminated_title": true,
+      "measured_characters": 261,
+      "last_read_offset": "0x418",
+      "crosses_title_slot": true
+    },
+    {
+      "name": "packed cover-handle reader",
+      "interleaved_publication": false,
+      "observed_handle": "0x12340001",
+      "old_handle": "0x12340001",
+      "new_handle": "0x56780002",
+      "torn_handle": false
+    },
+    {
+      "name": "packed cover-handle reader",
+      "interleaved_publication": true,
+      "observed_handle": "0x12340002",
+      "old_handle": "0x12340001",
+      "new_handle": "0x56780002",
+      "torn_handle": true
+    },
+    {
+      "name": "widget retains borrowed bitmap handle",
+      "stored_offset": "0x3c",
+      "stored_handle": "0x12340001",
+      "get_object_calls": 1,
+      "bitmap_not_duplicated": true
+    }
+  ],
+  "actual_reader_instructions": true,
+  "publication_and_gdi_are_fixtures": true,
+  "real_scheduler_interleaving_observed": false,
+  "native_cover_handle_lifetime_tested": false,
+  "concurrency_fixed": false,
+  "output_sha256": "935dabf375402934109a69611860985048d21b0b7c56a1cf1f3533cf1f8eb3c8",
+  "tool_sha256": "9738784bc59e599615f4e73a7b1ce724a3f2efb564a1fdf7254999c211dc69d0"
+}

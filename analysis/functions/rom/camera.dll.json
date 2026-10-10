@@ -1,0 +1,327 @@
+{
+  "module": "rom/camera.dll",
+  "sha256": "5971cdeb8ed54f413a21d88f8b15c69dbe56af40f512284603ea4c471695aaa2",
+  "scope": "Function boundaries from .pdata; labels and call edges are static candidates, not proved behavior",
+  "functions": [
+    {
+      "begin_va": "0xc0972cd0",
+      "end_va": "0xc0972e78",
+      "bytes": 424,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0xc0972cec",
+      "label_candidates": [],
+      "imports": [],
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "va": "0xc0972d88",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0xc0972e4c",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0xc0972e78",
+      "end_va": "0xc0972f10",
+      "bytes": 152,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0xc0972e88",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "CAM_Deinit"
+        }
+      ],
+      "imports": [
+        {
+          "va": "0xc0972eb0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterruptDisable@629",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0xc0972eb8",
+          "kind": "import_call",
+          "symbol": "CEDDK.dll!InterruptDisconnect",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0xc0972ec8",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!CloseHandle@553",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0xc0972ee0",
+          "kind": "import_call",
+          "symbol": "CEDDK.dll!MmUnmapIoSpace@9",
+          "constant_arg_candidates": {
+            "$a1": 212
+          }
+        },
+        {
+          "va": "0xc0972ef0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!LocalFree@36",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [],
+      "indirect_calls": [],
+      "strings": []
+    },
+    {
+      "begin_va": "0xc0972f4c",
+      "end_va": "0xc097335c",
+      "bytes": 1040,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0xc0972f78",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "CAM_IOControl"
+        }
+      ],
+      "imports": [
+        {
+          "va": "0xc0972f90",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!NKDbgPrintfW@545",
+          "constant_arg_candidates": {
+            "$a0": 3231132748
+          }
+        },
+        {
+          "va": "0xc0973030",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!WaitForSingleObject@497",
+          "constant_arg_candidates": {
+            "$a1": 0
+          }
+        },
+        {
+          "va": "0xc097304c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterruptDone@628",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0xc09730c0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!NKDbgPrintfW@545",
+          "constant_arg_candidates": {
+            "$a0": 3231132660
+          }
+        },
+        {
+          "va": "0xc0973154",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "constant_arg_candidates": {
+            "$a0": 10
+          }
+        },
+        {
+          "va": "0xc097319c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterruptDone@628",
+          "constant_arg_candidates": {}
+        },
+        {
+          "va": "0xc0973278",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!Sleep@496",
+          "constant_arg_candidates": {
+            "$a0": 1
+          }
+        },
+        {
+          "va": "0xc09732d0",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memcpy@1044",
+          "constant_arg_candidates": {
+            "$a2": 64
+          }
+        },
+        {
+          "va": "0xc097331c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!SetLastError@517",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0xc097325c",
+          "kind": "direct_call",
+          "target_va": "0xc0972cd0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "va": "0xc097305c",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0xc0973188",
+          "kind": "indirect_call",
+          "register": "$t0"
+        },
+        {
+          "va": "0xc0973288",
+          "kind": "indirect_call",
+          "register": "$t0"
+        }
+      ],
+      "strings": []
+    },
+    {
+      "begin_va": "0xc097335c",
+      "end_va": "0xc0973450",
+      "bytes": 244,
+      "handler_va": "0x0",
+      "handler_data_va": "0x0",
+      "prolog_end_va": "0xc0973368",
+      "label_candidates": [
+        {
+          "source": "export",
+          "name": "CAM_Init"
+        }
+      ],
+      "imports": [
+        {
+          "va": "0xc097336c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!LocalAlloc@33",
+          "constant_arg_candidates": {
+            "$a0": 64,
+            "$a1": 44
+          }
+        },
+        {
+          "va": "0xc0973388",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!memset@1047",
+          "constant_arg_candidates": {
+            "$a1": 0,
+            "$a2": 44
+          }
+        },
+        {
+          "va": "0xc09733a0",
+          "kind": "import_call",
+          "symbol": "CEDDK.dll!MmMapIoSpace@8",
+          "constant_arg_candidates": {
+            "$a0": 335560704,
+            "$a1": 0,
+            "$a2": 212,
+            "$a3": 0
+          }
+        },
+        {
+          "va": "0xc09733c8",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!CreateEventW@495",
+          "constant_arg_candidates": {
+            "$a0": 0,
+            "$a1": 0,
+            "$a2": 0,
+            "$a3": 0
+          }
+        },
+        {
+          "va": "0xc0973410",
+          "kind": "import_call",
+          "symbol": "CEDDK.dll!InterruptConnect",
+          "constant_arg_candidates": {
+            "$a0": 0,
+            "$a1": 0,
+            "$a2": 96,
+            "$a3": 0
+          }
+        },
+        {
+          "va": "0xc097342c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterruptInitialize@627",
+          "constant_arg_candidates": {
+            "$a2": 0,
+            "$a3": 0
+          }
+        },
+        {
+          "va": "0xc097343c",
+          "kind": "import_call",
+          "symbol": "COREDLL.dll!InterruptDone@628",
+          "constant_arg_candidates": {}
+        }
+      ],
+      "direct_calls": [
+        {
+          "va": "0xc09733e4",
+          "kind": "direct_call",
+          "target_va": "0xc0972e78"
+        }
+      ],
+      "indirect_calls": [],
+      "strings": []
+    }
+  ],
+  "unmapped_calls": [
+    {
+      "va": "0xc09716f0",
+      "kind": "direct_call",
+      "target_va": "0xc44a0048"
+    },
+    {
+      "va": "0xc0971eac",
+      "kind": "direct_call",
+      "target_va": "0xc44a0048"
+    },
+    {
+      "va": "0xc0972088",
+      "kind": "direct_call",
+      "target_va": "0xc5450d40"
+    },
+    {
+      "va": "0xc0972214",
+      "kind": "direct_call",
+      "target_va": "0xc5450d40"
+    },
+    {
+      "va": "0xc09723a0",
+      "kind": "direct_call",
+      "target_va": "0xc5450d40"
+    },
+    {
+      "va": "0xc097252c",
+      "kind": "direct_call",
+      "target_va": "0xc5450d40"
+    },
+    {
+      "va": "0xc09726b8",
+      "kind": "direct_call",
+      "target_va": "0xc5450d40"
+    },
+    {
+      "va": "0xc0972844",
+      "kind": "direct_call",
+      "target_va": "0xc5450d40"
+    },
+    {
+      "va": "0xc09737c0",
+      "kind": "direct_call",
+      "target_va": "0xc0428908"
+    }
+  ]
+}
