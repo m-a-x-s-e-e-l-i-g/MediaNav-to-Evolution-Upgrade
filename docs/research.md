@@ -70,6 +70,7 @@
 - [USB playback state candidate](../analysis/usb-graph-state-development.md): bounded polling and caller failure handling after MAX04.
 - [Failed USB graph initialization](../analysis/usb-graph-init-development.md): partial-resource cleanup and retry after initialization errors; builds on the playback state candidate.
 - [USB seek timing candidate](../analysis/usb-seek-timing-development.md): invalid timing output, progress retention and nonnegative seek targets; builds on initialization cleanup.
+- [USB seek completion candidate](../analysis/usb-seek-completion-development.md): failed saved-resume, held and IPC seeks; builds on the timing candidate.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
