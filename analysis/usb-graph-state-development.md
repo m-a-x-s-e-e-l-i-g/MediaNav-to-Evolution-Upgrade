@@ -28,7 +28,8 @@ API references: [GetState](https://learn.microsoft.com/en-us/windows/win32/api/c
 
 ## Evidence
 
-- [Instruction report](firmware/usb-graph-state-development.json): **386 cases**, including five original-defect reproductions, repeated pause/seek calls, completed/pending/failed transitions, frozen clocks, tick wraparound, absent/replaced interfaces, caller failure gates and three alternate load addresses.
+- [Instruction report](firmware/usb-graph-state-development.json): **431 cases**, including five original-defect reproductions, the previous draft's wrong-frame failure, repeated pause/seek calls, completed/pending/failed transitions, frozen clocks, tick wraparound, absent/replaced interfaces, caller failure gates and three alternate load addresses.
+- Every caller failure exit belongs to the caller's original function-table row. The verifier executes original prologues, supplied failure state, gates, cleanup and final returns; the window dispatcher frees its temporary buffer. Complete held-seek entries in both directions and refused RenderFile replacement also execute through return at four load bases.
 - [Retained USB checks](firmware/usb-graph-state-retained.json): **72,212 passing cases** for save/resume settings, folders, sorting, WMA/shuffle, artwork, playlists and earlier input/encoding behavior. Historical inputs match the published stage manifests; 224 legacy Python source snapshots were hash-checked.
 - [Complete member manifest](firmware/usb-graph-state-members.json): all **1,918 files** retained; **1,917 unchanged** from MAX04. Only `MgrUSB.exe` changes; version and release assets stay unchanged.
 - Original PE sections, imports, entry point, routine stack frames and prior function-table rows are preserved. Nine helper rows and their relocations occupy checked existing space.
@@ -49,9 +50,11 @@ python tools/build_usb_graph_state_development.py --baseline build/max04-reprodu
 - Outputs contain the complete payload, edit recipe, evidence and member hashes. No LGU or version bump is produced.
 - `python -m unittest discover -s tools -p test_usb_graph_state.py` checks refusal behavior.
 - GitHub Actions reproduces MAX04 and builds/checks this candidate.
-- The retained report uses the historical local stage inputs. The new candidate's 386-case suite and complete member checks run in CI; the full historical suite is not claimed to run there.
+- The retained report uses the historical local stage inputs. The new candidate's 431-case suite and complete member checks run in CI; the full historical suite is not claimed to run there.
 
 ## Device validation still needed
+
+The earlier draft sent held-seek failure to `0x1db30`, a different function's frame restoration. The corrected target is the owning function's epilogue at `0x1dab0`. Earlier checks stopped at the destination; the new complete-return checks reproduce the old invalid stack read and verify the corrected return. This candidate remains untested on hardware.
 
 - This bounds the polling policy; Pause, Stop, Seek, Release and logging APIs can still block internally. It is not a universal deadlock repair.
 - COM calls, clocks and scheduling are fixtures. Native CE loading/unwind, codec behavior, timing and concurrent ownership remain unverified.

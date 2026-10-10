@@ -15,12 +15,16 @@ from inspect_bt_pairing import put, data
 from patch_usb_graph_state import BASE, BASE_SHA, POLL, TEARDOWN, RENDER_INIT, GATES, MAX_POLLS, TIMEOUT_MS, patch
 from verify_media_responsiveness import VM, call
 from verify_usb_input_safety import relocated
+from inspect_wave_queue import STOP
 
 ROOT = Path(__file__).resolve().parents[1]
 OBJECT, CONTROL, AUDIO, INSTANCE = 0x45000000, 0x46000000, 0x47000000, 0x48000000
 VTABLE, API = 0x49000000, 0xF0600000
 ROUTINES = {"stop": 0x11568, "real_pause": 0x11790, "pause": 0x11918}
 INTERMEDIATE, CANT_CUE, E_FAIL = 0x40237, 0x40268, 0x80004005
+OLD_HELD_GATE = bytes.fromhex(
+    '05004010000000000100193c4c14392708002003000000000200193c30db3927'
+    '0800200300000000000000000000000000000000000000000000000000000000')
 
 
 class InfiniteWait(Exception):
@@ -35,8 +39,11 @@ class Graph:
         pe = pefile.PE(data=raw)
         self.vm = VM(pe, [(a+delta, b+delta) for a, b in (
             (0x11568, 0x11AB0), (0x11E7C, 0x12264),
+            (0x11790, 0x11918), (0x11918, 0x11AB0),
             (POLL, POLL+0x600), (TEARDOWN, TEARDOWN+0x200),
-            (RENDER_INIT, RENDER_INIT+0x100), (0x40900, 0x40A80), (0x20BE4, 0x20CB8))])
+            (RENDER_INIT, RENDER_INIT+0x100), (0x40900, 0x40A80), (0x20BE4, 0x20CB8),
+            # Optional PR-27 cleanup: execute its actual bytes on cumulative builds.
+            (0x40B00, 0x40C00))])
         self.vm.ranges.extend((at+delta, at+0x40+delta) for at, *_ in GATES)
         self.delta, self.clock = delta, clock
         self.samples, self.index = list(samples), 0
@@ -171,6 +178,10 @@ def structure(original, candidate, recipe):
     old_rows, rows = read_rows(a), read_rows(b)
     assert set(old_rows).issubset(rows) and len(rows) == len(old_rows)+len(recipe['added_pdata_rows'])
     assert all(x[1] <= y[0] for x, y in zip(rows, rows[1:]))
+    owner = lambda at: next(row for row in rows if row[0] <= at < row[1])
+    for gate, sites, success, failure, label in GATES:
+        for site in sites:
+            assert owner(site) == owner(failure), f'{label}: failure exit belongs to another function'
     for delta in (0x1000, 0x10000, 0x123000):
         q = pefile.PE(data=relocated(candidate, delta))
         assert read_rows(q) == [tuple(x+delta if x else 0 for x in row) for row in rows]
@@ -185,11 +196,87 @@ def structure(original, candidate, recipe):
                 three_alternate_load_bases=True,previous_usb_helpers_unchanged=True)
 
 
+def caller_failure_return(raw, site, delta=0):
+    """Execute the original prologue, actual gate and cleanup through JR return.
+
+    Supply the state at the gate; earlier caller work is not simulated as real.
+    The window dispatcher owns a temporary buffer at this point.
+    """
+    g = Graph(raw, delta=delta)
+    m = g.vm
+    directory = m.pe.OPTIONAL_HEADER.DATA_DIRECTORY[3]
+    rows = [struct.unpack_from('<5I', m.pe.get_data(directory.VirtualAddress, directory.Size), i)
+            for i in range(0, directory.Size, 20)]
+    row = next(row for row in rows if row[0] <= site+delta < row[1])
+    m.ranges.append((row[0], row[1]))
+    saved = {r: 0x12340000+r for r in (*range(16, 24), 28, 30)}
+    for r, value in saved.items(): m.reg[r] = value
+    stack = 0x68000000
+    m.reg[29], m.reg[31] = stack, STOP
+    m.write(stack-0x2000, 0xA55AA55A); m.write(stack+0x40, 0xA55AA55A)
+    m.run(row[0], {row[4]}, limit=1000)
+    m.reg[2] = 0
+    prologue = m.pe.get_data(row[0]-m.pe.OPTIONAL_HEADER.ImageBase, row[4]-row[0])
+    saved_here = {(word >> 16) & 31 for (word,) in struct.iter_unpack('<I', prologue)
+                  if word >> 26 == 0x2B and (word >> 21) & 31 == 29}
+    if 17 in saved_here: m.reg[17] = 1
+    released = []
+    def free(v):
+        assert v.reg[4] == 0x55000000
+        released.append(v.reg[4]); Graph.clobber(v); return 0
+    if site == 0x22424:
+        m.write(m.reg[29]+0xA60, 0x55000000)
+        m.hooks[0x25510+delta] = free
+    m.run(site+delta, {STOP}, limit=1000)
+    assert m.reg[29] == stack and m.reg[31] == STOP
+    assert all(m.reg[r] == value for r, value in saved.items())
+    assert m.read(stack-0x2000) == m.read(stack+0x40) == 0xA55AA55A
+    assert len(released) == int(site == 0x22424)
+    return g
+
+
+def held_failure(raw, direction=1, delta=0, previous_gate=False):
+    """Run the complete held-seek entry through its failed RealPause and return."""
+    g = Graph(raw, ((E_FAIL, 0),), delta=delta)
+    m = g.vm; ui = 0x51000000
+    put(m, ui, bytes(0x2940)); m.write(ui+0x2930, direction)
+    m.write(INSTANCE+0x3C, 0x6666)
+    m.ranges.append((0x1D880+delta, 0x1DACC+delta))
+    timers = []
+    def manager(v): Graph.clobber(v); return OBJECT
+    def kill(v):
+        assert v.reg[4:6] == [0x6666, 1000]
+        timers.append(1000); Graph.clobber(v); return 1
+    m.hooks[0x1144C+delta] = manager
+    m.hooks[0x2517C+delta] = kill
+    if previous_gate:
+        # Actual 64-byte gate published in PR-26 revision 0e5645e. Its failure
+        # lands in the next function and attempts to use the caller's FP as SP.
+        m.overrides.update({0x409C0+delta+i: struct.unpack_from('<I', OLD_HELD_GATE, i)[0]
+                            for i in range(0, len(OLD_HELD_GATE), 4)})
+        m.ranges.append((0x1DACC+delta, 0x1DB4C+delta))
+    result = call(m, 0x1D880+delta, [ui], limit=200000)
+    assert timers == [1000] and g.index == 1 and not g.seeks and not g.released
+    assert m.read(ui+0x2930) == direction
+    return g, result
+
+
 def verify(original, candidate, recipe):
     traces = []
 
     def record(name, graph, result):
         traces.append(dict(name=name, result=result, **graph.summary()))
+
+    try:
+        held_failure(candidate, previous_gate=True)
+    except AssertionError as error:
+        assert '1234002e' in str(error), str(error)
+        traces.append(dict(name='previous draft held-seek failure restores another function frame',
+                           wrong_target='0x1db30', correct_target='0x1dab0',
+                           original_gate_hex=OLD_HELD_GATE.hex(),
+                           failure=str(error), complete_original_caller_entry_executed=True))
+    else:
+        raise AssertionError('Previous draft wrong-frame defect not reproduced')
 
     # Execute original instructions, rather than a Python approximation of them.
     for name in ROUTINES:
@@ -209,6 +296,15 @@ def verify(original, candidate, recipe):
 
     for delta in (0, 0x1000, 0x10000, 0x123000):
         raw = relocated(candidate, delta) if delta else candidate
+        for site in [site for _, sites, *_ in GATES for site in sites]+[0x20C00]:
+            g = caller_failure_return(raw, site, delta)
+            record(f'caller prologue/failure cleanup/ABI return +{site:x} base +{delta:x}', g, 'returned')
+        for direction in (1, 2):
+            g, result = held_failure(raw, direction, delta)
+            record(f'complete held-seek failed pause direction={direction} base +{delta:x}', g, result)
+        g = Graph(raw, ((E_FAIL, 0),), delta=delta)
+        assert g.run('render') == 0 and not g.initialized and not g.released
+        record(f'complete RenderFile refused replacement returns base +{delta:x}', g, 0)
         for name, samples in (("stop", ((0, 2), (INTERMEDIATE, 1), (0, 1), (INTERMEDIATE, 0), (0, 0))),
                               ("pause", ((0, 2), (0, 1), (0, 0))),
                               ("real_pause", ((0, 2), (INTERMEDIATE, 1), (0, 1)))):
