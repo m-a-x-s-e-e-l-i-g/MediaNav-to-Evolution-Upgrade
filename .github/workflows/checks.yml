@@ -19,3 +19,6 @@ jobs:
       - run: python -m unittest discover -s tools -p test_release_payload.py
       - run: python tools/release_payload.py --prepare-input .inputs/max04-baseline
       - run: python tools/release_payload.py --baseline .inputs/max04-baseline --out build/max04-reproduced
+      - run: python -m pip install -r tools/requirements.txt
+      - run: python -m unittest discover -s tools -p test_usb_graph_state.py
+      - run: python tools/build_usb_graph_state_development.py --baseline build/max04-reproduced/payload --out build/usb-graph-state-development
