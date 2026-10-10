@@ -4,7 +4,11 @@ MAXmade is now developed here: patch tools, decompiled code, technical research 
 
 Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
-![MediaNav Evolution home screen with Radio, Media, Phone, Map, Nav and Settings](assets/medianav-evolution-home.png)
+| Home | Media |
+| --- | --- |
+| ![MAX04 home screen](assets/ui/max04/home-after.jpg) | ![MAX04 media player](assets/ui/max04/media-after.jpg) |
+
+UI previews from real assets, with sample data and approximate fonts. Full before/after comparisons are in the [MAX04 release notes](releases/7.0.6.MAX04/README.md).
 
 [Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX04/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX04/README.md) · [Developer guide](docs/development.md)
 
@@ -22,19 +26,10 @@ MAXmade builds on that upgrade and adds:
 - **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers.
 - **Eight saved phones instead of five:** remember more phones without deleting an old one first. The list has two pages; you still connect one phone at a time.
 - **The navigation fix included:** the fix for the **“File corruption detected”** error is part of this update. You do not need to install a second update for it.
-
-## New in 7.0.6.MAX04
-
 - **Dark UI:** new Home, Radio, Media and Phone designs, with existing control positions retained.
 - **Media fixes:** improved USB resume, repeat/shuffle, tags, artwork and playlists.
 - **System fixes:** Bluetooth startup audio retry, touch-release and startup/error handling.
 - **English updater/DBoot:** clearer update errors and verified file copies.
-
-| Home | Media |
-| --- | --- |
-| ![MAX04 home screen](assets/ui/max04/home-after.jpg) | ![MAX04 media player](assets/ui/max04/media-after.jpg) |
-
-UI previews from real assets, with sample data and approximate fonts. Full before/after comparisons are in the [MAX04 release notes](releases/7.0.6.MAX04/README.md).
 
 ## Compatibility
 
