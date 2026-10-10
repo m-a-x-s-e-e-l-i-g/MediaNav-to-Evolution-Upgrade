@@ -50,3 +50,4 @@ jobs:
       - run: python -m unittest discover -s tools -p test_usb_catalog_recovery.py
       - run: python tools/build_usb_catalog_recovery_development.py --baseline build/max04-reproduced/payload --out build/usb-catalog-recovery-development
       - run: python tools/verify_usb_catalog_recovery_allocator.py --candidate "build/usb-catalog-recovery-development/payload/upgrade/Storage Card/System/MgrUSB.exe" --report build/usb-catalog-recovery-allocator.json
+      - run: python tools/verify_usb_scan_coordination.py --candidate "build/usb-catalog-recovery-development/payload/upgrade/Storage Card/System/MgrUSB.exe" --baseline "build/max04-reproduced/payload/upgrade/Storage Card/System/MgrUSB.exe" --report build/usb-scan-coordination.json
