@@ -73,6 +73,7 @@
 - [USB seek completion candidate](../analysis/usb-seek-completion-development.md): failed saved-resume, held and IPC seeks; builds on the timing candidate.
 - [USB playback start candidate](../analysis/usb-playback-start-development.md): failed start cleanup and ordinary-play error handling; preserves the existing reload fallback.
 - [USB playback recovery candidate](../analysis/usb-playback-recovery-development.md): confirmed Stop status, failed resume/reload seeks and unavailable position output; preserves loader recovery.
+- [USB duration output candidate](../analysis/usb-duration-output-development.md): reject stale duration output while preserving valid bounds and seeking without a known duration.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
