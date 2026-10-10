@@ -47,6 +47,8 @@ nop
 lw s3, 4(s0)
 beqz s3, failed
 nop
+lw t0, 0x24(s0)
+sw t0, 0x28(sp)
 lw a0, 0x14(s0)
 beqz a0, clock
 nop
@@ -158,6 +160,21 @@ move a1, zero
 b done_success
 nop
 cache_pause:
+# Preserve valid already-stopped/no-graph UI state for a confirmed no-op.
+# A running-to-paused/stopped transition still records the original pause UI state.
+lw t0, 0x28(sp)
+addiu t1, zero, 2
+beq t0, t1, write_pause
+nop
+lw t0, 0x20(sp)
+bnez t0, write_pause
+nop
+addiu t0, zero, -1
+bne s6, t0, write_pause
+nop
+b done_success
+nop
+write_pause:
 addiu t0, zero, 1
 sw t0, 0x24(s0)
 done_success:
@@ -310,8 +327,8 @@ lw t0, 4(s1)
 beqz t0, finish
 nop
 lw t0, 0x24(s1)
-addiu t1, zero, 2
-bne t0, t1, finish
+sltiu t1, t0, 4
+beqz t1, finish
 nop
 move a0, s1
 addiu a1, zero, {mode}
@@ -321,7 +338,7 @@ move s0, v0
 finish:
 b {hex(stop)}
 nop
-""", "Preserve Pause/RealPause preconditions with checked state completion")
+""", "Confirm Pause/RealPause completion, including valid already-paused/stopped calls")
     block(0x11E88, 0x11F60 - 0x11E88,
           f"jal {hex(TEARDOWN)}\nnop\nb 0x11f60\nnop",
           "Propagate teardown failure without releasing interfaces")

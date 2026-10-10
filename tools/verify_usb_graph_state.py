@@ -245,10 +245,18 @@ def verify(original, candidate, recipe):
             for cached in (0, 1, 3, 0xFFFFFFFF):
                 g = Graph(raw, ((0, 0),), cached=cached, delta=delta)
                 result = g.run(name)
-                assert result == int(name=="stop")
+                assert result == int(name=="stop" or cached!=0xFFFFFFFF)
                 if name != "stop":
-                    assert g.index == 0 and g.vm.read(OBJECT+0x24)==cached
+                    assert g.vm.read(OBJECT+0x24)==cached
+                    assert g.index == (0 if cached==0xFFFFFFFF else 1)
                 record(f"{name} cached={cached:x} base +{delta:x}", g, result)
+        for name, stable in (('real_pause',1),('pause',0)):
+            g=Graph(raw,((0,2),(0,1),(0,stable)),delta=delta)
+            assert g.run(name)==1 and g.vm.read(OBJECT+0x24)==1
+            commands=g.summary()['commands'].copy()
+            assert g.run(name)==1 and g.run(name)==1
+            assert g.vm.read(OBJECT+0x24)==1 and g.summary()['commands']==commands
+            record(f'repeated {name} keeps held seeking available base +{delta:x}',g,1)
         for failure in (False, True):
             g = Graph(raw, ((E_FAIL, 0),) if failure else ((0, 0),), delta=delta)
             refs = data(g.vm, OBJECT+4, 0x18)
