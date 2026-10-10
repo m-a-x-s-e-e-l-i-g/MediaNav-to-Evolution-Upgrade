@@ -30,6 +30,20 @@ def quotient(a, b):
 
 
 class TimingVM(VM):
+    def word(self, pc):
+        word = super().word(pc)
+        marker = getattr(self, 'native_markers', {}).get(pc)
+        if marker:
+            self.timing_events.append(dict(api=marker, value=self.reg[5]))
+        return word
+
+    def write(self, at, value, size=4):
+        super().write(at, value, size)
+        # Observe the actual converter's DWORD store without replacing it.
+        if at == UI+0x2940 and size == 4 and hasattr(self, 'progress_writes'):
+            self.progress_writes.append(dict(value=value & 0xFFFFFFFF,
+                                             event_index=len(self.timing_events)))
+
     def run(self, start, stops, limit=10000):
         # Same reviewed branch/delay-slot semantics as StorageVM, with explicit
         # tail-called API fixtures. A JR to an unknown address still fails closed.
@@ -97,7 +111,9 @@ class Timing(Graph):
         m.ranges.extend((a+delta, b+delta) for a, b in (
             (0x1111C, 0x113E0), (0x19864, 0x19900), (0x1B3B0, 0x1B484),
             (0x1D880, 0x1DACC), (0x20EAC, 0x21BEC), (0x21D00, 0x2271C),
-            (0x40C00, 0x40E00)))
+            (0x40C00, 0x40E00), (0x19760, 0x197BC),
+            (0x1DD5C, 0x1DD78), (0x1ED30, 0x1ED4C),
+            (0x1B484, 0x1B544), (0x1ED4C, 0x1ED68)))
         # Internal calls must land at actual entry points, including each leaf.
         m.ranges.extend((a+delta, b+delta) for a, b in (
             (0x11230, 0x1137C), (0x1137C, 0x113E0), (0x19864, 0x198DC)))
@@ -106,7 +122,7 @@ class Timing(Graph):
         self.duration, self.position = list(duration), list(position)
         self.duration_index = self.position_index = self.divisions = 0
         self.seek_hr, self.targets, self.published, self.notifications = seek_hr, [], [], []
-        self.timer_ids, self.end_actions, self.resumes, self.freed = [], [], [], []
+        self.timer_ids, self.end_actions, self.freed = [], [], []
         for at, n in ((SEEK, 0x20), (SEEK_TABLE, 0x50), (UI, 0x3000)):
             put(m, at, bytes(n))
         m.write(OBJECT+0xC, SEEK if interface else 0)
@@ -116,14 +132,16 @@ class Timing(Graph):
         m.hooks.update({0x2537C+delta: self.divide, 0x1144C+delta: self.manager,
                         0x24094+delta: self.publish, 0x23580+delta: self.notify,
                         0x2517C+delta: self.kill_timer, 0x1D23C+delta: self.end_action,
-                        0x19760+delta: self.seek_mode, 0x1D1B0+delta: self.end_action,
-                        0x1DD5C+delta: self.progress_wrapper,
-                        0x1ED30+delta: self.resume, 0x1DC80+delta: self.no_more_work,
+                        0x1D1B0+delta: self.end_action, 0x1DC80+delta: self.no_more_work,
                         0x25510+delta: self.free})
         m.write(INSTANCE+0x3C, 0x6666); m.write(INSTANCE+0x40, 0x9900)
         m.write(INSTANCE+0x4C, UI-8); m.write(INSTANCE+0x84, 1)
         m.write(UI+0x2922, 2); m.write(UI+0xE7C, 37); m.write(UI+0x2940, 37)
         put(m, UI+0x1AD8, bytes((0, 37, 0)))
+        m.native_markers = {at+delta: name for at, name in (
+            (0x19760, 'native_finish_seek'), (0x1DD5C, 'native_progress_set'),
+            (0x1ED30, 'native_progress_refresh'))}
+        m.timing_events, m.progress_writes = self.events, []
 
     def output(self, m, responses, index, name):
         assert m.reg[4] == SEEK
@@ -177,17 +195,6 @@ class Timing(Graph):
     def end_action(self, m):
         self.end_actions.append(m.reg[4:8].copy()); self.clobber(m); return 1
 
-    def seek_mode(self, m):
-        m.write(UI+0x2930, m.reg[5]); self.clobber(m); return 0
-
-    def progress_wrapper(self, m):
-        # Wrapper is outside this fixture; actual converter is executed directly
-        # in timer/held paths. Record the requested UI update in dispatched seeks.
-        self.events.append(dict(api='progress', value=m.reg[5])); self.clobber(m); return 0
-
-    def resume(self, m):
-        self.resumes.append(m.reg[4:8].copy()); self.clobber(m); return 1
-
     def no_more_work(self, m):
         self.clobber(m); return 0
 
@@ -200,6 +207,10 @@ class Timing(Graph):
         args = [UI] if name in ('timer', 'held') else [OBJECT]
         if name == 'seek': args.append(requested & 0xFFFFFFFF)
         return call(self.vm, address+self.delta, args, limit=20000)
+
+    def run_controller(self, requested=90, do_seek=1, wrapper=True):
+        address, this = (0x1ED4C, UI-8) if wrapper else (0x1B484, UI)
+        return call(self.vm, address+self.delta, [this, requested, do_seek], limit=20000)
 
     def run_dispatched(self, kind, requested=90):
         # Actual function prologue and return surround the established seek arm.
@@ -231,8 +242,9 @@ class Timing(Graph):
                     displayed_position=self.vm.read(UI+0x2940),
                     clock_bytes=data(self.vm, UI+0x1AD8, 3).hex(),
                     publishes=len(self.published), notifications=len(self.notifications),
-                    end_actions=len(self.end_actions), resumes=len(self.resumes),
-                    freed=self.freed.copy())
+                    end_actions=len(self.end_actions),
+                    progress_refreshes=sum(e['api'] == 'native_progress_refresh' for e in self.events),
+                    progress_writes=self.vm.progress_writes.copy(), freed=self.freed.copy())
 
 
 def reproduce(previous):
@@ -263,6 +275,43 @@ def reproduce(previous):
         g = Timing(previous, position=((E_FAIL, None),))
         assert g.run_dispatched(kind) == 1 and g.targets == [90*UNIT]
         traces.append(dict(name='dispatched seek consumes failed position', kind=kind, **g.snapshot()))
+    g = Timing(previous, seek_hr=E_FAIL)
+    g.run_controller(90)
+    assert g.vm.read(UI+0xE7C) == g.vm.read(UI+0x2940) == 90
+    assert g.targets == [90*UNIT] and len(g.published) == len(g.notifications) == 1
+    traces.append(dict(name='failed seek sentinel accepted as true; requested progress published', **g.snapshot()))
+    return traces
+
+
+def native_helper_checks(candidate):
+    """Independent contracts for the three previously substituted wrappers."""
+    traces = []
+    for delta in (0, 0x1000, 0x10000, 0x123000):
+        raw = relocated(candidate, delta) if delta else candidate
+        for send in (0, 1):
+            g = Timing(raw, delta=delta)
+            g.vm.write(UI+0x2930, 2); g.vm.write(UI+0xE60, 4)
+            call(g.vm, 0x19760+delta, [UI, send])
+            assert g.timer_ids == [1001, 1002]
+            assert g.notifications == ([[5, 0x15, 0x6C, 0]] if send else [])
+            assert g.vm.read(UI+0x2930) == 2 and g.vm.read(UI+0xE60) == 4
+            assert not g.targets and not g.published and not g.vm.progress_writes
+            traces.append(dict(name='actual finish helper cancels timers; optional notification',
+                               base_delta=delta, send=send, **g.snapshot()))
+        g = Timing(raw, delta=delta)
+        call(g.vm, 0x1DD5C+delta, [UI-8, 90])
+        assert g.vm.read(UI+0x2940) == 90 and data(g.vm, UI+0x1AD8, 3) == bytes((1, 30, 0))
+        assert not g.duration_index and not g.position_index and not g.targets and not g.published
+        assert not g.notifications and g.vm.read(UI+0xE7C) == 37
+        traces.append(dict(name='actual progress-set wrapper and converter', base_delta=delta, **g.snapshot()))
+        g = Timing(raw, delta=delta)
+        call(g.vm, 0x1ED30+delta, [UI-8])
+        assert g.vm.read(UI+0xE7C) == g.vm.read(UI+0x2940) == 42
+        assert g.duration_index == g.position_index == 1 and len(g.published) == 1
+        assert g.notifications == [[5, 0x15, 0x65, 0]]
+        assert not g.targets and not any(e['api'] in ('Pause', 'Stop', 'Mute') for e in g.events)
+        traces.append(dict(name='actual progress-refresh wrapper; not playback resume',
+                           base_delta=delta, **g.snapshot()))
     return traces
 
 
@@ -297,7 +346,8 @@ def structure(previous, candidate, recipe):
     assert a.get_data(0x40E00-0x10000, 0x200) == b.get_data(0x40E00-0x10000, 0x200)
     for source, target in ((0x112BC, 0x11258), (0x113AC, 0x11390),
                            (0x1D8E0, 0x1DAB0), (0x1D8F0, 0x1DAB0), (0x1DA44, 0x1DAB0),
-                           (0x21728, 0x21028), (0x223F4, 0x226C0), (0x1B3F8, 0x1B470)):
+                           (0x21728, 0x21028), (0x223F4, 0x226C0), (0x1B3F8, 0x1B470),
+                           (0x1B4B4, 0x1B530)):
         owner = next(r for r in before if r[0] <= source < r[1])
         assert owner[0] <= target < owner[1], 'Cross-frame error exit'
     for index in (3, 5):
@@ -311,6 +361,7 @@ def structure(previous, candidate, recipe):
 
 def verify(previous, candidate, recipe):
     traces = reproduce(previous)
+    traces.extend(native_helper_checks(candidate))
     checks = structure(previous, candidate, recipe)
     for delta in (0, 0x1000, 0x10000, 0x123000):
         old = relocated(previous, delta) if delta else previous
@@ -351,6 +402,44 @@ def verify(previous, candidate, recipe):
             g = Timing(raw, interface=False, delta=delta)
             assert g.run_timing(name) == 0xFFFFFFFF and not g.duration_index and not g.position_index and not g.targets
             traces.append(dict(name='missing interface: '+name, base_delta=delta))
+        for wrapper, requested, do_seek, hr in itertools.product((False, True), (0, 42, 90, 400), (0, 1), (0, 1)):
+            pair = []
+            for content in (old, raw):
+                g = Timing(content, delta=delta, seek_hr=hr)
+                pair.append((g.run_controller(requested, do_seek, wrapper), g.snapshot()))
+            assert pair[0] == pair[1]
+            if not do_seek: assert not g.targets and not g.duration_index
+            traces.append(dict(name='unchanged controller seek/display-only behavior', wrapper=wrapper,
+                               requested=requested, do_seek=do_seek, hr=hr, base_delta=delta))
+        for wrapper, requested, hr in itertools.product((False, True), (0, 42, 400),
+                                                         (E_FAIL, 0x80004001, 0x80070057)):
+            g = Timing(raw, delta=delta, seek_hr=hr)
+            before = g.snapshot()
+            assert g.run_controller(requested, wrapper=wrapper) == 0xFFFFFFFF
+            assert len(g.targets) == 1 and not g.vm.progress_writes and not g.published and not g.notifications
+            assert g.vm.read(UI+0xE7C) == g.vm.read(UI+0x2940) == 37
+            assert g.snapshot()['clock_bytes'] == before['clock_bytes']
+            traces.append(dict(name='failed controller seek preserves progress', wrapper=wrapper,
+                               requested=requested, hr=hr, base_delta=delta, **g.snapshot()))
+        for wrapper in (False, True):
+            g = Timing(raw, delta=delta, interface=False)
+            assert g.run_controller(wrapper=wrapper) == 0xFFFFFFFF
+            assert not g.targets and not g.duration_index and not g.vm.progress_writes and not g.published
+            traces.append(dict(name='controller missing seeking interface', wrapper=wrapper, base_delta=delta))
+        for mapping, notification in itertools.product((False, True), repeat=2):
+            g = Timing(raw, delta=delta, seek_hr=E_FAIL)
+            g.vm.write(INSTANCE+0x40, 0x9900 if mapping else 0)
+            g.vm.write(INSTANCE+0x84, int(notification))
+            assert g.run_controller() == 0xFFFFFFFF and not g.vm.progress_writes and not g.published and not g.notifications
+            traces.append(dict(name='controller error independent of mapping/notification flags',
+                               mapping=mapping, notification=notification, base_delta=delta))
+        g = Timing(raw, delta=delta, seek_hr=E_FAIL)
+        assert g.run_controller() == 0xFFFFFFFF and not g.vm.progress_writes
+        g.seek_hr = 0
+        assert g.run_controller() == 1 and len(g.targets) == 2
+        assert len(g.published) == len(g.notifications) == len(g.vm.progress_writes) == 1
+        assert g.vm.read(UI+0xE7C) == g.vm.read(UI+0x2940) == 90
+        traces.append(dict(name='controller error then successful retry', base_delta=delta, **g.snapshot()))
         # Positive failed-duration seek fallback remains the original behavior.
         for output in (None, -UNIT, 7*UNIT):
             pair = []
@@ -399,8 +488,8 @@ def verify(previous, candidate, recipe):
                 kwargs = ({'duration': ((0, 300*UNIT), (E_FAIL, None))} if failure == 'second_duration'
                           else {failure: ((E_FAIL, None),)})
                 g = Timing(raw, delta=delta, **kwargs)
-                assert g.run_dispatched(kind) == 1 and not g.targets and not g.resumes
-                assert not any(e['api'] == 'progress' for e in g.events)
+                assert g.run_dispatched(kind) == 1 and not g.targets and not g.vm.progress_writes
+                assert not any(e['api'] in ('native_progress_set', 'native_progress_refresh') for e in g.events)
                 traces.append(dict(name='dispatched error exits and cleanup', kind=kind,
                                    failure=failure, base_delta=delta, **g.snapshot()))
             for requested in (0, 42, 90, 400):

@@ -143,6 +143,9 @@ def patch(raw):
     displacement = (0x1B470-0x1B3F8-4)//4
     edit(0x1B3F8, struct.pack('<I', (1 << 26) | (2 << 21) | (displacement & 65535)),
          'Skip progress publication after a failed position query')
+    displacement = (0x1B530-0x1B4B4-4)//4
+    edit(0x1B4B4, struct.pack('<I', (6 << 26) | (2 << 21) | (displacement & 65535)),
+         'Failed seek returns -1; skip cached/displayed progress and publication')
     directory = pe.OPTIONAL_HEADER.DATA_DIRECTORY[3]
     original_rows = [struct.unpack_from('<5I', pe.get_data(directory.VirtualAddress, directory.Size), i)
                      for i in range(0, directory.Size, 20)]

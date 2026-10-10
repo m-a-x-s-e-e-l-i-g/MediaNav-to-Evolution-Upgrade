@@ -11209,7 +11209,7 @@
     {
       "path": "upgrade/Storage Card/System/MgrUSB.exe",
       "bytes": 249344,
-      "sha256": "824b8deb9698dae3d0919584ec696cf64243c41a9ea0b3556550c9f14efc13c9",
+      "sha256": "c88c6d682d8fdc00146fb1b8cd628d4376f1b58f8d5517aa01d456cc634ed36f",
       "max04_sha256": "cac3d40f5d54de681b1aad8c99fe79df5b430d3ee3d668616b63970f02ca1a2c"
     },
     {
@@ -11526,8 +11526,8 @@
     }
   ],
   "tools": {
-    "patch_usb_seek_timing.py": "69052d8193204921cf20c19a763f3b60dcf93cd5dcab87ea07048c413eacd50c",
-    "verify_usb_seek_timing.py": "92768c4e87eb958d29a4468b89807abda2e05814678848cfe4b127eea70fd51a",
+    "patch_usb_seek_timing.py": "2405ef9b4fed0c628a7cd20d70d72982a80c8b24369c42f5af877b4ec944eafd",
+    "verify_usb_seek_timing.py": "74b0cdebe825adf85884e8b10651c7a5f80a3e1f5971e6356113e4e497db2b65",
     "build_usb_seek_timing_development.py": "fe518a6c6ab812b03e73323924b4c472a098989479308dd884cbc3c8bb504d5e",
     "patch_usb_graph_init.py": "58f73c3927f6fdb3f1d147eac11f72af331efced79f7b0b44c3e320d7628d25d",
     "verify_usb_graph_init.py": "22e02d5423051bc326adf5c0edaa6c3a067680c22d85b18fe2d26109510edb5a",
@@ -11536,7 +11536,7 @@
   },
   "recipe": {
     "base_sha256": "82792cb54bfb7de6d3ccd07f68fdf6357a7772122bd3d8be6dc5578c574720ea",
-    "sha256": "824b8deb9698dae3d0919584ec696cf64243c41a9ea0b3556550c9f14efc13c9",
+    "sha256": "c88c6d682d8fdc00146fb1b8cd628d4376f1b58f8d5517aa01d456cc634ed36f",
     "edits": [
       {
         "offset": 166400,
@@ -11820,6 +11820,14 @@
         "after_hex": "1d004004",
         "reason": "Skip progress publication after a failed position query",
         "va": "0x1b3f8"
+      },
+      {
+        "offset": 43188,
+        "bytes": 4,
+        "before_hex": "03004010",
+        "after_hex": "1e004018",
+        "reason": "Failed seek returns -1; skip cached/displayed progress and publication",
+        "va": "0x1b4b4"
       },
       {
         "offset": 216576,
@@ -12553,9 +12561,9 @@
   },
   "proof": {
     "path": "evidence.json",
-    "sha256": "f793cb34326e245f0509c3f26213ae09428c8af481e0a6fad012cedff989c6b7"
+    "sha256": "ff9b4eda92541843c5ac0d202cd788b3725ab676f6cdc9112f9ce3d15ebdf1e9"
   },
-  "cases": 1336,
+  "cases": 1581,
   "native_executed": false,
   "hardware_tested": false,
   "native_timing_measured": false,

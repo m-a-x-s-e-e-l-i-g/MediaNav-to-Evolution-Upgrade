@@ -1,7 +1,7 @@
 {
   "recipe": {
     "base_sha256": "82792cb54bfb7de6d3ccd07f68fdf6357a7772122bd3d8be6dc5578c574720ea",
-    "sha256": "824b8deb9698dae3d0919584ec696cf64243c41a9ea0b3556550c9f14efc13c9",
+    "sha256": "c88c6d682d8fdc00146fb1b8cd628d4376f1b58f8d5517aa01d456cc634ed36f",
     "edits": [
       {
         "offset": 166400,
@@ -285,6 +285,14 @@
         "after_hex": "1d004004",
         "reason": "Skip progress publication after a failed position query",
         "va": "0x1b3f8"
+      },
+      {
+        "offset": 43188,
+        "bytes": 4,
+        "before_hex": "03004010",
+        "after_hex": "1e004018",
+        "reason": "Failed seek returns -1; skip cached/displayed progress and publication",
+        "va": "0x1b4b4"
       },
       {
         "offset": 216576,
@@ -1017,7 +1025,7 @@
     "hardware_tested": false
   },
   "checks": {
-    "cases": 544,
+    "cases": 789,
     "structure": {
       "cases": 1,
       "exact_reversal": true,
@@ -1041,7 +1049,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1057,7 +1066,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1075,7 +1085,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1093,7 +1104,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1111,7 +1123,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1126,7 +1139,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 0,
+            "event_index": 1
+          }
+        ],
         "freed": []
       },
       {
@@ -1142,7 +1161,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1160,7 +1180,17 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 2,
+            "event_index": 6
+          },
+          {
+            "value": 0,
+            "event_index": 7
+          }
+        ],
         "freed": []
       },
       {
@@ -1178,7 +1208,17 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 0,
+            "event_index": 5
+          },
+          {
+            "value": 0,
+            "event_index": 6
+          }
+        ],
         "freed": []
       },
       {
@@ -1191,12 +1231,18 @@
         "position_queries": 1,
         "divisions": 1,
         "cached_position": 37,
-        "displayed_position": 37,
-        "clock_bytes": "002500",
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 3
+          }
+        ],
         "freed": []
       },
       {
@@ -1206,18 +1252,367 @@
           900000000
         ],
         "duration_queries": 2,
-        "position_queries": 1,
+        "position_queries": 2,
         "divisions": 1,
+        "cached_position": 37,
+        "displayed_position": 0,
+        "clock_bytes": "000000",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 1,
+        "progress_writes": [
+          {
+            "value": 0,
+            "event_index": 8
+          }
+        ],
+        "freed": [
+          305419896
+        ]
+      },
+      {
+        "name": "failed seek sentinel accepted as true; requested progress published",
+        "targets": [
+          900000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 90,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 2
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 0,
+        "send": 0,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
         "cached_position": 37,
         "displayed_position": 37,
         "clock_bytes": "002500",
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 1,
-        "freed": [
-          305419896
-        ]
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 0,
+        "send": 1,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual progress-set wrapper and converter",
+        "base_delta": 0,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 1
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual progress-refresh wrapper; not playback resume",
+        "base_delta": 0,
+        "targets": [],
+        "duration_queries": 1,
+        "position_queries": 1,
+        "divisions": 2,
+        "cached_position": 42,
+        "displayed_position": 42,
+        "clock_bytes": "002a00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 1,
+        "progress_writes": [
+          {
+            "value": 42,
+            "event_index": 3
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 4096,
+        "send": 0,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 4096,
+        "send": 1,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual progress-set wrapper and converter",
+        "base_delta": 4096,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 1
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual progress-refresh wrapper; not playback resume",
+        "base_delta": 4096,
+        "targets": [],
+        "duration_queries": 1,
+        "position_queries": 1,
+        "divisions": 2,
+        "cached_position": 42,
+        "displayed_position": 42,
+        "clock_bytes": "002a00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 1,
+        "progress_writes": [
+          {
+            "value": 42,
+            "event_index": 3
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 65536,
+        "send": 0,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 65536,
+        "send": 1,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual progress-set wrapper and converter",
+        "base_delta": 65536,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 1
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual progress-refresh wrapper; not playback resume",
+        "base_delta": 65536,
+        "targets": [],
+        "duration_queries": 1,
+        "position_queries": 1,
+        "divisions": 2,
+        "cached_position": 42,
+        "displayed_position": 42,
+        "clock_bytes": "002a00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 1,
+        "progress_writes": [
+          {
+            "value": 42,
+            "event_index": 3
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 1191936,
+        "send": 0,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual finish helper cancels timers; optional notification",
+        "base_delta": 1191936,
+        "send": 1,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "actual progress-set wrapper and converter",
+        "base_delta": 1191936,
+        "targets": [],
+        "duration_queries": 0,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 1
+          }
+        ],
+        "freed": []
+      },
+      {
+        "name": "actual progress-refresh wrapper; not playback resume",
+        "base_delta": 1191936,
+        "targets": [],
+        "duration_queries": 1,
+        "position_queries": 1,
+        "divisions": 2,
+        "cached_position": 42,
+        "displayed_position": 42,
+        "clock_bytes": "002a00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 1,
+        "progress_writes": [
+          {
+            "value": 42,
+            "event_index": 3
+          }
+        ],
+        "freed": []
       },
       {
         "name": "unchanged healthy position rounding/clamp",
@@ -1624,7 +2019,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1644,7 +2040,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1664,7 +2061,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1684,7 +2082,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1704,7 +2103,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1724,7 +2124,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1744,7 +2145,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1764,7 +2166,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1784,7 +2187,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1804,7 +2208,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1824,7 +2229,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1844,7 +2250,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1864,7 +2271,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1884,7 +2292,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1904,7 +2313,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1924,7 +2334,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -1938,6 +2349,717 @@
       {
         "name": "missing interface: seek",
         "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 0
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 0
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 0,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 0,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 0,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 0,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 0,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 0,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 0,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 0,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 0,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 0,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 0,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 0,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 0,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 0,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 0,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 0,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 0,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 0,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": false,
+        "base_delta": 0
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": true,
+        "base_delta": 0
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": false,
+        "base_delta": 0
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": true,
+        "base_delta": 0
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": false,
+        "base_delta": 0
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": true,
+        "base_delta": 0
+      },
+      {
+        "name": "controller error then successful retry",
+        "base_delta": 0,
+        "targets": [
+          900000000,
+          900000000
+        ],
+        "duration_queries": 2,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 90,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 4
+          }
+        ],
+        "freed": []
       },
       {
         "name": "preserved seek fallback after failed duration",
@@ -1968,7 +3090,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 3
+          }
+        ],
         "freed": []
       },
       {
@@ -1985,7 +3113,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 4
+          }
+        ],
         "freed": []
       },
       {
@@ -2004,7 +3138,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2023,7 +3158,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2042,7 +3178,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2082,7 +3219,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2101,7 +3239,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2120,7 +3259,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2160,7 +3300,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2179,7 +3320,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2198,7 +3340,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2238,7 +3381,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2257,7 +3401,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2276,7 +3421,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2316,7 +3462,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2335,7 +3482,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2354,7 +3502,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2394,7 +3543,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2413,7 +3563,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2432,7 +3583,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2471,7 +3623,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2489,7 +3642,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2507,7 +3661,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -2549,7 +3704,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -2569,7 +3725,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -2589,7 +3746,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -2633,7 +3791,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3041,7 +4200,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3061,7 +4221,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3081,7 +4242,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3101,7 +4263,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3121,7 +4284,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3141,7 +4305,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3161,7 +4326,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3181,7 +4347,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3201,7 +4368,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3221,7 +4389,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3241,7 +4410,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3261,7 +4431,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3281,7 +4452,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3301,7 +4473,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3321,7 +4494,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3341,7 +4515,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3355,6 +4530,717 @@
       {
         "name": "missing interface: seek",
         "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 4096
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 4096
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 4096,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 4096,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 4096,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 4096,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 4096,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 4096,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 4096,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 4096,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 4096,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 4096,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 4096,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 4096,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 4096,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 4096,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 4096,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 4096,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 4096,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 4096,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": false,
+        "base_delta": 4096
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": true,
+        "base_delta": 4096
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": false,
+        "base_delta": 4096
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": true,
+        "base_delta": 4096
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": false,
+        "base_delta": 4096
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": true,
+        "base_delta": 4096
+      },
+      {
+        "name": "controller error then successful retry",
+        "base_delta": 4096,
+        "targets": [
+          900000000,
+          900000000
+        ],
+        "duration_queries": 2,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 90,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 4
+          }
+        ],
+        "freed": []
       },
       {
         "name": "preserved seek fallback after failed duration",
@@ -3385,7 +5271,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 3
+          }
+        ],
         "freed": []
       },
       {
@@ -3402,7 +5294,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 4
+          }
+        ],
         "freed": []
       },
       {
@@ -3421,7 +5319,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3440,7 +5339,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3459,7 +5359,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3499,7 +5400,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3518,7 +5420,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3537,7 +5440,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3577,7 +5481,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3596,7 +5501,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3615,7 +5521,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3655,7 +5562,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3674,7 +5582,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3693,7 +5602,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3733,7 +5643,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3752,7 +5663,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3771,7 +5683,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3811,7 +5724,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3830,7 +5744,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3849,7 +5764,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3888,7 +5804,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3906,7 +5823,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3924,7 +5842,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -3966,7 +5885,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -3986,7 +5906,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -4006,7 +5927,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -4050,7 +5972,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4458,7 +6381,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4478,7 +6402,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4498,7 +6423,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4518,7 +6444,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4538,7 +6465,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4558,7 +6486,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4578,7 +6507,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4598,7 +6528,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4618,7 +6549,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4638,7 +6570,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4658,7 +6591,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4678,7 +6612,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4698,7 +6633,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4718,7 +6654,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4738,7 +6675,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4758,7 +6696,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4772,6 +6711,717 @@
       {
         "name": "missing interface: seek",
         "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 65536
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 65536
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 65536,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 65536,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 65536,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 65536,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 65536,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 65536,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 65536,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 65536,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 65536,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 65536,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 65536,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 65536,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 65536,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 65536,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 65536,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 65536,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 65536,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 65536,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": false,
+        "base_delta": 65536
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": true,
+        "base_delta": 65536
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": false,
+        "base_delta": 65536
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": true,
+        "base_delta": 65536
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": false,
+        "base_delta": 65536
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": true,
+        "base_delta": 65536
+      },
+      {
+        "name": "controller error then successful retry",
+        "base_delta": 65536,
+        "targets": [
+          900000000,
+          900000000
+        ],
+        "duration_queries": 2,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 90,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 4
+          }
+        ],
+        "freed": []
       },
       {
         "name": "preserved seek fallback after failed duration",
@@ -4802,7 +7452,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 3
+          }
+        ],
         "freed": []
       },
       {
@@ -4819,7 +7475,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 4
+          }
+        ],
         "freed": []
       },
       {
@@ -4838,7 +7500,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4857,7 +7520,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4876,7 +7540,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4916,7 +7581,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4935,7 +7601,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4954,7 +7621,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -4994,7 +7662,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5013,7 +7682,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5032,7 +7702,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5072,7 +7743,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5091,7 +7763,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5110,7 +7783,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5150,7 +7824,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5169,7 +7844,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5188,7 +7864,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5228,7 +7905,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5247,7 +7925,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5266,7 +7945,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5305,7 +7985,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5323,7 +8004,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5341,7 +8023,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5383,7 +8066,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -5403,7 +8087,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -5423,7 +8108,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -5467,7 +8153,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5875,7 +8562,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5895,7 +8583,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5915,7 +8604,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5935,7 +8625,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5955,7 +8646,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5975,7 +8667,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -5995,7 +8688,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6015,7 +8709,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6035,7 +8730,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6055,7 +8751,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6075,7 +8772,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6095,7 +8793,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6115,7 +8814,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6135,7 +8835,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6155,7 +8856,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6175,7 +8877,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6189,6 +8892,717 @@
       {
         "name": "missing interface: seek",
         "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": false,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 0,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 42,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 90,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 0,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 0,
+        "base_delta": 1191936
+      },
+      {
+        "name": "unchanged controller seek/display-only behavior",
+        "wrapper": true,
+        "requested": 400,
+        "do_seek": 1,
+        "hr": 1,
+        "base_delta": 1191936
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 1191936,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 1191936,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 1191936,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 1191936,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 1191936,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 1191936,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 1191936,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 1191936,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": false,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 1191936,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500037,
+        "base_delta": 1191936,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147500033,
+        "base_delta": 1191936,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 0,
+        "hr": 2147942487,
+        "base_delta": 1191936,
+        "targets": [
+          0
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500037,
+        "base_delta": 1191936,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147500033,
+        "base_delta": 1191936,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 42,
+        "hr": 2147942487,
+        "base_delta": 1191936,
+        "targets": [
+          420000000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500037,
+        "base_delta": 1191936,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147500033,
+        "base_delta": 1191936,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "failed controller seek preserves progress",
+        "wrapper": true,
+        "requested": 400,
+        "hr": 2147942487,
+        "base_delta": 1191936,
+        "targets": [
+          2998500000
+        ],
+        "duration_queries": 1,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 37,
+        "displayed_position": 37,
+        "clock_bytes": "002500",
+        "publishes": 0,
+        "notifications": 0,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
+        "freed": []
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": false,
+        "base_delta": 1191936
+      },
+      {
+        "name": "controller missing seeking interface",
+        "wrapper": true,
+        "base_delta": 1191936
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": false,
+        "base_delta": 1191936
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": false,
+        "notification": true,
+        "base_delta": 1191936
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": false,
+        "base_delta": 1191936
+      },
+      {
+        "name": "controller error independent of mapping/notification flags",
+        "mapping": true,
+        "notification": true,
+        "base_delta": 1191936
+      },
+      {
+        "name": "controller error then successful retry",
+        "base_delta": 1191936,
+        "targets": [
+          900000000,
+          900000000
+        ],
+        "duration_queries": 2,
+        "position_queries": 0,
+        "divisions": 0,
+        "cached_position": 90,
+        "displayed_position": 90,
+        "clock_bytes": "011e00",
+        "publishes": 1,
+        "notifications": 1,
+        "end_actions": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 90,
+            "event_index": 4
+          }
+        ],
+        "freed": []
       },
       {
         "name": "preserved seek fallback after failed duration",
@@ -6219,7 +9633,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 3
+          }
+        ],
         "freed": []
       },
       {
@@ -6236,7 +9656,13 @@
         "publishes": 1,
         "notifications": 1,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [
+          {
+            "value": 43,
+            "event_index": 4
+          }
+        ],
         "freed": []
       },
       {
@@ -6255,7 +9681,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6274,7 +9701,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6293,7 +9721,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6333,7 +9762,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6352,7 +9782,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6371,7 +9802,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6411,7 +9843,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6430,7 +9863,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6449,7 +9883,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6489,7 +9924,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6508,7 +9944,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6527,7 +9964,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6567,7 +10005,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6586,7 +10025,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6605,7 +10045,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6645,7 +10086,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6664,7 +10106,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6683,7 +10126,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6722,7 +10166,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6740,7 +10185,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6758,7 +10204,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       },
       {
@@ -6800,7 +10247,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -6820,7 +10268,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -6840,7 +10289,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": [
           305419896
         ]
@@ -6884,7 +10334,8 @@
         "publishes": 0,
         "notifications": 0,
         "end_actions": 0,
-        "resumes": 0,
+        "progress_refreshes": 0,
+        "progress_writes": [],
         "freed": []
       }
     ],
@@ -50830,8 +54281,8 @@
     "limits": "Actual MIPS instructions; COM, clocks and scheduling are fixtures. No native or device testing."
   },
   "tools": {
-    "patch_usb_seek_timing.py": "69052d8193204921cf20c19a763f3b60dcf93cd5dcab87ea07048c413eacd50c",
-    "verify_usb_seek_timing.py": "92768c4e87eb958d29a4468b89807abda2e05814678848cfe4b127eea70fd51a",
+    "patch_usb_seek_timing.py": "2405ef9b4fed0c628a7cd20d70d72982a80c8b24369c42f5af877b4ec944eafd",
+    "verify_usb_seek_timing.py": "74b0cdebe825adf85884e8b10651c7a5f80a3e1f5971e6356113e4e497db2b65",
     "build_usb_seek_timing_development.py": "fe518a6c6ab812b03e73323924b4c472a098989479308dd884cbc3c8bb504d5e",
     "patch_usb_graph_init.py": "58f73c3927f6fdb3f1d147eac11f72af331efced79f7b0b44c3e320d7628d25d",
     "verify_usb_graph_init.py": "22e02d5423051bc326adf5c0edaa6c3a067680c22d85b18fe2d26109510edb5a",
