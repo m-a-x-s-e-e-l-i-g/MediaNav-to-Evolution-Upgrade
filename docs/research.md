@@ -86,6 +86,7 @@
 - [Shuffle lifecycle](../analysis/usb-shuffle-lifecycle.md): old shuffle results and saved settings published across USB reset, including a new request restoring the enabled flag.
 - [USB ownership prototype](../analysis/usb-lifecycle-protocol.md): unwired MIPS lease/generation protocol, protected completion and explicit caller retry on contention.
 - [Deferred USB requests](../analysis/usb-deferred-requests.md): native queue and idempotent admission bridge retain request parameters while ownership is busy.
+- [USB payload binding](../analysis/usb-request-binding.md): bind generation/sequence under the ownership gate; stale records cannot claim newer pending work.
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
