@@ -2,10 +2,11 @@
 
 ## Download
 
+- [7.0.6.MAX10](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX10) — current; owner tested; Bluetooth artwork remains open.
 - [7.0.6.MAX04](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX04)
 - Releases contain one downloadable asset: **`upgrade.lgu`**.
 - The [main guide](../README.md) explains compatibility, preparation and installation.
-- MAX04 is experimental. Offline checks passed; full installation, native runtime and rollback remain untested.
+- MAX10 installation is reported by the owner. Bluetooth audio, titles and selected-button improvements are retained; album art still fails. Broader hardware compatibility and rollback remain unverified. Historical MAX04 offline-validation status is preserved in its notes.
 
 ## Build and verify
 
@@ -29,6 +30,11 @@
 - Container bytes can vary when repacking. Payload reproduction must match all member hashes; an unchanged official download must match its published LGU checksum.
 
 ## Release records
+
+- [MAX10 notes and device feedback](../releases/7.0.6.MAX10/README.md)
+- [MAX10 complete build manifest](../releases/7.0.6.MAX10/build-manifest.json)
+- [MAX10 cumulative edit plan](../src/patches/max10.json)
+- [MAX10 code source snapshots](../releases/7.0.6.MAX10/source-manifest.json)
 
 - [MAX04 notes and screenshots](../releases/7.0.6.MAX04/README.md)
 - [Complete build manifest](../releases/7.0.6.MAX04/build-manifest.json)
