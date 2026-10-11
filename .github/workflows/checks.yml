@@ -19,3 +19,6 @@ jobs:
       - run: python -m unittest discover -s tools -p test_release_payload.py
       - run: python tools/release_payload.py --prepare-input .inputs/max04-baseline
       - run: python tools/release_payload.py --baseline .inputs/max04-baseline --out build/max04-reproduced
+      - run: python tools/check_max10_release.py
+      - run: python tools/release_max10_payload.py --prepare-input .inputs/max10-baseline
+      - run: python tools/release_max10_payload.py --baseline .inputs/max10-baseline --out build/max10-reproduced
