@@ -23,6 +23,7 @@ Compared with 4.1.0, the original upgrade to Evolution software brought these im
 
 MAXmade builds on that upgrade and adds:
 
+- **DBoot 2.0 access included:** open the underlying Windows CE desktop to browse and copy files, make backups and use CE tools. This major benefit of the original conversion is retained in MAXmade. See [how to open Windows CE with DBoot](#access-windows-ce-with-dboot).
 - **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers.
 - **Eight saved phones instead of five:** remember more phones without deleting an old one first. The list has two pages; you still connect one phone at a time.
 - **The navigation fix included:** the fix for the **“File corruption detected”** error is part of this update. You do not need to install a second update for it.
