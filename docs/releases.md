@@ -2,11 +2,12 @@
 
 ## Download
 
-- [7.0.6.MAX10](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX10) — current; owner tested; Bluetooth artwork remains open.
+- [7.0.6.MAX15](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX15) — current; owner installed and confirmed Bluetooth album art works.
+- [7.0.6.MAX10](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX10) — historical release; its original artwork failure record is retained.
 - [7.0.6.MAX04](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX04)
 - Releases contain one downloadable asset: **`upgrade.lgu`**.
 - The [main guide](../README.md) explains compatibility, preparation and installation.
-- MAX10 installation is reported by the owner. Bluetooth audio, titles and selected-button improvements are retained; album art still fails. Broader hardware compatibility and rollback remain unverified. Historical MAX04 offline-validation status is preserved in its notes.
+- MAX15 installation and working artwork are reported by the owner on the [documented test device](test-device.md). Earlier audio, title and selected-button fixes are retained. Broader hardware compatibility and rollback remain unverified. Historical release feedback is preserved in its original records.
 
 ## Build and verify
 
@@ -30,6 +31,11 @@
 - Container bytes can vary when repacking. Payload reproduction must match all member hashes; an unchanged official download must match its published LGU checksum.
 
 ## Release records
+
+- [MAX15 notes and device feedback](../releases/7.0.6.MAX15/README.md)
+- [MAX15 complete build manifest](../releases/7.0.6.MAX15/build-manifest.json)
+- [MAX15 cumulative edit plan](../src/patches/max15.json)
+- [MAX15 exact source dependencies](../releases/7.0.6.MAX15/source-manifest.json)
 
 - [MAX10 notes and device feedback](../releases/7.0.6.MAX10/README.md)
 - [MAX10 complete build manifest](../releases/7.0.6.MAX10/build-manifest.json)

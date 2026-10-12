@@ -1,4 +1,4 @@
-# MediaNav MAXmade — 7.0.6.MAX10
+# MediaNav MAXmade — 7.0.6.MAX15
 
 Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
@@ -8,11 +8,11 @@ Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution 
 
 Full before/after comparisons are in the [MAX04 design notes](releases/7.0.6.MAX04/README.md).
 
-[Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX10/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX10/README.md) · [Developer guide](docs/development.md)
+[Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX15/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX15/README.md) · [Developer guide](docs/development.md)
 
-**MAX10 has been installed and tested by the owner. Bluetooth audio and track titles retain the confirmed improvements; selected-button text is corrected. Bluetooth album art still shows an empty placeholder after skips and reconnects and remains an open issue.** See the [MAX10 notes](releases/7.0.6.MAX10/README.md) for device feedback and validation limits.
+**The owner installed MAX15 in the car and confirmed Bluetooth album art works.** Earlier audio, title and selected-button improvements are retained. Settings and both themes use matching redesigned styling, and Bluetooth adopts the USB player layout. See the [MAX15 notes](releases/7.0.6.MAX15/README.md) and [Max's test device](docs/test-device.md) for hardware details and validation scope.
 
-## Why upgrade from 4.1.0 to 7.0.6.MAX10?
+## Why upgrade from 4.1.0 to 7.0.6.MAX15?
 
 Compared with 4.1.0, the original upgrade to Evolution software brought these improvements on Max's unit:
 
@@ -27,7 +27,8 @@ MAXmade builds on that upgrade and adds:
 - **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers.
 - **Eight saved phones instead of five:** remember more phones without deleting an old one first. The list has two pages; you still connect one phone at a time.
 - **The navigation fix included:** the fix for the **“File corruption detected”** error is part of this update. You do not need to install a second update for it.
-- **Dark UI:** new Home, Radio, Media and Phone designs, with existing control positions retained.
+- **Matching dark and light UI:** redesigned Home, Settings, Radio, Media and Phone styling; the light theme stays light.
+- **Bluetooth album art:** current-track covers now display on the owner's test unit, using the large USB-style media player layout.
 - **Media fixes:** improved USB resume, repeat/shuffle, tags, artwork and playlists.
 - **System fixes:** Bluetooth startup audio retry, touch-release and startup/error handling.
 - **English updater/DBoot:** clearer update errors and verified file copies.
@@ -36,7 +37,7 @@ MAXmade builds on that upgrade and adds:
 
 This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
 
-You can upgrade directly to **7.0.6.MAX10**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope.
+You can upgrade directly to **7.0.6.MAX15**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope.
 
 **Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
 
@@ -58,18 +59,18 @@ Just to warn you that this update is not always succesful and can introduce some
 2. Back up your unit if possible.
 3. Write down your vehicle settings and radio presets; the update can replace them.
 4. Use a USB stick of **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
-5. Download [upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX10/upgrade.lgu) from the release assets. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
+5. Download [upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX15/upgrade.lgu) from the release assets. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
 
-This updates the system software as well as the apps. The owner installed MAX10 on the test unit. Returning to an older version and compatibility with other units remain unverified.
+This updates the system software as well as the apps. The owner installed MAX15 on the test unit. Returning to an older version and compatibility with other units remain unverified.
 
-## Install 7.0.6.MAX10
+## Install 7.0.6.MAX15
 
 1. Start the engine and wait for the normal MediaNav interface.
-2. Insert the prepared USB stick. The offered update should identify the new version as **7.0.6.MAX10**. If there is no dialog or a different version appears, check the troubleshooting section before proceeding.
+2. Insert the prepared USB stick. The offered update should identify the new version as **7.0.6.MAX15**. If there is no dialog or a different version appears, check the troubleshooting section before proceeding.
 3. Accept the update by pressing **Update**.
 4. Keep the engine running and leave the USB connected until the update has finished. The original full-update process can restart the unit several times and temporarily display Arabic text while installation continues.
 5. Enter your radio code if prompted.
-6. Once normal operation returns, remove the USB stick. Open **Settings > System > System version** and confirm **7.0.6.MAX10**.
+6. Once normal operation returns, remove the USB stick. Open **Settings > System > System version** and confirm **7.0.6.MAX15**.
 
 ## Access Windows CE with DBoot
 
@@ -107,7 +108,7 @@ Copy backups from the unit to USB/PC and check that the copied files are readabl
 
 ### No update dialog
 
-Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` directly at its root. Check for an accidental extra extension such as `upgrade.lgu.lgu`. The version should be **7.0.6.MAX10**, which sorts above existing **7.0.5.MD** versions. If the installed version is equal or newer, the normal updater may not offer it. Report the current version if the correct package still does not appear.
+Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` directly at its root. Check for an accidental extra extension such as `upgrade.lgu.lgu`. The version should be **7.0.6.MAX15**, which sorts above existing **7.0.5.MD** versions. If the installed version is equal or newer, the normal updater may not offer it. Report the current version if the correct package still does not appear.
 
 ### Returning to an older version
 
@@ -115,7 +116,7 @@ Returning from MAXmade to an older version has not been tested. The updater may 
 
 ## Technical details
 
-For the download checksum, what is included and how the update was checked, see the [package notes](releases/7.0.6.MAX10/README.md) and [SHA256SUMS.txt](releases/7.0.6.MAX10/SHA256SUMS.txt).
+For the download checksum, what is included and how the update was checked, see the [package notes](releases/7.0.6.MAX15/README.md) and [SHA256SUMS.txt](releases/7.0.6.MAX15/SHA256SUMS.txt).
 
 ## Development
 

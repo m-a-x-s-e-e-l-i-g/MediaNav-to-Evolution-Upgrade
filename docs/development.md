@@ -68,6 +68,10 @@ python -m venv .venv
 - [UI workflow](ui.md): render actual assets and compare native layout fixtures.
 - [Release workflow](releases.md): pack, independently decode, round-trip and publish a complete LGU.
 
-## Current MAX10 release
+## Historical MAX10 release
 
-The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) record owner feedback, cumulative code snapshots and the known unresolved Bluetooth album-art issue. Run `python tools/check_max10_release.py`, then use `python tools/release_max10_payload.py --prepare-input .inputs/max10-baseline` and `python tools/release_max10_payload.py --baseline .inputs/max10-baseline --out build/max10-reproduced` for full payload reproduction from the pinned historical MAX04 input. MAX04 sources and evidence remain preserved.
+The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) preserve the original failed artwork test, owner feedback and cumulative code snapshots. Run `python tools/check_max10_release.py`, then use `python tools/release_max10_payload.py --prepare-input .inputs/max10-baseline` and `python tools/release_max10_payload.py --baseline .inputs/max10-baseline --out build/max10-reproduced` for full payload reproduction from the pinned historical MAX04 input. MAX04 sources and evidence remain preserved.
+
+## Current MAX15 release
+
+[The MAX15 notes](../releases/7.0.6.MAX15/README.md) describe owner-confirmed Bluetooth artwork, cumulative Settings/light-theme/player changes and the [test device](test-device.md). Run `python tools/check_max15_release.py`, then `python tools/release_max15_payload.py --prepare-input .inputs/max15-baseline` and `python tools/release_max15_payload.py --baseline .inputs/max15-baseline --out build/max15-reproduced`. The plan reproduces all 1,918 payload files from the pinned historical MAX04 input; exact patch constructors and dependencies are preserved in the release source manifest. MAX04/MAX10 records remain historical.
