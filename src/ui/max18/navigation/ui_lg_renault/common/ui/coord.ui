@@ -1,0 +1,45 @@
+<layer ui_Input_GeoCoord z=30>
+	<DIV class=panel_ext visible=(%lua.Utm)>	
+		<BUTTON class="btn_main value keyb r2l" left=0 top=9 w=100% h=55 bmp="key.bmp#3" text="UTM zone" padding=28 onrelease=sc_Input_GeoCoord_Switch_zone >
+			<TEXT class="value keyb" left=33% text=(%lua.gcoor_zonetext) >
+		</BUTTON>
+		
+		<SPRITE class="input_coord" left=0 top=70 h=55 phase=(%regional.keyboard.input_name == "inp_GeoCoord_easting") onrelease=sc_Input_GeoCoord_Switch_easting>
+			<TEXT                           class="input_coord r2l" color=(%regional.keyboard.input_name == "inp_GeoCoord_easting" ? #F4F7F8 : #F4F7F8) text="Easting">
+			<INPUTTEXT inp_GeoCoord_easting class="input_text coord utm r2l" color2=(%regional.keyboard.input_name == "inp_GeoCoord_easting" ? #F4F7F8 : #F4F7F8)   align="RIGHT" onchange=sc_inp_GeoCoord_Update_Keys enable=(%regional.keyboard.input_name == "inp_GeoCoord_easting")>
+		</SPRITE>
+		
+		<SPRITE class="input_coord" left=0 top=132 h=55 phase=(%regional.keyboard.input_name == "inp_GeoCoord_northing") onrelease=sc_Input_GeoCoord_Switch_northing>
+			<TEXT                            class="input_coord r2l"  color=(%regional.keyboard.input_name == "inp_GeoCoord_northing" ? #F4F7F8 : #F4F7F8) text="Northing" visible=(%lua.Utm)>
+			<INPUTTEXT inp_GeoCoord_northing class="input_text coord utm r2l" color2=(%regional.keyboard.input_name == "inp_GeoCoord_northing" ? #F4F7F8 : #F4F7F8)   align="RIGHT"  onchange=sc_inp_GeoCoord_Update_Keys enable=(%regional.keyboard.input_name == "inp_GeoCoord_northing")>
+		</SPRITE>
+	</DIV>
+	
+	<DIV class="panel_ext coord" visible=(!%lua.Utm)>
+		<SPRITE class="input_coord" left=0 top=16 right=5% h=61 phase=(%regional.keyboard.input_name == "inp_GeoCoord_lat") onrelease=sc_Input_GeoCoord_Switch_lat>
+			<INPUTTEXT inp_GeoCoord_lat class="input_text coord r2l" color2=(%regional.keyboard.input_name == "inp_GeoCoord_lat" ? #F4F7F8 : #F4F7F8) onchange=sc_inp_GeoCoord_Update_Keys enable=(%regional.keyboard.input_name == "inp_GeoCoord_lat")>
+		</SPRITE>
+		
+		<SPRITE class="input_coord" left=0 top=80 right=5% h=61 phase=(%regional.keyboard.input_name == "inp_GeoCoord_lon") onrelease=sc_Input_GeoCoord_Switch_lon>
+			<INPUTTEXT inp_GeoCoord_lon class="input_text coord r2l" color2=(%regional.keyboard.input_name == "inp_GeoCoord_lon" ? #F4F7F8 : #F4F7F8) onchange=sc_inp_GeoCoord_Update_Keys enable=(%regional.keyboard.input_name == "inp_GeoCoord_lon")>
+		</SPRITE>
+	</DIV>
+	
+	<DIV class="full" w=34%>
+		<CHECKBOX left=0 right=0 top=3% bottom=0 align="CENTER" valign="CENTER" bmp="findcoorglobe_ns_chk.bmp#2" boolmodel="lua.gcoor.swaps_lat" onrelease=sc_LatChbox_OnRelease visible=(%regional.keyboard.input_name == "inp_GeoCoord_lat" && !%lua.Utm)>
+		<TEXT class="txt_34 color_coord" left=0 right=0 top=23% bottom=0 padding=0 align="CENTER" valign="TOP" text="GECOOR_N"  visible=(%regional.keyboard.input_name == "inp_GeoCoord_lat" && !%lua.Utm)>
+		<TEXT class="txt_34 color_coord" left=0 right=0 top=75% bottom=0 padding=0 align="CENTER" valign="TOP" text="GECOOR_S" visible=(%regional.keyboard.input_name == "inp_GeoCoord_lat" && !%lua.Utm)>
+		
+		<CHECKBOX left=0 right=0 top=3% bottom=0 align="CENTER" valign="CENTER" bmp="findcoorglobe_we_chk.bmp#2" boolmodel="lua.gcoor.swaps_lon" onrelease=sc_LonChbox_OnRelease visible=(%regional.keyboard.input_name == "inp_GeoCoord_lon" && !%lua.Utm)>
+		<TEXT class="txt_34 color_coord" left=0 w=44 top=3% bottom=0 padding=0 align="CENTER" valign="CENTER" text="GECOOR_W" visible=(%regional.keyboard.input_name == "inp_GeoCoord_lon" && !%lua.Utm)>
+		<TEXT class="txt_34 color_coord" w=44 right=0 top=3% bottom=0 padding=0 align="CENTER" valign="CENTER" text="GECOOR_E" visible=(%regional.keyboard.input_name == "inp_GeoCoord_lon" && !%lua.Utm)>
+	</DIV>
+</layer>
+
+<layer ui_Input_GeoCoord_Zone z=30>
+	<DIV class="panel_ext">
+		<SPRITE class="button_input">
+		<INPUTTEXT inp_GeoCoord_zone class=input_text  nospace=1 onchange=sc_inp_GeoCoord_Update_Zone_Keys>
+	</DIV>
+</layer>
+

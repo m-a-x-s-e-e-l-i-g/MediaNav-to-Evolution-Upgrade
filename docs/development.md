@@ -72,6 +72,24 @@ python -m venv .venv
 
 The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) preserve the original failed artwork test, owner feedback and cumulative code snapshots. Run `python tools/check_max10_release.py`, then use `python tools/release_max10_payload.py --prepare-input .inputs/max10-baseline` and `python tools/release_max10_payload.py --baseline .inputs/max10-baseline --out build/max10-reproduced` for full payload reproduction from the pinned historical MAX04 input. MAX04 sources and evidence remain preserved.
 
-## Current MAX15 release
+## Historical MAX15 release
 
 [The MAX15 notes](../releases/7.0.6.MAX15/README.md) describe owner-confirmed Bluetooth artwork, cumulative Settings/light-theme/player changes and the [test device](test-device.md). Run `python tools/check_max15_release.py`, then `python tools/release_max15_payload.py --prepare-input .inputs/max15-baseline` and `python tools/release_max15_payload.py --baseline .inputs/max15-baseline --out build/max15-reproduced`. The plan reproduces all 1,918 payload files from the pinned historical MAX04 input; exact patch constructors and dependencies are preserved in the release source manifest. MAX04/MAX10 records remain historical.
+
+## Current MAX18 release
+
+[MAX18](../releases/7.0.6.MAX18/README.md) carries forward the tested Bluetooth
+album art and redesigns Nav and the volume popup, with direct navigation launch.
+The owner tested MAX18 in the car and approved publication on 13 October 2026.
+Run `python tools/check_max18_release.py`, then:
+
+```powershell
+python tools/release_max18_payload.py --prepare-input .inputs/max18-baseline
+python tools/release_max18_payload.py --prepare-nav .inputs/max18-navigation.zip
+python tools/release_max18_payload.py --baseline .inputs/max18-baseline --navigation .inputs/max18-navigation.zip --out build/max18-reproduced
+```
+
+The baseline is reproduced from pinned Git history through the existing MAX15
+recipe. Navigation input is extracted from the hash-pinned public 4.1.0 backup;
+the private device backup is not required. All 1,919 output hashes and the full
+navigation archive are checked. GitHub Actions runs this reproduction too.

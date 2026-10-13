@@ -39,6 +39,14 @@ every phone, player or AVRCP implementation.
 - MAX15: owner installed it in the car and confirmed **Bluetooth album art works**,
   then authorized publication on 12 October 2026.
 
+- MAX18: owner tested it in the car, reported that everything looks good, and
+  authorized publication on 13 October 2026. The Nav skin, volume popup and
+  direct navigation launch are included in this tested build.
+
+MAX18's detailed cold-boot/GPS/guidance matrix was not separately reported.
+[Release notes](../releases/7.0.6.MAX18/README.md) distinguish that general
+approval from the earlier offline checks.
+
 MAX15's precise track-skip/reconnect test matrix was not separately reported.
 Offline fixture results are listed in the [MAX15 release notes](../releases/7.0.6.MAX15/README.md).
 Results on this device do not establish support for factory Evolution or later
