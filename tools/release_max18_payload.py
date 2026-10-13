@@ -78,6 +78,11 @@ def prepare_navigation(plan, destination):
 
 
 def build_navigation(plan, source, output):
+    # The tested archive was packed by Windows CPython 3.14.2 with zlib-ng.
+    # Other deflaters can preserve every skin member but change ZIP bytes.
+    assert zlib.ZLIB_RUNTIME_VERSION == '1.3.1.zlib-ng', (
+        'Exact MAX18 skin reproduction requires Windows Python 3.14.2 '
+        '(zlib runtime 1.3.1.zlib-ng); do not substitute a different deflater')
     nav = plan['navigation']
     assert payload.sha(source.read_bytes()) == nav['source_archive_sha256'], 'Navigation source changed'
     edits = {}

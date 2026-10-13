@@ -26,6 +26,16 @@ jobs:
       - run: python tools/release_max15_payload.py --prepare-input .inputs/max15-baseline
       - run: python tools/release_max15_payload.py --baseline .inputs/max15-baseline --out build/max15-reproduced
       - run: python tools/check_max18_release.py
+  max18-reproduction:
+    # Match the tested ZIP's deflater; Linux zlib packs different archive bytes.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14.2'
       - run: python tools/release_max18_payload.py --prepare-input .inputs/max18-baseline
       - run: python tools/release_max18_payload.py --prepare-nav .inputs/max18-navigation.zip
       - run: python tools/release_max18_payload.py --baseline .inputs/max18-baseline --navigation .inputs/max18-navigation.zip --out build/max18-reproduced

@@ -81,6 +81,10 @@ The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) preserve the origin
 [MAX18](../releases/7.0.6.MAX18/README.md) carries forward the tested Bluetooth
 album art and redesigns Nav and the volume popup, with direct navigation launch.
 The owner tested MAX18 in the car and approved publication on 13 October 2026.
+Source checks use Python 3.12 or newer. For exact MAX18 navigation archive
+reproduction, use **Windows Python 3.14.2** with zlib runtime
+**1.3.1.zlib-ng**. Different deflaters can preserve skin contents while changing
+ZIP bytes, so the reproduction tool verifies the runtime and refuses substitutions.
 Run `python tools/check_max18_release.py`, then:
 
 ```powershell
@@ -92,4 +96,5 @@ python tools/release_max18_payload.py --baseline .inputs/max18-baseline --naviga
 The baseline is reproduced from pinned Git history through the existing MAX15
 recipe. Navigation input is extracted from the hash-pinned public 4.1.0 backup;
 the private device backup is not required. All 1,919 output hashes and the full
-navigation archive are checked. GitHub Actions runs this reproduction too.
+navigation archive are checked. GitHub Actions runs this reproduction on
+Windows with the pinned Python version, alongside the Linux source checks.

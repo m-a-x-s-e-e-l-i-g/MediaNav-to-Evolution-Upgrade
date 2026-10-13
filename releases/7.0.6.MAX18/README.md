@@ -66,7 +66,10 @@ the exact cumulative source/evidence snapshots delivered with the build,
 including Nav and volume generators and the navigation acceptance patch.
 Prior release sources and feedback remain preserved.
 
-Use Python 3.12 or newer. Input preparation reads the pinned historical MAX04
+Use **Windows Python 3.14.2**, with zlib runtime **1.3.1.zlib-ng**, for exact
+navigation archive reproduction. Other deflaters can produce identical skin
+contents with different ZIP bytes; the tool refuses that substitution.
+Source checks remain compatible with Python 3.12 or newer. Input preparation reads the pinned historical MAX04
 LGU from Git history and applies the published MAX15 recipe. Navigation input
 preparation downloads and verifies the public 4.1.0 backup, then extracts only
 its identical navigation skin. These are build inputs, not installation steps:
