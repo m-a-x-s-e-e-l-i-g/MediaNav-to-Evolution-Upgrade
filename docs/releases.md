@@ -2,12 +2,13 @@
 
 ## Download
 
-- [7.0.6.MAX15](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX15) — current; owner installed and confirmed Bluetooth album art works.
+- [7.0.6.MAX18](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX18) — current; owner tested in the car and approved publication on 13 October 2026.
+- [7.0.6.MAX15](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX15) — previous; owner installed and confirmed Bluetooth album art works.
 - [7.0.6.MAX10](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX10) — historical release; its original artwork failure record is retained.
 - [7.0.6.MAX04](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX04)
 - Releases contain one downloadable asset: **`upgrade.lgu`**.
 - The [main guide](../README.md) explains compatibility, preparation and installation.
-- MAX15 installation and working artwork are reported by the owner on the [documented test device](test-device.md). Earlier audio, title and selected-button fixes are retained. Broader hardware compatibility and rollback remain unverified. Historical release feedback is preserved in its original records.
+- MAX18 installation and general approval, and MAX15 working artwork, are reported by the owner on the [documented test device](test-device.md). Earlier audio, title and selected-button fixes are retained. Broader hardware compatibility and rollback remain unverified. Historical release feedback is preserved in its original records.
 
 ## Build and verify
 
@@ -31,6 +32,11 @@
 - Container bytes can vary when repacking. Payload reproduction must match all member hashes; an unchanged official download must match its published LGU checksum.
 
 ## Release records
+
+- [MAX18 notes and device feedback](../releases/7.0.6.MAX18/README.md)
+- [MAX18 complete build manifest](../releases/7.0.6.MAX18/build-manifest.json)
+- [MAX18 cumulative edit plan and Nav addition](../src/patches/max18.json)
+- [MAX18 exact source snapshots](../releases/7.0.6.MAX18/source-manifest.json)
 
 - [MAX15 notes and device feedback](../releases/7.0.6.MAX15/README.md)
 - [MAX15 complete build manifest](../releases/7.0.6.MAX15/build-manifest.json)
