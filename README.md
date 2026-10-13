@@ -40,6 +40,14 @@ MAXmade builds on that upgrade and adds:
 
 ## Compatibility
 
+This update is intended for these Renault models when equipped with the **first-generation MediaNav** described below:
+
+| Model | Model years |
+| --- | --- |
+| Clio IV | 2012–2015 |
+| Captur I | 2013–2014 |
+| Master III | 2012–2014 |
+
 This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
 
 You can upgrade directly to **7.0.6.MAX18**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope.
