@@ -1,5 +1,11 @@
 # MediaNav MAXmade — 7.0.6.MAX18
 
+## Local Bluetooth source-switch optimization — 7.0.6.MAX23
+
+- [Full LGU](build/maxmade-7.0.6.MAX23/upgrade.lgu) · [Full ZIP](build/maxmade-7.0.6.MAX23.zip) · [Change and verification](analysis/max23-source-switch-budget.md).
+- Count native work and scheduler delay toward the 200/400 ms Bluetooth settling windows after a successful play request. Other source/fade paths and failed requests retain the native waits. This removes added delay, while preserving the command order and minimum time windows. Actual car speed and audio remain unverified.
+- Complete MAX22 successor, retaining Settings redraw, saved debugging, non-overwriting logs, artwork, navigation and all 1,919 payload paths. Local candidate only.
+
 Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
 | Home | Media |

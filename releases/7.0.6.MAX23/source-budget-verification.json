@@ -1,0 +1,1917 @@
+{
+  "passed": true,
+  "cases": 65,
+  "checks": [
+    "native play/fade order, minimum elapsed window, on=0, work=0, success=False",
+    "native play/fade order, minimum elapsed window, on=0, work=0, success=True",
+    "native play/fade order, minimum elapsed window, on=0, work=10, success=False",
+    "native play/fade order, minimum elapsed window, on=0, work=10, success=True",
+    "native play/fade order, minimum elapsed window, on=0, work=30, success=False",
+    "native play/fade order, minimum elapsed window, on=0, work=30, success=True",
+    "native play/fade order, minimum elapsed window, on=0, work=100, success=False",
+    "native play/fade order, minimum elapsed window, on=0, work=100, success=True",
+    "native play/fade order, minimum elapsed window, on=0, work=250, success=False",
+    "native play/fade order, minimum elapsed window, on=0, work=250, success=True",
+    "native play/fade order, minimum elapsed window, on=1, work=0, success=False",
+    "native play/fade order, minimum elapsed window, on=1, work=0, success=True",
+    "native play/fade order, minimum elapsed window, on=1, work=10, success=False",
+    "native play/fade order, minimum elapsed window, on=1, work=10, success=True",
+    "native play/fade order, minimum elapsed window, on=1, work=30, success=False",
+    "native play/fade order, minimum elapsed window, on=1, work=30, success=True",
+    "native play/fade order, minimum elapsed window, on=1, work=100, success=False",
+    "native play/fade order, minimum elapsed window, on=1, work=100, success=True",
+    "native play/fade order, minimum elapsed window, on=1, work=250, success=False",
+    "native play/fade order, minimum elapsed window, on=1, work=250, success=True",
+    "native relocated play/fade with tick wrap and scheduler elapsed 10000/1388/0",
+    "native relocated play/fade with tick wrap and scheduler elapsed 10000/1388/70",
+    "native relocated play/fade with tick wrap and scheduler elapsed 10000/1388/250",
+    "native relocated play/fade with tick wrap and scheduler elapsed 10000/fffffff0/0",
+    "native relocated play/fade with tick wrap and scheduler elapsed 10000/fffffff0/70",
+    "native relocated play/fade with tick wrap and scheduler elapsed 10000/fffffff0/250",
+    "native relocated play/fade with tick wrap and scheduler elapsed 123000/1388/0",
+    "native relocated play/fade with tick wrap and scheduler elapsed 123000/1388/70",
+    "native relocated play/fade with tick wrap and scheduler elapsed 123000/1388/250",
+    "native relocated play/fade with tick wrap and scheduler elapsed 123000/fffffff0/0",
+    "native relocated play/fade with tick wrap and scheduler elapsed 123000/fffffff0/70",
+    "native relocated play/fade with tick wrap and scheduler elapsed 123000/fffffff0/250",
+    "fade caller ownership and absent timestamp fallback 0/115728/0",
+    "fade caller ownership and absent timestamp fallback 0/115728/12c0",
+    "fade caller ownership and absent timestamp fallback 0/115728/1324",
+    "fade caller ownership and absent timestamp fallback 0/115728/1388",
+    "fade caller ownership and absent timestamp fallback 0/115728/fffffff0",
+    "fade caller ownership and absent timestamp fallback 0/1154b4/0",
+    "fade caller ownership and absent timestamp fallback 0/1154b4/12c0",
+    "fade caller ownership and absent timestamp fallback 0/1154b4/1324",
+    "fade caller ownership and absent timestamp fallback 0/1154b4/1388",
+    "fade caller ownership and absent timestamp fallback 0/1154b4/fffffff0",
+    "fade caller ownership and absent timestamp fallback 0/777777/0",
+    "fade caller ownership and absent timestamp fallback 0/777777/12c0",
+    "fade caller ownership and absent timestamp fallback 0/777777/1324",
+    "fade caller ownership and absent timestamp fallback 0/777777/1388",
+    "fade caller ownership and absent timestamp fallback 0/777777/fffffff0",
+    "fade caller ownership and absent timestamp fallback 1/115728/0",
+    "fade caller ownership and absent timestamp fallback 1/115728/12c0",
+    "fade caller ownership and absent timestamp fallback 1/115728/1324",
+    "fade caller ownership and absent timestamp fallback 1/115728/1388",
+    "fade caller ownership and absent timestamp fallback 1/115728/fffffff0",
+    "fade caller ownership and absent timestamp fallback 1/1154b4/0",
+    "fade caller ownership and absent timestamp fallback 1/1154b4/12c0",
+    "fade caller ownership and absent timestamp fallback 1/1154b4/1324",
+    "fade caller ownership and absent timestamp fallback 1/1154b4/1388",
+    "fade caller ownership and absent timestamp fallback 1/1154b4/fffffff0",
+    "fade caller ownership and absent timestamp fallback 1/777777/0",
+    "fade caller ownership and absent timestamp fallback 1/777777/12c0",
+    "fade caller ownership and absent timestamp fallback 1/777777/1324",
+    "fade caller ownership and absent timestamp fallback 1/777777/1388",
+    "fade caller ownership and absent timestamp fallback 1/777777/fffffff0",
+    "stamp native arguments, v0/v1, LastError and stack ABI result=0",
+    "stamp native arguments, v0/v1, LastError and stack ABI result=1",
+    "stamp native arguments, v0/v1, LastError and stack ABI result=ffffffff"
+  ],
+  "app_sha256": "ba360cb95f1b6829b7ff39744ebf5a39e957eb727f85e65e3f225346f4680b9c",
+  "previous_app_sha256": "95d7947770b6bdf90923391948604ea9a02cd243f1925069b482b895385585a7",
+  "native_trace_comparisons": [
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=0, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 421
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 421
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=0, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 421
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 421
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=10, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5430
+          ],
+          [
+            "native log",
+            5441
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 410,
+        "records": [],
+        "total_ms": 451
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5430
+          ],
+          [
+            "native log",
+            5441
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 410,
+        "records": [],
+        "total_ms": 451
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=10, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5430
+          ],
+          [
+            "native log",
+            5441
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 410,
+        "records": [],
+        "total_ms": 451
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5420
+          ],
+          [
+            "native log",
+            5431
+          ]
+        ],
+        "sleeps": [
+          190,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 441
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=30, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5470
+          ],
+          [
+            "native log",
+            5481
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 430,
+        "records": [],
+        "total_ms": 511
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5470
+          ],
+          [
+            "native log",
+            5481
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 430,
+        "records": [],
+        "total_ms": 511
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=30, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5470
+          ],
+          [
+            "native log",
+            5481
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 430,
+        "records": [],
+        "total_ms": 511
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5440
+          ],
+          [
+            "native log",
+            5451
+          ]
+        ],
+        "sleeps": [
+          170,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 481
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=100, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5610
+          ],
+          [
+            "native log",
+            5621
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 500,
+        "records": [],
+        "total_ms": 721
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5610
+          ],
+          [
+            "native log",
+            5621
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 500,
+        "records": [],
+        "total_ms": 721
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=100, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5610
+          ],
+          [
+            "native log",
+            5621
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 500,
+        "records": [],
+        "total_ms": 721
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5510
+          ],
+          [
+            "native log",
+            5521
+          ]
+        ],
+        "sleeps": [
+          100,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 621
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=250, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5910
+          ],
+          [
+            "native log",
+            5921
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 650,
+        "records": [],
+        "total_ms": 1171
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5910
+          ],
+          [
+            "native log",
+            5921
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 650,
+        "records": [],
+        "total_ms": 1171
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=0, work=250, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5910
+          ],
+          [
+            "native log",
+            5921
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 650,
+        "records": [],
+        "total_ms": 1171
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5660
+          ],
+          [
+            "native log",
+            5671
+          ]
+        ],
+        "sleeps": [
+          0,
+          150
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [],
+        "total_ms": 921
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=0, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 421
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 421
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=0, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 421
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5000
+          ],
+          [
+            "native log",
+            5010
+          ],
+          [
+            "fade",
+            5410
+          ],
+          [
+            "native log",
+            5421
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 421
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=10, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5430
+          ],
+          [
+            "native log",
+            5441
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 410,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 451
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5430
+          ],
+          [
+            "native log",
+            5441
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 410,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 451
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=10, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5430
+          ],
+          [
+            "native log",
+            5441
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 410,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 451
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5010
+          ],
+          [
+            "native log",
+            5020
+          ],
+          [
+            "fade",
+            5420
+          ],
+          [
+            "native log",
+            5431
+          ]
+        ],
+        "sleeps": [
+          190,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            190,
+            190
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 441
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=30, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5470
+          ],
+          [
+            "native log",
+            5481
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 430,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 511
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5470
+          ],
+          [
+            "native log",
+            5481
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 430,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 511
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=30, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5470
+          ],
+          [
+            "native log",
+            5481
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 430,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 511
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5030
+          ],
+          [
+            "native log",
+            5040
+          ],
+          [
+            "fade",
+            5440
+          ],
+          [
+            "native log",
+            5451
+          ]
+        ],
+        "sleeps": [
+          170,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            170,
+            170
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 481
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=100, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5610
+          ],
+          [
+            "native log",
+            5621
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 500,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 721
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5610
+          ],
+          [
+            "native log",
+            5621
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 500,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 721
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=100, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5610
+          ],
+          [
+            "native log",
+            5621
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 500,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 721
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5100
+          ],
+          [
+            "native log",
+            5110
+          ],
+          [
+            "fade",
+            5510
+          ],
+          [
+            "native log",
+            5521
+          ]
+        ],
+        "sleeps": [
+          100,
+          200
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            100,
+            100
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 621
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=250, success=False",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5910
+          ],
+          [
+            "native log",
+            5921
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 650,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 1171
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5910
+          ],
+          [
+            "native log",
+            5921
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 650,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 1171
+      }
+    },
+    {
+      "case": "native play/fade order, minimum elapsed window, on=1, work=250, success=True",
+      "previous": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5910
+          ],
+          [
+            "native log",
+            5921
+          ]
+        ],
+        "sleeps": [
+          200,
+          200
+        ],
+        "post_request_to_fade_ms": 650,
+        "records": [
+          [
+            1,
+            134,
+            200,
+            200
+          ],
+          [
+            1,
+            135,
+            200,
+            200
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 1171
+      },
+      "candidate": {
+        "operations": [
+          [
+            "native log",
+            5000
+          ],
+          [
+            "window post",
+            1045
+          ],
+          [
+            "play",
+            5250
+          ],
+          [
+            "native log",
+            5260
+          ],
+          [
+            "fade",
+            5660
+          ],
+          [
+            "native log",
+            5671
+          ]
+        ],
+        "sleeps": [
+          0,
+          150
+        ],
+        "post_request_to_fade_ms": 400,
+        "records": [
+          [
+            1,
+            134,
+            0,
+            0
+          ],
+          [
+            1,
+            135,
+            150,
+            150
+          ],
+          [
+            1,
+            136,
+            11,
+            1
+          ]
+        ],
+        "total_ms": 921
+      }
+    }
+  ],
+  "minimum_settling_window_ms": 400,
+  "limits": "Interpreter clocks and explicit CE/IPC/GUI boundaries; real audio and speed require car testing."
+}
