@@ -1,0 +1,85 @@
+{
+  "sessions": [
+    {
+      "session": "session\t2026-10-15T00:00:00.000\t0",
+      "files": [
+        "debug-issue-fixture.log"
+      ],
+      "records": 8,
+      "invalid_or_partial_lines": 0,
+      "timings": [
+        {
+          "event": 403,
+          "name": "RVC configuration write",
+          "count": 1,
+          "median_ms": 30,
+          "p95_ms": 30,
+          "max_ms": 30
+        }
+      ],
+      "begins_without_matching_end_count": {},
+      "memory_samples": [],
+      "dropped_records_latest": null,
+      "native_messages": [],
+      "notes": [
+        "Durations include a small instrumentation cost and use the device millisecond clock.",
+        "A begin without an end can also result from rotation, dropped records or abrupt power loss.",
+        "Raw function results and IPC delivery do not prove completed hardware transitions.",
+        "Device calendar time may be unset; the session also contains a boot-relative start tick.",
+        "Event 302 stores interval poll count and maximum poll duration, not a timed operation.",
+        "Artwork RAM snapshots are global OS free memory, not per-process ownership.",
+        "Bitmap counters track successful instrumented artwork operations while debugging is enabled; pre-existing handles and disabled intervals are not inventoried.",
+        "GPS observations contain raw sentence markers, not independently validated checksums or coordinates.",
+        "Native parser acceptance is separate from a valid navigation position fix.",
+        "Repeated unchanged GPS markers are sampled per bucket every five seconds; changes emit sooner.",
+        "Service entry 3746 and 3748 follow different native paths; power-state timing is retained.",
+        "A configuration-write acknowledgement does not alone prove retention after restart."
+      ],
+      "artwork_poll_summaries": [],
+      "artwork_memory_snapshots": [],
+      "artwork_bitmap_counters": [],
+      "artwork_bitmap_create_failures": [],
+      "artwork_bitmap_delete_failures": [],
+      "service_actions": [
+        {
+          "event": 403,
+          "name": "RVC configuration write",
+          "start_ms": 100,
+          "end_ms": 130,
+          "raw_begin_value": 1024,
+          "requested_configuration_bits": 1024,
+          "test_write_blocked": true,
+          "requested_enabled": true,
+          "duration_ms": 30,
+          "raw_result": 0,
+          "write_acknowledged": false
+        }
+      ],
+      "gps_observations": [
+        {
+          "ms": 200,
+          "sentence": "RMC",
+          "talker": "GN",
+          "raw_status": "V",
+          "native_parser_accepted": false
+        },
+        {
+          "ms": 300,
+          "sentence": "GGA",
+          "talker": "GP",
+          "raw_status": "0",
+          "native_parser_accepted": true,
+          "satellites_used_reported": 0
+        },
+        {
+          "ms": 400,
+          "sentence": "GSV",
+          "talker": "GP",
+          "raw_status": null,
+          "native_parser_accepted": true,
+          "satellites_visible_reported": 12
+        }
+      ]
+    }
+  ]
+}

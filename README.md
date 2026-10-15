@@ -1,5 +1,11 @@
 # MediaNav MAXmade — 7.0.6.MAX18
 
+## MAX24 reporter diagnostic candidate — Micom/RVC and GPS
+
+- [Full ZIP](build/maxmade-7.0.6.MAX24.zip) · [LGU](build/maxmade-7.0.6.MAX24/upgrade.lgu) · [Reporter plan](analysis/issue52-reporter-test-plan.md) · [Technical evidence](analysis/max24-micom-gps-diagnostics.md).
+- Two native failure-path guards plus coordinate-free GPS observation for issues #53/#54; actual reporter-unit resolution remains unconfirmed.
+- All 1,919 prior payload paths retained, 1,915 byte-exact; 402 checks, independent full decode/extraction, hashes, ZIP CRC and 66 source pins pass. Stable MAX18 is unchanged.
+
 ## Local Bluetooth source-switch optimization — 7.0.6.MAX23
 
 - [Full LGU](build/maxmade-7.0.6.MAX23/upgrade.lgu) · [Full ZIP](build/maxmade-7.0.6.MAX23.zip) · [Change and verification](analysis/max23-source-switch-budget.md).
