@@ -33,6 +33,13 @@ every phone, player or AVRCP implementation.
 
 ## Hardware feedback
 
+- MAX30: owner upgraded from MAX26, reports that everything works fine as far as
+  known, and authorized release on 18 October 2026. **The iPhone album-art change
+  has not yet been tested.** Individual checklist results and deliberate
+  recovery/error-path tests were not separately reported. The
+  [MAX30 device-status record](../releases/7.0.6.MAX30/device-status.json) preserves
+  this distinction from the offline verification.
+
 - MAX07: owner confirmed selected-button text fixes.
 - MAX08: owner confirmed Bluetooth stuttering/delay and “No title” resolved.
 - MAX14: owner reported “Cover starting (S0)” and no artwork.
