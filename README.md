@@ -118,8 +118,26 @@ Copy backups from the unit to USB/PC and check that the copied files are readabl
 
    <img width="403" height="265" alt="MediaNav system version screen showing the five points to press in order" src="https://github.com/user-attachments/assets/f8df3f4a-0242-4a53-8714-a166f1137a21?raw=1" />
 
-3. Fill in code `0362` and press OK.
-4. Fill in the second code `3748` and press OK.
+3. If test mode is currently Off, enter `0362` and press OK to enable it. **This code toggles test mode**: entering it again turns test mode Off.
+4. Enter `3748` and press OK to request the MICOM service screen through its power-state transition.
+
+### Service codes
+
+Enter these codes in the keypad opened by steps 1–2 above. Service test mode is separate from the **Debugging** setting used for USB logging in diagnostic builds.
+
+| Code | Requires test mode | Function traced in the firmware |
+| --- | --- | --- |
+| `0362` | No | Toggles test mode On/Off. It does not always enable it. |
+| `3746` | Yes | Directly requests the service-tool window. |
+| `3748` | Yes | Requests power state 2, which leads to a separate service-screen path. |
+| `1111` | No | Opens detailed version information. |
+| `6971` | Yes | Closes the main MediaNav application and starts Windows Explorer on the Windows CE desktop. |
+
+**`3746` and `3748` select different paths; they are not interchangeable entry codes.** The `3740`–`3749` family sends its final digit to Micom as a command selector. The effects of all remaining selectors have not been fully established, so they are not listed as instructions here.
+
+These meanings come from firmware analysis; behavior on every supported unit has not been confirmed. If MICOM blanks the screen or restarts the radio, record the exact entry sequence and see [the open MICOM/RVC issue](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/53). Switching codes is not a confirmed fix for that problem.
+
+**`DSI_Config` requests CAN configuration; it is not a general Save button.** The RVC control sends its own configuration command when toggled. On the reported failure path, the old interface can show the changed state even when the command fails, so an On label alone does not confirm that the setting was applied or retained after restart.
 
 ## Troubleshooting
 
