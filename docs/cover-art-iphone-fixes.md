@@ -1,6 +1,6 @@
 # iPhone Bluetooth cover-art final-packet fix
 
-This is an **unreleased patch recipe**, contributed by
+This fix ships in [MAX32](../releases/7.0.6.MAX32/README.md), contributed by
 [Emanuel / emstoica](https://github.com/emstoica) in
 [PR #60](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/pull/60).
 His original implementation and reverse engineering were AI-assisted (Claude
@@ -8,9 +8,10 @@ Code); his Spotify/Apple Music results were reported from a human test in a car.
 Maintainer changes make the recipe portable and verify the actual patched PE
 bytes. These are separate evidence sources, not a new maintainer car test.
 
-The public MAX31 download is unchanged. This PR adds no firmware binary and
-does not create a release. A later release still follows the maintainer's
-[complete-package checklist](releases.md).
+The public MAX31 download remains unchanged as the pinned baseline. MAX32 is a
+complete successor built with the maintainer's
+[complete-package checklist](releases.md); no native firmware binary is committed
+to the source repository.
 
 ## Input and output pins
 
@@ -24,7 +25,8 @@ The recipe accepts only the exact published **7.0.6.MAX31** upgrade.lgu:
 | Patched Blue.exe | 1,963,008 | `e6d63ab65a0c06a2da0a14cfec60f9e98cd2db134b9dd84c2d7942bfbf0890db` |
 
 All **1,920 members** are retained. Only Blue.exe changes, plus Version_Info.txt
-if an explicit new label is supplied. AppMain, native display layout, decoder
+if an explicit new label is supplied to this focused recipe. The complete MAX32
+builder additionally updates the diagnostic revision/checksum. AppMain, native display layout, decoder
 size, retry scheduling, boot/recovery, updater, MCU and navigation are unchanged.
 
 ## Cause and exact native change

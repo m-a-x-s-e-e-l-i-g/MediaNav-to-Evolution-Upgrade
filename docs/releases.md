@@ -2,7 +2,9 @@
 
 ## Download
 
-- [7.0.6.MAX31](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX31) — current; DBoot/CE false-recovery correction. Owner authorized publication on 20 October 2026; MAX31 car testing and the quick CE reboot result remain pending.
+- [7.0.6.MAX32](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX32) — current; iPhone final-packet fix from emstoica, who reports Spotify/Apple Music artwork working. Complete MAX32 maintainer car validation remains pending.
+
+- [7.0.6.MAX31](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX31) — previous; DBoot/CE false-recovery correction. Owner authorized publication on 20 October 2026; MAX31 car testing and the quick CE reboot result remain pending.
 - [7.0.6.MAX30](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX30) — previous; owner upgraded from MAX26 and initially reported normal operation. A false recovery prompt and quick CE reboot were subsequently reported during DBoot use. iPhone artwork remains untested.
 - [7.0.6.MAX18](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX18) — previous; owner tested in the car and approved publication on 13 October 2026.
 - [7.0.6.MAX15](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX15) — previous; owner installed and confirmed Bluetooth album art works.
@@ -10,7 +12,7 @@
 - [7.0.6.MAX04](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/tag/7.0.6.MAX04)
 - Releases contain one downloadable asset: **`upgrade.lgu`**.
 - The [main guide](../README.md) explains compatibility, preparation and installation.
-- MAX30 installation/general operation and MAX15 working artwork are reported by the owner on the [documented test device](test-device.md). MAX31 has no physical test report. Its DBoot correction, quick reboot result, inherited iPhone artwork, recovery fault scenarios, broader compatibility and rollback remain unverified; see its [known limits](../releases/7.0.6.MAX31/README.md#known-installer-and-hardware-limits). Historical feedback is preserved.
+- MAX30 installation/general operation and MAX15 working artwork are reported by the owner on the [documented test device](test-device.md). MAX32 adds the contributor-reported iPhone fix; complete MAX32 testing, DBoot quick reboot, intermittent cover loss, recovery faults, broader compatibility and rollback remain open. See [MAX32 limits](../releases/7.0.6.MAX32/README.md#known-installer-and-hardware-limits). Historical feedback is preserved.
 
 ## Build and verify
 
@@ -34,6 +36,12 @@
 - Container bytes can vary when repacking. Payload reproduction must match all member hashes; an unchanged official download must match its published LGU checksum.
 
 ## Release records
+
+- [MAX32 notes and evidence](../releases/7.0.6.MAX32/README.md)
+- [MAX32 full manifest](../releases/7.0.6.MAX32/build-manifest.json)
+- [MAX32 comparison with MAX31](../releases/7.0.6.MAX32/public-baseline-comparison.json)
+- [MAX32 source pins](../releases/7.0.6.MAX32/source-manifest.json)
+- [MAX32 device status](../releases/7.0.6.MAX32/device-status.json)
 
 - [MAX31 notes and pending car validation](../releases/7.0.6.MAX31/README.md)
 - [MAX31 complete build manifest](../releases/7.0.6.MAX31/build-manifest.json)

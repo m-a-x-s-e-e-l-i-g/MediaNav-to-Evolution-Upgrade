@@ -1,4 +1,4 @@
-# MediaNav MAXmade — 7.0.6.MAX31
+# MediaNav MAXmade — 7.0.6.MAX32
 
 Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution software, with the MAXmade improvements included in **one USB update**.
 
@@ -8,17 +8,17 @@ Upgrade the **first-generation Renault / Dacia MediaNav** from 4.x to Evolution 
 
 Full before/after comparisons are in the [MAX04 design notes](releases/7.0.6.MAX04/README.md).
 
-[Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX31/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX31/README.md) · [Developer guide](docs/development.md)
+[Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX32/upgrade.lgu) · [Release notes and checksum](releases/7.0.6.MAX32/README.md) · [Developer guide](docs/development.md)
 
-**MAX31 corrects the false recovery prompt during intentional DBoot/Windows CE
-entry. The owner authorized release on 20 October 2026; MAX31 has not yet been
-tested in the car.** Native DBoot initialization is restored for the recovery
-desktop path; the reported quick CE reboot still needs physical confirmation.
-All MAX30 features remain included. **iPhone album art remains unverified.**
-See the [MAX31 notes and known limits](releases/7.0.6.MAX31/README.md) and
-[Max's test device](docs/test-device.md).
+**MAX32 adds the iPhone Bluetooth artwork final-packet fix from contributor
+[emstoica](https://github.com/emstoica), who reports working Spotify and Apple
+Music covers in his car.** The owner authorized release on 20 October 2026;
+the complete MAX32 has not yet been tested in the maintainer's car. It retains
+the MAX31 DBoot correction and all previous features. Intermittent missing
+covers after skips remain open. See [MAX32 notes](releases/7.0.6.MAX32/README.md)
+and [device evidence](docs/test-device.md).
 
-## Why upgrade from 4.1.0 to 7.0.6.MAX31?
+## Why upgrade from 4.1.0 to 7.0.6.MAX32?
 
 Compared with 4.1.0, the original upgrade to Evolution software brought these improvements on Max's unit:
 
@@ -33,7 +33,7 @@ MAXmade builds on that upgrade and adds:
 - **Less Bluetooth audio delay:** reduces the lag between playback on your phone and sound from the speakers.
 - **Eight saved phones instead of five:** remember more phones without deleting an old one first. The list has two pages; you still connect one phone at a time.
 - **The navigation fix included:** the fix for the **“File corruption detected”** error is part of this update. You do not need to install a second update for it.
-- **Bluetooth album art sync:** supported phone covers display in the large USB-style player, alongside title and artist information. The iPhone negotiation change in MAX30 still needs physical confirmation.
+- **Bluetooth album art sync:** supported phone covers display in the large USB-style player, alongside title and artist information. MAX32 includes the final-packet fix; contributor-reported Spotify/Apple Music success and pending maintainer testing are recorded separately.
 - **Saved USB debugging:** enable Debugging in System Settings to collect separate USB log sessions across restarts, with navigation action/RAM measurements and fewer repetitive records.
 - **Navigation without the recurring warning:** open Navigation or Map directly, without having to press Agree every time.
 - **Redesigned UI throughout:** Navigation, Home, Settings, Radio, Media, Phone and the volume popup share updated styling. Both dark and light system themes are redesigned; the light theme keeps its light background.
@@ -53,7 +53,7 @@ This update is intended for these Renault models when equipped with the **first-
 
 This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
 
-You can upgrade directly to **7.0.6.MAX31**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope. The owner's earlier MAX30 test started at MAX26. MAX31 has not yet been physically tested; other starting-version routes remain unverified.
+You can upgrade directly to **7.0.6.MAX32**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope. The owner's earlier MAX30 test started at MAX26. MAX32 has not yet been physically tested; other starting-version routes remain unverified.
 
 **Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
 
@@ -75,18 +75,18 @@ Just to warn you that this update is not always succesful and can introduce some
 2. Back up your unit if possible.
 3. Write down your vehicle settings and radio presets; the update can replace them.
 4. Use a USB stick of **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
-5. Download [upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX31/upgrade.lgu) from the release assets. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
+5. Download [upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX32/upgrade.lgu) from the release assets. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
 
-This updates the system software as well as the apps. The owner previously installed MAX30 from MAX26; MAX31 car validation is pending. Returning to an older version, failure recovery and compatibility with other units remain unverified. Known maintenance/formatting/wait gaps are documented in the [release notes](releases/7.0.6.MAX31/README.md#known-installer-and-hardware-limits); this is not a guarantee against lockout.
+This updates the system software as well as the apps. The owner previously installed MAX30 from MAX26; MAX32 car validation is pending. Returning to an older version, failure recovery and compatibility with other units remain unverified. Known maintenance/formatting/wait gaps are documented in the [release notes](releases/7.0.6.MAX32/README.md#known-installer-and-hardware-limits); this is not a guarantee against lockout.
 
-## Install 7.0.6.MAX31
+## Install 7.0.6.MAX32
 
 1. Start the engine and wait for the normal MediaNav interface.
-2. Insert the prepared USB stick. The offered update should identify the new version as **7.0.6.MAX31**. If there is no dialog or a different version appears, check the troubleshooting section before proceeding.
+2. Insert the prepared USB stick. The offered update should identify the new version as **7.0.6.MAX32**. If there is no dialog or a different version appears, check the troubleshooting section before proceeding.
 3. Accept the update by pressing **Update**.
 4. Keep the engine running and leave the USB connected until the update has finished. The original full-update process can restart the unit several times and temporarily display Arabic text while installation continues.
 5. Enter your radio code if prompted.
-6. Once normal operation returns, remove the USB stick. Open **Settings > System > System version** and confirm **7.0.6.MAX31**.
+6. Once normal operation returns, remove the USB stick. Open **Settings > System > System version** and confirm **7.0.6.MAX32**.
 
 ## Access Windows CE with DBoot
 
@@ -142,7 +142,7 @@ These meanings come from firmware analysis; behavior on every supported unit has
 
 ### No update dialog
 
-Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` directly at its root. Check for an accidental extra extension such as `upgrade.lgu.lgu`. The version should be **7.0.6.MAX31**, which sorts above existing **7.0.5.MD** versions. If the installed version is equal or newer, the normal updater may not offer it. Report the current version if the correct package still does not appear.
+Confirm the stick is FAT32, recognized by the unit and contains `upgrade.lgu` directly at its root. Check for an accidental extra extension such as `upgrade.lgu.lgu`. The version should be **7.0.6.MAX32**, which sorts above existing **7.0.5.MD** versions. If the installed version is equal or newer, the normal updater may not offer it. Report the current version if the correct package still does not appear.
 
 ### Returning to an older version
 
@@ -150,7 +150,7 @@ Returning from MAXmade to an older version has not been tested. The updater may 
 
 ## Technical details
 
-For the download checksum, what is included and how the update was checked, see the [package notes](releases/7.0.6.MAX31/README.md) and [SHA256SUMS.txt](releases/7.0.6.MAX31/SHA256SUMS.txt).
+For the download checksum, what is included and how the update was checked, see the [package notes](releases/7.0.6.MAX32/README.md) and [SHA256SUMS.txt](releases/7.0.6.MAX32/SHA256SUMS.txt).
 
 ## Development
 
