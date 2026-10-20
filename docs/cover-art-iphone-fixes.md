@@ -72,9 +72,10 @@ The source JPEG check stays 200×200. `mask` calls `GetObjectW` (IAT `0x185078`)
 | Patched validator accepts iPhone-style final packets and still rejects wrong IDs and error opcodes | Fixture results |
 | Retry decisions (first failure, too soon, due, budget spent, new track reset) | Fixture results on the written bytes |
 | Corner mask changes exactly 212 pixels per cover and nothing else | Fixture results on the written bytes |
-| `TransparentImage` accepts a memory DC as source | Inferred from existing app calls (decompiler reading), not yet a device test |
-| Why a cover is missing after a skip | Guess; no log of the failure was available |
-| Retry, corners and 278×278 display on a car | Pending device test |
+| `TransparentImage` accepts a memory DC as source and the rounded corners show through | Device test (corners applied) |
+| Why a cover is missing after a skip | Unknown; the retry did not fix it, and no log of a failure was available |
+| 278×278 decode gives no visible quality gain over the 200×200 stretch | Device test (no visible improvement) |
+| Retry removes the intermittent missing cover after a skip | Device test: not resolved, the cover still sometimes fails to load |
 
 ## Reproduce and verify
 
