@@ -1,0 +1,43 @@
+{
+  "source_sha256": "14e80fb6c83be1ccfebcf76fa84c39a745c25b34917f2cf062e36cdb37f89724",
+  "output_sha256": "3cf82210ff74ef412dd50ae1a4e89271bf434c1f2e46bab385221c3cc96b5de1",
+  "base": 65536,
+  "physical_base": 2163408896,
+  "main": 70644,
+  "intent": 70196,
+  "dboot": 70134,
+  "edits": [
+    {
+      "va": 70644,
+      "offset": 14706047,
+      "bytes": 236,
+      "reason": "Native StartWinCE request precedes stale startup marker"
+    },
+    {
+      "va": 70196,
+      "offset": 14705599,
+      "bytes": 52,
+      "reason": "Native CE path in former CodeView debug locator"
+    }
+  ],
+  "assembly": {
+    "start": "0x113f4",
+    "end": "0x114e0",
+    "used_bytes": 228,
+    "labels": {
+      "probe": "0x11414",
+      "intent": "0x1144c",
+      "normal": "0x1147c",
+      "recovery": "0x114a4",
+      "done": "0x114c4"
+    },
+    "assembly": "addiu sp, sp, -0x28\nsw ra, 0x20(sp)\nsw s0, 0x1c(sp)\nsw s1, 0x18(sp)\njal 0x1134c\naddiu s0, zero, 200\nlui s1, 1\naddiu s1, s1, 4598\nprobe:\nmove a0, s1\nlui a1, 0x8000\njal 0x11268\naddiu a2, zero, 3\nbnez v0, intent\nnop\nlui t8, 1\naddiu t8, t8, 8208\nlw t9, 0(t8)\njalr t9\naddiu a0, zero, 10\naddiu s0, s0, -1\nbnez s0, probe\nnop\nintent:\naddiu a0, s1, 62\nlui a1, 0x8000\njal 0x11268\naddiu a2, zero, 3\nbnez v0, normal\nnop\naddiu a0, s1, -430\nlui a1, 0x8000\njal 0x11268\naddiu a2, zero, 3\nbnez v0, recovery\nnop\nnormal:\nmove a0, s1\njal 0x112d8\naddiu a1, zero, 1\nbnez v0, done\nnop\naddiu a0, s1, -202\njal 0x112d8\naddiu a1, zero, 1\nbnez v0, done\nnop\nrecovery:\naddiu a0, s1, -54\njal 0x112d8\nmove a1, zero\nbnez v0, done\nnop\naddiu a0, s1, -118\njal 0x112d8\nmove a1, zero\ndone:\nlw s1, 0x18(sp)\nlw s0, 0x1c(sp)\nlw ra, 0x20(sp)\njr ra\naddiu sp, sp, 0x28",
+    "source_assembly": "addiu sp, sp, -0x28\nsw ra, 0x20(sp)\nsw s0, 0x1c(sp)\nsw s1, 0x18(sp)\njal 0x1134c\naddiu s0, zero, 200\nla s1, 0x111f6\nprobe:\nmove a0, s1\nlui a1, 0x8000\njal 0x11268\naddiu a2, zero, 3\nbnez v0, intent\nnop\nla t8, 0x12010\nlw t9, 0(t8)\njalr t9\naddiu a0, zero, 10\naddiu s0, s0, -1\nbnez s0, probe\nnop\nintent:\naddiu a0, s1, 62\nlui a1, 0x8000\njal 0x11268\naddiu a2, zero, 3\nbnez v0, normal\nnop\naddiu a0, s1, -430\nlui a1, 0x8000\njal 0x11268\naddiu a2, zero, 3\nbnez v0, recovery\nnop\nnormal:\nmove a0, s1\njal 0x112d8\naddiu a1, zero, 1\nbnez v0, done\nnop\naddiu a0, s1, -202\njal 0x112d8\naddiu a1, zero, 1\nbnez v0, done\nnop\nrecovery:\naddiu a0, s1, -54\njal 0x112d8\nmove a1, zero\nbnez v0, done\nnop\naddiu a0, s1, -118\njal 0x112d8\nmove a1, zero\ndone:\nlw s1, 0x18(sp)\nlw s0, 0x1c(sp)\nlw ra, 0x20(sp)\njr ra\naddiu sp, sp, 0x28"
+  },
+  "physical_tested": false,
+  "changed_modules": [
+    "ULC_launcher.exe"
+  ],
+  "kernel_layout_unchanged": true,
+  "bootloader_or_mcu_changed": false
+}

@@ -76,7 +76,19 @@ The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) preserve the origin
 
 [The MAX15 notes](../releases/7.0.6.MAX15/README.md) describe owner-confirmed Bluetooth artwork, cumulative Settings/light-theme/player changes and the [test device](test-device.md). Run `python tools/check_max15_release.py`, then `python tools/release_max15_payload.py --prepare-input .inputs/max15-baseline` and `python tools/release_max15_payload.py --baseline .inputs/max15-baseline --out build/max15-reproduced`. The plan reproduces all 1,918 payload files from the pinned historical MAX04 input; exact patch constructors and dependencies are preserved in the release source manifest. MAX04/MAX10 records remain historical.
 
-## Current MAX18 release
+## Current MAX31 release
+
+[MAX31](../releases/7.0.6.MAX31/README.md) corrects intentional DBoot/CE entry
+being mistaken for startup failure, with native desktop initialization in the
+recovery path. Publication was authorized on 20 October 2026; physical MAX31
+testing, including the quick CE reboot, remains pending. It retains all 1,920
+MAX30 paths and the inherited application features. Run
+`python tools/check_max31_release.py` to check the full inventory, 115 frozen
+source pins and recorded proof/status; add `--lgu path/to/upgrade.lgu` to check
+the downloaded artifact. Cumulative build recipes require their pinned inputs
+and are documented in the release notes.
+
+## Historical MAX18 release
 
 [MAX18](../releases/7.0.6.MAX18/README.md) carries forward the tested Bluetooth
 album art and redesigns Nav and the volume popup, with direct navigation launch.
