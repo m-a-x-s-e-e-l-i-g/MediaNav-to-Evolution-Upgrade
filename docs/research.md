@@ -68,6 +68,7 @@
 ## USB, media and iPod
 
 - [artwork-playlist-development](../analysis/artwork-playlist-development.md)
+- [cover-art-iphone-fixes](cover-art-iphone-fixes.md)
 - [ipod-contracts](../analysis/ipod-contracts.md)
 - [usb-controller-contracts](../analysis/usb-controller-contracts.md)
 - [usb-folders-development](../analysis/usb-folders-development.md)
