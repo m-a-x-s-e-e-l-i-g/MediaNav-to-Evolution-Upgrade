@@ -33,6 +33,12 @@ every phone, player or AVRCP implementation.
 
 ## Hardware feedback
 
+- MAX31: publication authorized on 20 October 2026. **No MAX31 car test has
+  been reported.** MAX30 later produced a false recovery prompt during DBoot
+  use and a quick CE reboot. MAX31 corrects the marker/desktop-entry paths;
+  both outcomes require physical validation. See the
+  [MAX31 device-status record](../releases/7.0.6.MAX31/device-status.json).
+
 - MAX30: owner upgraded from MAX26, reports that everything works fine as far as
   known, and authorized release on 18 October 2026. **The iPhone album-art change
   has not yet been tested.** Individual checklist results and deliberate
