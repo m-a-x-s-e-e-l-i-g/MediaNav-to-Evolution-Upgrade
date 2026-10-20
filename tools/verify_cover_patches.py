@@ -1,224 +1,232 @@
-"""Verify the cover-art patch packages against the published upgrade.lgu.
+"""Verify the full iPhone candidate and execute its actual active GET bytes.
 
-Checks (all on written bytes): which members changed, that every changed byte lies
-in a reviewed address range, PE checksums, and execution fixtures for the three
-changes (final-packet validator, retry decisions, corner mask) in the repo's MIPS
-interpreter. Needs pefile and capstone (tools/requirements.txt).
-
-    python tools/verify_cover_patches.py PUBLISHED.lgu STEP1.lgu STEP2.lgu
+python tools/verify_cover_patches.py MAX31.lgu CANDIDATE.lgu [--version LABEL]
+The optional version must match the patch command. Container hashes may vary
+with compression; every payload member must match its expected size and hash.
 """
-import argparse, io, struct, sys, zipfile, zlib
+import argparse
+import hashlib
+import io
+import json
 from pathlib import Path
-from types import SimpleNamespace
+import struct
+import sys
+import urllib.request
+import zipfile
 import pefile
+import lgu_repack as L
+import patch_cover_final_packet as patch
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL = ROOT / "releases/7.0.6.MAX10/build-sources"
-sys.path[:0] = [str(ROOT / "tools"), str(MODEL / "model-tools"), str(MODEL / "workspace-tools")]
-import lgu_repack as L
-import cover_corner_mask as mask
-import cover_retry_patch as retry
-from inspect_bt_lifecycle import SliceVM
-import verify_media_responsiveness as vmr
+MODEL = ROOT / 'releases/7.0.6.MAX10/build-sources'
+sys.path[:0] = [str(ROOT/'tools'), str(MODEL/'model-tools'), str(MODEL/'workspace-tools')]
+import bt_cover_art_responses as native
+import bt_cover_art_client as host
+import verify_bt_cover_responses as fixtures
+from verify_media_responsiveness import call
+from verify_usb_input_safety import relocated
 
-SYS = "upgrade\\Storage Card\\System\\"
-PUBLISHED_SHA = "521e9192c1dea4ae4d64d5346db0cc441c638e6156b7227af8a64eac162979b3"
-# Reviewed address ranges (virtual addresses), see docs/cover-art-iphone-fixes.md.
-BLUE_STEP1_FILE = [(o + s, 4) for s in (0, 0x198cd0 - 0x12fed0) for o in (0x12feb4, 0x12fee4, 0x12fefc)]
-BLUE_STEP2 = [(retry.HOOK_A, 4), (retry.HOOK_B, 4), (retry.CAVE, 0x400)]
-APP_STEP2 = [(0x387ec0, 4), (0x387f60, 4), (0x2221c0, 4), (0x222260, 4), (0x23515c, 4),
-             (0x235168, 8), (0x235178, 4), (0x388268, 4), (0x388d10, 0x200)]
+BASE_URL = 'https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX31/upgrade.lgu'
+ACTIVE_GET = 0x31f600
 
 
-def load(path):
-    raw = Path(path).read_bytes()
-    assert raw[:4] == b"LGU0" and struct.unpack_from("<Q", raw, 12)[0] == len(raw)
-    z = bytes(L.xor(raw[1024:]))
-    assert zlib.crc32(z) == struct.unpack_from("<I", raw, 24)[0], "payload CRC"
-    zf = zipfile.ZipFile(io.BytesIO(z))
-    members = {}
-    for i in zf.infolist():
-        data = zf.read(i, pwd=L.PW)
-        assert zlib.crc32(data) & 0xffffffff == i.CRC, i.filename
-        members[i.filename] = data
-    return raw, members
+def verify_blue(before, after):
+    expected = patch.patch_blue(before)
+    if after != expected:
+        raise ValueError('Blue.exe differs from the exact six-instruction patch and checksum')
+    for shift in (0, patch.COPY_SHIFT):
+        for offset, _, _ in patch.EDITS:
+            if after[offset+shift:offset+shift+4] != patch.NOP:
+                raise ValueError('Missing validator instruction replacement')
+    pe = pefile.PE(data=after)
+    if pe.generate_checksum() != pe.OPTIONAL_HEADER.CheckSum:
+        raise ValueError('Blue.exe PE checksum mismatch')
 
 
-def diff_vas(old, new, ranges, name):
-    """Every differing byte must lie inside `ranges` (VA, length), ignoring the PE checksum."""
-    pe = pefile.PE(data=new)
-    base = pe.OPTIONAL_HEADER.ImageBase
-    cs = pe.OPTIONAL_HEADER.get_field_absolute_offset("CheckSum")
-    assert len(old) == len(new)
-    bad = []
-    for o in (i for i in range(len(old)) if old[i] != new[i]):
-        if cs <= o < cs + 4:
-            continue
-        va = base + pe.get_rva_from_offset(o)
-        if not any(lo <= va < lo + n for lo, n in ranges):
-            bad.append(hex(va))
-    assert not bad, f"{name}: unreviewed changes at {bad[:5]}"
-    assert pe.generate_checksum() == pe.OPTIONAL_HEADER.CheckSum, f"{name}: PE checksum"
-
-
-class PeImage:
-    def __init__(self, data):
-        self.pe = pefile.PE(data=data)
-        self.base = self.pe.OPTIONAL_HEADER.ImageBase
-        self.data = data
-    OPTIONAL_HEADER = SimpleNamespace(ImageBase=0)
-
-    def get_data(self, rva, n):
-        o = self.pe.get_offset_from_rva(rva - self.base)
-        return self.data[o:o + n]
-
-
-def fixture_retry(blue):
-    img = PeImage(blue)
-    BIND, CTRL = 0x300300, 0x500000
-
-    class VM(SliceVM):
-        def word(s, pc):
-            return struct.unpack("<I", img.get_data(pc, 4))[0]
-        def internal_call(s, va):
-            return retry.CAVE <= va < retry.CAVE + 0x400
-    labels = retry.build()[1]
-
-    def run(entry, t0, s4, bind, state=0, published=0, now=1000):
-        vm = VM(img, {})
-        vm.hooks[retry.CLOCK] = lambda m: now
-        for k, v in bind.items():
-            SliceVM.write(vm, BIND + k, v, 4)
-        SliceVM.write(vm, CTRL, state, 4)
-        SliceVM.write(vm, CTRL + 36, published, 4)
-        vm.reg[8], vm.reg[17], vm.reg[20], vm.reg[19], vm.reg[29] = t0, BIND, s4, CTRL, 0x7f000000
-        stops = {retry.RESUME_A, retry.REFUSED, retry.NORMAL_B, retry.ACCEPTED, retry.REFRESH}
-        vm.run(labels[entry], stops, limit=5000)
-        return vm.pc, vm.read(BIND + 40)
-    R = retry
-    cases = [("cavea", 4, 5, {}, 0, 0, 1000, R.RESUME_A, 0),                    # new attempt passes through
-             ("cavea", 5, 5, {44: 5}, 0, 0, 1000, R.REFUSED, 0),                # first failure: stamp and wait
-             ("cavea", 5, 5, {44: 5, 36: 1000}, 0, 0, 2000, R.REFUSED, 0),      # too soon
-             ("cavea", 5, 5, {44: 5, 36: 1000}, 0, 0, 2600, R.RESUME_A, 1),     # due: retry
-             ("cavea", 5, 5, {44: 5, 36: 1000, 40: 3}, 0, 0, 9000, R.REFUSED, 3),  # budget spent
-             ("caveb", 1, 5, {}, 0, 0, 1000, R.NORMAL_B, 0),
-             ("caveb", 0, 5, {44: 5}, 3, 0, 1000, R.ACCEPTED, 0),               # not READY
-             ("caveb", 0, 5, {44: 5}, 5, 1, 1000, R.ACCEPTED, 0),               # cover published
-             ("caveb", 0, 5, {44: 5, 36: 1000}, 5, 0, 2600, R.REFRESH, 1),      # READY, no cover: ask again
-             ("caveb", 0, 5, {44: 5, 36: 1000, 40: 3}, 5, 0, 9000, R.ACCEPTED, 3)]
-    for entry, t0, s4, bind, state, pub, now, want_pc, want_n in cases:
-        pc, n = run(entry, t0, s4, bind, state, pub, now)
-        assert (pc, n) == (want_pc, want_n), (entry, hex(pc), n)
-    return len(cases)
-
-
-def fixture_mask(app):
-    img = PeImage(app)
-    at = 0x388d10
-    blob, e = mask.build(at)
-    assert img.get_data(at, len(blob)) == blob, "written bytes differ from the reviewed routine"
-    BITS, N = 0x50000000, mask.EDGE * mask.STRIDE
-
-    class VM(SliceVM):
-        def word(s, pc):
-            return struct.unpack("<I", img.get_data(pc, 4))[0]
-        def internal_call(s, va):
-            return at <= va < at + len(blob)
-        def write(s, a, v, size=4):
-            assert BITS <= a < BITS + N or a >= 0x7000000, ("stray write", hex(a))
-            super().write(a, v, size)
-    vm = VM(img, {})
-    for i, b in enumerate(blob):
-        SliceVM.write(vm, at + i, b, 1)
-    for i in range(N):
-        SliceVM.write(vm, BITS + i, 0x55, 1)
-    vmr.call(vm, e["maskbits"], [BITS], limit=200000)
-    w = mask.widths()
-    want = {(row, col) for r in range(mask.RADIUS) for x in range(w[r])
-            for row in (r, mask.EDGE - 1 - r) for col in (x, mask.EDGE - 1 - x)}
-    got = set()
-    for row in range(mask.EDGE):
-        for col in range(mask.EDGE):
-            px = [vm.read(BITS + row * mask.STRIDE + col * 3 + k, 1) for k in range(3)]
-            if px == [255, 0, 255]:
-                got.add((row, col))
+def verify_missing_edits(before, after):
+    """A missing edit in either copy must fail even with a valid PE checksum."""
+    cases = 0
+    for shift in (0, patch.COPY_SHIFT):
+        for offset, _, _ in patch.EDITS:
+            at = offset+shift
+            mutant = bytearray(after)
+            mutant[at:at+4] = before[at:at+4]
+            patch.fix_checksum(mutant)
+            try:
+                verify_blue(before, bytes(mutant))
+            except ValueError:
+                cases += 1
             else:
-                assert px == [0x55] * 3
-    assert got == want
-    for row in range(mask.EDGE):
-        assert all(vm.read(BITS + row * mask.STRIDE + k, 1) == 0x55 for k in (834, 835))
-    return len(got)
+                raise AssertionError('Verifier accepted an omitted validator edit')
+    return cases
 
 
-def fixture_final_packet():
-    """Strict vs patched GET validator on iPhone-style packets (assembled reviewed model)."""
-    import bt_cover_art_responses as native
-    import bt_cover_art_client as host
-    import verify_bt_cover_responses as v
-    orig = [dict(r) for r in native.assembled()]
-
-    def edited(raw):
-        raw = bytearray(raw)
-        i = raw.find(struct.pack("<III", 0x32e80001, 0x92290000, 0x240a00a0))
-        j = raw.find(struct.pack("<II", 0x8e090004, 0x0128482b))
-        assert i >= 0 and j >= 0
-        for at in (i + 20, i + 44, j + 24):
-            raw[at:at + 4] = bytes(4)
-        return bytes(raw)
-    patched = [dict(r, raw=edited(r["raw"])) if r["address"] == native.GET else dict(r) for r in orig]
-
-    def run(rows, pkts):
-        v.helpers = lambda: rows
-        state, body, out = [v.BODY, host.MAX_IMAGE, 0, 0, 0, 0, v.CID, 0], b"", []
-        for p in pkts:
-            vm = v.VM(p, state, body)
-            st = vmr.call(vm, native.GET, [v.OUTPUT, v.INPUT, len(p)], limit=200000)
-            out.append(st)
-            if st not in (1, 2):
-                break
-            state = [v.BODY, host.MAX_IMAGE] + [vm.read(v.OUTPUT + o) for o in (8, 12, 16, 20, 24, 28)]
-            body = v.data(vm, v.BODY, state[2])
-        return out
-    img = bytes(range(256)) * 6
-    first = v.packet(0x90, v.fixed(0xcb, v.CID) + v.fixed(0xc3, len(img)) + v.sequence(0x48, img[:1000]))
+def fixture_packets(before, after):
+    """Execute preferred-base PE bytes; never assemble a replacement GET model."""
+    f = fixtures
+    img = bytes(range(256))*6
+    first = f.packet(0x90, f.fixed(0xcb,f.CID)+f.fixed(0xc3,len(img))+f.sequence(0x48,img[:1000]))
     bad = 0xffffffff
-    cases = [("valid final", [first, v.packet(0xa0, v.sequence(0x49, img[1000:]))], [1, 2], [1, 2]),
-             ("final as plain Body", [first, v.packet(0xa0, v.sequence(0x48, img[1000:]))], [1, bad], [1, 2]),
-             ("Length differs", [v.packet(0x90, v.fixed(0xcb, v.CID) + v.fixed(0xc3, len(img) + 37) + v.sequence(0x48, img[:1000])),
-                                 v.packet(0xa0, v.sequence(0x49, img[1000:]))], [1, bad], [1, 2]),
-             ("repeated Length", [first, v.packet(0xa0, v.fixed(0xc3, len(img) + 5) + v.sequence(0x49, img[1000:]))], [1, bad], [1, 2]),
-             ("wrong connection id", [v.packet(0x90, v.fixed(0xcb, v.CID + 1) + v.sequence(0x48, img[:1000]))], [bad], [bad]),
-             ("error opcode", [v.packet(0xc4, b"")], [bad], [bad])]
-    for name, pk, strict, fixed in cases:
-        assert run(orig, pk) == strict, (name, "published")
-        assert run(patched, pk) == fixed, (name, "patched")
-    return len(cases)
+    cases = [
+        ('valid final', [first,f.packet(0xa0,f.sequence(0x49,img[1000:]))], [1,2],[1,2]),
+        ('Body final', [first,f.packet(0xa0,f.sequence(0x48,img[1000:]))], [1,bad],[1,2]),
+        ('declared size differs', [f.packet(0x90,f.fixed(0xcb,f.CID)+f.fixed(0xc3,len(img)+37)+f.sequence(0x48,img[:1000])),
+            f.packet(0xa0,f.sequence(0x49,img[1000:]))], [1,bad],[1,2]),
+        ('repeated length differs', [first,f.packet(0xa0,f.fixed(0xc3,len(img)+5)+f.sequence(0x49,img[1000:]))], [1,bad],[1,2]),
+        ('wrong connection', [f.packet(0x90,f.fixed(0xcb,f.CID+1)+f.sequence(0x48,img[:1000]))], [bad],[bad]),
+        ('error opcode', [f.packet(0xc4)], [bad],[bad]),
+        ('oversize packet', [f.packet(0xa0,f.sequence(0x49,bytes(1025)))], [bad],[bad]),
+        ('empty body', [f.packet(0xa0,f.sequence(0x49,b''))], [bad],[bad]),
+        ('truncated header', [f.packet(0xa0,b'\x49\x00')], [bad],[bad]),
+        ('oversize declaration', [f.packet(0x90,f.fixed(0xc3,host.MAX_IMAGE+1))], [bad],[bad]),
+    ]
+    traces = []
+    saved_helpers = f.helpers
+    try:
+        for label,image in [('MAX31',before),('candidate',after)]:
+            base = pefile.PE(data=image).OPTIONAL_HEADER.ImageBase
+            for delta in (0,):
+                pe = pefile.PE(data=relocated(image,delta) if delta else image)
+                rows = [dict(address=va+delta,raw=pe.get_data(va-base,size))
+                        for va,size in [(native.HEADER,0x400),(ACTIVE_GET,0x400)]]
+                f.helpers = lambda: rows
+                for name,packets,strict,patched in cases:
+                    state = [f.BODY,host.MAX_IMAGE,0,0,0,0,f.CID,0]
+                    body = b''
+                    got = []
+                    for packet in packets:
+                        vm = f.VM(packet,state,body)
+                        owned = vm.owned()
+                        status = call(vm,ACTIVE_GET+delta,[f.OUTPUT,f.INPUT,len(packet)],limit=200000)
+                        got.append(status)
+                        vm.guards()
+                        if status not in (1,2):
+                            assert vm.owned()==owned, 'Rejected packet mutated context/body'
+                            break
+                        state = [f.BODY,host.MAX_IMAGE]+[vm.read(f.OUTPUT+o) for o in (8,12,16,20,24,28)]
+                        body = f.data(vm,f.BODY,state[2])
+                    assert got==(strict if label=='MAX31' else patched), (label,delta,name,got)
+                    traces.append(dict(image=label,delta=hex(delta),case=name,statuses=got))
+    finally:
+        f.helpers = saved_helpers
+    return traces
+
+
+def verify_relocation_preservation(before, after):
+    """The six relative-branch edits must not change any other rebased bytes.
+
+    This is equivalence, not proof that the inherited image loads correctly at
+    every base. MAX31's active clone retains an unrelocated HEADER call.
+    """
+    checksum = pefile.PE(data=before).OPTIONAL_HEADER.get_field_absolute_offset('CheckSum')
+    cases = 0
+    for delta in (0,0x10000,0x120000):
+        a = bytearray(relocated(before,delta) if delta else before)
+        b = bytearray(relocated(after,delta) if delta else after)
+        a[checksum:checksum+4] = b[checksum:checksum+4] = bytes(4)
+        for shift in (0,patch.COPY_SHIFT):
+            for offset,_,_ in patch.EDITS:
+                at = offset+shift
+                assert b[at:at+4]==patch.NOP
+                b[at:at+4] = a[at:at+4]
+        assert a==b, 'Unexpected change under the inherited base relocation table'
+        cases += 1
+    return cases
+
+
+def verify(published, candidate, version=None):
+    if patch.sha(published)!=patch.BASE_SHA:
+        raise ValueError('Source is not the exact published MAX31 LGU')
+    if version is not None:
+        L.version_bytes(version)
+    with zipfile.ZipFile(io.BytesIO(L.unpack(published))) as baseline:
+        before = L.read_member(baseline,patch.BLUE)
+    manifest = json.loads((ROOT/'releases/7.0.6.MAX31/build-manifest.json').read_bytes())
+    assert manifest['container_verification']['lgu_sha256']==patch.BASE_SHA
+    expected = {r['path']:(r['bytes'],r['sha256']) for r in manifest['container_verification']['members']}
+    assert len(expected)==1920
+    expected[patch.BLUE] = (len(before),patch.PATCHED_BLUE_SHA)
+    if version is not None:
+        data = L.version_bytes(version)
+        expected[patch.VER] = (len(data),patch.sha(data))
+    label = candidate[0x2dc:0x304].decode('utf-16le').split('\0')[0]
+    if label!=(version or patch.BASE_VERSION):
+        raise ValueError('Candidate version label differs from requested version')
+    header = bytearray(published[:1024])
+    header[12:20] = candidate[12:20]
+    header[24:28] = candidate[24:28]
+    if version is not None:
+        header[0x2dc:0x304] = (version.encode('utf-16le')+b'\0\0').ljust(0x28,b'\xfe')
+    if bytes(header)!=candidate[:1024]:
+        raise ValueError('Unexpected LGU header changes')
+    with zipfile.ZipFile(io.BytesIO(L.unpack(candidate))) as archive:
+        members = L.zip_index(archive)
+        if set(members)!=set(expected):
+            raise ValueError('Candidate does not retain the complete MAX31 payload')
+        after = b''
+        for count,(name,info) in enumerate(members.items(),1):
+            digest = hashlib.sha256()
+            size = 0
+            chunks = []
+            with archive.open(info,pwd=L.PW) as source:
+                while block:=source.read(1024*1024):
+                    size += len(block)
+                    digest.update(block)
+                    if name==patch.BLUE:
+                        chunks.append(block)
+            if (size,digest.hexdigest())!=expected[name]:
+                raise ValueError(f'Unexpected payload bytes: {name}')
+            if name==patch.BLUE:
+                after = b''.join(chunks)
+            if count%250==0:
+                print(f'Checked {count}/1920 payload members',flush=True)
+    verify_blue(before,after)
+    traces = fixture_packets(before,after)
+    return dict(passed=True,members=1920,changed_members=[patch.BLUE]+([patch.VER] if version else []),
+                base_sha256=patch.BASE_SHA,candidate_sha256=patch.sha(candidate),blue_sha256=patch.sha(after),
+                missing_edit_negative_cases=verify_missing_edits(before,after),
+                actual_written_packet_cases=len(traces),packet_traces=traces,
+                relocation_preservation_cases=verify_relocation_preservation(before,after),
+                full_rebased_execution_verified=False,
+                inherited_limit='MAX31 active GET clone has an unrelocated HEADER call; unchanged by this patch.',
+                physical_test=False,firmware_executed=False)
+
+
+def prepare_input(path):
+    if path.exists():
+        if patch.sha(path.read_bytes())!=patch.BASE_SHA:
+            raise ValueError('Existing baseline differs; it was not overwritten')
+        return
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with urllib.request.urlopen(BASE_URL,timeout=60) as response:
+        raw = response.read()
+    if patch.sha(raw)!=patch.BASE_SHA:
+        raise ValueError('Downloaded baseline hash mismatch')
+    with path.open('xb') as output:
+        output.write(raw)
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("published"), ap.add_argument("step1"), ap.add_argument("step2")
-    a = ap.parse_args()
-    base_raw, base = load(a.published)
-    import hashlib
-    assert hashlib.sha256(base_raw).hexdigest() == PUBLISHED_SHA, "not the published package"
-    _, s1 = load(a.step1)
-    _, s2 = load(a.step2)
-    blue, app = SYS + "Blue.exe", SYS + "AppMain.exe"
-    for label, m, expect in (("step1", s1, {blue}), ("step2", s2, {blue, app})):
-        assert list(m) == list(base)
-        assert {n for n in m if m[n] != base[n]} == expect, label
-    pe = pefile.PE(data=base[blue])
-    b1 = [(pe.OPTIONAL_HEADER.ImageBase + pe.get_rva_from_offset(o), n) for o, n in BLUE_STEP1_FILE]
-    diff_vas(base[blue], s1[blue], b1, "step1 Blue.exe")
-    diff_vas(base[blue], s2[blue], b1 + BLUE_STEP2, "step2 Blue.exe")
-    diff_vas(base[app], s2[app], APP_STEP2, "step2 AppMain.exe")
-    assert {n for n in s2 if s2[n] != s1[n]} == {blue, app}
-    print("members/address ranges/checksums ok")
-    print("final-packet fixtures:", fixture_final_packet())
-    print("retry fixtures:", fixture_retry(s2[blue]))
-    print("corner mask pixels per cover:", fixture_mask(s2[app]))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('published',type=Path,nargs='?')
+    parser.add_argument('candidate',type=Path,nargs='?')
+    parser.add_argument('--prepare-input',type=Path)
+    parser.add_argument('--version')
+    parser.add_argument('--report',type=Path)
+    args = parser.parse_args()
+    if args.prepare_input:
+        prepare_input(args.prepare_input)
+        return
+    if not args.published or not args.candidate:
+        parser.error('Provide the published and candidate LGU paths')
+    result = verify(args.published.read_bytes(),args.candidate.read_bytes(),args.version)
+    if args.report:
+        args.report.parent.mkdir(parents=True,exist_ok=True)
+        with args.report.open('x',encoding='utf-8') as output:
+            json.dump(result,output,indent=2)
+            output.write('\n')
+    print(json.dumps({k:v for k,v in result.items() if k!='packet_traces'},indent=2))
 
 
-if __name__ == "__main__":
+if __name__=='__main__':
     main()

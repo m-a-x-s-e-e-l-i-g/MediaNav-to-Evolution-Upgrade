@@ -1,9 +1,35 @@
 """Repack an LGU0 upgrade package: XOR layer, ZipCrypto member replacement, header fix-up."""
 import struct,zlib,io,json,hashlib
 from pathlib import Path
-R=Path('/Users/emanuelst/Repositories/MediaNav-to-Evolution-Upgrade')
+R=Path(__file__).resolve().parents[1]
 KEY=bytes.fromhex(json.loads((R/'src/container/lgu0.json').read_bytes())['xor_hex'])
 PW=b'I_LOVE_LG^^'
+if len(KEY)!=1024:
+    raise ValueError('LGU XOR table must have 1024 bytes')
+
+def canonical(name):
+    """Match Windows/raw ZIP spellings without altering stored member names."""
+    name=name.replace('\\','/')
+    if any(p in ('','.','..') or ':' in p for p in name.split('/')):
+        raise ValueError(f'Unsafe member name: {name!r}')
+    return name
+
+def zip_index(archive):
+    result={};seen=set()
+    for info in archive.infolist():
+        name=canonical(info.filename)
+        if name.casefold() in seen:
+            raise ValueError(f'Duplicate member: {name}')
+        seen.add(name.casefold());result[name]=info
+    return result
+
+def read_member(archive,name):
+    return archive.read(zip_index(archive)[canonical(name)],pwd=PW)
+
+def version_bytes(version):
+    if not version or len(version)>19 or not all(c.isascii() and (c.isalnum() or c in '._-') for c in version):
+        raise ValueError('Version must contain 1-19 ASCII letters, digits, dots, underscores or hyphens')
+    return version.encode('ascii')
 def xor(d):
     # The XOR table is symmetric, so the same call decodes and encodes the payload.
     d=bytearray(d)
@@ -41,7 +67,12 @@ class Cipher:
         return bytes(out)
 def parse(z):
     # EOCD
-    e=z.rfind(b'PK\x05\x06');n,cdsize,cdoff=struct.unpack_from('<10xHII',z,e);assert z[e+20:]==b'\0\0' or len(z)==e+22
+    e=z.rfind(b'PK\x05\x06')
+    if e<0 or len(z)<e+22:
+        raise ValueError('Missing ZIP directory')
+    disk,cddisk,ondisk,n,cdsize,cdoff,comment=struct.unpack_from('<4HIIH',z,e+4)
+    if disk or cddisk or ondisk!=n or n==65535 or cdoff+cdsize!=e or len(z)!=e+22+comment:
+        raise ValueError('Unsupported ZIP layout')
     recs=[];p=cdoff
     for _ in range(n):
         assert z[p:p+4]==b'PK\x01\x02'
@@ -55,13 +86,25 @@ def rebuild(z,replace):
     # Copy every ZIP member untouched, except the ones in `replace`, then rewrite the directory.
     """replace: {name: new_bytes}; returns new zip bytes."""
     recs,cdoff,e=parse(z);out=bytearray();cd=bytearray();pos=0
+    normalized={canonical(n):v for n,v in replace.items()}
+    names=[canonical(r['name']) for r in recs]
+    if len(normalized)!=len(replace) or len({n.casefold() for n in names})!=len(names):
+        raise ValueError('Duplicate replacement or archive member')
+    missing=normalized.keys()-set(names)
+    if missing:
+        raise ValueError(f'Replacement members absent: {sorted(missing)}')
     for r in recs:
-        assert r['off']==pos or True
+        if r['off']!=pos:
+            raise ValueError('Noncontiguous ZIP members')
         nl,xl=struct.unpack_from('<26xHH',z,r['off'])
         total=30+nl+xl+r['csize'];loc=bytearray(z[r['off']:r['off']+total])
         crec=bytearray(z[r['cd']:r['cd']+r['cdlen']])
-        if r['name'] in replace:
-            data=replace[r['name']];crc=zlib.crc32(data)&0xffffffff
+        if loc[:4]!=b'PK\x03\x04' or struct.unpack_from('<HH',loc,6)!=(1,8):
+            raise ValueError('Expected encrypted DEFLATE member without data descriptor')
+        pos+=total
+        name=canonical(r['name'])
+        if name in normalized:
+            data=normalized[name];crc=zlib.crc32(data)&0xffffffff
             co=zlib.compressobj(9,zlib.DEFLATED,-15);comp=co.compress(data)+co.flush()
             hdr=bytearray(hashlib.sha256(r['name'].encode()+data).digest()[:12]);hdr[11]=crc>>24
             c=Cipher(PW);body=c.enc(bytes(hdr)+comp)
@@ -70,19 +113,33 @@ def rebuild(z,replace):
             struct.pack_into('<III',crec,16,crc,len(body),len(data))
         struct.pack_into('<I',crec,42,len(out))
         out+=loc;cd+=crec
+    if pos!=cdoff:
+        raise ValueError('Unexpected bytes before ZIP directory')
     cdoff2=len(out);out+=cd
-    eocd=bytearray(z[e:e+22]);struct.pack_into('<HHII',eocd,8,len(recs),len(recs),len(cd),cdoff2)
+    eocd=bytearray(z[e:]);struct.pack_into('<HHII',eocd,8,len(recs),len(recs),len(cd),cdoff2)
     out+=eocd
     return bytes(out)
 def pack(raw_header,zipdata,version=None):
     # Keep the original 1024-byte header; update the version label, total size and payload CRC.
     h=bytearray(raw_header[:1024])
-    if version:
+    if version is not None:
+        version_bytes(version)
         h[0x2dc:0x304]=(version.encode('utf-16le')+b'\0\0').ljust(0x28,b'\xfe')
     body=bytes(xor(zipdata))
     struct.pack_into('<Q',h,12,1024+len(body))
     struct.pack_into('<I',h,24,zlib.crc32(zipdata)&0xffffffff)
     return bytes(h)+body
+
+def unpack(raw):
+    if len(raw)<1024 or raw[:4]!=b'LGU0' or struct.unpack_from('<2I',raw,4)!=(7,1024):
+        raise ValueError('Invalid LGU0 header')
+    if struct.unpack_from('<Q',raw,12)[0]!=len(raw):
+        raise ValueError('LGU size mismatch')
+    z=bytes(xor(raw[1024:]))
+    if zlib.crc32(z)&0xffffffff!=struct.unpack_from('<I',raw,24)[0]:
+        raise ValueError('LGU payload CRC mismatch')
+    parse(z)
+    return z
 def pe_checksum(data,cs_off):
     # Standard PE image checksum, computed with the checksum field zeroed.
     d=bytearray(data);d[cs_off:cs_off+4]=b'\0\0\0\0'

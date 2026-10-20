@@ -1,92 +1,120 @@
-# Bluetooth cover art: iPhone fix and display polish
+# iPhone Bluetooth cover-art final-packet fix
 
-Research note for two patch scripts that work on the published `upgrade.lgu`. This is not a release. A release is still packed by the maintainer with the pinned tools in [releases.md](releases.md). The scripts exist so the changes can be reproduced and reviewed.
+This is an **unreleased patch recipe**, contributed by
+[Emanuel / emstoica](https://github.com/emstoica) in
+[PR #60](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/pull/60).
+His original implementation and reverse engineering were AI-assisted (Claude
+Code); his Spotify/Apple Music results were reported from a human test in a car.
+Maintainer changes make the recipe portable and verify the actual patched PE
+bytes. These are separate evidence sources, not a new maintainer car test.
 
-Written with AI assistance (Claude, via Claude Code). Device results come from a human test in a car.
+The public MAX31 download is unchanged. This PR adds no firmware binary and
+does not create a release. A later release still follows the maintainer's
+[complete-package checklist](releases.md).
 
-## Original modules
+## Input and output pins
 
-| Module | Bytes | SHA-256 (published package) |
+The recipe accepts only the exact published **7.0.6.MAX31** upgrade.lgu:
+52,310,420 bytes, SHA-256
+`521e9192c1dea4ae4d64d5346db0cc441c638e6156b7227af8a64eac162979b3`.
+
+| Module | Bytes | SHA-256 |
 | --- | --- | --- |
-| `Blue.exe` | 1,963,008 | `8dfb6f7c3be0bdf2c2f6e15f19e5cd44712ca508d1f01d43b0fb4d5829b492a0` |
-| `AppMain.exe` | 3,151,360 | `f42977f84a3f38fb020e85779504bd3e3b78b3ce387a03c0032e99cb4a305d0b` |
+| Original Blue.exe | 1,963,008 | `8dfb6f7c3be0bdf2c2f6e15f19e5cd44712ca508d1f01d43b0fb4d5829b492a0` |
+| Patched Blue.exe | 1,963,008 | `e6d63ab65a0c06a2da0a14cfec60f9e98cd2db134b9dd84c2d7942bfbf0890db` |
 
-The published package is the 52,310,420-byte `upgrade.lgu` with SHA-256 `521e9192c1dea4ae4d64d5346db0cc441c638e6156b7227af8a64eac162979b3`.
+All **1,920 members** are retained. Only Blue.exe changes, plus Version_Info.txt
+if an explicit new label is supplied. AppMain, native display layout, decoder
+size, retry scheduling, boot/recovery, updater, MCU and navigation are unchanged.
 
-| Step | `Blue.exe` SHA-256 | `AppMain.exe` SHA-256 |
+## Cause and exact native change
+
+The contributor reports that iPhone transfers completed their handshake and
+first packet, but the final smaller packet was rejected. The GET validator
+insisted on an End-of-Body header and exact/repeated declared-Length agreement.
+The recipe replaces three rejecting branches with NOPs in both copies:
+
+| First / active instrumented copy VA | Original branch | Relaxed requirement |
 | --- | --- | --- |
-| After `patch_cover_final_packet.py` | `e6d63ab65a0c06a2da0a14cfec60f9e98cd2db134b9dd84c2d7942bfbf0890db` | unchanged |
-| After `patch_cover_retry_and_corners.py` | `f46fd97342baf973c316f90be94643db6a4f17761649e49b71094a09d46babc0` | `2b7dee26f1dcd2636abab1cccc5153eb085963e0929e73f67395d8672b59c607` |
+| `0x24a2b4` / `0x31f8b4` | `bne t0,s5` | Repeated Length must equal the first |
+| `0x24a2e4` / `0x31f8e4` | `beqz t0` | Final response must contain End-of-Body (`0x49`) |
+| `0x24a2fc` / `0x31f8fc` | `bne s4,s5` | Collected bytes must exactly equal declared Length |
 
-All other members are byte-identical to the published package. Addresses are virtual addresses in the module.
+The original instruction words and input/output module hashes are checked.
+Only these six words and the PE checksum change. No new instructions containing
+absolute addresses, imports, allocation or code caves are added; existing base
+relocations and unwind metadata remain byte-identical.
 
-## 1. Final cover-art packet (`Blue.exe`)
-
-**Reason.** Debug logs from an iPhone showed the OBEX handshake, cover handle and first 1,024-byte packet accepted, then every final packet rejected by the GET validator (`bt_cover_art_responses.py`, `GET_CODE`). No image was ever completed.
-
-**Change.** Three branch-to-failed instructions become no-ops, in both copies of the validator (second copy is the debug-instrumented clone). Each address is hash-guarded on its original instruction word.
-
-| Address (1st copy / 2nd copy) | Original | Meaning |
-| --- | --- | --- |
-| `0x24a2b4` / `0x31f8b4` | `bne t0,s5` | a repeated Length header must equal the first |
-| `0x24a2e4` / `0x31f8e4` | `beqz t0` | a final packet must carry End-of-Body (`0x49`) |
-| `0x24a2fc` / `0x31f8fc` | `bne s4,s5` | collected bytes must equal the declared Length |
-
-Packet size, Connection ID, opcode, capacity and empty-body checks are unchanged.
-
-## 2. Retry (`Blue.exe`)
-
-**Reason.** The binding action tries each track selection once. If the transfer failed, or the phone reported no cover for a fresh track, the cover stayed missing.
-
-**Change.** Two hooks in the action at `0x273400`, with code in the free gap at `0x273690`.
-
-| Address | Original | Now |
-| --- | --- | --- |
-| `0x273574` | `beq t0,s4,refused` | `j` to retry case A (channel idle or failed, same selection) |
-| `0x2734dc` | `beqz t0,accepted` | `j` to retry case B (covered, controller READY, nothing published) |
-
-Each selection gets at most 3 retries, 1.5 s apart, using the tick clock stub at `0x25a000`. Counters use the unused binding words at `0x300324` (stamp), `0x300328` (retries) and `0x30032c` (selection tag). The retry reuses the existing refresh and reopen paths.
-
-## 3. Rounded corners and 278×278 cover (`AppMain.exe`)
-
-**Reason.** The cover slot is 278×278 at (27,98), but the 200×200 thumbnail was stretched with a plain GDI stretch.
-
-| Address | Change |
-| --- | --- |
-| `0x387ec0`, `0x387f60` | decoder (live clone): DIB size and draw rectangle 200 → 278 |
-| `0x2221c0`, `0x222260` | same edit in the unused original decoder |
-| `0x23515c` | paint: source size 200 → 278 |
-| `0x235168`, `0x23516c` | paint: ROP replaced by key color `0x00FF00FF` |
-| `0x235178` | paint: `StretchBlt` import (`0x185250`) → `TransparentImage` (`0x18524c`) |
-| `0x388268` | decoder wrapper: `move s6,v0` → `jal` to the corner-mask routine |
-| `0x388d10`.. | new code: `post`, `mask`, `maskbits` and a 16-entry width table |
-
-The source JPEG check stays 200×200. `mask` calls `GetObjectW` (IAT `0x185078`), requires a 278×278, 24-bit DIB section, then paints the corner quarter-discs with the key color. `TransparentImage` skips them, so the active theme's background shows through.
-
-## Evidence
-
-| Claim | Level |
-| --- | --- |
-| The iPhone's final packet was rejected by the three checks above | Confirmed static behavior plus device logs |
-| Relaxing them lets iPhone covers load (Spotify, Apple Music) | Device test |
-| Patched validator accepts iPhone-style final packets and still rejects wrong IDs and error opcodes | Fixture results |
-| Retry decisions (first failure, too soon, due, budget spent, new track reset) | Fixture results on the written bytes |
-| Corner mask changes exactly 212 pixels per cover and nothing else | Fixture results on the written bytes |
-| `TransparentImage` accepts a memory DC as source and the rounded corners show through | Device test (corners applied) |
-| Why a cover is missing after a skip | Unknown; the retry did not fix it, and no log of a failure was available |
-| 278×278 decode gives no visible quality gain over the 200×200 stretch | Device test (no visible improvement) |
-| Retry removes the intermittent missing cover after a skip | Device test: not resolved, the cover still sometimes fails to load |
+Packet/header bounds, connection identity, accepted response opcodes, buffer
+capacity, nonempty result and the existing image decoder remain in place.
+This is tolerant final-packet handling, not a change to the image size requested
+from the phone. The fixture packet variations are synthetic; they do not by
+themselves establish which exact variation appeared in each real iPhone log.
 
 ## Reproduce and verify
 
+Use Python 3.12 or newer. From any checkout path, including Windows:
+
+```console
+python -m pip install -r tools/requirements-cover.txt
+python -m unittest discover -s tools -p test_cover_package.py
+python tools/verify_cover_patches.py --prepare-input .inputs/cover/MAX31.lgu
+python tools/patch_cover_final_packet.py .inputs/cover/MAX31.lgu build/cover/candidate.lgu --version 7.0.6.COVERTEST
+python tools/verify_cover_patches.py .inputs/cover/MAX31.lgu build/cover/candidate.lgu --version 7.0.6.COVERTEST --report build/cover/verification.json
 ```
-python3 tools/patch_cover_final_packet.py upgrade.lgu step1.lgu
-python3 tools/patch_cover_retry_and_corners.py step1.lgu step2.lgu
-python3 tools/verify_cover_patches.py upgrade.lgu step1.lgu step2.lgu
-```
 
-`verify_cover_patches.py` checks the written bytes: only the listed members change, every changed byte lies in a reviewed range, PE checksums, and the fixtures above in the repo's MIPS interpreter. The scripts need `pefile` and `capstone`. Use `--version` on either patch script to relabel a test build.
+`--prepare-input` downloads only the pinned public MAX31 file and checks its
+hash. Existing differing inputs and output files are preserved. `COVERTEST` is
+an offline verification label, **not a published release or installation
+recommendation**. Maintainers choose a proper new version when building a release.
+If `--version` is omitted from both commands, the original MAX31 label is kept.
 
-## Not included
+ZIP names are compared using canonical separators while their raw stored names
+and unchanged compressed/encrypted members are retained during repacking.
+Compression may differ across Python/zlib platforms; verification checks every
+member's expected size/hash and ZIP CRC, the LGU header and payload CRC, not an
+intermediate platform-specific container hash. The official baseline and the
+patched module are still checked against exact immutable hashes.
 
-A larger cover image requested from the phone (`GetImage` with an image descriptor). The unit asks for the 200×200 linked thumbnail. What the iPhone accepts is unknown, so it needs a log of the phone's image properties first.
+## Verification and remaining device work
+
+- Nine portability/input-guard tests cover Windows/raw ZIP spellings, exact
+  retention of untouched encrypted members, absent replacements, duplicate or
+  unsafe names, CRC corruption, label limits and existing-output preservation.
+- All 1,920 candidate members must match the MAX31 manifest, with only the
+  documented Blue.exe/new-label changes permitted. LGU/ZIP integrity and the
+  exact PE output/checksum are checked.
+- Six negative mutations independently omit each instruction replacement;
+  the verifier must reject each even after recalculating its PE checksum.
+- **20 packet cases** execute actual bytes from the baseline and patched active
+  GET clone at its preferred base. They cover accepted
+  final-packet variations and retained identity, opcode, malformed-header,
+  empty-result and size rejection, with context/body guards and ABI checks.
+  No replacement GET assembly is generated by the verifier.
+- Three relocation-preservation checks compare the baseline and candidate at
+  the preferred and two alternate bases: only the same six words/checksum may
+  differ. This is equivalence, **not complete rebased execution proof**.
+- CI runs the complete recipe/verifier on Linux Python 3.12 and Windows Python
+  3.14.2, in addition to existing repository/release checks.
+
+The contributor reports iPhone covers working with Spotify and Apple Music.
+The intermittent missing cover after skipping a track remains **unresolved**.
+Other iPhones/apps and the maintainer's car need testing; offline native-byte
+execution does not run Windows CE, its loader, radio or Bluetooth hardware.
+
+The expanded review found that MAX31's existing active GET clone has an
+unrelocated call to its HEADER helper. Whole-clone execution at an alternate
+base therefore remains unverified/unsupported by these fixtures for both the
+baseline and candidate. This inherited limitation is unchanged and requires a
+separate native relocation fix; it is not hidden by claiming alternate-base
+packet tests passed.
+
+## Deferred display/retry experiment
+
+The original PR also tested rounded corners, a 278x278 decoded bitmap and a
+retry. The contributor reported working corners, no visible sharpness gain,
+and no solution to intermittent missing covers from the retry. These changes
+are omitted from the focused merge. The original commit
+[`b4b55fc`](https://github.com/emstoica/MediaNav-to-Evolution-Upgrade/commit/b4b55fc04e6a2e37b9469623a17f8729c49bf6a0)
+preserves that research. Any later display/retry PR must add appropriate native
+relocations/unwind records and test actual written/rebased bytes separately.
