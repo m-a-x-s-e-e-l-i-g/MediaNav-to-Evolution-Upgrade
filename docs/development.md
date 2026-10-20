@@ -76,7 +76,16 @@ The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) preserve the origin
 
 [The MAX15 notes](../releases/7.0.6.MAX15/README.md) describe owner-confirmed Bluetooth artwork, cumulative Settings/light-theme/player changes and the [test device](test-device.md). Run `python tools/check_max15_release.py`, then `python tools/release_max15_payload.py --prepare-input .inputs/max15-baseline` and `python tools/release_max15_payload.py --baseline .inputs/max15-baseline --out build/max15-reproduced`. The plan reproduces all 1,918 payload files from the pinned historical MAX04 input; exact patch constructors and dependencies are preserved in the release source manifest. MAX04/MAX10 records remain historical.
 
-## Current MAX31 release
+## Current MAX32 release
+
+[MAX32](../releases/7.0.6.MAX32/README.md) integrates PR60's iPhone final-packet
+fix into the full prior payload. Run `python tools/check_max32_release.py` for
+release inventory/source/proof checks, optionally with `--lgu path/to/upgrade.lgu`.
+The complete builder is `tools/build_max32.py`; public baseline and pinned Windows
+PC packing tools are required. Contributor car feedback and complete-release
+physical testing remain separate.
+
+## Historical MAX31 release
 
 [MAX31](../releases/7.0.6.MAX31/README.md) corrects intentional DBoot/CE entry
 being mistaken for startup failure, with native desktop initialization in the

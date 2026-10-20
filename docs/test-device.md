@@ -33,6 +33,11 @@ every phone, player or AVRCP implementation.
 
 ## Hardware feedback
 
+- MAX32: owner authorized release on 20 October 2026. No complete MAX32
+  maintainer car test yet. Contributor emstoica reports iPhone Spotify/Apple
+  Music success with the exact shipped Blue.exe. Missing covers after skips
+  remain open. [Evidence distinction](../releases/7.0.6.MAX32/device-status.json).
+
 - MAX31: publication authorized on 20 October 2026. **No MAX31 car test has
   been reported.** MAX30 later produced a false recovery prompt during DBoot
   use and a quick CE reboot. MAX31 corrects the marker/desktop-entry paths;
