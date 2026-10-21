@@ -19,6 +19,10 @@ After extraction, the native updater installs a verified copy of the independent
 InstallResume.exe worker and Recovery.exe before settings processing. A healthy
 install keeps the existing native settings migration. Its application-copy phase
 then delegates to the worker, which copies from retained internal staging.
+A different full package retaining both native first-stage boot files is handed
+back to the original first-stage handler, so this prelude does not reject later
+upgrades just because their version is different. A foreign application-only
+remainder is stopped before native migration; its worker is not MAX33's.
 
 Application blocks are checked against the compiled package manifest, written to
 a temporary, flushed and read back before publication. Two alternating checked

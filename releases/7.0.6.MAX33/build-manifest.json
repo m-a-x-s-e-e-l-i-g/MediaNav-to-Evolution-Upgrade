@@ -19,32 +19,32 @@
       "-p",
       "m1",
       "7.0.6.MAX33",
-      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-04\\payload",
-      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-04\\upgrade.lgu"
+      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-05\\payload",
+      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-05\\upgrade.lgu"
     ],
     "sha256": "d8424c16f6832a4f7b1e474e815fee5120cf5041d2d498dbafb030272ec1c9b0",
     "returncode": 0,
-    "duration_seconds": 8.021,
-    "log": "build\\max33-resumable-installer-development-04\\dir2lgu.log"
+    "duration_seconds": 5.874,
+    "log": "build\\max33-resumable-installer-development-05\\dir2lgu.log"
   },
   "extractor": {
     "command": [
       "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\tools\\vendor\\lgu-favremod\\lgu2dir.exe",
-      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-04\\upgrade.lgu",
-      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-04\\roundtrip"
+      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-05\\upgrade.lgu",
+      "C:\\Users\\maxom\\Documents\\ChatGPT\\MediaNav Max\\build\\max33-resumable-installer-development-05\\roundtrip"
     ],
     "sha256": "89e1731808f3912bcfd40f0ef0dafddf1c04cdb16fc3cb4e7e6be44a0c16f54f",
     "returncode": 0,
-    "duration_seconds": 34.782,
-    "log": "build\\max33-resumable-installer-development-04\\lgu2dir.log"
+    "duration_seconds": 25.939,
+    "log": "build\\max33-resumable-installer-development-05\\lgu2dir.log"
   },
   "container_verification": {
-    "lgu_sha256": "48265d1d6c6611979be12c714e364bfca33d77a8e8aee95693c1accab173c684",
-    "bytes": 52493625,
+    "lgu_sha256": "a61665ad388720d24171d84d986bbb93dbfa354c8f4ecaaaf1be9f51840a6b67",
+    "bytes": 52493724,
     "magic": "LGU0",
     "label": "*MEDIA-NAV*",
     "content": "7.0.6.MAX33",
-    "decoded_zip_crc32": "0x20d4734a",
+    "decoded_zip_crc32": "0xc99692e8",
     "header_crc_valid": true,
     "member_crc_sizes_hashes_valid": true,
     "independent_cipher_headers": 1921,
@@ -61,9 +61,9 @@
       {
         "path": "upgrade/Storage Card/InstallResume.exe",
         "bytes": 733696,
-        "sha256": "8972ae0de325d2160732432c2a0ba9531753eabf1b6e18abde25de2b553f3a76",
-        "crc32": "0x8054b61f",
-        "compressed_bytes": 174704,
+        "sha256": "f3bfa4c25e65848877d724bdd94dcfd951f4dcfec382ed123305d47276b8231a",
+        "crc32": "0x18fd350c",
+        "compressed_bytes": 174709,
         "method": 8,
         "flags": 1
       },
@@ -268,9 +268,9 @@
       {
         "path": "upgrade/Storage Card/System/UpgradeManager.exe",
         "bytes": 885248,
-        "sha256": "cc7df63260cb3d969f63043c10e2a13a37524ded389e5253028050b347ee6170",
-        "crc32": "0x181c2bee",
-        "compressed_bytes": 93815,
+        "sha256": "3158408e35878ea15c5ceddf307d73d2196b83a00b042b87da3fcba7ce1b0eb8",
+        "crc32": "0xb9e9e0a4",
+        "compressed_bytes": 93909,
         "method": 8,
         "flags": 1
       },
@@ -17342,7 +17342,7 @@
   },
   "byte_verification": {
     "passed": true,
-    "cases": 183,
+    "cases": 185,
     "checks": [
       "full 1921-member final hashes; 1915 application copies plus version last; source cleanup after commit; boot flag retained; delegated parent never killed",
       "reboot during AppMain resumes saved 256KiB blocks without replaying settings migration",
@@ -17395,6 +17395,8 @@
       "bootstrap refuses/rolls back without settings migration: rename failure",
       "healthy native settings entry preserved staged=False",
       "healthy native settings entry preserved staged=True",
+      "later full package reaches original first-stage entry without bootstrapping MAX33 worker or blocking future upgrade",
+      "foreign application-only remainder stops before native migration and leaves recovery available",
       "native -MAX33Install success contract / failure stop: none",
       "native -MAX33Install success contract / failure stop: child error",
       "native -MAX33Install success contract / failure stop: wait timeout",
@@ -17550,11 +17552,11 @@
     "tools/inspect_updater_zip.py": "abf2ef46838f522e5cb65b14235c2c29fb5e1ccbba93ce9556d909dfa71ebf39",
     "tools/inspect_wave_queue.py": "021c179cdfd2f2d39b5cc2dd2667600e23bd2ac3619b75321933ef20b37391dc",
     "tools/install_resume33.c": "62ee831260bcc9049e742c8c4c1d80962ce933031a2eba9eaaa450614567447f",
-    "tools/installer_resume33.py": "a868ee8cc76589f1cdf5dda8d230d7b5cffe3bb13aec35619d433d2db5169c3f",
+    "tools/installer_resume33.py": "ea3eae598785efa9f724eefdd9344cc80418a54315c825e714b1fadc005c0ab1",
     "tools/issue56_repair.c": "32359ebba0b3c9e86925a0d4e9a6408bd6c8cd50934410cbd85fdc81d05b1e52",
     "tools/nng_rl_bitmap.py": "bf4b5f096fbc73f4c0f1129ebd338cf587b593b57a4718f56e63c91a2bcb4591",
     "tools/package_max16.py": "1fdaded32e381b4524d1bd0d7236a9842d6a95703c17215d7d819bf8786f8d9b",
-    "tools/package_max33.py": "57000b9da0e7b3dc34dc7461e43c4452bd0d518cb98f0840a9f0ae343074d46b",
+    "tools/package_max33.py": "814cb56998935b7faddd95efd0d60a27d82d8e00150e0dffc997f884e5385f87",
     "tools/patch_bt_playback.py": "772c654a4d6ba646880f833ec7fb05726781ad545242e13c0f07a8a070353813",
     "tools/patch_shared_mapping_checks.py": "b521593a9ad5f73e9f79463b7e0172a09e9b0a3d6f831ab254526cf735129a71",
     "tools/patch_ui_english.py": "351b8641ec1f91a71881897d242f2c6a065843e9b17cc46b482f914454d4b8fc",
@@ -17567,7 +17569,7 @@
     "tools/verify_bt_database_io.py": "dcf04361089c9ae50f65ed01cd60849b64eb7c76a8f52d9a642e7cd6a6ffee21",
     "tools/verify_bt_pairing_storage.py": "a95f530fc36b6db4149d7cee9543d37a24d1a5a0a7bc7c6f21c835bdc0c8bc85",
     "tools/verify_installer33.py": "b503ca48ba110d75acee867e3f82b5883c9bccf3901f1939c35095a13a359bae",
-    "tools/verify_installer33_native.py": "da4b3a19353c530682135762c18e77fe90f5a9b752e5d90f0e814246ae5904f1",
+    "tools/verify_installer33_native.py": "fef9ae2061033fbdea8b2c3f720a7b48ccfcdc962338939fce6589722a4ab14b",
     "tools/verify_issue56_repair.py": "ece617dc44a08758caf91c7457ae5036fcb96aa9c058c2209b19f7350baad4ac",
     "tools/verify_issue59_finish.py": "a5aa9a4da9a47d5eda57271d8a88186ee2f474607147b7f9c596a84226d10c56",
     "tools/verify_ui_english.py": "f804df4213c76c67dd9d17bb26f2727a138cf7d0723e4fa73988a0f9386b0f37",

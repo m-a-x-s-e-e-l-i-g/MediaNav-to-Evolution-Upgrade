@@ -1,6 +1,6 @@
 {
   "input_sha256": "df4651042416b1a0008b0ec4dd04630ac71782737cec35fc749dc3c91e97340c",
-  "output_sha256": "cc7df63260cb3d969f63043c10e2a13a37524ded389e5253028050b347ee6170",
+  "output_sha256": "3158408e35878ea15c5ceddf307d73d2196b83a00b042b87da3fcba7ce1b0eb8",
   "code_va": 1892352,
   "state_va": 2678784,
   "edits": [
@@ -64,7 +64,7 @@
       "offset": 400,
       "va": null,
       "before_hex": "00c01200c0150000",
-      "after_hex": "00001f0014220000",
+      "after_hex": "00001f003c220000",
       "reason": "Cumulative relocation records"
     },
     {
@@ -239,7 +239,7 @@
       "capacity": 1024,
       "frame_bytes": 40,
       "registers": [],
-      "assembly": "addiu sp, sp, -40\nsw ra, 36(sp)\nla a0, 0x1e6088\nla a1, 0x1e6280\naddiu a2, zero, 11\njal 0x1ce000\nnop\nbeqz v0, failed\nnop\nla a0, 0x1e6030\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbeq v0, t0, failed\nnop\nandi t0, v0, 16\nbnez t0, failed\nnop\nla a0, 0x1e62b4\nla a1, 0x1e6320\nla a2, 0x1e6360\nla a3, 0x1e63b4\njal 0x10af80\nnop\nbeqz v0, failed\nnop\nla a0, 0x1e6408\nla a1, 0x1e646c\nla a2, 0x1e64a4\nla a3, 0x1e64f0\njal 0x10af80\nnop\nbeqz v0, failed\nnop\naddiu v0, zero, 1\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40\nfailed:\nmove v0, zero\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40"
+      "assembly": "addiu sp, sp, -40\nsw ra, 36(sp)\nla a0, 0x1e6088\nla a1, 0x1e6354\naddiu a2, zero, 11\njal 0x1ce000\nnop\nbeqz v0, failed\nnop\nla a0, 0x1e6030\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbeq v0, t0, failed\nnop\nandi t0, v0, 16\nbnez t0, failed\nnop\nla a0, 0x1e6388\nla a1, 0x1e63f4\nla a2, 0x1e6434\nla a3, 0x1e6488\njal 0x10af80\nnop\nbeqz v0, failed\nnop\nla a0, 0x1e64dc\nla a1, 0x1e6540\nla a2, 0x1e6578\nla a3, 0x1e65c4\njal 0x10af80\nnop\nbeqz v0, failed\nnop\naddiu v0, zero, 1\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40\nfailed:\nmove v0, zero\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40"
     },
     {
       "address": 1894400,
@@ -247,7 +247,7 @@
       "capacity": 768,
       "frame_bytes": 96,
       "registers": [],
-      "assembly": "addiu sp, sp, -96\nsw ra, 92(sp)\nsw zero, 0x50(sp)\nsw zero, 0x40(sp)\nsw zero, 0x44(sp)\nsw zero, 0x48(sp)\nsw zero, 0x4c(sp)\nla a0, 0x1e6558\nla a1, 0x1e653c\nb spawn\nnop\nfallback:\nla a0, 0x1e6590\nmove a1, zero\nspawn:\nmove a2, zero\nmove a3, zero\nsw zero, 0x10(sp)\nsw zero, 0x14(sp)\nsw zero, 0x18(sp)\nsw zero, 0x1c(sp)\nsw zero, 0x20(sp)\naddiu t0, sp, 0x40\nsw t0, 0x24(sp)\nla t8, 0x370b0\nlw t9, 0(t8)\njalr t9\nnop\nbnez v0, opened\nnop\nla t0, 0x1e6590\n# Preserve a bounded single fallback: s0 is not available in this frame, use\n# a stack flag initialized before the first launch.\nlw t1, 0x50(sp)\nbnez t1, done\nnop\naddiu t1, zero, 1\nsw t1, 0x50(sp)\nb fallback\nnop\nopened:\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nlw a0, 0x44(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\naddiu v0, zero, 1\ndone:\nlw ra, 92(sp)\njr ra\naddiu sp, sp, 96"
+      "assembly": "addiu sp, sp, -96\nsw ra, 92(sp)\nsw zero, 0x50(sp)\nsw zero, 0x40(sp)\nsw zero, 0x44(sp)\nsw zero, 0x48(sp)\nsw zero, 0x4c(sp)\nla a0, 0x1e662c\nla a1, 0x1e6610\nb spawn\nnop\nfallback:\nla a0, 0x1e6664\nmove a1, zero\nspawn:\nmove a2, zero\nmove a3, zero\nsw zero, 0x10(sp)\nsw zero, 0x14(sp)\nsw zero, 0x18(sp)\nsw zero, 0x1c(sp)\nsw zero, 0x20(sp)\naddiu t0, sp, 0x40\nsw t0, 0x24(sp)\nla t8, 0x370b0\nlw t9, 0(t8)\njalr t9\nnop\nbnez v0, opened\nnop\nla t0, 0x1e6664\n# Preserve a bounded single fallback: s0 is not available in this frame, use\n# a stack flag initialized before the first launch.\nlw t1, 0x50(sp)\nbnez t1, done\nnop\naddiu t1, zero, 1\nsw t1, 0x50(sp)\nb fallback\nnop\nopened:\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nlw a0, 0x44(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\naddiu v0, zero, 1\ndone:\nlw ra, 92(sp)\njr ra\naddiu sp, sp, 96"
     },
     {
       "address": 1895168,
@@ -258,15 +258,15 @@
         "s0",
         "s1"
       ],
-      "assembly": "addiu sp, sp, -128\nsw ra, 124(sp)\nsw s0, 120(sp)\nsw s1, 116(sp)\nmove s1, a0\nla t0, 0x41000\naddiu t1, zero, 6001\nsw t1, 0(t0)\nla t0, 0x3784c\naddiu t1, zero, 3008\nsw t1, 0(t0)\n# Stop the old five-minute monitor through its existing success event. The\n# native controller still owns/closes COM2 on its ordinary return path.\nla t0, 0x38f34\nlw a0, 0(t0)\nbeqz a0, spawn\nnop\naddiu a1, zero, 3\nla t8, 0x3702c\nlw t9, 0(t8)\njalr t9\nnop\nspawn:\nsw zero, 0x40(sp)\nsw zero, 0x44(sp)\nsw zero, 0x48(sp)\nsw zero, 0x4c(sp)\nla a0, 0x1e614c\nmove a1, s1\nmove a2, zero\nmove a3, zero\nsw zero, 0x10(sp)\nsw zero, 0x14(sp)\nsw zero, 0x18(sp)\nsw zero, 0x1c(sp)\nsw zero, 0x20(sp)\naddiu t0, sp, 0x40\nsw t0, 0x24(sp)\nla t8, 0x370b0\nlw t9, 0(t8)\njalr t9\nnop\nbeqz v0, failed\nnop\nlw a0, 0x44(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nlw a0, 0x40(sp)\naddiu a1, zero, -1\nla t8, 0x37014\nlw t9, 0(t8)\njalr t9\nnop\nmove s0, v0\nlw a0, 0x40(sp)\naddiu a1, sp, 0x50\nla t8, 0x290000\nlw t9, 0(t8)\njalr t9\nnop\nbeqz v0, child_failed\nnop\nbnez s0, child_failed\nnop\nlw t0, 0x50(sp)\nbnez t0, child_failed\nnop\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nla a0, 0x1e618c\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbne v0, t0, failed\nnop\nla t8, 0x37008\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, 2\nbeq v0, t0, check_stage\nnop\naddiu t0, zero, 3\nbne v0, t0, failed\nnop\ncheck_stage:\nla a0, 0x1e6000\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbne v0, t0, failed\nnop\nla t8, 0x37008\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, 2\nbeq v0, t0, check_commit\nnop\naddiu t0, zero, 3\nbne v0, t0, failed\nnop\ncheck_commit:\nla a0, 0x1e61d4\nla a1, 0x1e628c\naddiu a2, zero, 37\njal 0x1ce000\nnop\nbeqz v0, failed\nnop\nla a0, 0x1e6100\nla a1, 0x1e6280\naddiu a2, zero, 11\njal 0x1ce000\nnop\nbeqz v0, failed\nnop\nla t0, 0x41000\nsw zero, 0(t0)\nla t0, 0x3784c\naddiu t1, zero, 3000\nsw t1, 0(t0)\naddiu v0, zero, 1\nlw s0, 120(sp)\nlw s1, 116(sp)\nlw ra, 124(sp)\njr ra\naddiu sp, sp, 128\nchild_failed:\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nfailed:\nla t0, 0x41000\nsw zero, 0(t0)\naddiu a0, zero, 5005\nla a1, 0x1e614c\njal 0x3e200\nnop\njal 0x3e400\nnop\nmove v0, zero\nlw s0, 120(sp)\nlw s1, 116(sp)\nlw ra, 124(sp)\njr ra\naddiu sp, sp, 128"
+      "assembly": "addiu sp, sp, -128\nsw ra, 124(sp)\nsw s0, 120(sp)\nsw s1, 116(sp)\nmove s1, a0\nla t0, 0x41000\naddiu t1, zero, 6001\nsw t1, 0(t0)\nla t0, 0x3784c\naddiu t1, zero, 3008\nsw t1, 0(t0)\n# Stop the old five-minute monitor through its existing success event. The\n# native controller still owns/closes COM2 on its ordinary return path.\nla t0, 0x38f34\nlw a0, 0(t0)\nbeqz a0, spawn\nnop\naddiu a1, zero, 3\nla t8, 0x3702c\nlw t9, 0(t8)\njalr t9\nnop\nspawn:\nsw zero, 0x40(sp)\nsw zero, 0x44(sp)\nsw zero, 0x48(sp)\nsw zero, 0x4c(sp)\nla a0, 0x1e614c\nmove a1, s1\nmove a2, zero\nmove a3, zero\nsw zero, 0x10(sp)\nsw zero, 0x14(sp)\nsw zero, 0x18(sp)\nsw zero, 0x1c(sp)\nsw zero, 0x20(sp)\naddiu t0, sp, 0x40\nsw t0, 0x24(sp)\nla t8, 0x370b0\nlw t9, 0(t8)\njalr t9\nnop\nbeqz v0, failed\nnop\nlw a0, 0x44(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nlw a0, 0x40(sp)\naddiu a1, zero, -1\nla t8, 0x37014\nlw t9, 0(t8)\njalr t9\nnop\nmove s0, v0\nlw a0, 0x40(sp)\naddiu a1, sp, 0x50\nla t8, 0x290000\nlw t9, 0(t8)\njalr t9\nnop\nbeqz v0, child_failed\nnop\nbnez s0, child_failed\nnop\nlw t0, 0x50(sp)\nbnez t0, child_failed\nnop\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nla a0, 0x1e618c\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbne v0, t0, failed\nnop\nla t8, 0x37008\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, 2\nbeq v0, t0, check_stage\nnop\naddiu t0, zero, 3\nbne v0, t0, failed\nnop\ncheck_stage:\nla a0, 0x1e6000\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbne v0, t0, failed\nnop\nla t8, 0x37008\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, 2\nbeq v0, t0, check_commit\nnop\naddiu t0, zero, 3\nbne v0, t0, failed\nnop\ncheck_commit:\nla a0, 0x1e61d4\nla a1, 0x1e6360\naddiu a2, zero, 37\njal 0x1ce000\nnop\nbeqz v0, failed\nnop\nla a0, 0x1e6100\nla a1, 0x1e6354\naddiu a2, zero, 11\njal 0x1ce000\nnop\nbeqz v0, failed\nnop\nla t0, 0x41000\nsw zero, 0(t0)\nla t0, 0x3784c\naddiu t1, zero, 3000\nsw t1, 0(t0)\naddiu v0, zero, 1\nlw s0, 120(sp)\nlw s1, 116(sp)\nlw ra, 124(sp)\njr ra\naddiu sp, sp, 128\nchild_failed:\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nfailed:\nla t0, 0x41000\nsw zero, 0(t0)\naddiu a0, zero, 5005\nla a1, 0x1e614c\njal 0x3e200\nnop\njal 0x3e400\nnop\nmove v0, zero\nlw s0, 120(sp)\nlw s1, 116(sp)\nlw ra, 124(sp)\njr ra\naddiu sp, sp, 128"
     },
     {
       "address": 1896960,
-      "bytes": 236,
+      "bytes": 384,
       "capacity": 1024,
       "frame_bytes": 40,
       "registers": [],
-      "assembly": "addiu sp, sp, -40\nsw ra, 36(sp)\nla a0, 0x1e618c\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbne v0, t0, resume\nnop\nla t8, 0x37008\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, 2\nbeq v0, t0, stage\nnop\naddiu t0, zero, 3\nbne v0, t0, failed\nnop\nstage:\nla a0, 0x1e6000\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbeq v0, t0, native\nnop\njal 0x1ce400\nnop\nbeqz v0, failed\nnop\nnative:\njal 0x3f200\nnop\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40\nresume:\nla a0, 0x1e6248\njal 0x1ceb00\nnop\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40\nfailed:\naddiu a0, zero, 5004\nla a1, 0x1e6000\njal 0x3e200\nnop\njal 0x3e400\nnop\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40"
+      "assembly": "addiu sp, sp, -40\nsw ra, 36(sp)\nla a0, 0x1e618c\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbne v0, t0, resume\nnop\nla t8, 0x37008\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, 2\nbeq v0, t0, stage\nnop\naddiu t0, zero, 3\nbne v0, t0, failed\nnop\nstage:\nla a0, 0x1e6000\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbeq v0, t0, native\nnop\nla a0, 0x1e6088\nla a1, 0x1e6354\naddiu a2, zero, 11\njal 0x1ce000\nnop\nbeqz v0, other_package\nnop\njal 0x1ce400\nnop\nbeqz v0, failed\nnop\nb native\nnop\nother_package:\n# A full later upgrade must reach its original first stage so it can replace\n# this updater. Do not bootstrap the MAX33 worker into a different package.\n# Require both first-stage boot sources; a foreign application-only remainder\n# is stopped rather than processed with MAX33's settings/worker assumptions.\nla a0, 0x1e622c\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbeq v0, t0, failed\nnop\nandi t0, v0, 16\nbnez t0, failed\nnop\nla a0, 0x1e6284\nla t8, 0x3705c\nlw t9, 0(t8)\njalr t9\nnop\naddiu t0, zero, -1\nbeq v0, t0, failed\nnop\nandi t0, v0, 16\nbnez t0, failed\nnop\nnative:\njal 0x3f200\nnop\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40\nresume:\nla a0, 0x1e631c\njal 0x1ceb00\nnop\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40\nfailed:\naddiu a0, zero, 5004\nla a1, 0x1e6000\njal 0x3e200\nnop\njal 0x3e400\nnop\nlw ra, 36(sp)\njr ra\naddiu sp, sp, 40"
     },
     {
       "address": 1897984,
@@ -274,7 +274,7 @@
       "capacity": 64,
       "frame_bytes": 0,
       "registers": [],
-      "assembly": "la a0, 0x1e622c\nj 0x1ceb00\nnop"
+      "assembly": "la a0, 0x1e6300\nj 0x1ceb00\nnop"
     },
     {
       "address": 1898048,
@@ -282,7 +282,7 @@
       "capacity": 768,
       "frame_bytes": 96,
       "registers": [],
-      "assembly": "addiu sp, sp, -96\nsw ra, 92(sp)\nsw zero, 0x40(sp)\nsw zero, 0x44(sp)\nsw zero, 0x48(sp)\nsw zero, 0x4c(sp)\nla a0, 0x1e614c\nla a1, 0x1e6264\nmove a2, zero\nmove a3, zero\nsw zero, 0x10(sp)\nsw zero, 0x14(sp)\nsw zero, 0x18(sp)\nsw zero, 0x1c(sp)\nsw zero, 0x20(sp)\naddiu t0, sp, 0x40\nsw t0, 0x24(sp)\nla t8, 0x370b0\nlw t9, 0(t8)\njalr t9\nnop\nbeqz v0, failed\nnop\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nlw a0, 0x44(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nb done\nnop\nfailed:\nmove a0, zero\nla a1, 0x1e65bc\nla a2, 0x1e666c\nlui a3, 4\nori a3, a3, 0x10\nla t8, 0x108000\nlw t9, 0(t8)\njalr t9\nnop\ndone:\nmove v0, zero\nlw ra, 92(sp)\njr ra\naddiu sp, sp, 96"
+      "assembly": "addiu sp, sp, -96\nsw ra, 92(sp)\nsw zero, 0x40(sp)\nsw zero, 0x44(sp)\nsw zero, 0x48(sp)\nsw zero, 0x4c(sp)\nla a0, 0x1e614c\nla a1, 0x1e6338\nmove a2, zero\nmove a3, zero\nsw zero, 0x10(sp)\nsw zero, 0x14(sp)\nsw zero, 0x18(sp)\nsw zero, 0x1c(sp)\nsw zero, 0x20(sp)\naddiu t0, sp, 0x40\nsw t0, 0x24(sp)\nla t8, 0x370b0\nlw t9, 0(t8)\njalr t9\nnop\nbeqz v0, failed\nnop\nlw a0, 0x40(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nlw a0, 0x44(sp)\nla t8, 0x37028\nlw t9, 0(t8)\njalr t9\nnop\nb done\nnop\nfailed:\nmove a0, zero\nla a1, 0x1e6690\nla a2, 0x1e6740\nlui a3, 4\nori a3, a3, 0x10\nla t8, 0x108000\nlw t9, 0(t8)\njalr t9\nnop\ndone:\nmove v0, zero\nlw ra, 92(sp)\njr ra\naddiu sp, sp, 96"
     },
     {
       "address": 1899072,
@@ -300,7 +300,7 @@
       "registers": [
         "s0"
       ],
-      "assembly": "addiu sp, sp, -80\nsw ra, 76(sp)\nsw s0, 72(sp)\nmove s0, a1\njal 0x1cf940\nnop\nla t0, 0x41000\nlw t0, 0(t0)\nbeqz t0, done\nnop\nla t0, 0x3784c\nlw t0, 0(t0)\naddiu t1, zero, 3007\nbne t0, t1, done\nnop\naddiu t0, zero, 40\nsw t0, 0x20(sp)\naddiu t0, zero, 290\nsw t0, 0x24(sp)\naddiu t0, zero, 760\nsw t0, 0x28(sp)\naddiu t0, zero, 365\nsw t0, 0x2c(sp)\njal 0x2a1e0\naddiu a0, zero, 2\nmove a2, v0\nmove a0, s0\njal 0x2a200\naddiu a1, sp, 0x20\nmove a0, s0\nla a1, 0x1e6698\naddiu a2, zero, -1\naddiu a3, sp, 0x20\naddiu t0, zero, 37\njal 0x2a400\nsw t0, 0x10(sp)\ndone:\nlw s0, 72(sp)\nlw ra, 76(sp)\njr ra\naddiu sp, sp, 80"
+      "assembly": "addiu sp, sp, -80\nsw ra, 76(sp)\nsw s0, 72(sp)\nmove s0, a1\njal 0x1cf940\nnop\nla t0, 0x41000\nlw t0, 0(t0)\nbeqz t0, done\nnop\nla t0, 0x3784c\nlw t0, 0(t0)\naddiu t1, zero, 3007\nbne t0, t1, done\nnop\naddiu t0, zero, 40\nsw t0, 0x20(sp)\naddiu t0, zero, 290\nsw t0, 0x24(sp)\naddiu t0, zero, 760\nsw t0, 0x28(sp)\naddiu t0, zero, 365\nsw t0, 0x2c(sp)\njal 0x2a1e0\naddiu a0, zero, 2\nmove a2, v0\nmove a0, s0\njal 0x2a200\naddiu a1, sp, 0x20\nmove a0, s0\nla a1, 0x1e676c\naddiu a2, zero, -1\naddiu a3, sp, 0x20\naddiu t0, zero, 37\njal 0x2a400\nsw t0, 0x10(sp)\ndone:\nlw s0, 72(sp)\nlw ra, 76(sp)\njr ra\naddiu sp, sp, 80"
     }
   ],
   "helper_rows": [
@@ -460,7 +460,7 @@
     ],
     [
       1896960,
-      1897196,
+      1897344,
       0,
       0,
       1896968
@@ -13963,7 +13963,7 @@
     [
       1827856,
       4,
-      25216
+      25428
     ],
     [
       1827860,
@@ -13998,7 +13998,7 @@
     [
       1827936,
       4,
-      25268
+      25480
     ],
     [
       1827940,
@@ -14008,7 +14008,7 @@
     [
       1827944,
       4,
-      25376
+      25588
     ],
     [
       1827948,
@@ -14018,7 +14018,7 @@
     [
       1827952,
       4,
-      25440
+      25652
     ],
     [
       1827956,
@@ -14028,7 +14028,7 @@
     [
       1827960,
       4,
-      25524
+      25736
     ],
     [
       1827964,
@@ -14043,7 +14043,7 @@
     [
       1827984,
       4,
-      25608
+      25820
     ],
     [
       1827988,
@@ -14053,7 +14053,7 @@
     [
       1827992,
       4,
-      25708
+      25920
     ],
     [
       1827996,
@@ -14063,7 +14063,7 @@
     [
       1828000,
       4,
-      25764
+      25976
     ],
     [
       1828004,
@@ -14073,7 +14073,7 @@
     [
       1828008,
       4,
-      25840
+      26052
     ],
     [
       1828012,
@@ -14088,7 +14088,7 @@
     [
       1828892,
       4,
-      25944
+      26156
     ],
     [
       1828896,
@@ -14098,7 +14098,7 @@
     [
       1828900,
       4,
-      25916
+      26128
     ],
     [
       1828904,
@@ -14108,7 +14108,7 @@
     [
       1828916,
       4,
-      26000
+      26212
     ],
     [
       1828920,
@@ -14128,7 +14128,7 @@
     [
       1828992,
       4,
-      26000
+      26212
     ],
     [
       1828996,
@@ -14328,7 +14328,7 @@
     [
       1830132,
       4,
-      25228
+      25440
     ],
     [
       1830136,
@@ -14353,7 +14353,7 @@
     [
       1830168,
       4,
-      25216
+      25428
     ],
     [
       1830172,
@@ -14477,33 +14477,48 @@
     ],
     [
       1831556,
-      5,
+      4,
+      24712
+    ],
+    [
+      1831560,
+      2,
       null
     ],
     [
-      1831572,
+      1831564,
+      4,
+      25428
+    ],
+    [
+      1831568,
+      2,
+      null
+    ],
+    [
+      1831576,
       5,
       null
     ],
     [
       1831592,
-      4,
-      25160
-    ],
-    [
-      1831596,
-      2,
+      5,
       null
     ],
     [
-      1831600,
-      5,
+      1831616,
+      4,
+      25132
+    ],
+    [
+      1831620,
+      2,
       null
     ],
     [
       1831624,
       4,
-      24576
+      28764
     ],
     [
       1831628,
@@ -14511,19 +14526,69 @@
       null
     ],
     [
-      1831632,
+      1831668,
+      4,
+      25220
+    ],
+    [
+      1831672,
+      2,
+      null
+    ],
+    [
+      1831676,
+      4,
+      28764
+    ],
+    [
+      1831680,
+      2,
+      null
+    ],
+    [
+      1831720,
       5,
       null
     ],
     [
-      1831640,
+      1831740,
+      4,
+      25372
+    ],
+    [
+      1831744,
+      2,
+      null
+    ],
+    [
+      1831748,
+      5,
+      null
+    ],
+    [
+      1831772,
+      4,
+      24576
+    ],
+    [
+      1831776,
+      2,
+      null
+    ],
+    [
+      1831780,
+      5,
+      null
+    ],
+    [
+      1831788,
       5,
       null
     ],
     [
       1832448,
       4,
-      25132
+      25344
     ],
     [
       1832452,
@@ -14548,7 +14613,7 @@
     [
       1832544,
       4,
-      25188
+      25400
     ],
     [
       1832548,
@@ -14588,7 +14653,7 @@
     [
       1832676,
       4,
-      26044
+      26256
     ],
     [
       1832680,
@@ -14598,7 +14663,7 @@
     [
       1832684,
       4,
-      26220
+      26432
     ],
     [
       1832688,
@@ -14733,7 +14798,7 @@
     [
       1834176,
       4,
-      26264
+      26476
     ],
     [
       1834180,
@@ -21330,9 +21395,11 @@
       "engine": 1990988,
       "pending": 1991052,
       "complete": 1991124,
-      "install": 1991212,
-      "resume": 1991240,
-      "repair": 1991268
+      "stage_kernel": 1991212,
+      "stage_updater": 1991300,
+      "install": 1991424,
+      "resume": 1991452,
+      "repair": 1991480
     },
     "delegated_error": 6001,
     "delegated_phase": 3008,

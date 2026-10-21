@@ -10,6 +10,10 @@ from a matching extracted MAX33 stage before entering native settings handling.
 The original verified temporary/backup/rename helper retains source copies.
 Healthy settings migration stays native; only the application-copy call delegates.
 An ambiguous settings checkpoint remains stopped until explicit Repair is selected.
+A different full package with both staged NK.bin and UpgradeManager.exe retains
+the original first-stage entry instead of being rejected as a mismatched MAX33
+transaction. Foreign application-only remainders stop before migration. The
+fixture checks this forward-upgrade entry route, not an actual future firmware.
 
 The running updater is recognized by its full pinned file hash and remote state:
 error 6001, phase 3008, firmware busy zero means a held delegated parent. It is

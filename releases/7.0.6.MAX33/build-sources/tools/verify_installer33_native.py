@@ -89,6 +89,13 @@ def verify(directory):
     for staged in [False,True]:
         f=Native(raw,files if staged else{});assert f.run(h['startup'],[])==1 and f.original_called
         assert not f.original_format;checks.append('healthy native settings entry preserved staged='+str(staged))
+    later=dict(files);later[STAGE+VERSION]=b'7.0.6.MAX34';later[STAGE+r'\Storage Card\NK.bin']=b'next kernel';later[STAGE+r'\Storage Card\System\UpgradeManager.exe']=b'next updater'
+    f=Native(raw,later);assert f.run(h['startup'],[])==1 and f.original_called
+    assert f.files[norm(ENGINE)]==b'old worker' and not f.original_format
+    checks.append('later full package reaches original first-stage entry without bootstrapping MAX33 worker or blocking future upgrade')
+    del later[STAGE+r'\Storage Card\NK.bin'];f=Native(raw,later);f.run(h['startup'],[])
+    assert f.stopped and not f.original_called and not f.original_format
+    checks.append('foreign application-only remainder stops before native migration and leaves recovery available')
     for entry,cmd in [(h['delegate'],'-MAX33Install'),(h['startup'],'-MAX33Resume')]:
         for failure in ['none','child error','wait timeout','no commit','receipt','version','pending','stage','spawn failure']:
             f=Native(raw,{PENDING:b'own receipt',BOOT:b'',STAGE+r'\filecopy_success.bin':b''});f.before={};f.vm.write(0x38f34,0x8888)

@@ -21,6 +21,7 @@ def build(raw,prior):
     paths={k:i.string(v)for k,v in dict(stage=r'\Storage Card3\upgrade',receipt=r'\Storage Card3\upgrade\filecopy_success.bin',
         version_source=r'\Storage Card3\upgrade\Storage Card\System\Version_Info.txt',version_target=r'\Storage Card\System\Version_Info.txt',
         engine=r'\Storage Card\InstallResume.exe',pending=PENDING,complete=COMPLETE,
+        stage_kernel=r'\Storage Card3\upgrade\Storage Card\NK.bin',stage_updater=r'\Storage Card3\upgrade\Storage Card\System\UpgradeManager.exe',
         install='-MAX33Install',resume='-MAX33Resume',repair='-MAX33Repair').items()}
     expected_version=i.string('7.0.6.MAX33',False)
     expected_complete=i.string(COMPLETION.decode(),False)
@@ -303,9 +304,39 @@ la a0, {hex(paths['stage'])}
 addiu t0, zero, -1
 beq v0, t0, native
 nop
+la a0, {hex(paths['version_source'])}
+la a1, {hex(expected_version)}
+addiu a2, zero, 11
+jal {hex(valid)}
+nop
+beqz v0, other_package
+nop
 jal {hex(bootstrap)}
 nop
 beqz v0, failed
+nop
+b native
+nop
+other_package:
+# A full later upgrade must reach its original first stage so it can replace
+# this updater. Do not bootstrap the MAX33 worker into a different package.
+# Require both first-stage boot sources; a foreign application-only remainder
+# is stopped rather than processed with MAX33's settings/worker assumptions.
+la a0, {hex(paths['stage_kernel'])}
+{i.api('attrs')}
+addiu t0, zero, -1
+beq v0, t0, failed
+nop
+andi t0, v0, 16
+bnez t0, failed
+nop
+la a0, {hex(paths['stage_updater'])}
+{i.api('attrs')}
+addiu t0, zero, -1
+beq v0, t0, failed
+nop
+andi t0, v0, 16
+bnez t0, failed
 nop
 native:
 jal {hex(STARTUP)}
