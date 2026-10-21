@@ -119,3 +119,18 @@ recipe. Navigation input is extracted from the hash-pinned public 4.1.0 backup;
 the private device backup is not required. All 1,919 output hashes and the full
 navigation archive are checked. GitHub Actions runs this reproduction on
 Windows with the pinned Python version, alongside the Linux source checks.
+
+## MAX33 application installer candidate
+
+[MAX33 candidate notes](../releases/7.0.6.MAX33/README.md) describe resumable
+application copying and explicit repair after an ambiguous settings checkpoint.
+It is not published and has no physical validation. MAX32 remains the public
+release. See [the transaction design](installer-resume33.md) for its boundaries.
+
+Run `python tools/check_max33_release.py`, optionally with `--lgu path/to/upgrade.lgu`,
+to verify the candidate inventory, frozen sources and recorded fixture evidence.
+Builders/verifiers are frozen in `releases/7.0.6.MAX33/build-sources/tools/` and
+retain their original workspace input paths, like earlier development snapshots.
+They need the pinned complete MAX32 extracted stage, prior native updater recipe,
+ROM ordinal reference, pinned Zig 0.13 and Windows/WSL MIPS linker toolchain.
+They are not firmware-free rebuild commands for a fresh checkout.
