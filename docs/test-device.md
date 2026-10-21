@@ -33,6 +33,11 @@ every phone, player or AVRCP implementation.
 
 ## Hardware feedback
 
+- MAX33: owner authorized publication as the main normal release on 22 October
+  2026 before physical testing. **Hardware installation, resume and runtime remain
+  unconfirmed.** Offline verification is not a car result. [Authorization and
+  status](../releases/7.0.6.MAX33/device-status.json).
+
 - MAX32: owner authorized release on 20 October 2026. No complete MAX32
   maintainer car test yet. Contributor emstoica reports iPhone Spotify/Apple
   Music success with the exact shipped Blue.exe. Missing covers after skips

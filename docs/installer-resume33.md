@@ -1,7 +1,10 @@
 # MAX33 application installation transaction
 
-Candidate only. MAX32 remains the published release. No physical car testing,
-CE loader validation or storage/power durability guarantee is claimed.
+The owner authorized MAX33 as the main normal release on 22 October 2026.
+Hardware validation remains unconfirmed: no physical car testing, CE loader
+validation or storage/power durability guarantee is claimed. Frozen development
+records describe the original candidate build; release authorization is recorded
+separately in the MAX33 device-status file.
 
 ## Entry and ownership
 

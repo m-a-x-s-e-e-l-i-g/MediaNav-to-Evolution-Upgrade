@@ -1,4 +1,4 @@
-"""Portable MAX33 candidate inventory/source/evidence check; optional LGU hash."""
+"""Portable MAX33 release inventory/source/evidence check; optional LGU hash."""
 import argparse,ast,hashlib,json
 from pathlib import Path
 
@@ -31,10 +31,18 @@ def main(lgu=None):
     assert engine['manifest_members']==1920 and engine['manifest_sha256']==sha((RELEASE/'installer-resume-evidence/engine/manifest.h').read_bytes())
     assert sha((RELEASE/'installer-resume-evidence/engine/install_resume33.c').read_bytes())==m['source_pins']['tools/install_resume33.c']
     assert sha((RELEASE/'installer-resume-evidence/menu/recovery33.c').read_bytes())==m['source_pins']['tools/recovery33.c']
-    status=read('device-status.json');assert status['candidate_only']and not status['published']and not status['car_tested']and not status['universal_recovery_guarantee']
+    status=read('device-status.json')
+    assert status['release_authorized_by_owner'] and status['release_channel']=='normal'
+    assert status['authorization_date']=='2026-10-22' and status['lgu_sha256']==c['lgu_sha256']
+    assert not status['car_tested'] and status['physical_test_pending']
+    assert not status['installation_reported_by_user'] and not status['application_resume_hardware_confirmed']
+    assert not status['normal_install_hardware_confirmed'] and not status['universal_recovery_guarantee']
+    assert not status['first_legacy_stage_protected']
+    # Frozen build-time publication flags remain historical; release-channel
+    # authorization and GitHub release state are separate evidence.
     assert not m['car_tested']and not m['published']and not m['universal_recovery_guarantee']
     assert (RELEASE/'SHA256SUMS.txt').read_text().strip()==c['lgu_sha256']+'  upgrade.lgu'
     if lgu:assert lgu.stat().st_size==c['bytes']and sha(lgu.read_bytes())==c['lgu_sha256']
-    print(json.dumps(dict(candidate='7.0.6.MAX33',members=1921,exact_MAX32_members=1916,cases=proof['cases'],source_pins=len(m['source_pins']),physical_tested=False,published=False,lgu_checked=bool(lgu)),indent=2))
+    print(json.dumps(dict(release='7.0.6.MAX33',members=1921,exact_MAX32_members=1916,cases=proof['cases'],source_pins=len(m['source_pins']),physical_tested=False,normal_release_authorized=True,lgu_checked=bool(lgu)),indent=2))
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--lgu',type=Path);main(p.parse_args().lgu)

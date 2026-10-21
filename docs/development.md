@@ -76,7 +76,7 @@ The [MAX10 release notes](../releases/7.0.6.MAX10/README.md) preserve the origin
 
 [The MAX15 notes](../releases/7.0.6.MAX15/README.md) describe owner-confirmed Bluetooth artwork, cumulative Settings/light-theme/player changes and the [test device](test-device.md). Run `python tools/check_max15_release.py`, then `python tools/release_max15_payload.py --prepare-input .inputs/max15-baseline` and `python tools/release_max15_payload.py --baseline .inputs/max15-baseline --out build/max15-reproduced`. The plan reproduces all 1,918 payload files from the pinned historical MAX04 input; exact patch constructors and dependencies are preserved in the release source manifest. MAX04/MAX10 records remain historical.
 
-## Current MAX32 release
+## Historical MAX32 release
 
 [MAX32](../releases/7.0.6.MAX32/README.md) integrates PR60's iPhone final-packet
 fix into the full prior payload. Run `python tools/check_max32_release.py` for
@@ -120,15 +120,15 @@ the private device backup is not required. All 1,919 output hashes and the full
 navigation archive are checked. GitHub Actions runs this reproduction on
 Windows with the pinned Python version, alongside the Linux source checks.
 
-## MAX33 application installer candidate
+## Current MAX33 release
 
-[MAX33 candidate notes](../releases/7.0.6.MAX33/README.md) describe resumable
+[MAX33 release notes](../releases/7.0.6.MAX33/README.md) describe resumable
 application copying and explicit repair after an ambiguous settings checkpoint.
-It is not published and has no physical validation. MAX32 remains the public
-release. See [the transaction design](installer-resume33.md) for its boundaries.
+The owner authorized MAX33 as the main normal release on 22 October 2026.
+Physical validation remains unconfirmed. See [the transaction design](installer-resume33.md) for its boundaries.
 
 Run `python tools/check_max33_release.py`, optionally with `--lgu path/to/upgrade.lgu`,
-to verify the candidate inventory, frozen sources and recorded fixture evidence.
+to verify the complete inventory, frozen sources and recorded fixture evidence.
 Builders/verifiers are frozen in `releases/7.0.6.MAX33/build-sources/tools/` and
 retain their original workspace input paths, like earlier development snapshots.
 They need the pinned complete MAX32 extracted stage, prior native updater recipe,

@@ -1,7 +1,20 @@
-# MAXmade 7.0.6.MAX33 — resumable application installer candidate
+# MAXmade 7.0.6.MAX33 — resumable application installation
 
-Local test candidate, not a published release. No physical car validation yet.
-The current public MAX32 download is unchanged.
+**Hardware validation: UNCONFIRMED.** No MAX33 physical installation or runtime
+test has been reported. The owner authorized publication as the main normal
+release on 22 October 2026 before hardware testing. The checks below are offline.
+
+Complete successor to MAX32, including the contributor's iPhone artwork fix and
+all earlier features. [Download upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX33/upgrade.lgu).
+
+**Validation:** 185 offline MIPS/API-fixture checks passed, with independent
+LGU decoding and separate pinned-PC-tool extraction. All 1,921 member hashes
+match. Size: **52,493,724 bytes**. SHA-256:
+`a61665ad388720d24171d84d986bbb93dbfa354c8f4ecaaaf1be9f51840a6b67`.
+
+MAX33 addresses the stopped application-install path inherited by MAX32.
+Physical confirmation that it resolves the reported installation problem remains
+pending. The initial firmware stage is outside this application transaction.
 
 ## What changes
 
@@ -51,8 +64,9 @@ damage TFAT metadata or storage. This is not a universal anti-brick guarantee.
 Offline MIPS/API fixtures do not test CE loading, actual screen rendering, car
 power/watchdog behavior, real flash durability or registry/MCU compatibility.
 
-Do not use this candidate as an untested repair for issue #59's already-installed
-MAX30. His separately supplied pinned completion kit is unchanged.
+This full upgrade does not replace the separate issue59 completion kit for an
+already-incomplete MAX30 installation. That kit and its guide remain unchanged;
+no hardware confirmation of that recovery has been received.
 
 ## Full payload retained
 
@@ -62,7 +76,7 @@ revision/checksum in CmnDll.dll. Added: InstallResume.exe. Kernel, DBoot, MCU,
 Blue.exe including the contributor iPhone fix, navigation and all media/resources
 are byte-identical to MAX32. Every previous delivery file is retained as well.
 
-## Physical acceptance test
+## Unconfirmed hardware checks
 
 Use stable power and leave the USB connected through both normal install stages.
 Do not deliberately remove power, corrupt files or erase markers to provoke recovery
@@ -79,6 +93,9 @@ in the daily car. Fault injection belongs on a recoverable bench unit.
    explicit Repair action and independent Windows CE action after a copy failure.
 
 The LGU has independent Python verification and separate native-tool extraction.
+The frozen build-manifest and development records retain their build-time
+candidate/unpublished state; device-status.json records the later owner release
+authorization. Neither record claims physical validation.
 See installer-resume-evidence for tests, manifests, source pins and generated C
 headers. Full-payload tests accelerate hashes; native SHA boundaries and actual
 native chunk publication are tested separately. Reused baseline helper evidence
