@@ -10,6 +10,7 @@
 
 ## Reverse engineering
 
+- [Issue 66 vehicle configuration tools](../docs/issue66-vehicle-config.md): read-only CE collector, offline analyzer and original-instruction fixtures.
 - [decompiled_view.py](decompiled_view.py): stream an address-linked C function from the published exports.
 - [function_view.py](function_view.py): inspect generated assembly/function boundaries.
 - [corpus_catalog.py](corpus_catalog.py), [function_index.py](function_index.py): module and function maps.

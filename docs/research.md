@@ -5,6 +5,7 @@
 
 ## UI and applications
 
+- [Issue 66 temperature/theme configuration and read-only capture](issue66-vehicle-config.md)
 - [appmain-gui-contracts](../analysis/appmain-gui-contracts.md)
 - [appmain-interaction-contracts](../analysis/appmain-interaction-contracts.md)
 - [appmain-startup-contracts](../analysis/appmain-startup-contracts.md)

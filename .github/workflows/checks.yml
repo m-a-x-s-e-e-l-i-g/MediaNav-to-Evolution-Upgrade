@@ -31,6 +31,8 @@ jobs:
       - run: python tools/check_max32_release.py
       - run: python tools/check_max33_release.py
       - run: python tools/check_max34_release.py
+      - run: python tools/check_vehicle_config.py
+      - run: python -m unittest discover -s tools -p test_vehicle_config.py
   max18-reproduction:
     # Match the tested ZIP's deflater; Linux zlib packs different archive bytes.
     runs-on: windows-latest
@@ -65,3 +67,5 @@ jobs:
       - run: python tools/verify_cover_patches.py .inputs/cover/MAX31.lgu build/cover/candidate.lgu --version 7.0.6.COVERTEST --report build/cover/verification.json
       - run: python tools/prepare_usb_transition34.py --lgu .inputs/usb/MAX33.lgu --output .inputs/usb/MgrUSB-MAX33.exe
       - run: python tools/verify_usb_transition34.py --baseline .inputs/usb/MgrUSB-MAX33.exe --out .inputs/usb/verification.json
+      - run: python tools/prepare_vehicle_config_input.py --lgu .inputs/usb/MAX33.lgu --output .inputs/vehicle/MicomManager.exe
+      - run: python tools/verify_vehicle_config_paths.py --module .inputs/vehicle/MicomManager.exe --output .inputs/vehicle/native-paths.json
