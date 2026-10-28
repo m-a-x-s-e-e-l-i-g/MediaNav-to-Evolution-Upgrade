@@ -1,5 +1,26 @@
 # Development
 
+## MAX34 USB candidate
+
+[MAX34](../releases/7.0.6.MAX34/README.md) is a local, unpublished full successor
+for issue66's pending graph transition. Run `python tools/check_max34_release.py`
+for inventory, source and fixture-evidence checks. To execute its actual USB
+instructions on a fresh checkout:
+
+```powershell
+python -m pip install -r tools/requirements-cover.txt
+python tools/prepare_usb_transition34.py --lgu .inputs/usb/MAX33.lgu --output .inputs/usb/MgrUSB-MAX33.exe
+python tools/verify_usb_transition34.py --baseline .inputs/usb/MgrUSB-MAX33.exe --out .inputs/usb/verification.json
+```
+
+The input preparer checks the public LGU and extracted USB member hashes. The
+fixture reproduces the old timeout and exercises repeated selection, native Run,
+COM ownership and error handling at four load addresses, with debugging Off/On.
+Its COM, codec, clock and external APIs are simulated; passing does not confirm
+audible car playback. Full packaging/installer sources are frozen under the
+candidate's `build-sources/tools/`, with the same workspace/toolchain prerequisites
+as MAX33. Temperature, theme/profile and Bluetooth liveness remain separate.
+
 ## Repository layout
 
 | Path | Contents |
