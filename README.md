@@ -56,7 +56,7 @@ This update is intended for these Renault models when equipped with the **first-
 | Clio IV | 2012–2015 |
 | Captur I | 2013–2014 |
 | Master III | 2012–2014 |
-| Sandero Stepway (Brazil) | 2015 — owner-reported success; see [#65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65) |
+| Sandero Stepway (Brazil) | 2015 — boots and Bluetooth art works; USB, temperature and theme problems subsequently reported in [#66](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/66) |
 
 This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
 
@@ -64,7 +64,7 @@ You can upgrade directly to **7.0.6.MAX33**; installing 7.0.5.MD first is not re
 
 **Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
 
-**MAX33 owner report:** a **2015 Renault Sandero Stepway (Brazil)** owner reports everything working after starting on **4.0.3**, installing the base version, then the first repository release, and finally **MAX33**. **Bluetooth album art works with a Samsung S21 and YouTube Music.** See [issue #65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65) for the original feedback. This confirms the reported setup and upgrade route; other units and routes still need testing.
+**MAX33 owner report:** a **2015 Renault Sandero Stepway (Brazil)** owner initially reported success after starting on **4.0.3** and reaching **MAX33**, including **Bluetooth album art with a Samsung S21 and YouTube Music** in [issue #65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65). The same owner subsequently supplied logs for **USB track-selection failures, wrong outside temperature and a changed theme** in [issue #66](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/66). This confirms booting and the reported Bluetooth artwork result; full USB operation and the other reported faults remain unconfirmed. The [unpublished MAX34 candidate](releases/7.0.6.MAX34/README.md) addresses the reproduced USB transition guard and still needs a car test.
 
 The [historical compatibility reports list vehicles and versions tested with the original upgrade](docs/compatibility.md#original-conversion-reports). Those reports do not yet confirm MAXmade compatibility.
 

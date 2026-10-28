@@ -1,5 +1,13 @@
 # Max's development and test device
 
+On 28 October 2026 the owner clarified that the USB folder-player changes since
+7.0.5.MD have never been physically tested by the maintainer. Earlier general
+release approvals do not establish that this USB path worked on any MAX version.
+[Issue 66](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/66)
+contains an external failure capture. The [MAX34 candidate](../releases/7.0.6.MAX34/README.md)
+corrects its reproduced transition guard; audible playback and the folder-player
+acceptance matrix still require a stationary car test.
+
 MAXmade is developed and tested on Max's **first-generation Renault / Dacia
 MediaNav**, converted to Evolution software. The owner supplied the following
 device specifications and system readings on 12 October 2026.
