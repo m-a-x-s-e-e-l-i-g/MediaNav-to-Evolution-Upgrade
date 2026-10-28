@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "cases": 14,
+  "checks": [
+    {
+      "name": "actual startup caller initializes 36-byte loader buffer to zero",
+      "buffer_hex": "000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "uncached read sizes 0/20",
+      "reads": [
+        [
+          241,
+          0
+        ]
+      ],
+      "writes": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ui_type": 0
+    },
+    {
+      "name": "uncached read sizes 11/20",
+      "reads": [
+        [
+          241,
+          11
+        ]
+      ],
+      "writes": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ui_type": 0
+    },
+    {
+      "name": "uncached read sizes 12/0",
+      "reads": [
+        [
+          241,
+          12
+        ],
+        [
+          242,
+          0
+        ]
+      ],
+      "writes": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ui_type": 0
+    },
+    {
+      "name": "uncached read sizes 12/19",
+      "reads": [
+        [
+          241,
+          12
+        ],
+        [
+          242,
+          19
+        ]
+      ],
+      "writes": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ui_type": 0
+    },
+    {
+      "name": "uncached read sizes 12/20",
+      "reads": [
+        [
+          241,
+          12
+        ],
+        [
+          242,
+          20
+        ]
+      ],
+      "writes": 1,
+      "config_hex": "0000000000000040000000000000000000000000000000000000000000000000",
+      "ui_type": 1
+    },
+    {
+      "name": "validated cached profile 0",
+      "reads": [],
+      "writes": 0,
+      "config_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ui_type": 0
+    },
+    {
+      "name": "validated cached profile 1",
+      "reads": [],
+      "writes": 0,
+      "config_hex": "0000000000000040000000000000000000000000000000000000000000000000",
+      "ui_type": 1
+    },
+    {
+      "name": "validated cached profile 2",
+      "reads": [],
+      "writes": 0,
+      "config_hex": "0000000000000080000000000000000000000000000000000000000000000000",
+      "ui_type": 2
+    },
+    {
+      "name": "validated cached profile 3",
+      "reads": [],
+      "writes": 0,
+      "config_hex": "00000000000000c0000000000000000000000000000000000000000000000000",
+      "ui_type": 3
+    },
+    {
+      "name": "native Celsius conversion",
+      "raw": 0,
+      "converted": -40,
+      "invalid": false
+    },
+    {
+      "name": "native Celsius conversion",
+      "raw": 3,
+      "converted": -37,
+      "invalid": false
+    },
+    {
+      "name": "native Celsius conversion",
+      "raw": 59,
+      "converted": 19,
+      "invalid": false
+    },
+    {
+      "name": "native Celsius conversion",
+      "raw": 255,
+      "converted": 418,
+      "invalid": true
+    }
+  ],
+  "micom_sha256": "b93cb55a66c843e1bb5ea34fd58642e451e6b07afcf9f8ccd1fbc762d627e629",
+  "limits": "Unchanged packaged MIPS with explicit cache/MCU/IPC fixtures. No reporter configuration or actual received temperature byte is available; no hardware resolution established."
+}
