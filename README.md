@@ -13,7 +13,7 @@ Full before/after comparisons are in the [MAX04 design notes](releases/7.0.6.MAX
 **MAX33 adds resumable application installation and a Repair / resume update
 action, alongside separate Windows CE access.**
 
-**Hardware validation is unconfirmed.** The owner authorized MAX33 as the main
+**Maintainer hardware validation is unconfirmed.** The owner authorized MAX33 as the main
 release on 22 October 2026 before physical testing. Its 185 offline checks and
 full package verification passed; this does not confirm installation/recovery
 on a real unit or guarantee recovery from every failure. See [MAX33 scope and
@@ -56,12 +56,15 @@ This update is intended for these Renault models when equipped with the **first-
 | Clio IV | 2012–2015 |
 | Captur I | 2013–2014 |
 | Master III | 2012–2014 |
+| Sandero Stepway (Brazil) | 2015 — owner-reported success; see [#65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65) |
 
 This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
 
-You can upgrade directly to **7.0.6.MAX33**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope. The owner's earlier MAX30 test started at MAX26. MAX33 has not yet been physically tested; other starting-version routes remain unverified.
+You can upgrade directly to **7.0.6.MAX33**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope. The owner's earlier MAX30 test started at MAX26. Maintainer testing of MAX33 is pending; other starting-version routes remain unverified.
 
 **Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
+
+**MAX33 owner report:** a **2015 Renault Sandero Stepway (Brazil)** owner reports everything working after starting on **4.0.3**, installing the base version, then the first repository release, and finally **MAX33**. **Bluetooth album art works with a Samsung S21 and YouTube Music.** See [issue #65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65) for the original feedback. This confirms the reported setup and upgrade route; other units and routes still need testing.
 
 The [historical compatibility reports list vehicles and versions tested with the original upgrade](docs/compatibility.md#original-conversion-reports). Those reports do not yet confirm MAXmade compatibility.
 
