@@ -49,22 +49,25 @@ MAXmade builds on that upgrade and adds:
 
 ## Compatibility
 
-This update is intended for these Renault models when equipped with the **first-generation MediaNav** described below:
+This update is intended for these Renault / Dacia models when equipped with the **first-generation MediaNav** described below:
 
 | Model | Model years |
 | --- | --- |
 | Clio IV | 2012–2015 |
 | Captur I | 2013–2014 |
 | Master III | 2012–2014 |
+| Dacia Logan MCV (France) | 2014 — owner-reported success; see [#71](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/71) |
 | Sandero Stepway (Brazil) | 2015 — owner-reported success; see [#65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65) |
 
 This update is built for the **first-generation MediaNav**: the original unit that came with **4.x software**, such as **4.0.3, 4.0.5, 4.0.6 or 4.1.0**. The minimum starting version in this family is **4.0.3**.
 
-You can upgrade directly to **7.0.6.MAX33**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope. The owner's earlier MAX30 test started at MAX26. Maintainer testing of MAX33 is pending; other starting-version routes remain unverified.
+You can upgrade directly to **7.0.6.MAX33**; installing 7.0.5.MD first is not required. First-generation units already converted to 7.0.5.MD are also within this guide's scope. The owner's earlier MAX30 test started at MAX26. Maintainer testing of MAX33 is pending; starting-version routes beyond the owner reports below remain unverified.
 
 **Factory MediaNav Evolution units and later hardware generations are not supported by this package.** The Evolution software installed by this upgrade does not change your unit's hardware generation.
 
 **MAX33 owner report:** a **2015 Renault Sandero Stepway (Brazil)** owner reports everything working after starting on **4.0.3**, installing the base version, then the first repository release, and finally **MAX33**. **Bluetooth album art works with a Samsung S21 and YouTube Music.** See [issue #65](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/65) for the original feedback. This confirms the reported setup and upgrade route; other units and routes still need testing.
+
+**MAX33 owner report:** a **2014 Dacia Logan MCV (France)** owner reports a successful direct upgrade from **4.0.6 to 7.0.6.MAX33** on the original MediaNav using a **4 GB FAT32 USB stick**. The radio code was requested once; the **new UI, Bluetooth music and clock** are reported working. See [issue #71](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/issues/71) for the original feedback. This confirms the reported setup and upgrade route; other units and routes still need testing.
 
 The [historical compatibility reports list vehicles and versions tested with the original upgrade](docs/compatibility.md#original-conversion-reports). Those reports do not yet confirm MAXmade compatibility.
 
@@ -86,7 +89,7 @@ Just to warn you that this update is not always succesful and can introduce some
 4. Use a USB stick of **64 MB to 4 GB, formatted FAT32**. Formatting erases the stick, so copy anything you need off it first.
 5. Download [upgrade.lgu](https://github.com/m-a-x-s-e-e-l-i-g/MediaNav-to-Evolution-Upgrade/releases/download/7.0.6.MAX33/upgrade.lgu) from the release assets. Copy **only that upgrade.lgu** directly onto the USB stick, not inside a folder. Keep the filename `upgrade.lgu` and safely eject the stick from your PC.
 
-This updates the system software as well as the apps. The owner previously installed MAX30 from MAX26; MAX33 car validation is pending. Returning to an older version, failure recovery and compatibility with other units remain unverified. Known maintenance/formatting/wait gaps are documented in the [release notes](releases/7.0.6.MAX33/README.md#scope-and-limits); this is not a guarantee against lockout.
+This updates the system software as well as the apps. The owner previously installed MAX30 from MAX26; maintainer MAX33 car validation is pending. Returning to an older version, failure recovery and compatibility with other units remain unverified. Known maintenance/formatting/wait gaps are documented in the [release notes](releases/7.0.6.MAX33/README.md#scope-and-limits); this is not a guarantee against lockout.
 
 ## Install 7.0.6.MAX33
 
